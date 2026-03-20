@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ECE Super Toolkit</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>ECE Toolkit</title>
 
 <style>
 body {
@@ -55,17 +54,19 @@ button {
 
 canvas {
   margin-top:10px;
+  background:white;
+  border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">⚡ ECE Super Toolkit</div>
+<div class="navbar">⚡ ECE Toolkit</div>
 
 <div class="container">
 
-<!-- Calculator -->
+<!-- CALCULATORS -->
 <div class="card">
 <h3>Calculators</h3>
 
@@ -95,17 +96,15 @@ canvas {
 
 </div>
 
-<!-- Graph -->
+<!-- CIRCUIT BUILDER -->
 <div class="card">
-<h3>Graph Engine</h3>
+<h3>🔌 Circuit Builder</h3>
 
-<button onclick="graph('sine')">Sine</button>
-<button onclick="graph('square')">Square</button>
-<button onclick="graph('triangle')">Triangle</button>
-<button onclick="graph('rc')">RC Curve</button>
-<button onclick="graph('am')">AM Signal</button>
+<button onclick="addComponent('resistor')">Resistor</button>
+<button onclick="addComponent('capacitor')">Capacitor</button>
+<button onclick="clearCanvas()">Clear</button>
 
-<canvas id="chart"></canvas>
+<canvas id="circuitCanvas" width="300" height="200"></canvas>
 
 </div>
 
@@ -113,68 +112,82 @@ canvas {
 
 <script>
 
-// Ohm
+// CALCULATORS
+
 function ohm(){
 let V=voltage.value;
 let R=resistance.value;
 out.innerHTML="Current = "+(V/R)+" A";
 }
 
-// Power
 function power(){
 let V=voltage.value;
 let I=current.value;
 out.innerHTML="Power = "+(V*I)+" W";
 }
 
-// RC
 function rc(){
 let R=r.value;
 let C=c.value;
 rcOut.innerHTML="τ = "+(R*C)+" sec";
 }
 
-// Frequency
 function period(){
 let f=freq.value;
 freqOut.innerHTML="T = "+(1/f)+" sec";
 }
 
-// Graph
-function graph(type){
+// CIRCUIT BUILDER
 
-const ctx=document.getElementById('chart').getContext('2d');
+let canvas = document.getElementById("circuitCanvas");
+let ctx = canvas.getContext("2d");
 
-if(window.g) g.destroy();
+let x = 20;
+let y = 100;
 
-let labels=[],data=[];
+function addComponent(type) {
 
-for(let i=0;i<100;i++){
-let t=i/10;
-labels.push(t);
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 2;
 
-if(type=="sine") data.push(Math.sin(t));
-if(type=="square") data.push(Math.sign(Math.sin(t)));
-if(type=="triangle") data.push(2*Math.asin(Math.sin(t))/Math.PI);
-if(type=="rc") data.push(1-Math.exp(-t));
-if(type=="am"){
-let c=Math.sin(10*t);
-let m=Math.sin(t);
-data.push((1+m)*c);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 20, y);
+  ctx.stroke();
+
+  x += 20;
+
+  if (type === "resistor") {
+    for (let i = 0; i < 4; i++) {
+      ctx.lineTo(x + 10, y - 10);
+      ctx.lineTo(x + 20, y + 10);
+      x += 20;
+    }
+  }
+
+  if (type === "capacitor") {
+    ctx.moveTo(x, y - 15);
+    ctx.lineTo(x, y + 15);
+
+    ctx.moveTo(x + 10, y - 15);
+    ctx.lineTo(x + 10, y + 15);
+
+    x += 20;
+  }
+
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 20, y);
+  ctx.stroke();
+
+  x += 20;
 }
-}
 
-g=new Chart(ctx,{
-type:'line',
-data:{
-labels:labels,
-datasets:[{
-label:type,
-data:data,
-borderWidth:2
-}]
-}
-});
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  x = 20;
 }
 
 </script>
