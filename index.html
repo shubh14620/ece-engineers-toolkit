@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ECE Toolkit</title>
+</head>
+
+<body style="background:#0f172a; color:white; text-align:center;">
+
+<h1>⚡ ECE – The Engineer’s Toolkit</h1>
+
+<h2>📡 Calculator</h2>
+<button onclick="ohm()">Ohm's Law</button>
+
+<h2>📄 Notes</h2>
+<input type="file">
+
+<h2>📊 Signal</h2>
+<button onclick="alert('Signal Generated')">Generate</button>
+
+<script>
+function ohm(){
+ let v = prompt("Voltage");
+ let r = prompt("Resistance");
+ alert("Current = " + (v/r));
+}
+</script>
+
+</body>
+</html>
