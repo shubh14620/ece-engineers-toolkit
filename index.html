@@ -2,117 +2,196 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ECE Toolkit</title>
+<title>ECE – The Engineer’s Toolkit</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
-  font-family: Arial;
-  background: #0f172a;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
-  text-align: center;
 }
 
+/* Navbar */
+.navbar {
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+}
+
+/* Section Cards */
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  padding: 20px;
 }
 
 .card {
-  background: #1e293b;
+  background: rgba(255,255,255,0.05);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 300px;
+  box-shadow: 0 0 20px rgba(0,255,150,0.2);
+  transition: 0.3s;
 }
 
-input, textarea {
-  width: 90%;
-  margin: 5px;
-  padding: 8px;
+.card:hover {
+  transform: scale(1.05);
 }
 
+/* Buttons */
 button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
   background: #22c55e;
   color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+/* Inputs */
+input, textarea {
+  width: 90%;
   padding: 8px;
-  border: none;
   margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
 }
 </style>
 </head>
 
 <body>
 
-<h1>⚡ ECE – The Engineer’s Toolkit</h1>
+<div class="navbar">
+⚡ ECE – The Engineer’s Toolkit
+</div>
 
 <div class="container">
 
+<!-- Calculator -->
 <div class="card">
-<h3>Calculator</h3>
-<input id="voltage" placeholder="Voltage">
-<input id="resistance" placeholder="Resistance">
-<button onclick="ohm()">Ohm</button>
+<h3>📡 Electronics Calculator</h3>
 
-<input id="current" placeholder="Current">
+<input id="voltage" placeholder="Voltage (V)">
+<input id="resistance" placeholder="Resistance (Ω)">
+<button onclick="ohm()">Ohm's Law</button>
+
+<input id="current" placeholder="Current (A)">
 <button onclick="power()">Power</button>
 
 <div id="calcOutput"></div>
 </div>
 
+<!-- Notes -->
 <div class="card">
-<h3>Graph</h3>
-<button onclick="drawGraph()">Generate</button>
+<h3>📄 Notes Section</h3>
+<p>Analog | Digital | Communication</p>
+
+<input type="file" id="pdfUpload" accept="application/pdf">
+<iframe id="pdfViewer" width="100%" height="200px"></iframe>
+</div>
+
+<!-- Signal -->
+<div class="card">
+<h3>📊 Signal Graph</h3>
+
+<button onclick="drawGraph()">Generate Signal</button>
 <canvas id="chart"></canvas>
 </div>
 
+<!-- Analyzer -->
 <div class="card">
-<h3>Analyzer</h3>
-<textarea id="text"></textarea>
+<h3>📄 Text Analyzer</h3>
+
+<textarea id="text" placeholder="Paste text..."></textarea>
 <button onclick="analyze()">Analyze</button>
+
 <div id="analysis"></div>
 </div>
 
 </div>
 
+<!-- Footer -->
+<footer>
+©️ 2026 ECE – The Engineer’s Toolkit | Developed by Shubham Pandey ⚡  
+All Rights Reserved.
+</footer>
+
 <script>
 
-let chart;
-
-function ohm(){
- let v = document.getElementById("voltage").value;
- let r = document.getElementById("resistance").value;
- document.getElementById("calcOutput").innerHTML = v/r;
+// Ohm Law
+function ohm() {
+  let v = document.getElementById("voltage").value;
+  let r = document.getElementById("resistance").value;
+  let i = v / r;
+  document.getElementById("calcOutput").innerHTML = "Current: " + i + " A";
 }
 
-function power(){
- let v = document.getElementById("voltage").value;
- let i = document.getElementById("current").value;
- document.getElementById("calcOutput").innerHTML = v*i;
+// Power
+function power() {
+  let v = document.getElementById("voltage").value;
+  let i = document.getElementById("current").value;
+  let p = v * i;
+  document.getElementById("calcOutput").innerHTML = "Power: " + p + " W";
 }
 
-function drawGraph(){
- let ctx = document.getElementById("chart").getContext("2d");
+// PDF Viewer
+document.getElementById("pdfUpload").addEventListener("change", function(e) {
+  let file = e.target.files[0];
+  let url = URL.createObjectURL(file);
+  document.getElementById("pdfViewer").src = url;
+});
 
- if(chart) chart.destroy();
+// Graph
+function drawGraph() {
+  let ctx = document.getElementById('chart').getContext('2d');
 
- chart = new Chart(ctx,{
-  type:"line",
-  data:{
-   labels:[1,2,3,4,5],
-   datasets:[{
-    label:"Signal",
-    data:[1,3,2,5,4]
-   }]
+  let data = [];
+  for (let i = 0; i < 50; i++) {
+    data.push(Math.sin(i/5));
   }
- });
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.map((_, i) => i),
+      datasets: [{
+        label: 'Signal',
+        data: data
+      }]
+    }
+  });
 }
 
-function analyze(){
- let text = document.getElementById("text").value;
- document.getElementById("analysis").innerHTML = text.length;
+// Analyzer
+function analyze() {
+  let text = document.getElementById("text").value;
+  let words = text.split(/\s+/).length;
+
+  document.getElementById("analysis").innerHTML =
+    "Word Count: " + words;
 }
 
 </script>
