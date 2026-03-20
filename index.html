@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ECE Pro Toolkit</title>
+<title>ECE – Engineer's Toolkit</title>
 
 <style>
 body {
@@ -9,38 +9,20 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg,#0f172a,#1e293b);
   color:white;
+  text-align:center;
 }
 
-/* NAVBAR */
 .navbar {
-  text-align:center;
   padding:15px;
   font-size:24px;
   font-weight:bold;
   background:rgba(0,0,0,0.7);
 }
 
-/* TABS */
-.tabs {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:10px;
-}
-
-.tabs button {
-  padding:10px;
-  border:none;
-  background:#22c55e;
-  color:white;
-  border-radius:5px;
-  cursor:pointer;
-}
-
-/* CONTAINER */
 .container {
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap:20px;
   padding:20px;
 }
 
@@ -48,7 +30,6 @@ body {
   background:rgba(255,255,255,0.05);
   padding:20px;
   border-radius:15px;
-  width:350px;
   box-shadow:0 0 20px rgba(0,255,150,0.2);
 }
 
@@ -60,10 +41,15 @@ input {
   border-radius:6px;
 }
 
-button.calc {
+button {
   width:100%;
   padding:10px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  border-radius:6px;
   margin-top:5px;
+  cursor:pointer;
 }
 
 .output {
@@ -72,26 +58,8 @@ button.calc {
   font-weight:bold;
 }
 
-/* HIDE */
-.section {
-  display:none;
-}
-
-.active {
-  display:block;
-}
-
-/* CANVAS */
-canvas {
-  width:100%;
-  height:200px;
-  background:white;
-  border-radius:10px;
-}
-
-/* FOOTER */
 footer {
-  text-align:center;
+  margin-top:20px;
   padding:15px;
   font-size:14px;
   opacity:0.8;
@@ -101,146 +69,158 @@ footer {
 
 <body>
 
-<div class="navbar">⚡ ECE Pro Toolkit</div>
-
-<div class="tabs">
-<button onclick="show('calc')">Calculators</button>
-<button onclick="show('circuit')">Circuit Builder</button>
-</div>
+<div class="navbar">⚡ ECE – Engineer’s Toolkit</div>
 
 <div class="container">
 
-<!-- CALCULATOR SECTION -->
-<div id="calc" class="card section active">
-
-<h3>⚡ Basic Calculations</h3>
-
+<!-- OHM -->
+<div class="card">
+<h3>Ohm's Law</h3>
 <input id="V" placeholder="Voltage (V)">
-<input id="R" placeholder="Resistance (Ω)">
-<button class="calc" onclick="current()">Calculate Current</button>
-
 <input id="I" placeholder="Current (A)">
-<button class="calc" onclick="power()">Calculate Power</button>
-
-<div class="output" id="out1"></div>
-
-<hr>
-
-<h3>🔧 RC Circuit</h3>
-
-<input id="r" placeholder="Resistance (Ω)">
-<input id="c" placeholder="Capacitance (F)">
-<button class="calc" onclick="rc()">Calculate τ</button>
-
-<div class="output" id="out2"></div>
-
-<hr>
-
-<h3>📡 Frequency</h3>
-
-<input id="f" placeholder="Frequency (Hz)">
-<button class="calc" onclick="freq()">Calculate Period</button>
-
-<div class="output" id="out3"></div>
-
+<input id="R" placeholder="Resistance (Ω)">
+<button onclick="ohm()">Calculate</button>
+<div class="output" id="o1"></div>
 </div>
 
-<!-- CIRCUIT BUILDER -->
-<div id="circuit" class="card section">
+<!-- POWER -->
+<div class="card">
+<h3>Power</h3>
+<input id="v1" placeholder="Voltage (V)">
+<input id="i1" placeholder="Current (A)">
+<button onclick="power()">Calculate</button>
+<div class="output" id="o2"></div>
+</div>
 
-<h3>🔌 Circuit Builder</h3>
+<!-- RC -->
+<div class="card">
+<h3>RC Time Constant</h3>
+<input id="r" placeholder="R">
+<input id="c" placeholder="C">
+<button onclick="rc()">Calculate</button>
+<div class="output" id="o3"></div>
+</div>
 
-<button onclick="add('resistor')">Resistor</button>
-<button onclick="add('capacitor')">Capacitor</button>
-<button onclick="reset()">Reset</button>
+<!-- FREQUENCY -->
+<div class="card">
+<h3>Frequency</h3>
+<input id="f" placeholder="Frequency">
+<button onclick="freq()">Calculate</button>
+<div class="output" id="o4"></div>
+</div>
 
-<canvas id="canvas"></canvas>
+<!-- XC -->
+<div class="card">
+<h3>Capacitive Reactance</h3>
+<input id="fc" placeholder="Frequency">
+<input id="cap" placeholder="Capacitance">
+<button onclick="xc()">Calculate</button>
+<div class="output" id="o5"></div>
+</div>
 
+<!-- XL -->
+<div class="card">
+<h3>Inductive Reactance</h3>
+<input id="fl" placeholder="Frequency">
+<input id="L" placeholder="Inductance">
+<button onclick="xl()">Calculate</button>
+<div class="output" id="o6"></div>
+</div>
+
+<!-- RLC -->
+<div class="card">
+<h3>Resonance</h3>
+<input id="Lr" placeholder="L">
+<input id="Cr" placeholder="C">
+<button onclick="rlc()">Calculate</button>
+<div class="output" id="o7"></div>
+</div>
+
+<!-- VOLTAGE DIVIDER -->
+<div class="card">
+<h3>Voltage Divider</h3>
+<input id="Vin" placeholder="Input Voltage">
+<input id="R1" placeholder="R1">
+<input id="R2" placeholder="R2">
+<button onclick="vd()">Calculate</button>
+<div class="output" id="o8"></div>
+</div>
+
+<!-- CURRENT DIVIDER -->
+<div class="card">
+<h3>Current Divider</h3>
+<input id="Iin" placeholder="Input Current">
+<input id="Ra" placeholder="R1">
+<input id="Rb" placeholder="R2">
+<button onclick="cd()">Calculate</button>
+<div class="output" id="o9"></div>
+</div>
+
+<!-- IMPEDANCE -->
+<div class="card">
+<h3>Impedance</h3>
+<input id="res" placeholder="Resistance">
+<input id="react" placeholder="Reactance">
+<button onclick="imp()">Calculate</button>
+<div class="output" id="o10"></div>
+</div>
+
+<!-- GAIN -->
+<div class="card">
+<h3>Gain</h3>
+<input id="Vo" placeholder="Output Voltage">
+<input id="Vi" placeholder="Input Voltage">
+<button onclick="gain()">Calculate</button>
+<div class="output" id="o11"></div>
+</div>
+
+<!-- dB -->
+<div class="card">
+<h3>dB</h3>
+<input id="g" placeholder="Gain">
+<button onclick="db()">Calculate</button>
+<div class="output" id="o12"></div>
+</div>
+
+<!-- BANDWIDTH -->
+<div class="card">
+<h3>Bandwidth</h3>
+<input id="fh" placeholder="High Freq">
+<input id="flw" placeholder="Low Freq">
+<button onclick="bw()">Calculate</button>
+<div class="output" id="o13"></div>
 </div>
 
 </div>
 
 <footer>
-©️ 2026 ECE Pro Toolkit | Developed by Shubham Pandey ⚡  
+©️ 2026 ECE – Engineer’s Toolkit | Developed by Shubham Pandey ⚡  
 All Rights Reserved.
 </footer>
 
 <script>
 
-// TAB SWITCH
-function show(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+// Existing
+function ohm(){let V=+V.value,I=+I.value,R=+R.value;
+if(V&&I)o1.innerHTML="R="+(V/I);
+else if(V&&R)o1.innerHTML="I="+(V/R);
+else if(I&&R)o1.innerHTML="V="+(I*R);
 }
 
-// CALCULATORS
-function current(){
-let V=V_input(),R=R_input();
-if(!V||!R) return alert("Enter values");
-out1.innerHTML="I = "+(V/R).toFixed(2)+" A";
-}
+function power(){o2.innerHTML="P="+(v1.value*i1.value);}
+function rc(){o3.innerHTML="τ="+(r.value*c.value);}
+function freq(){o4.innerHTML="T="+(1/f.value);}
+function xc(){o5.innerHTML="Xc="+(1/(2*Math.PI*fc.value*cap.value));}
+function xl(){o6.innerHTML="Xl="+(2*Math.PI*fl.value*L.value);}
+function rlc(){o7.innerHTML="f="+(1/(2*Math.PI*Math.sqrt(Lr.value*Cr.value)));}
 
-function power(){
-let V=V_input(),I=I_input();
-if(!V||!I) return alert("Enter values");
-out1.innerHTML="P = "+(V*I).toFixed(2)+" W";
-}
-
-function rc(){
-let R=r.value,C=c.value;
-out2.innerHTML="τ = "+(R*C).toExponential(2)+" sec";
-}
-
-function freq(){
-let fval=f.value;
-out3.innerHTML="T = "+(1/fval).toFixed(4)+" sec";
-}
-
-// INPUT HELPERS
-function V_input(){return parseFloat(document.getElementById("V").value)}
-function R_input(){return parseFloat(document.getElementById("R").value)}
-function I_input(){return parseFloat(document.getElementById("I").value)}
-
-// CIRCUIT BUILDER
-let ctx=document.getElementById("canvas").getContext("2d");
-let x=20,y=100;
-
-function add(type){
-ctx.strokeStyle="black";
-ctx.beginPath();
-ctx.moveTo(x,y);
-ctx.lineTo(x+20,y);
-ctx.stroke();
-x+=20;
-
-if(type==="resistor"){
-for(let i=0;i<4;i++){
-ctx.lineTo(x+10,y-10);
-ctx.lineTo(x+20,y+10);
-x+=20;
-}
-}
-
-if(type==="capacitor"){
-ctx.moveTo(x,y-15);
-ctx.lineTo(x,y+15);
-ctx.moveTo(x+10,y-15);
-ctx.lineTo(x+10,y+15);
-x+=20;
-}
-
-ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(x,y);
-ctx.lineTo(x+20,y);
-ctx.stroke();
-x+=20;
-}
-
-function reset(){
-ctx.clearRect(0,0,400,200);
-x=20;
-}
+// NEW
+function vd(){o8.innerHTML="Vout="+(Vin.value*(R2.value/(+R1.value+ +R2.value)));}
+function cd(){o9.innerHTML="Iout="+(Iin.value*(Rb.value/(+Ra.value+ +Rb.value)));}
+function imp(){o10.innerHTML="Z="+Math.sqrt(res.value**2+react.value**2);}
+function gain(){o11.innerHTML="Av="+(Vo.value/Vi.value);}
+function db(){o12.innerHTML="dB="+(20*Math.log10(g.value));}
+function bw(){o13.innerHTML="BW="+(fh.value-flw.value);}
 
 </script>
 
