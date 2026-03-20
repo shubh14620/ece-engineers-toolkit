@@ -19,9 +19,7 @@ A smart and interactive platform for Electronics & Communication Engineering stu
 (Add screenshot here later)
 
 ## 👨‍💻 Author
-Shubham Pandey
+Shubham Pandey 
 
 ## 📌 Future Improvements
 - Mobile responsive UI
-- Advanced calculators (RC, Frequency)
-- AI-based analyzer
