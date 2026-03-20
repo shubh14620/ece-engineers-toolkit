@@ -4,9 +4,7 @@ A smart and interactive platform for Electronics & Communication Engineering stu
 
 ## 🚀 Features
 - 📡 Electronics Calculators (Ohm’s Law, Power)
-- 📊 Signal Graph Visualization
-- 📄 Notes Section (PDF Upload & View)
-- 🧠 Text Analyzer (Word Count & Basic Analysis)
+  
 
 ## 🌐 Live Website
 👉 https://shubh14620.github.io/ece-engineers-toolkit/
