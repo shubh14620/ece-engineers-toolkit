@@ -1,214 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>ECE – The Engineer’s Toolkit</title>
-
+<title>ECE Super Toolkit</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
-  margin: 0;
+  margin:0;
   font-family: Arial;
   background: linear-gradient(135deg,#0f172a,#1e293b);
-  color: white;
-  text-align: center;
+  color:white;
+  text-align:center;
 }
 
 .navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.5);
-  padding: 15px;
-  font-size: 22px;
-  font-weight: bold;
+  padding:15px;
+  font-size:22px;
+  font-weight:bold;
+  background:rgba(0,0,0,0.5);
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  padding:20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 15px;
-  width: 300px;
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  width:300px;
 }
 
-input, textarea {
-  width: 90%;
-  padding: 8px;
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
+input {
+  width:90%;
+  padding:8px;
+  margin:5px;
+  border:none;
+  border-radius:5px;
 }
 
 button {
-  background: #22c55e;
-  border: none;
-  padding: 8px 15px;
-  margin: 5px;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  margin:5px;
+  border-radius:5px;
+  cursor:pointer;
 }
 
-#calcOutput, #rcOutput, #freqOutput, #analysis {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-footer {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 14px;
+canvas {
+  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">⚡ ECE – The Engineer’s Toolkit</div>
+<div class="navbar">⚡ ECE Super Toolkit</div>
 
 <div class="container">
 
 <!-- Calculator -->
 <div class="card">
-<h3>Calculator</h3>
+<h3>Calculators</h3>
 
-<input type="number" id="voltage" placeholder="Voltage (V)">
-<input type="number" id="resistance" placeholder="Resistance (Ω)">
-<button onclick="calculateOhm()">Ohm</button>
+<input id="voltage" placeholder="Voltage (V)">
+<input id="resistance" placeholder="Resistance (Ω)">
+<button onclick="ohm()">Ohm</button>
 
-<input type="number" id="current" placeholder="Current (A)">
-<button onclick="calculatePower()">Power</button>
+<input id="current" placeholder="Current (A)">
+<button onclick="power()">Power</button>
 
-<div id="calcOutput"></div>
+<div id="out"></div>
 
 <hr>
 
 <h3>RC Circuit</h3>
-<input type="number" id="resistor" placeholder="Resistance (Ω)">
-<input type="number" id="capacitor" placeholder="Capacitance (F)">
-<button onclick="calculateRC()">RC</button>
-<div id="rcOutput"></div>
+<input id="r" placeholder="Resistance (Ω)">
+<input id="c" placeholder="Capacitance (F)">
+<button onclick="rc()">Calculate</button>
+<div id="rcOut"></div>
 
 <hr>
 
 <h3>Frequency</h3>
-<input type="number" id="freq" placeholder="Frequency (Hz)">
-<button onclick="calculatePeriod()">Period</button>
-<div id="freqOutput"></div>
+<input id="freq" placeholder="Frequency (Hz)">
+<button onclick="period()">Period</button>
+<div id="freqOut"></div>
 
 </div>
 
 <!-- Graph -->
 <div class="card">
-<h3>Graph</h3>
-<button onclick="generateGraph()">Generate</button>
+<h3>Graph Engine</h3>
+
+<button onclick="graph('sine')">Sine</button>
+<button onclick="graph('square')">Square</button>
+<button onclick="graph('triangle')">Triangle</button>
+<button onclick="graph('rc')">RC Curve</button>
+<button onclick="graph('am')">AM Signal</button>
+
 <canvas id="chart"></canvas>
-</div>
-
-<!-- Analyzer -->
-<div class="card">
-<h3>Analyzer</h3>
-<textarea id="textInput" placeholder="Paste text..."></textarea>
-<button onclick="analyzeText()">Analyze</button>
-<div id="analysis"></div>
-</div>
 
 </div>
 
-<footer>
-©️ 2026 ECE – The Engineer’s Toolkit | Developed by Shubham Pandey ⚡ All Rights Reserved.
-</footer>
+</div>
 
 <script>
 
-// Ohm's Law
-function calculateOhm() {
-  let V = document.getElementById("voltage").value;
-  let R = document.getElementById("resistance").value;
-
-  let I = V / R;
-
-  document.getElementById("calcOutput").innerHTML = "Current = " + I + " A";
+// Ohm
+function ohm(){
+let V=voltage.value;
+let R=resistance.value;
+out.innerHTML="Current = "+(V/R)+" A";
 }
 
 // Power
-function calculatePower() {
-  let V = document.getElementById("voltage").value;
-  let I = document.getElementById("current").value;
-
-  let P = V * I;
-
-  document.getElementById("calcOutput").innerHTML = "Power = " + P + " W";
+function power(){
+let V=voltage.value;
+let I=current.value;
+out.innerHTML="Power = "+(V*I)+" W";
 }
 
-// RC Circuit
-function calculateRC() {
-  let R = document.getElementById("resistor").value;
-  let C = document.getElementById("capacitor").value;
-
-  let tau = R * C;
-
-  document.getElementById("rcOutput").innerHTML = "τ = " + tau + " sec";
+// RC
+function rc(){
+let R=r.value;
+let C=c.value;
+rcOut.innerHTML="τ = "+(R*C)+" sec";
 }
 
 // Frequency
-function calculatePeriod() {
-  let f = document.getElementById("freq").value;
-
-  let T = 1 / f;
-
-  document.getElementById("freqOutput").innerHTML = "T = " + T + " sec";
+function period(){
+let f=freq.value;
+freqOut.innerHTML="T = "+(1/f)+" sec";
 }
 
-// Graph (Sine Wave)
-function generateGraph() {
-  const ctx = document.getElementById('chart').getContext('2d');
+// Graph
+function graph(type){
 
-  if (window.myChart) {
-    window.myChart.destroy();
-  }
+const ctx=document.getElementById('chart').getContext('2d');
 
-  let labels = [];
-  let data = [];
+if(window.g) g.destroy();
 
-  for (let i = 0; i <= 10; i++) {
-    labels.push(i);
-    data.push(Math.sin(i));
-  }
+let labels=[],data=[];
 
-  window.myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Sine Wave',
-        data: data,
-        borderWidth: 2
-      }]
-    }
-  });
+for(let i=0;i<100;i++){
+let t=i/10;
+labels.push(t);
+
+if(type=="sine") data.push(Math.sin(t));
+if(type=="square") data.push(Math.sign(Math.sin(t)));
+if(type=="triangle") data.push(2*Math.asin(Math.sin(t))/Math.PI);
+if(type=="rc") data.push(1-Math.exp(-t));
+if(type=="am"){
+let c=Math.sin(10*t);
+let m=Math.sin(t);
+data.push((1+m)*c);
+}
 }
 
-// Analyzer
-function analyzeText() {
-  let text = document.getElementById("textInput").value;
-
-  let words = text.trim().split(/\s+/).length;
-  let characters = text.length;
-  let sentences = text.split(/[.!?]+/).length - 1;
-
-  document.getElementById("analysis").innerHTML =
-    "Words: " + words + "<br>" +
-    "Characters: " + characters + "<br>" +
-    "Sentences: " + sentences;
+g=new Chart(ctx,{
+type:'line',
+data:{
+labels:labels,
+datasets:[{
+label:type,
+data:data,
+borderWidth:2
+}]
+}
+});
 }
 
 </script>
