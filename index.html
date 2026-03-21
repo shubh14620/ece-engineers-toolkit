@@ -7,477 +7,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
 :root{
-  --neon:#00ffe7;
-  --neon2:#ff2d78;
-  --neon3:#ffe600;
-  --bg:#020b18;
-  --card:#040f1e;
-  --border:rgba(0,255,231,0.18);
+  --neon:#00ffe7;--neon2:#ff2d78;--neon3:#ffe600;--neon4:#a259ff;--neon5:#00b8ff;
+  --bg:#020b18;--card:#040f1e;--border:rgba(0,255,231,0.18);
   --glow:0 0 24px rgba(0,255,231,0.22),0 0 60px rgba(0,255,231,0.07);
 }
-
 html{scroll-behavior:smooth;}
-
-body{
-  font-family:'Rajdhani',sans-serif;
-  background:var(--bg);
-  color:#e0f7fa;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-/* ---- GRID BG ---- */
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(0,255,231,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,231,0.04) 1px, transparent 1px);
-  background-size:44px 44px;
-  pointer-events:none;
-  z-index:0;
-  animation:gridPulse 8s ease-in-out infinite;
-}
-
-@keyframes gridPulse{
-  0%,100%{opacity:.7;}
-  50%{opacity:1;}
-}
-
-/* ---- PARTICLES ---- */
-#particles{
-  position:fixed;inset:0;
-  pointer-events:none;z-index:0;
-  overflow:hidden;
-}
-.particle{
-  position:absolute;
-  border-radius:50%;
-  animation:floatUp linear infinite;
-  opacity:0;
-}
-@keyframes floatUp{
-  0%{transform:translateY(100vh) scale(0);opacity:0;}
-  10%{opacity:.7;}
-  90%{opacity:.3;}
-  100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
-}
-
-/* ---- NAVBAR ---- */
-.navbar{
-  position:sticky;top:0;z-index:100;
-  padding:0 30px;
-  height:68px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(2,11,24,0.85);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 2px 40px rgba(0,255,231,0.08);
-}
-
-.logo{
-  font-family:'Orbitron',monospace;
-  font-size:1.15rem;
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--neon);
-  text-shadow:0 0 16px var(--neon);
-  display:flex;align-items:center;gap:10px;
-  animation:logoPulse 3s ease-in-out infinite;
-}
-
-@keyframes logoPulse{
-  0%,100%{text-shadow:0 0 16px var(--neon),0 0 40px rgba(0,255,231,0.2);}
-  50%{text-shadow:0 0 30px var(--neon),0 0 80px rgba(0,255,231,0.4);}
-}
-
-.logo span{
-  font-size:1.5rem;
-  animation:bolt 1.5s ease-in-out infinite alternate;
-}
+body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:#e0f7fa;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,231,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,231,0.04) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0;animation:gridPulse 8s ease-in-out infinite;}
+@keyframes gridPulse{0%,100%{opacity:.7;}50%{opacity:1;}}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.particle{position:absolute;border-radius:50%;animation:floatUp linear infinite;opacity:0;}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:.7;}90%{opacity:.3;}100%{transform:translateY(-10vh) scale(1.2);opacity:0;}}
+.navbar{position:sticky;top:0;z-index:100;padding:0 30px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(2,11,24,0.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:0 2px 40px rgba(0,255,231,0.08);}
+.logo{font-family:'Orbitron',monospace;font-size:1.15rem;font-weight:900;letter-spacing:2px;color:var(--neon);text-shadow:0 0 16px var(--neon);display:flex;align-items:center;gap:10px;animation:logoPulse 3s ease-in-out infinite;}
+@keyframes logoPulse{0%,100%{text-shadow:0 0 16px var(--neon),0 0 40px rgba(0,255,231,0.2);}50%{text-shadow:0 0 30px var(--neon),0 0 80px rgba(0,255,231,0.4);}}
+.logo span{font-size:1.5rem;animation:bolt 1.5s ease-in-out infinite alternate;}
 @keyframes bolt{from{transform:scale(1);}to{transform:scale(1.2) rotate(-10deg);}}
-
 .nav-right{display:flex;align-items:center;gap:12px;}
-
-#search{
-  padding:8px 16px;
-  border-radius:30px;
-  border:1px solid var(--border);
-  background:rgba(0,255,231,0.05);
-  color:var(--neon);
-  font-family:'Rajdhani',sans-serif;
-  font-size:0.95rem;
-  outline:none;
-  width:220px;
-  transition:.3s;
-}
+#search{padding:8px 16px;border-radius:30px;border:1px solid var(--border);background:rgba(0,255,231,0.05);color:var(--neon);font-family:'Rajdhani',sans-serif;font-size:0.95rem;outline:none;width:200px;transition:.3s;}
 #search::placeholder{color:rgba(0,255,231,0.4);}
-#search:focus{
-  border-color:var(--neon);
-  box-shadow:0 0 16px rgba(0,255,231,0.2);
-  background:rgba(0,255,231,0.08);
-}
-
-.theme-btn{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--neon);
-  padding:8px 14px;
-  border-radius:30px;
-  cursor:pointer;
-  font-size:1.1rem;
-  transition:.3s;
-  width:auto;margin:0;
-}
+#search:focus{border-color:var(--neon);box-shadow:0 0 16px rgba(0,255,231,0.2);background:rgba(0,255,231,0.08);}
+.theme-btn{background:transparent;border:1px solid var(--border);color:var(--neon);padding:8px 14px;border-radius:30px;cursor:pointer;font-size:1.1rem;transition:.3s;width:auto;margin:0;}
 .theme-btn:hover{background:rgba(0,255,231,0.1);box-shadow:var(--glow);}
-
-/* ---- HERO ---- */
-#homeMenu{
-  position:relative;z-index:1;
-  min-height:calc(100vh - 68px);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-}
-
-.hero-tag{
-  font-family:'Orbitron',monospace;
-  font-size:0.7rem;
-  letter-spacing:6px;
-  color:var(--neon2);
-  text-transform:uppercase;
-  margin-bottom:18px;
-  opacity:0;
-  animation:fadeUp .6s .2s forwards;
-}
-
-.hero-title{
-  font-family:'Orbitron',monospace;
-  font-size:clamp(2.2rem,6vw,4.5rem);
-  font-weight:900;
-  line-height:1.1;
-  margin-bottom:18px;
-  opacity:0;
-  animation:fadeUp .7s .4s forwards;
-}
-
-.hero-title .line1{
-  display:block;
-  background:linear-gradient(90deg,var(--neon),#00b8ff,var(--neon));
-  background-size:200%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shine 3s linear infinite;
-}
+#homeMenu{position:relative;z-index:1;min-height:calc(100vh - 68px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+.hero-tag{font-family:'Orbitron',monospace;font-size:0.7rem;letter-spacing:6px;color:var(--neon2);text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fadeUp .6s .2s forwards;}
+.hero-title{font-family:'Orbitron',monospace;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:18px;opacity:0;animation:fadeUp .7s .4s forwards;}
+.hero-title .line1{display:block;background:linear-gradient(90deg,var(--neon),#00b8ff,var(--neon));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shine 3s linear infinite;}
 @keyframes shine{0%{background-position:0%;}100%{background-position:200%;}}
-
-.hero-title .line2{
-  display:block;
-  color:white;
-  font-size:0.55em;
-  letter-spacing:4px;
-  -webkit-text-fill-color:white;
-}
-
-.hero-sub{
-  color:rgba(224,247,250,0.55);
-  font-size:1.1rem;
-  max-width:500px;
-  margin:0 auto 50px;
-  font-weight:300;
-  letter-spacing:1px;
-  opacity:0;
-  animation:fadeUp .7s .6s forwards;
-}
-
+.hero-title .line2{display:block;color:white;font-size:0.55em;letter-spacing:4px;-webkit-text-fill-color:white;}
+.hero-sub{color:rgba(224,247,250,0.55);font-size:1.1rem;max-width:500px;margin:0 auto 50px;font-weight:300;letter-spacing:1px;opacity:0;animation:fadeUp .7s .6s forwards;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
-
-.cat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
-  max-width:600px;
-  width:100%;
-  opacity:0;
-  animation:fadeUp .7s .8s forwards;
-}
-
-.cat-card{
-  position:relative;
-  padding:38px 28px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:var(--card);
-  cursor:pointer;
-  transition:.4s cubic-bezier(.4,0,.2,1);
-  overflow:hidden;
-  text-align:left;
-}
-
-.cat-card::before{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(0,255,231,0.07),transparent);
-  opacity:0;transition:.4s;
-}
-
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
+.cat-card{position:relative;padding:30px 24px;border:1px solid var(--border);border-radius:20px;background:var(--card);cursor:pointer;transition:.4s cubic-bezier(.4,0,.2,1);overflow:hidden;text-align:left;}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,231,0.07),transparent);opacity:0;transition:.4s;}
 .cat-card:hover::before{opacity:1;}
-.cat-card:hover{
-  transform:translateY(-6px) scale(1.02);
-  border-color:var(--neon);
-  box-shadow:0 8px 40px rgba(0,255,231,0.25),0 0 0 1px rgba(0,255,231,0.15);
-}
-
-.cat-icon{
-  font-size:2.8rem;
-  margin-bottom:14px;
-  display:block;
-  filter:drop-shadow(0 0 12px var(--neon));
-  animation:iconPulse 2s ease-in-out infinite alternate;
-}
+.cat-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--neon);box-shadow:0 8px 40px rgba(0,255,231,0.25);}
+.cat-icon{font-size:2.4rem;margin-bottom:12px;display:block;filter:drop-shadow(0 0 12px var(--neon));animation:iconPulse 2s ease-in-out infinite alternate;}
 @keyframes iconPulse{from{filter:drop-shadow(0 0 8px var(--neon));}to{filter:drop-shadow(0 0 22px var(--neon));}}
-
-.cat-title{
-  font-family:'Orbitron',monospace;
-  font-size:1rem;
-  font-weight:700;
-  color:var(--neon);
-  letter-spacing:1px;
-  margin-bottom:8px;
-}
-
-.cat-desc{
-  font-size:.9rem;
-  color:rgba(224,247,250,0.5);
-  font-weight:300;
-}
-
-.cat-arrow{
-  position:absolute;right:22px;bottom:22px;
-  font-size:1.4rem;
-  color:var(--neon);
-  opacity:.4;
-  transition:.3s;
-}
+.cat-title{font-family:'Orbitron',monospace;font-size:.9rem;font-weight:700;color:var(--neon);letter-spacing:1px;margin-bottom:6px;}
+.cat-desc{font-size:.82rem;color:rgba(224,247,250,0.5);font-weight:300;}
+.cat-arrow{position:absolute;right:18px;bottom:18px;font-size:1.3rem;color:var(--neon);opacity:.4;transition:.3s;}
 .cat-card:hover .cat-arrow{opacity:1;transform:translateX(4px);}
-
-/* ---- SECTION ---- */
-.section{
-  position:relative;z-index:1;
-  padding:30px 20px 80px;
-  max-width:680px;
-  margin:auto;
-  display:none;
-}
-
-.section-header{
-  display:flex;align-items:center;gap:16px;
-  margin-bottom:40px;
-  padding-bottom:20px;
-  border-bottom:1px solid var(--border);
-}
-
-.back-btn{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--neon);
-  padding:9px 18px;
-  border-radius:30px;
-  cursor:pointer;
-  font-family:'Rajdhani',sans-serif;
-  font-size:.95rem;
-  transition:.3s;
-  width:auto;margin:0;
-  display:flex;align-items:center;gap:6px;
-}
-.back-btn:hover{background:rgba(0,255,231,0.1);border-color:var(--neon);}
-
-.section-title{
-  font-family:'Orbitron',monospace;
-  font-size:1.3rem;
-  color:var(--neon);
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-/* ---- CARDS ---- */
-.container{display:flex;flex-direction:column;gap:22px;}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
-  transition:.35s cubic-bezier(.4,0,.2,1);
-  position:relative;
-  overflow:hidden;
-  animation:cardIn .5s ease both;
-}
-
-@keyframes cardIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-
-.card::after{
-  content:'';
-  position:absolute;
-  top:-50%;left:-50%;
-  width:200%;height:200%;
-  background:radial-gradient(circle at 50% 50%,rgba(0,255,231,0.06),transparent 60%);
-  opacity:0;transition:.4s;
-  pointer-events:none;
-}
-.card:hover::after{opacity:1;}
-.card:hover{
-  border-color:rgba(0,255,231,0.45);
-  box-shadow:var(--glow);
-  transform:translateY(-3px);
-}
-
-.card h3{
-  font-family:'Orbitron',monospace;
-  font-size:.88rem;
-  font-weight:700;
-  letter-spacing:2px;
-  color:var(--neon);
-  margin-bottom:18px;
-  display:flex;align-items:center;gap:8px;
-}
-.card h3::before{
-  content:'';
-  display:inline-block;
-  width:8px;height:8px;
-  border-radius:50%;
-  background:var(--neon);
-  box-shadow:0 0 10px var(--neon);
-  flex-shrink:0;
-}
-
-input, select{
-  width:100%;
-  padding:12px 16px;
-  margin:6px 0;
-  border:1px solid rgba(0,255,231,0.2);
-  border-radius:10px;
-  background:rgba(0,255,231,0.04);
-  color:#e0f7fa;
-  font-family:'Rajdhani',sans-serif;
-  font-size:.95rem;
-  outline:none;
-  transition:.3s;
-}
-input::placeholder{color:rgba(0,255,231,0.3);}
-input:focus, select:focus{
-  border-color:var(--neon);
-  background:rgba(0,255,231,0.08);
-  box-shadow:0 0 14px rgba(0,255,231,0.12);
-}
-select option{background:#040f1e;color:#e0f7fa;}
-
-button:not(.back-btn):not(.theme-btn){
-  width:100%;
-  padding:12px;
-  background:linear-gradient(90deg,rgba(0,255,231,0.15),rgba(0,184,255,0.15));
-  border:1px solid var(--neon);
-  color:var(--neon);
-  border-radius:10px;
-  margin-top:10px;
-  cursor:pointer;
-  font-family:'Orbitron',monospace;
-  font-size:.78rem;
-  letter-spacing:2px;
-  font-weight:700;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
-button:not(.back-btn):not(.theme-btn)::before{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(0,255,231,0.15),transparent);
-  transform:translateX(-100%);
-  transition:.5s;
-}
-button:not(.back-btn):not(.theme-btn):hover::before{transform:translateX(100%);}
-button:not(.back-btn):not(.theme-btn):hover{
-  background:linear-gradient(90deg,rgba(0,255,231,0.25),rgba(0,184,255,0.25));
-  box-shadow:0 0 22px rgba(0,255,231,0.3);
-  transform:translateY(-1px);
-}
-button:not(.back-btn):not(.theme-btn):active{transform:scale(.98);}
-
-.output{
-  margin-top:14px;
-  padding:12px 16px;
-  border-radius:10px;
-  background:rgba(0,255,231,0.06);
-  border:1px solid rgba(0,255,231,0.15);
-  color:var(--neon);
-  font-weight:600;
-  font-size:1.05rem;
-  letter-spacing:1px;
-  min-height:44px;
-  display:flex;align-items:center;
-  transition:.3s;
-  font-family:'Orbitron',monospace;
-}
-
-/* ---- STATS BAR (Hero) ---- */
-.stats-bar{
-  display:flex;gap:40px;
-  margin-top:50px;
-  opacity:0;
-  animation:fadeUp .7s 1s forwards;
-}
+.stats-bar{display:flex;gap:40px;margin-top:50px;opacity:0;animation:fadeUp .7s 1s forwards;}
 .stat{text-align:center;}
-.stat-num{
-  font-family:'Orbitron',monospace;
-  font-size:1.8rem;
-  font-weight:900;
-  color:var(--neon);
-  text-shadow:0 0 16px var(--neon);
-  display:block;
-}
-.stat-label{
-  font-size:.75rem;
-  letter-spacing:2px;
-  color:rgba(224,247,250,0.35);
-  text-transform:uppercase;
-}
-
-/* ---- GLOW ORBS ---- */
-.orb{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(80px);
-  pointer-events:none;
-  z-index:0;
-  animation:orbFloat 10s ease-in-out infinite alternate;
-}
+.stat-num{font-family:'Orbitron',monospace;font-size:1.8rem;font-weight:900;color:var(--neon);text-shadow:0 0 16px var(--neon);display:block;}
+.stat-label{font-size:.75rem;letter-spacing:2px;color:rgba(224,247,250,0.35);text-transform:uppercase;}
+.section{position:relative;z-index:1;padding:30px 20px 80px;max-width:720px;margin:auto;display:none;}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.back-btn{background:transparent;border:1px solid var(--border);color:var(--neon);padding:9px 18px;border-radius:30px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:.95rem;transition:.3s;width:auto;margin:0;display:flex;align-items:center;gap:6px;}
+.back-btn:hover{background:rgba(0,255,231,0.1);border-color:var(--neon);}
+.section-title{font-family:'Orbitron',monospace;font-size:1.3rem;color:var(--neon);font-weight:700;letter-spacing:2px;}
+.container{display:flex;flex-direction:column;gap:22px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;animation:cardIn .5s ease both;}
+@keyframes cardIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+.card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(0,255,231,0.06),transparent 60%);opacity:0;transition:.4s;pointer-events:none;}
+.card:hover::after{opacity:1;}
+.card:hover{border-color:rgba(0,255,231,0.45);box-shadow:var(--glow);transform:translateY(-3px);}
+.card h3{font-family:'Orbitron',monospace;font-size:.88rem;font-weight:700;letter-spacing:2px;color:var(--neon);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.card h3::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);flex-shrink:0;}
+input,select{width:100%;padding:12px 16px;margin:6px 0;border:1px solid rgba(0,255,231,0.2);border-radius:10px;background:rgba(0,255,231,0.04);color:#e0f7fa;font-family:'Rajdhani',sans-serif;font-size:.95rem;outline:none;transition:.3s;}
+input::placeholder{color:rgba(0,255,231,0.3);}
+input:focus,select:focus{border-color:var(--neon);background:rgba(0,255,231,0.08);box-shadow:0 0 14px rgba(0,255,231,0.12);}
+select option{background:#040f1e;color:#e0f7fa;}
+button:not(.back-btn):not(.theme-btn){width:100%;padding:12px;background:linear-gradient(90deg,rgba(0,255,231,0.15),rgba(0,184,255,0.15));border:1px solid var(--neon);color:var(--neon);border-radius:10px;margin-top:10px;cursor:pointer;font-family:'Orbitron',monospace;font-size:.78rem;letter-spacing:2px;font-weight:700;transition:.3s;position:relative;overflow:hidden;}
+button:not(.back-btn):not(.theme-btn)::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,255,231,0.15),transparent);transform:translateX(-100%);transition:.5s;}
+button:not(.back-btn):not(.theme-btn):hover::before{transform:translateX(100%);}
+button:not(.back-btn):not(.theme-btn):hover{background:linear-gradient(90deg,rgba(0,255,231,0.25),rgba(0,184,255,0.25));box-shadow:0 0 22px rgba(0,255,231,0.3);transform:translateY(-1px);}
+button:not(.back-btn):not(.theme-btn):active{transform:scale(.98);}
+.output{margin-top:14px;padding:12px 16px;border-radius:10px;background:rgba(0,255,231,0.06);border:1px solid rgba(0,255,231,0.15);color:var(--neon);font-weight:600;font-size:1rem;letter-spacing:1px;min-height:44px;display:flex;align-items:center;transition:.3s;font-family:'Orbitron',monospace;flex-wrap:wrap;gap:6px;}
+.info-box{background:rgba(0,255,231,0.05);border:1px solid rgba(0,255,231,0.15);border-radius:10px;padding:14px;margin-top:10px;font-size:.9rem;color:rgba(224,247,250,0.7);line-height:1.6;}
+.info-box strong{color:var(--neon);}
+.bands-row{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap;}
+.band-box{width:40px;height:60px;border-radius:6px;border:2px solid rgba(255,255,255,0.2);}
+.truth-table{width:100%;border-collapse:collapse;margin-top:12px;font-family:'Orbitron',monospace;font-size:.75rem;}
+.truth-table th{background:rgba(0,255,231,0.15);color:var(--neon);padding:8px;border:1px solid rgba(0,255,231,0.2);}
+.truth-table td{padding:8px;border:1px solid rgba(0,255,231,0.1);text-align:center;color:#e0f7fa;}
+.truth-table tr:nth-child(even) td{background:rgba(0,255,231,0.03);}
+.t1{color:#00ff88;}.t0{color:#ff4466;}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbFloat 10s ease-in-out infinite alternate;}
 .orb1{width:400px;height:400px;background:rgba(0,255,231,0.06);top:-100px;right:-100px;}
 .orb2{width:300px;height:300px;background:rgba(255,45,120,0.05);bottom:10%;left:-80px;animation-delay:3s;}
 .orb3{width:250px;height:250px;background:rgba(255,230,0,0.04);bottom:30%;right:10%;animation-delay:6s;}
 @keyframes orbFloat{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,40px) scale(1.15);}}
-
-/* ---- LIGHT THEME ---- */
-body.light{
-  background:#f0f4f8;
-  color:#0a1628;
-}
-body.light::before{
-  background-image:
-    linear-gradient(rgba(0,100,180,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,100,180,0.05) 1px, transparent 1px);
-}
+body.light{background:#f0f4f8;color:#0a1628;}
+body.light::before{background-image:linear-gradient(rgba(0,100,180,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,100,180,0.05) 1px,transparent 1px);}
 body.light .navbar{background:rgba(240,244,248,0.9);border-color:rgba(0,100,180,0.12);}
 body.light .card{background:white;border-color:rgba(0,100,180,0.15);color:#0a1628;}
 body.light .card h3{color:#0057b8;}
-body.light .card h3::before{background:#0057b8;box-shadow:0 0 10px rgba(0,87,184,.3);}
+body.light .card h3::before{background:#0057b8;}
 body.light input,body.light select{background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.2);color:#0a1628;}
-body.light input::placeholder{color:rgba(0,87,184,0.35);}
 body.light input:focus,body.light select:focus{border-color:#0057b8;background:rgba(0,87,184,0.08);}
 body.light button:not(.back-btn):not(.theme-btn){border-color:#0057b8;color:#0057b8;background:rgba(0,87,184,0.07);}
 body.light .output{color:#0057b8;background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.15);}
@@ -485,78 +104,26 @@ body.light .logo{color:#0057b8;text-shadow:0 0 16px rgba(0,87,184,.3);}
 body.light .cat-title{color:#0057b8;}
 body.light .cat-card{background:white;}
 body.light .section-title{color:#0057b8;}
-body.light .hero-tag{color:#e0003a;}
-body.light .stat-num{color:#0057b8;text-shadow:none;}
-body.light #search{color:#0057b8;border-color:rgba(0,87,184,0.2);background:rgba(0,87,184,0.05);}
-body.light #search::placeholder{color:rgba(0,87,184,0.4);}
-body.light .back-btn{color:#0057b8;border-color:rgba(0,87,184,0.2);}
-body.light .cat-arrow{color:#0057b8;}
-body.light .orb1{background:rgba(0,87,184,0.06);}
-body.light .orb2{background:rgba(224,0,58,0.05);}
-
-/* ---- FOOTER ---- */
-footer{
-  position:relative;z-index:1;
-  text-align:center;
-  padding:28px 20px;
-  border-top:1px solid var(--border);
-  font-size:.82rem;
-  color:rgba(224,247,250,0.3);
-  letter-spacing:1px;
-}
+body.light #search{color:#0057b8;background:rgba(0,87,184,0.05);}
+body.light .back-btn{color:#0057b8;}
+body.light .info-box{background:rgba(0,87,184,0.05);color:#0a1628;}
+footer{position:relative;z-index:1;text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.82rem;color:rgba(224,247,250,0.3);letter-spacing:1px;}
 footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78rem;}
-.copyright-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  margin-bottom:8px;
-  padding:5px 14px;
-  border:1px solid rgba(0,255,231,0.15);
-  border-radius:30px;
-  font-size:.75rem;
-  background:rgba(0,255,231,0.04);
-}
-
-/* ---- COUNTER ANIMATION ---- */
-@keyframes countUp{from{opacity:0;}to{opacity:1;}}
-
-/* ---- TOOLTIP ---- */
-.tooltip{
-  position:absolute;
-  top:-36px;left:50%;
-  transform:translateX(-50%);
-  background:var(--neon);
-  color:#020b18;
-  font-size:.72rem;
-  font-weight:700;
-  padding:5px 10px;
-  border-radius:6px;
-  white-space:nowrap;
-  pointer-events:none;
-  opacity:0;
-  transition:.2s;
-  font-family:'Orbitron',monospace;
-  letter-spacing:1px;
-}
-.card:hover .tooltip{opacity:1;}
-
-/* scrollbar */
+.copyright-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;padding:5px 14px;border:1px solid rgba(0,255,231,0.15);border-radius:30px;font-size:.75rem;background:rgba(0,255,231,0.04);}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:rgba(0,255,231,0.25);border-radius:10px;}
 </style>
 </head>
 <body>
-
-<!-- ORBS -->
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
 <div id="particles"></div>
 
 <!-- NAVBAR -->
 <div class="navbar">
   <div class="logo"><span>⚡</span> ECE TOOLKIT</div>
   <div class="nav-right">
-    <input type="text" id="search" placeholder="🔍 Search calculator..." onkeyup="searchCards()">
+    <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchCards()">
     <button class="theme-btn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
@@ -569,402 +136,357 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
     <span class="line2">PRECISION · POWER · PERFORMANCE</span>
   </h1>
   <p class="hero-sub">Professional-grade calculators for ECE students &amp; engineers. Fast. Accurate. Always ready.</p>
-
   <div class="cat-grid">
-    <div class="cat-card" onclick="openECE()">
+    <div class="cat-card" onclick="openSection('eceSection')">
       <span class="cat-icon">⚡</span>
       <div class="cat-title">ECE Core</div>
-      <div class="cat-desc">Ohm's Law, Power, RC, Filters, Op-Amp, Transistors & more</div>
+      <div class="cat-desc">Ohm's Law, Power, Filters, Transistors & more</div>
       <div class="cat-arrow">→</div>
     </div>
-    <div class="cat-card" onclick="openDigital()">
-      <span class="cat-icon" style="animation-delay:.5s;filter:drop-shadow(0 0 12px #ff2d78)">💻</span>
+    <div class="cat-card" onclick="openSection('digitalSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">💻</span>
       <div class="cat-title" style="color:var(--neon2)">ECE Digital</div>
-      <div class="cat-desc">Binary, Hex, K-Map, Logic Gates & number conversions</div>
+      <div class="cat-desc">Binary, Hex, Octal, Logic Gates, Complement</div>
+      <div class="cat-arrow" style="color:var(--neon2)">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('designSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ffe600)">📐</span>
+      <div class="cat-title" style="color:var(--neon3)">Design Tools</div>
+      <div class="cat-desc">PCB, LED, Resistor color code, Regulators</div>
+      <div class="cat-arrow" style="color:var(--neon3)">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('commSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #a259ff)">📡</span>
+      <div class="cat-title" style="color:var(--neon4)">Communication</div>
+      <div class="cat-desc">Modulation, Shannon, Antenna, Nyquist</div>
+      <div class="cat-arrow" style="color:var(--neon4)">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('practicalSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00b8ff)">💡</span>
+      <div class="cat-title" style="color:var(--neon5)">Practical Tools</div>
+      <div class="cat-desc">Cap decoder, IC reference, Zener, E-series</div>
+      <div class="cat-arrow" style="color:var(--neon5)">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('mcuSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">🔌</span>
+      <div class="cat-title" style="color:var(--neon2)">Microcontroller</div>
+      <div class="cat-desc">Timer, PWM, UART, ADC, SPI, I2C</div>
       <div class="cat-arrow" style="color:var(--neon2)">→</div>
     </div>
   </div>
-
   <div class="stats-bar">
     <div class="stat"><span class="stat-num" id="cnt1">0</span><span class="stat-label">Calculators</span></div>
     <div class="stat"><span class="stat-num" id="cnt2">0</span><span class="stat-label">Formulas</span></div>
-    <div class="stat"><span class="stat-num" id="cnt3">0</span><span class="stat-label">Conversions</span></div>
+    <div class="stat"><span class="stat-num" id="cnt3">0</span><span class="stat-label">Categories</span></div>
   </div>
 </div>
 
 <!-- ECE CORE -->
 <div id="eceSection" class="section">
-  <div class="section-header">
-    <button class="back-btn" onclick="goHome()">← Back</button>
-    <div class="section-title">⚡ ECE CORE</div>
-  </div>
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title">⚡ ECE CORE</div></div>
   <div class="container">
-
-    <div class="card">
-      <h3>Ohm's Law</h3>
-      <input id="V" placeholder="Voltage (V)">
-      <input id="I" placeholder="Current (A)">
-      <input id="R" placeholder="Resistance (Ω)">
-      <button onclick="ohm()">CALCULATE</button>
-      <div id="o1" class="output">Enter any 2 values</div>
-    </div>
-
-    <div class="card">
-      <h3>Power</h3>
-      <input id="v1" placeholder="Voltage (V)">
-      <input id="i1" placeholder="Current (A)">
-      <button onclick="power()">CALCULATE</button>
-      <div id="o2" class="output">P = V × I</div>
-    </div>
-
-    <div class="card">
-      <h3>RC Time Constant</h3>
-      <input id="Rrc" placeholder="Resistance (Ω)">
-      <input id="Crc" placeholder="Capacitance (F)">
-      <button onclick="rc()">CALCULATE</button>
-      <div id="o3" class="output">τ = R × C</div>
-    </div>
-
-    <div class="card">
-      <h3>Frequency / Period</h3>
-      <input id="f" placeholder="Frequency (Hz)">
-      <button onclick="freq()">CALCULATE</button>
-      <div id="o4" class="output">T = 1 / f</div>
-    </div>
-
-    <div class="card">
-      <h3>Capacitive Reactance</h3>
-      <input id="fc" placeholder="Frequency (Hz)">
-      <input id="cap" placeholder="Capacitance (F)">
-      <button onclick="xc()">CALCULATE</button>
-      <div id="o5" class="output">Xc = 1 / (2πfC)</div>
-    </div>
-
-    <div class="card">
-      <h3>Inductive Reactance</h3>
-      <input id="fl" placeholder="Frequency (Hz)">
-      <input id="L" placeholder="Inductance (H)">
-      <button onclick="xl()">CALCULATE</button>
-      <div id="o6" class="output">Xl = 2πfL</div>
-    </div>
-
-    <div class="card">
-      <h3>RLC Resonance</h3>
-      <input id="Lr" placeholder="Inductance (H)">
-      <input id="Cr" placeholder="Capacitance (F)">
-      <button onclick="rlc()">CALCULATE</button>
-      <div id="o7" class="output">f = 1 / (2π√LC)</div>
-    </div>
-
-    <div class="card">
-      <h3>Voltage Divider</h3>
-      <input id="Vin" placeholder="Input Voltage (V)">
-      <input id="R1" placeholder="R1 (Ω)">
-      <input id="R2" placeholder="R2 (Ω)">
-      <button onclick="vd()">CALCULATE</button>
-      <div id="o8" class="output">Vout = Vin × R2/(R1+R2)</div>
-    </div>
-
-    <div class="card">
-      <h3>Current Divider</h3>
-      <input id="Iin" placeholder="Input Current (A)">
-      <input id="Ra" placeholder="Ra (Ω)">
-      <input id="Rb" placeholder="Rb (Ω)">
-      <button onclick="cd()">CALCULATE</button>
-      <div id="o9" class="output">Iout = Iin × Rb/(Ra+Rb)</div>
-    </div>
-
-    <div class="card">
-      <h3>Impedance</h3>
-      <input id="res" placeholder="Resistance (Ω)">
-      <input id="react" placeholder="Reactance (Ω)">
-      <button onclick="imp()">CALCULATE</button>
-      <div id="o10" class="output">Z = √(R² + X²)</div>
-    </div>
-
-    <div class="card">
-      <h3>Decibel (dB)</h3>
-      <input id="g" placeholder="Gain (ratio)">
-      <button onclick="db()">CALCULATE</button>
-      <div id="o12" class="output">dB = 20 × log₁₀(gain)</div>
-    </div>
-
-    <div class="card">
-      <h3>Bandwidth</h3>
-      <input id="fh" placeholder="High Frequency (Hz)">
-      <input id="flw" placeholder="Low Frequency (Hz)">
-      <button onclick="bw()">CALCULATE</button>
-      <div id="o13" class="output">BW = fH - fL</div>
-    </div>
-
-    <div class="card">
-      <h3>Op-Amp Gain (Inverting)</h3>
-      <input id="Rf" placeholder="Rf (Ω)">
-      <input id="Rin" placeholder="Rin (Ω)">
-      <button onclick="opamp()">CALCULATE</button>
-      <div id="opout" class="output">Gain = -Rf / Rin</div>
-    </div>
-
-    <div class="card">
-      <h3>Low Pass Filter – Cutoff</h3>
-      <input id="Rlpf" placeholder="Resistance (Ω)">
-      <input id="Clpf" placeholder="Capacitance (F)">
-      <button onclick="lpf()">CALCULATE</button>
-      <div id="lpfout" class="output">Fc = 1 / (2πRC)</div>
-    </div>
-
-    <div class="card">
-      <h3>High Pass Filter – Cutoff</h3>
-      <input id="Rhpf" placeholder="Resistance (Ω)">
-      <input id="Chpf" placeholder="Capacitance (F)">
-      <button onclick="hpf()">CALCULATE</button>
-      <div id="hpfout" class="output">Fc = 1 / (2πRC)</div>
-    </div>
-
-    <div class="card">
-      <h3>BJT Current Gain (β)</h3>
-      <input id="Ic" placeholder="Collector Current (A)">
-      <input id="Ib" placeholder="Base Current (A)">
-      <button onclick="bjt()">CALCULATE</button>
-      <div id="bjtout" class="output">β = Ic / Ib</div>
-    </div>
-
-    <div class="card">
-      <h3>MOSFET Drain Current</h3>
-      <input id="Vgs" placeholder="Vgs (V)">
-      <input id="Vth" placeholder="Vth (V)">
-      <input id="kval" placeholder="k (A/V²)">
-      <button onclick="mosfet()">CALCULATE</button>
-      <div id="mosout" class="output">Id = k/2 × (Vgs−Vth)²</div>
-    </div>
-
+    <div class="card"><h3>Ohm's Law</h3><input id="V" placeholder="Voltage (V)"><input id="I" placeholder="Current (A)"><input id="R" placeholder="Resistance (Ω)"><button onclick="ohm()">CALCULATE</button><div id="o1" class="output">Enter any 2 values</div></div>
+    <div class="card"><h3>Power</h3><input id="v1" placeholder="Voltage (V)"><input id="i1" placeholder="Current (A)"><button onclick="power()">CALCULATE</button><div id="o2" class="output">P = V × I</div></div>
+    <div class="card"><h3>RC Time Constant</h3><input id="Rrc" placeholder="Resistance (Ω)"><input id="Crc" placeholder="Capacitance (F)"><button onclick="rc()">CALCULATE</button><div id="o3" class="output">τ = R × C</div></div>
+    <div class="card"><h3>Frequency / Period</h3><input id="f" placeholder="Frequency (Hz)"><button onclick="freq()">CALCULATE</button><div id="o4" class="output">T = 1/f</div></div>
+    <div class="card"><h3>Capacitive Reactance</h3><input id="fc" placeholder="Frequency (Hz)"><input id="cap" placeholder="Capacitance (F)"><button onclick="xc()">CALCULATE</button><div id="o5" class="output">Xc = 1/(2πfC)</div></div>
+    <div class="card"><h3>Inductive Reactance</h3><input id="fl" placeholder="Frequency (Hz)"><input id="L" placeholder="Inductance (H)"><button onclick="xl()">CALCULATE</button><div id="o6" class="output">Xl = 2πfL</div></div>
+    <div class="card"><h3>RLC Resonance</h3><input id="Lr" placeholder="Inductance (H)"><input id="Cr" placeholder="Capacitance (F)"><button onclick="rlc()">CALCULATE</button><div id="o7" class="output">f = 1/(2π√LC)</div></div>
+    <div class="card"><h3>Voltage Divider</h3><input id="Vin" placeholder="Input Voltage (V)"><input id="R1" placeholder="R1 (Ω)"><input id="R2" placeholder="R2 (Ω)"><button onclick="vd()">CALCULATE</button><div id="o8" class="output">Vout = Vin×R2/(R1+R2)</div></div>
+    <div class="card"><h3>Current Divider</h3><input id="Iin" placeholder="Input Current (A)"><input id="Ra" placeholder="Ra (Ω)"><input id="Rb" placeholder="Rb (Ω)"><button onclick="cd()">CALCULATE</button><div id="o9" class="output">Iout = Iin×Rb/(Ra+Rb)</div></div>
+    <div class="card"><h3>Impedance</h3><input id="res" placeholder="Resistance (Ω)"><input id="react" placeholder="Reactance (Ω)"><button onclick="imp()">CALCULATE</button><div id="o10" class="output">Z = √(R²+X²)</div></div>
+    <div class="card"><h3>Decibel (dB)</h3><input id="g" placeholder="Gain (ratio)"><button onclick="db()">CALCULATE</button><div id="o12" class="output">dB = 20×log₁₀(gain)</div></div>
+    <div class="card"><h3>Bandwidth</h3><input id="fh" placeholder="High Frequency (Hz)"><input id="flw" placeholder="Low Frequency (Hz)"><button onclick="bw()">CALCULATE</button><div id="o13" class="output">BW = fH−fL</div></div>
+    <div class="card"><h3>Op-Amp Gain (Inverting)</h3><input id="Rf" placeholder="Rf (Ω)"><input id="Rin" placeholder="Rin (Ω)"><button onclick="opamp()">CALCULATE</button><div id="opout" class="output">Gain = −Rf/Rin</div></div>
+    <div class="card"><h3>Low Pass Filter Cutoff</h3><input id="Rlpf" placeholder="Resistance (Ω)"><input id="Clpf" placeholder="Capacitance (F)"><button onclick="lpf()">CALCULATE</button><div id="lpfout" class="output">Fc = 1/(2πRC)</div></div>
+    <div class="card"><h3>High Pass Filter Cutoff</h3><input id="Rhpf" placeholder="Resistance (Ω)"><input id="Chpf" placeholder="Capacitance (F)"><button onclick="hpf()">CALCULATE</button><div id="hpfout" class="output">Fc = 1/(2πRC)</div></div>
+    <div class="card"><h3>BJT Current Gain (β)</h3><input id="Ic" placeholder="Collector Current (A)"><input id="Ib" placeholder="Base Current (A)"><button onclick="bjt()">CALCULATE</button><div id="bjtout" class="output">β = Ic/Ib</div></div>
+    <div class="card"><h3>MOSFET Drain Current</h3><input id="Vgs" placeholder="Vgs (V)"><input id="Vth" placeholder="Vth (V)"><input id="kval" placeholder="k (A/V²)"><button onclick="mosfet()">CALCULATE</button><div id="mosout" class="output">Id = k/2×(Vgs−Vth)²</div></div>
   </div>
 </div>
 
 <!-- DIGITAL -->
 <div id="digitalSection" class="section">
-  <div class="section-header">
-    <button class="back-btn" onclick="goHome()">← Back</button>
-    <div class="section-title" style="color:var(--neon2)">💻 DIGITAL</div>
-  </div>
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon2)">💻 DIGITAL</div></div>
   <div class="container">
-
-    <div class="card">
-      <h3>Binary → Decimal</h3>
-      <input id="bin" placeholder="Enter Binary (e.g. 1010)">
-      <button onclick="binToDec()">CONVERT</button>
-      <div id="d1" class="output">Result appears here</div>
-    </div>
-
-    <div class="card">
-      <h3>Decimal → Binary</h3>
-      <input id="dec" placeholder="Enter Decimal">
-      <button onclick="decToBin()">CONVERT</button>
-      <div id="d2" class="output">Result appears here</div>
-    </div>
-
-    <div class="card">
-      <h3>Decimal → Hex</h3>
-      <input id="dec2" placeholder="Enter Decimal">
-      <button onclick="decToHex()">CONVERT</button>
-      <div id="d3" class="output">Result appears here</div>
-    </div>
-
-    <div class="card">
-      <h3>Hex → Decimal</h3>
-      <input id="hex" placeholder="Enter Hex (e.g. 1F)">
-      <button onclick="hexToDec()">CONVERT</button>
-      <div id="d4" class="output">Result appears here</div>
-    </div>
-
+    <div class="card"><h3>Binary → Decimal</h3><input id="bin" placeholder="Enter Binary (e.g. 1010)"><button onclick="binToDec()">CONVERT</button><div id="d1" class="output">Result here</div></div>
+    <div class="card"><h3>Decimal → Binary</h3><input id="dec" placeholder="Enter Decimal"><button onclick="decToBin()">CONVERT</button><div id="d2" class="output">Result here</div></div>
+    <div class="card"><h3>Decimal → Hex</h3><input id="dec2" placeholder="Enter Decimal"><button onclick="decToHex()">CONVERT</button><div id="d3" class="output">Result here</div></div>
+    <div class="card"><h3>Hex → Decimal</h3><input id="hex" placeholder="Enter Hex (e.g. 1F)"><button onclick="hexToDec()">CONVERT</button><div id="d4" class="output">Result here</div></div>
+    <div class="card"><h3>Decimal → Octal</h3><input id="dec3" placeholder="Enter Decimal"><button onclick="decToOct()">CONVERT</button><div id="d5" class="output">Result here</div></div>
+    <div class="card"><h3>Octal → Decimal</h3><input id="oct" placeholder="Enter Octal (e.g. 17)"><button onclick="octToDec()">CONVERT</button><div id="d6" class="output">Result here</div></div>
     <div class="card">
       <h3>Logic Gate Calculator</h3>
-      <select id="gate">
-        <option>AND</option>
-        <option>OR</option>
-        <option>XOR</option>
-        <option>NAND</option>
-        <option>NOR</option>
-        <option>NOT</option>
-      </select>
-      <input id="a" placeholder="Input A (0 or 1)">
-      <input id="b" placeholder="Input B (0 or 1)">
+      <select id="gate"><option>AND</option><option>OR</option><option>XOR</option><option>NAND</option><option>NOR</option><option>NOT</option><option>XNOR</option></select>
+      <input id="a" placeholder="Input A (0 or 1)"><input id="b" placeholder="Input B (0 or 1)">
       <button onclick="logic()">CALCULATE</button>
-      <div id="gout" class="output">Output appears here</div>
+      <div id="gout" class="output">Output here</div>
+      <div id="gateTable"></div>
     </div>
-
-    <div class="card">
-      <h3>K-Map Simplifier</h3>
-      <input id="k0" placeholder="Minterm list (e.g. 0,1,3,7)">
-      <button onclick="kmap()">SIMPLIFY</button>
-      <div id="kout" class="output">Enter minterms to simplify</div>
-    </div>
-
+    <div class="card"><h3>1's &amp; 2's Complement</h3><input id="binComp" placeholder="Enter Binary number"><button onclick="complement()">CALCULATE</button><div id="compOut" class="output">Result here</div></div>
+    <div class="card"><h3>K-Map Simplifier</h3><input id="k0" placeholder="Minterm list (e.g. 0,1,3,7)"><button onclick="kmap()">SIMPLIFY</button><div id="kout" class="output">Enter minterms</div></div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- DESIGN TOOLS -->
+<div id="designSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon3)">📐 DESIGN TOOLS</div></div>
+  <div class="container">
+    <div class="card">
+      <h3>Resistor Color Code Reader</h3>
+      <select id="b1"><option value="">Band 1</option></select>
+      <select id="b2"><option value="">Band 2</option></select>
+      <select id="b3"><option value="">Multiplier</option></select>
+      <select id="b4"><option value="">Tolerance</option></select>
+      <button onclick="resistorColor()">READ VALUE</button>
+      <div id="resColorOut" class="output">Select all 4 bands</div>
+      <div id="colorBands" class="bands-row"></div>
+    </div>
+    <div class="card"><h3>LED Resistor Calculator</h3><input id="Vsup" placeholder="Supply Voltage (V)"><input id="Vled" placeholder="LED Forward Voltage (V) e.g. 2.0"><input id="Iled" placeholder="LED Current (mA) e.g. 20"><button onclick="ledRes()">CALCULATE</button><div id="ledOut" class="output">R = (Vs−Vf)/I</div></div>
+    <div class="card"><h3>PCB Trace Width</h3><input id="pcbI" placeholder="Current (A)"><input id="pcbT" placeholder="Temp Rise (°C) e.g. 10"><input id="pcbTh" placeholder="Copper Thickness (oz) e.g. 1"><button onclick="pcbTrace()">CALCULATE</button><div id="pcbOut" class="output">IPC-2221 standard</div><div class="info-box">1oz copper = 35µm. External layer formula used.</div></div>
+    <div class="card"><h3>Voltage Regulator (78xx) Check</h3><input id="vregIn" placeholder="Input Voltage (V)"><input id="vregOut" placeholder="Required Output (V)"><button onclick="vreg()">CHECK</button><div id="vregRes" class="output">Min dropout ~2V</div><div class="info-box"><strong>Common:</strong> 7805→5V · 7809→9V · 7812→12V · 7815→15V</div></div>
+    <div class="card"><h3>Battery Life Estimator</h3><input id="batCap" placeholder="Battery Capacity (mAh)"><input id="batCurr" placeholder="Device Current (mA)"><button onclick="batLife()">ESTIMATE</button><div id="batOut" class="output">Life = Capacity/Current</div></div>
+    <div class="card">
+      <h3>Unit Converter (SI Prefix)</h3>
+      <input id="unitVal" placeholder="Enter value">
+      <select id="unitFrom"><option value="1e-12">pico (p)</option><option value="1e-9">nano (n)</option><option value="1e-6">micro (µ)</option><option value="1e-3">milli (m)</option><option value="1" selected>base</option><option value="1e3">kilo (k)</option><option value="1e6">Mega (M)</option></select>
+      <select id="unitTo"><option value="1e-12">pico (p)</option><option value="1e-9">nano (n)</option><option value="1e-6">micro (µ)</option><option value="1e-3">milli (m)</option><option value="1" selected>base</option><option value="1e3">kilo (k)</option><option value="1e6">Mega (M)</option></select>
+      <button onclick="unitConv()">CONVERT</button>
+      <div id="unitOut" class="output">Result here</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMUNICATION -->
+<div id="commSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon4)">📡 COMMUNICATION</div></div>
+  <div class="container">
+    <div class="card"><h3>AM Modulation Index</h3><input id="amVm" placeholder="Message Amplitude Vm"><input id="amVc" placeholder="Carrier Amplitude Vc"><button onclick="amIndex()">CALCULATE</button><div id="amOut" class="output">µ = Vm/Vc</div><div class="info-box">µ &lt; 1: Under | µ = 1: Full | µ &gt; 1: Over-modulated</div></div>
+    <div class="card"><h3>FM Modulation Index</h3><input id="fmDelta" placeholder="Frequency Deviation Δf (Hz)"><input id="fmFm" placeholder="Message Frequency fm (Hz)"><button onclick="fmIndex()">CALCULATE</button><div id="fmOut" class="output">β = Δf/fm</div></div>
+    <div class="card"><h3>Shannon Channel Capacity</h3><input id="shB" placeholder="Bandwidth B (Hz)"><input id="shSNR" placeholder="SNR (linear ratio)"><button onclick="shannon()">CALCULATE</button><div id="shOut" class="output">C = B×log₂(1+SNR)</div></div>
+    <div class="card"><h3>Friis Transmission (Link Budget)</h3><input id="frisPt" placeholder="Tx Power Pt (dBm)"><input id="frisGt" placeholder="Tx Gain Gt (dBi)"><input id="frisGr" placeholder="Rx Gain Gr (dBi)"><input id="frisL" placeholder="Path Loss L (dB)"><button onclick="friis()">CALCULATE</button><div id="frisOut" class="output">Pr = Pt+Gt+Gr−L</div></div>
+    <div class="card"><h3>Free Space Path Loss</h3><input id="fsplF" placeholder="Frequency (MHz)"><input id="fsplD" placeholder="Distance (km)"><button onclick="fspl()">CALCULATE</button><div id="fsplOut" class="output">FSPL = 20log(d)+20log(f)+32.44</div></div>
+    <div class="card"><h3>Noise Figure</h3><input id="nfSnrIn" placeholder="SNR Input (dB)"><input id="nfSnrOut" placeholder="SNR Output (dB)"><button onclick="noiseFig()">CALCULATE</button><div id="nfOut" class="output">NF = SNRin−SNRout</div></div>
+    <div class="card"><h3>Wavelength Calculator</h3><input id="wlFreq" placeholder="Frequency (Hz)"><button onclick="wavelength()">CALCULATE</button><div id="wlOut" class="output">λ = c/f</div></div>
+    <div class="card"><h3>Nyquist Sampling Rate</h3><input id="nyqF" placeholder="Max Signal Frequency (Hz)"><button onclick="nyquist()">CALCULATE</button><div id="nyqOut" class="output">fs ≥ 2×fmax</div></div>
+  </div>
+</div>
+
+<!-- PRACTICAL TOOLS -->
+<div id="practicalSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon5)">💡 PRACTICAL TOOLS</div></div>
+  <div class="container">
+    <div class="card"><h3>Capacitor Code Decoder</h3><input id="capCode" placeholder="Enter code (e.g. 104, 472)"><button onclick="capDecode()">DECODE</button><div id="capDecOut" class="output">e.g. 104 → 100nF</div><div class="info-box">First 2 digits = value, 3rd = multiplier (10^n). Result in pF.</div></div>
+    <div class="card"><h3>E12 / E24 Resistor Finder</h3><input id="eserVal" placeholder="Required resistance (Ω)"><select id="eserSeries"><option value="12">E12 Series</option><option value="24">E24 Series</option></select><button onclick="eSeries()">FIND NEAREST</button><div id="eserOut" class="output">Nearest standard value</div></div>
+    <div class="card"><h3>Power Dissipation in Resistor</h3><input id="pdV" placeholder="Voltage across R (V)"><input id="pdR" placeholder="Resistance (Ω)"><button onclick="powerDiss()">CALCULATE</button><div id="pdOut" class="output">P = V²/R</div></div>
+    <div class="card"><h3>Zener Diode Regulator</h3><input id="zenVin" placeholder="Input Voltage (V)"><input id="zenVz" placeholder="Zener Voltage (V)"><input id="zenIL" placeholder="Load Current (mA)"><button onclick="zener()">CALCULATE</button><div id="zenOut" class="output">Rs = (Vin−Vz)/IL</div></div>
+    <div class="card">
+      <h3>IC Quick Reference</h3>
+      <select id="icRef"><option value="">Select IC</option><option value="555">NE555 – Timer</option><option value="741">LM741 – Op-Amp</option><option value="7805">LM7805 – 5V Reg</option><option value="7812">LM7812 – 12V Reg</option><option value="4017">CD4017 – Decade Counter</option><option value="7400">74LS00 – Quad NAND</option><option value="7486">74LS86 – Quad XOR</option><option value="324">LM324 – Quad Op-Amp</option></select>
+      <button onclick="icInfo()">GET INFO</button>
+      <div id="icOut" class="output">Select an IC</div>
+    </div>
+    <div class="card"><h3>Transformer Turns Ratio</h3><input id="trV1" placeholder="Primary Voltage (V)"><input id="trV2" placeholder="Secondary Voltage (V)"><button onclick="transformer()">CALCULATE</button><div id="trOut" class="output">n = V1/V2</div></div>
+  </div>
+</div>
+
+<!-- MICROCONTROLLER -->
+<div id="mcuSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon2)">🔌 MICROCONTROLLER</div></div>
+  <div class="container">
+    <div class="card"><h3>Timer Frequency (Arduino)</h3><input id="timerClk" placeholder="Clock Freq (Hz) e.g. 16000000"><input id="timerPre" placeholder="Prescaler (1,8,64,256,1024)"><input id="timerOCR" placeholder="OCR Value (0-255)"><button onclick="timerFreq()">CALCULATE</button><div id="timerOut" class="output">f = Fclk/(2×N×(1+OCR))</div></div>
+    <div class="card"><h3>PWM Duty Cycle</h3><input id="pwmOn" placeholder="ON time (ms)"><input id="pwmPeriod" placeholder="Total Period (ms)"><button onclick="pwmDuty()">CALCULATE</button><div id="pwmOut" class="output">Duty = (Ton/T)×100%</div></div>
+    <div class="card"><h3>UART Baud Rate (AVR)</h3><input id="uartClk" placeholder="CPU Clock (Hz) e.g. 16000000"><input id="uartBaud" placeholder="Baud Rate e.g. 9600"><button onclick="uartCalc()">CALCULATE</button><div id="uartOut" class="output">UBRR = Fclk/(16×Baud)−1</div></div>
+    <div class="card"><h3>ADC Step Size &amp; Resolution</h3><input id="adcVref" placeholder="Vref (V)"><input id="adcBits" placeholder="Bit Resolution (e.g. 10, 12)"><button onclick="adcCalc()">CALCULATE</button><div id="adcOut" class="output">Step = Vref/2^n</div></div>
+    <div class="card"><h3>ADC Reading → Voltage</h3><input id="adcDig" placeholder="Digital Reading (e.g. 512)"><input id="adcVref2" placeholder="Vref (V)"><input id="adcBits2" placeholder="Bit Resolution"><button onclick="adcVoltage()">CALCULATE</button><div id="adcVout" class="output">Vin = (D/2^n)×Vref</div></div>
+    <div class="card"><h3>SPI Clock Speed</h3><input id="spiClk" placeholder="CPU Clock (Hz)"><select id="spiDiv"><option value="2">/2</option><option value="4">/4</option><option value="8">/8</option><option value="16">/16</option><option value="32">/32</option><option value="64">/64</option><option value="128">/128</option></select><button onclick="spiSpeed()">CALCULATE</button><div id="spiOut" class="output">SPI CLK = Fclk/Div</div></div>
+    <div class="card"><h3>I²C Frequency (AVR)</h3><input id="i2cClk" placeholder="CPU Clock (Hz)"><input id="i2cBRR" placeholder="TWBR value"><select id="i2cPre"><option value="1">TWPS=0 (×1)</option><option value="4">TWPS=1 (×4)</option><option value="16">TWPS=2 (×16)</option><option value="64">TWPS=3 (×64)</option></select><button onclick="i2cFreq()">CALCULATE</button><div id="i2cOut" class="output">f = Fclk/(16+2×TWBR×4^TWPS)</div></div>
+  </div>
+</div>
+
 <footer>
   <div class="copyright-badge">©️ 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
-  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp;
-  Unauthorized reproduction prohibited &nbsp;|&nbsp;
-  <strong>ECE-TOOLKIT v2.0</strong>
+  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v3.0</strong>
 </footer>
 
 <script>
-// ---- PARTICLES ----
+// PARTICLES
 (function(){
   const c=document.getElementById('particles');
   for(let i=0;i<28;i++){
-    const p=document.createElement('div');
-    p.className='particle';
+    const p=document.createElement('div');p.className='particle';
     const s=Math.random()*5+2;
-    p.style.cssText=`
-      width:${s}px;height:${s}px;
-      left:${Math.random()*100}%;
-      background:${Math.random()>.5?'#00ffe7':Math.random()>.5?'#ff2d78':'#ffe600'};
-      animation-duration:${Math.random()*12+8}s;
-      animation-delay:${Math.random()*10}s;
-      opacity:0;
-    `;
+    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${['#00ffe7','#ff2d78','#ffe600','#a259ff','#00b8ff'][Math.floor(Math.random()*5)]};animation-duration:${Math.random()*12+8}s;animation-delay:${Math.random()*10}s;opacity:0;`;
     c.appendChild(p);
   }
 })();
 
-// ---- COUNTER ----
-function animCount(el,target,suffix=''){
-  let n=0,step=Math.ceil(target/40),t=setInterval(()=>{
-    n=Math.min(n+step,target);
-    el.textContent=n+(suffix);
-    if(n>=target)clearInterval(t);
-  },30);
-}
-setTimeout(()=>{
-  animCount(document.getElementById('cnt1'),22);
-  animCount(document.getElementById('cnt2'),18,'+');
-  animCount(document.getElementById('cnt3'),6,'+');
-},800);
+// COUNTER
+function animCount(el,target,suffix=''){let n=0,step=Math.ceil(target/40),t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n+suffix;if(n>=target)clearInterval(t);},30);}
+setTimeout(()=>{animCount(document.getElementById('cnt1'),40,'+');animCount(document.getElementById('cnt2'),35,'+');animCount(document.getElementById('cnt3'),6);},800);
 
-// ---- NAV ----
-function openECE(){
-  homeMenu.style.display="none";
-  eceSection.style.display="block";
-  eceSection.style.animation="none";
-  digitalSection.style.display="none";
-}
-function openDigital(){
-  homeMenu.style.display="none";
-  digitalSection.style.display="block";
-  eceSection.style.display="none";
-}
-function goHome(){
-  homeMenu.style.display="flex";
-  eceSection.style.display="none";
-  digitalSection.style.display="none";
-  document.querySelectorAll(".card").forEach(c=>c.style.display="");
-}
-
-// ---- SEARCH ----
+// NAVIGATION
+const allSections=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection'];
+function openSection(id){document.getElementById('homeMenu').style.display='none';allSections.forEach(s=>document.getElementById(s).style.display='none');document.getElementById(id).style.display='block';window.scrollTo(0,0);}
+function goHome(){document.getElementById('homeMenu').style.display='flex';allSections.forEach(s=>document.getElementById(s).style.display='none');document.querySelectorAll('.card').forEach(c=>c.style.display='');}
 function searchCards(){
   const val=document.getElementById('search').value.toLowerCase();
   if(!val){goHome();return;}
-  homeMenu.style.display="none";
-  eceSection.style.display="block";
-  digitalSection.style.display="block";
-  document.querySelectorAll(".card").forEach(c=>{
-    c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
-  });
+  document.getElementById('homeMenu').style.display='none';
+  allSections.forEach(s=>document.getElementById(s).style.display='block');
+  document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(val)?'block':'none');
 }
-
-// ---- THEME ----
 let dark=true;
-function toggleTheme(){
-  dark=!dark;
-  document.body.classList.toggle("light");
-  document.querySelector('.theme-btn').textContent=dark?'🌙':'☀️';
-}
+function toggleTheme(){dark=!dark;document.body.classList.toggle('light');document.querySelector('.theme-btn').textContent=dark?'🌙':'☀️';}
 
-// ---- HELPER ----
-function fmt(n){
-  if(isNaN(n)||!isFinite(n))return "⚠ Invalid input";
-  return n%1===0?n:parseFloat(n.toFixed(6));
-}
-function setOut(id,label,val){
-  document.getElementById(id).innerHTML=`${label} = <span style="color:#fff">${fmt(val)}</span>`;
-}
+// HELPERS
+function fmt(n){if(isNaN(n)||!isFinite(n))return'⚠ Invalid';return n%1===0?n:parseFloat(n.toFixed(6));}
+function setOut(id,label,val,unit=''){document.getElementById(id).innerHTML=`${label} = <span style="color:#fff">${fmt(val)}${unit?' '+unit:''}</span>`;}
+function gv(id){return parseFloat(document.getElementById(id).value);}
+function gs(id){return document.getElementById(id).value.trim();}
 
-// ---- ECE CALCULATORS ----
-function ohm(){
-  let v=parseFloat(V.value),i=parseFloat(I.value),r=parseFloat(R.value);
-  if(!isNaN(v)&&!isNaN(i))setOut('o1','R',v/i);
-  else if(!isNaN(v)&&!isNaN(r))setOut('o1','I',v/r);
-  else if(!isNaN(i)&&!isNaN(r))setOut('o1','V',i*r);
-  else document.getElementById('o1').innerHTML="⚠ Enter any 2 values";
-}
-function power(){setOut('o2','P',parseFloat(v1.value)*parseFloat(i1.value));}
-function rc(){setOut('o3','τ',parseFloat(Rrc.value)*parseFloat(Crc.value));}
-function freq(){setOut('o4','T',1/parseFloat(f.value));}
-function xc(){setOut('o5','Xc',1/(2*Math.PI*parseFloat(fc.value)*parseFloat(cap.value)));}
-function xl(){setOut('o6','Xl',2*Math.PI*parseFloat(fl.value)*parseFloat(L.value));}
-function rlc(){setOut('o7','f',1/(2*Math.PI*Math.sqrt(parseFloat(Lr.value)*parseFloat(Cr.value))));}
-function vd(){setOut('o8','Vout',parseFloat(Vin.value)*(parseFloat(R2.value)/(parseFloat(R1.value)+parseFloat(R2.value))));}
-function cd(){setOut('o9','Iout',parseFloat(Iin.value)*(parseFloat(Rb.value)/(parseFloat(Ra.value)+parseFloat(Rb.value))));}
-function imp(){setOut('o10','Z',Math.sqrt(parseFloat(res.value)**2+parseFloat(react.value)**2));}
-function db(){setOut('o12','dB',20*Math.log10(parseFloat(g.value)));}
-function bw(){setOut('o13','BW',parseFloat(fh.value)-parseFloat(flw.value));}
-function opamp(){setOut('opout','Gain',-(parseFloat(Rf.value)/parseFloat(Rin.value)));}
-function lpf(){setOut('lpfout','Fc',1/(2*Math.PI*parseFloat(Rlpf.value)*parseFloat(Clpf.value)));}
-function hpf(){setOut('hpfout','Fc',1/(2*Math.PI*parseFloat(Rhpf.value)*parseFloat(Chpf.value)));}
-function bjt(){setOut('bjtout','β',parseFloat(Ic.value)/parseFloat(Ib.value));}
-function mosfet(){
-  let k=parseFloat(kval.value),vgs=parseFloat(Vgs.value),vth=parseFloat(Vth.value);
-  setOut('mosout','Id',(k/2)*Math.pow(vgs-vth,2));
-}
+// ECE CORE
+function ohm(){let v=gv('V'),i=gv('I'),r=gv('R');if(!isNaN(v)&&!isNaN(i))setOut('o1','R',v/i,'Ω');else if(!isNaN(v)&&!isNaN(r))setOut('o1','I',v/r,'A');else if(!isNaN(i)&&!isNaN(r))setOut('o1','V',i*r,'V');else document.getElementById('o1').innerHTML='⚠ Enter any 2 values';}
+function power(){setOut('o2','P',gv('v1')*gv('i1'),'W');}
+function rc(){setOut('o3','τ',gv('Rrc')*gv('Crc'),'s');}
+function freq(){setOut('o4','T',1/gv('f'),'s');}
+function xc(){setOut('o5','Xc',1/(2*Math.PI*gv('fc')*gv('cap')),'Ω');}
+function xl(){setOut('o6','Xl',2*Math.PI*gv('fl')*gv('L'),'Ω');}
+function rlc(){setOut('o7','f',1/(2*Math.PI*Math.sqrt(gv('Lr')*gv('Cr'))),'Hz');}
+function vd(){setOut('o8','Vout',gv('Vin')*(gv('R2')/(gv('R1')+gv('R2'))),'V');}
+function cd(){setOut('o9','Iout',gv('Iin')*(gv('Rb')/(gv('Ra')+gv('Rb'))),'A');}
+function imp(){setOut('o10','Z',Math.sqrt(gv('res')**2+gv('react')**2),'Ω');}
+function db(){setOut('o12','dB',20*Math.log10(gv('g')),'dB');}
+function bw(){setOut('o13','BW',gv('fh')-gv('flw'),'Hz');}
+function opamp(){setOut('opout','Gain',-(gv('Rf')/gv('Rin')));}
+function lpf(){setOut('lpfout','Fc',1/(2*Math.PI*gv('Rlpf')*gv('Clpf')),'Hz');}
+function hpf(){setOut('hpfout','Fc',1/(2*Math.PI*gv('Rhpf')*gv('Chpf')),'Hz');}
+function bjt(){setOut('bjtout','β',gv('Ic')/gv('Ib'));}
+function mosfet(){setOut('mosout','Id',(gv('kval')/2)*Math.pow(gv('Vgs')-gv('Vth'),2),'A');}
 
-// ---- DIGITAL ----
-function binToDec(){
-  const v=document.getElementById('bin').value.trim();
-  const r=parseInt(v,2);
-  document.getElementById('d1').innerHTML=isNaN(r)?"⚠ Invalid binary":`Decimal = <span style='color:#fff'>${r}</span>`;
+// DIGITAL
+function binToDec(){const v=gs('bin'),r=parseInt(v,2);document.getElementById('d1').innerHTML=isNaN(r)?'⚠ Invalid binary':`Decimal = <span style='color:#fff'>${r}</span>`;}
+function decToBin(){const v=parseInt(gs('dec'));document.getElementById('d2').innerHTML=isNaN(v)?'⚠ Invalid':`Binary = <span style='color:#fff'>${v.toString(2)}</span>`;}
+function decToHex(){const v=parseInt(gs('dec2'));document.getElementById('d3').innerHTML=isNaN(v)?'⚠ Invalid':`Hex = <span style='color:#fff'>${v.toString(16).toUpperCase()}</span>`;}
+function hexToDec(){const v=parseInt(gs('hex'),16);document.getElementById('d4').innerHTML=isNaN(v)?'⚠ Invalid':`Decimal = <span style='color:#fff'>${v}</span>`;}
+function decToOct(){const v=parseInt(gs('dec3'));document.getElementById('d5').innerHTML=isNaN(v)?'⚠ Invalid':`Octal = <span style='color:#fff'>${v.toString(8)}</span>`;}
+function octToDec(){const v=parseInt(gs('oct'),8);document.getElementById('d6').innerHTML=isNaN(v)?'⚠ Invalid':`Decimal = <span style='color:#fff'>${v}</span>`;}
+function complement(){
+  const b=gs('binComp');
+  if(!/^[01]+$/.test(b)){document.getElementById('compOut').innerHTML='⚠ Binary only';return;}
+  const ones=b.split('').map(x=>x==='0'?'1':'0').join('');
+  let carry=1,twos=ones.split('').reverse().map(x=>{let s=parseInt(x)+carry;carry=s>1?1:0;return s%2;}).reverse().join('');
+  document.getElementById('compOut').innerHTML=`1's: <span style='color:#fff'>${ones}</span> &nbsp;|&nbsp; 2's: <span style='color:#fff'>${twos}</span>`;
 }
-function decToBin(){
-  const v=parseInt(document.getElementById('dec').value);
-  document.getElementById('d2').innerHTML=isNaN(v)?"⚠ Invalid input":`Binary = <span style='color:#fff'>${v.toString(2)}</span>`;
-}
-function decToHex(){
-  const v=parseInt(document.getElementById('dec2').value);
-  document.getElementById('d3').innerHTML=isNaN(v)?"⚠ Invalid input":`Hex = <span style='color:#fff'>${v.toString(16).toUpperCase()}</span>`;
-}
-function hexToDec(){
-  const v=parseInt(document.getElementById('hex').value,16);
-  document.getElementById('d4').innerHTML=isNaN(v)?"⚠ Invalid hex":`Decimal = <span style='color:#fff'>${v}</span>`;
-}
-
 function logic(){
-  let A=parseInt(document.getElementById('a').value),
-      B=parseInt(document.getElementById('b').value),
-      g=document.getElementById('gate').value,o;
-  if(isNaN(A)||A<0||A>1||(g!=="NOT"&&(isNaN(B)||B<0||B>1))){
-    document.getElementById('gout').innerHTML="⚠ Enter 0 or 1";return;
-  }
-  if(g=="AND")o=A&B;
-  if(g=="OR")o=A|B;
-  if(g=="XOR")o=A^B;
-  if(g=="NAND")o=(A&B)?0:1;
-  if(g=="NOR")o=(A|B)?0:1;
-  if(g=="NOT")o=A?0:1;
-  document.getElementById('gout').innerHTML=`${g}(${A}${g!=="NOT"?','+B:''}) = <span style='color:#fff;font-size:1.3em'>${o}</span>`;
+  let A=parseInt(gs('a')),B=parseInt(gs('b')),g=document.getElementById('gate').value,o;
+  if(isNaN(A)||A<0||A>1||(g!=='NOT'&&(isNaN(B)||B<0||B>1))){document.getElementById('gout').innerHTML='⚠ Enter 0 or 1';return;}
+  if(g=='AND')o=A&B;if(g=='OR')o=A|B;if(g=='XOR')o=A^B;
+  if(g=='NAND')o=(A&B)?0:1;if(g=='NOR')o=(A|B)?0:1;
+  if(g=='NOT')o=A?0:1;if(g=='XNOR')o=(A===B)?1:0;
+  document.getElementById('gout').innerHTML=`${g}(${A}${g!=='NOT'?','+B:''}) = <span style='color:#fff;font-size:1.3em'>${o}</span>`;
+  let rows=g==='NOT'?[[0],[1]]:[[0,0],[0,1],[1,0],[1,1]];
+  let th=g==='NOT'?'<th>A</th><th>OUT</th>':`<th>A</th><th>B</th><th>OUT</th>`;
+  let trs=rows.map(r=>{
+    let a=r[0],b=r[1]??0,out;
+    if(g=='AND')out=a&b;if(g=='OR')out=a|b;if(g=='XOR')out=a^b;
+    if(g=='NAND')out=(a&b)?0:1;if(g=='NOR')out=(a|b)?0:1;
+    if(g=='NOT')out=a?0:1;if(g=='XNOR')out=(a===b)?1:0;
+    return g==='NOT'?`<tr><td>${a}</td><td class="${out?'t1':'t0'}">${out}</td></tr>`:`<tr><td>${a}</td><td>${b}</td><td class="${out?'t1':'t0'}">${out}</td></tr>`;
+  }).join('');
+  document.getElementById('gateTable').innerHTML=`<table class="truth-table"><tr>${th}</tr>${trs}</table>`;
 }
+function kmap(){document.getElementById('kout').innerHTML='⚠ Full K-Map solver coming in v3.1';}
 
-function kmap(){
-  document.getElementById('kout').innerHTML="⚠ Full K-Map solver coming soon";
+// DESIGN TOOLS — Resistor Color
+const COLORS=[{n:'Black',v:0,c:'#111'},{n:'Brown',v:1,c:'#8B4513'},{n:'Red',v:2,c:'#e53935'},{n:'Orange',v:3,c:'#FF6600'},{n:'Yellow',v:4,c:'#FFD700'},{n:'Green',v:5,c:'#2e7d32'},{n:'Blue',v:6,c:'#1565C0'},{n:'Violet',v:7,c:'#7B1FA2'},{n:'Grey',v:8,c:'#616161'},{n:'White',v:9,c:'#EEE'}];
+const MULT=[{n:'×1 (Black)',v:1,c:'#111'},{n:'×10 (Brown)',v:10,c:'#8B4513'},{n:'×100 (Red)',v:100,c:'#e53935'},{n:'×1K (Orange)',v:1000,c:'#FF6600'},{n:'×10K (Yellow)',v:10000,c:'#FFD700'},{n:'×100K (Green)',v:100000,c:'#2e7d32'},{n:'×1M (Blue)',v:1000000,c:'#1565C0'},{n:'×0.1 (Gold)',v:0.1,c:'#FFD700'},{n:'×0.01 (Silver)',v:0.01,c:'#C0C0C0'}];
+const TOL=[{n:'±1% (Brown)',v:'±1%',c:'#8B4513'},{n:'±2% (Red)',v:'±2%',c:'#e53935'},{n:'±5% (Gold)',v:'±5%',c:'#FFD700'},{n:'±10% (Silver)',v:'±10%',c:'#C0C0C0'},{n:'±20% (None)',v:'±20%',c:'#888'}];
+(function(){
+  const b1=document.getElementById('b1'),b2=document.getElementById('b2'),b3=document.getElementById('b3'),b4=document.getElementById('b4');
+  COLORS.forEach(c=>{b1.innerHTML+=`<option value="${c.v}">${c.n}</option>`;b2.innerHTML+=`<option value="${c.v}">${c.n}</option>`;});
+  MULT.forEach(m=>{b3.innerHTML+=`<option value="${m.v}">${m.n}</option>`;});
+  TOL.forEach(t=>{b4.innerHTML+=`<option value="${t.v}">${t.n}</option>`;});
+})();
+function resistorColor(){
+  const v1=parseInt(document.getElementById('b1').value),v2=parseInt(document.getElementById('b2').value),mult=parseFloat(document.getElementById('b3').value),tol=document.getElementById('b4').value;
+  if(document.getElementById('b1').value===''||document.getElementById('b2').value===''||document.getElementById('b3').value===''){document.getElementById('resColorOut').innerHTML='⚠ Select all bands';return;}
+  const val=(v1*10+v2)*mult;
+  let display=val>=1e6?`${val/1e6}MΩ`:val>=1e3?`${val/1e3}kΩ`:`${val}Ω`;
+  document.getElementById('resColorOut').innerHTML=`Value = <span style='color:#fff'>${display} ${tol}</span>`;
+  const cols=[COLORS[v1]?.c,COLORS[v2]?.c,MULT.find(m=>m.v==mult)?.c,TOL.find(t=>t.v==tol)?.c];
+  document.getElementById('colorBands').innerHTML=cols.map(c=>`<div class="band-box" style="background:${c||'#888'}"></div>`).join('');
 }
+function ledRes(){const r=(gv('Vsup')-gv('Vled'))/(gv('Iled')/1000);document.getElementById('ledOut').innerHTML=`R = <span style='color:#fff'>${fmt(r)} Ω</span> (use ${fmt(Math.ceil(r/10)*10)} Ω)`;}
+function pcbTrace(){const I=gv('pcbI'),dT=gv('pcbT'),th=gv('pcbTh'),A=I/(0.048*Math.pow(dT,0.44)),w=A/(th*1.378);document.getElementById('pcbOut').innerHTML=`Width = <span style='color:#fff'>${fmt(w)} mils (${fmt(w*0.0254)} mm)</span>`;}
+function vreg(){const d=gv('vregIn')-gv('vregOut');document.getElementById('vregRes').innerHTML=d>=2?`✅ <span style='color:#00ff88'>OK — ${fmt(d)}V headroom</span>`:`⚠ <span style='color:#ff4466'>Insufficient! Need ≥2V. Use LDO.</span>`;}
+function batLife(){const h=gv('batCap')/gv('batCurr');document.getElementById('batOut').innerHTML=`<span style='color:#fff'>${fmt(h)} hours (${fmt(h/24)} days)</span>`;}
+function unitConv(){const v=gv('unitVal'),from=parseFloat(document.getElementById('unitFrom').value),to=parseFloat(document.getElementById('unitTo').value);document.getElementById('unitOut').innerHTML=`= <span style='color:#fff'>${fmt(v*from/to)}</span>`;}
 
-// ---- ENTER KEY ----
+// COMMUNICATION
+function amIndex(){const mu=gv('amVm')/gv('amVc');document.getElementById('amOut').innerHTML=`µ = <span style='color:#fff'>${fmt(mu)}</span> → ${mu<1?'<span style="color:#00ff88">Under-mod</span>':mu===1?'<span style="color:#ffe600">Full mod</span>':'<span style="color:#ff4466">Over-mod</span>'}`;}
+function fmIndex(){setOut('fmOut','β',gv('fmDelta')/gv('fmFm'));}
+function shannon(){const C=gv('shB')*Math.log2(1+gv('shSNR'));document.getElementById('shOut').innerHTML=`C = <span style='color:#fff'>${fmt(C)} bps (${fmt(C/1e6)} Mbps)</span>`;}
+function friis(){setOut('frisOut','Pr',gv('frisPt')+gv('frisGt')+gv('frisGr')-gv('frisL'),'dBm');}
+function fspl(){setOut('fsplOut','FSPL',20*Math.log10(gv('fsplD'))+20*Math.log10(gv('fsplF'))+32.44,'dB');}
+function noiseFig(){setOut('nfOut','NF',gv('nfSnrIn')-gv('nfSnrOut'),'dB');}
+function wavelength(){const lam=3e8/gv('wlFreq');document.getElementById('wlOut').innerHTML=`λ = <span style='color:#fff'>${fmt(lam)} m</span>`;}
+function nyquist(){document.getElementById('nyqOut').innerHTML=`fs ≥ <span style='color:#fff'>${fmt(2*gv('nyqF'))} Hz</span>`;}
+
+// PRACTICAL
+function capDecode(){
+  const code=gs('capCode');
+  if(code.length===3&&/^\d{3}$/.test(code)){
+    const val=parseInt(code.slice(0,2))*Math.pow(10,parseInt(code[2]));
+    let d=val>=1e6?`${val/1e6}µF`:val>=1e3?`${val/1e3}nF`:`${val}pF`;
+    document.getElementById('capDecOut').innerHTML=`= <span style='color:#fff'>${d}</span>`;
+  } else if(/^\d+$/.test(code)){
+    document.getElementById('capDecOut').innerHTML=`= <span style='color:#fff'>${code}pF</span>`;
+  } else document.getElementById('capDecOut').innerHTML='⚠ Enter 2-3 digit code';
+}
+const E12=[1.0,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2];
+const E24=[1.0,1.1,1.2,1.3,1.5,1.6,1.8,2.0,2.2,2.4,2.7,3.0,3.3,3.6,3.9,4.3,4.7,5.1,5.6,6.2,6.8,7.5,8.2,9.1];
+function eSeries(){
+  const target=gv('eserVal'),s=parseInt(document.getElementById('eserSeries').value),base=s===12?E12:E24;
+  let all=[];for(let d=0;d<=6;d++)base.forEach(v=>all.push(parseFloat((v*Math.pow(10,d)).toPrecision(3))));
+  const nearest=all.reduce((a,b)=>Math.abs(b-target)<Math.abs(a-target)?b:a);
+  const err=((nearest-target)/target*100).toFixed(2);
+  document.getElementById('eserOut').innerHTML=`Nearest = <span style='color:#fff'>${nearest} Ω</span> (error: ${err}%)`;
+}
+function powerDiss(){setOut('pdOut','P',gv('pdV')**2/gv('pdR'),'W');}
+function zener(){setOut('zenOut','Rs',(gv('zenVin')-gv('zenVz'))/(gv('zenIL')/1000),'Ω');}
+const IC_INFO={
+  '555':'NE555 Timer IC\nPins(8): GND · Trigger · Output · Reset · Control · Threshold · Discharge · Vcc\nVcc: 4.5–16V | Uses: Oscillator, PWM, Monostable/Astable',
+  '741':'LM741 Op-Amp\nPins(8): Offset N1 · Inv(−) · Non-inv(+) · Vcc− · Offset N2 · Output · Vcc+ · NC\nGBW: 1MHz | Slew: 0.5V/µs',
+  '7805':'LM7805 Regulator\nPins(3): Input · GND · Output\nVout: 5V | Vin max: 35V | Iout: 1A | Dropout: ~2V',
+  '7812':'LM7812 Regulator\nPins(3): Input · GND · Output\nVout: 12V | Vin max: 35V | Iout: 1A | Dropout: ~2V',
+  '4017':'CD4017 Decade Counter\nPins(16): 10 decoded outputs + Clock, Reset, ClkEn\nUses: LED chaser, frequency divider',
+  '7400':'74LS00 Quad 2-input NAND\nPins(14): 4 gates | Vcc: 5V | Delay: ~10ns',
+  '7486':'74LS86 Quad 2-input XOR\nPins(14): 4 gates | Vcc: 5V | Uses: Comparator, parity checker',
+  '324':'LM324 Quad Op-Amp\nPins(14): 4 op-amps | Supply: 3–32V | GBW: 1MHz',
+};
+function icInfo(){const ic=document.getElementById('icRef').value;document.getElementById('icOut').innerHTML=IC_INFO[ic]?`<div class="info-box"><strong>${ic}</strong><br>${IC_INFO[ic].replace(/\n/g,'<br>')}</div>`:'Select an IC';}
+function transformer(){const n=gv('trV1')/gv('trV2');document.getElementById('trOut').innerHTML=`n = <span style='color:#fff'>${fmt(n)}</span> | <span style='color:#fff'>${n>1?'Step-Down':n<1?'Step-Up':'Isolation'}</span>`;}
+
+// MCU
+function timerFreq(){const f=gv('timerClk')/(2*gv('timerPre')*(1+gv('timerOCR')));document.getElementById('timerOut').innerHTML=`f = <span style='color:#fff'>${fmt(f)} Hz (${fmt(f/1000)} kHz)</span>`;}
+function pwmDuty(){setOut('pwmOut','Duty',gv('pwmOn')/gv('pwmPeriod')*100,'%');}
+function uartCalc(){
+  const UBRR=Math.round(gv('uartClk')/(16*gv('uartBaud'))-1);
+  const actual=gv('uartClk')/(16*(UBRR+1));
+  const err=((actual-gv('uartBaud'))/gv('uartBaud')*100).toFixed(2);
+  document.getElementById('uartOut').innerHTML=`UBRR=<span style='color:#fff'>${UBRR}</span> | Actual: <span style='color:#fff'>${fmt(actual)}</span> | Err: <span style='color:${Math.abs(err)<2?'#00ff88':'#ff4466'}'>${err}%</span>`;
+}
+function adcCalc(){const step=gv('adcVref')/Math.pow(2,gv('adcBits'));document.getElementById('adcOut').innerHTML=`Step=<span style='color:#fff'>${fmt(step*1000)}mV</span> | Steps=<span style='color:#fff'>${Math.pow(2,gv('adcBits'))}</span>`;}
+function adcVoltage(){setOut('adcVout','Vin',(gv('adcDig')/Math.pow(2,gv('adcBits2')))*gv('adcVref2'),'V');}
+function spiSpeed(){const f=gv('spiClk')/parseInt(document.getElementById('spiDiv').value);document.getElementById('spiOut').innerHTML=`SPI CLK = <span style='color:#fff'>${fmt(f/1e6)} MHz</span>`;}
+function i2cFreq(){const pre=parseInt(document.getElementById('i2cPre').value);const f=gv('i2cClk')/(16+2*gv('i2cBRR')*pre);document.getElementById('i2cOut').innerHTML=`f = <span style='color:#fff'>${fmt(f/1000)} kHz</span>`;}
+
+// ENTER KEY
 document.addEventListener('keydown',e=>{
   if(e.key==='Enter'){
-    const btn=document.querySelector('.section:not([style*="none"]) button:not(.back-btn)');
-    if(btn)btn.click();
+    const v=allSections.find(s=>document.getElementById(s).style.display==='block');
+    if(v){const btn=document.querySelector(`#${v} button:not(.back-btn)`);if(btn)btn.click();}
   }
 });
 </script>
