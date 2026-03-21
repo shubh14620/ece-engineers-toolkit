@@ -36,7 +36,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .hero-title .line1{display:block;background:linear-gradient(90deg,var(--neon),#00b8ff,var(--neon));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shine 3s linear infinite;}
 @keyframes shine{0%{background-position:0%;}100%{background-position:200%;}}
 .hero-title .line2{display:block;color:white;font-size:0.55em;letter-spacing:4px;-webkit-text-fill-color:white;}
-.hero-sub{color:rgba(224,247,250,0.55);font-size:1.1rem;max-width:500px;margin:0 auto 50px;font-weight:300;letter-spacing:1px;opacity:0;animation:fadeUp .7s .6s forwards;}
+.hero-sub{color:rgba(224,247,250,0.55);font-size:1.1rem;max-width:700px;margin:0 auto 50px;font-weight:300;letter-spacing:1px;opacity:0;animation:fadeUp .7s .6s forwards;white-space:nowrap;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
 .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1100px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
 @media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
@@ -110,6 +110,7 @@ body.light .hero-tag{color:#cc0033;}
 body.light .hero-title .line1{background:linear-gradient(90deg,#003399,#0055cc,#003399);-webkit-background-clip:text;background-clip:text;}
 body.light .hero-title .line2{color:#1a2d55;-webkit-text-fill-color:#1a2d55;}
 body.light .hero-sub{color:#2d4070;}
+@media(max-width:700px){.hero-sub{white-space:normal;font-size:.95rem;}}
 body.light .stat-num{color:#003399;text-shadow:none;}
 body.light .stat-label{color:#4a5e8a;}
 body.light .cat-card{background:#ffffff;border-color:rgba(0,60,150,0.18);}
@@ -248,9 +249,9 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
   <div class="hero-tag">⚙️ Electronics &amp; Communication Engineering · AKTU</div>
   <h1 class="hero-title">
     <span class="line1">ENGINEER'S TOOLKIT</span>
-    <span class="line2">NOTES · CIRCUITS · SIMULATORS · CALCULATORS</span>
+    <span class="line2">PRECISION · POWER · PERFORMANCE</span>
   </h1>
-  <p class="hero-sub">Stop searching. Start solving. Built for ECE Students &amp; Engineers.</p>
+  <p class="hero-sub">Stop searching. Start solving. Made for ECE Students &amp; Engineers.</p>
   <div class="cat-grid">
     <div class="cat-card" onclick="openSection('theorySection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #c084fc)">📚</span>
@@ -1500,6 +1501,17 @@ function goHome(){
   document.getElementById('homeMenu').style.display='flex';
   allSections.forEach(s=>document.getElementById(s).style.display='none');
   document.querySelectorAll('.card').forEach(c=>c.style.display='');
+  document.querySelectorAll('.subject-card').forEach(c=>c.style.display='');
+  document.querySelectorAll('.comp-card').forEach(c=>c.style.display='');
+  document.querySelectorAll('.sem-content').forEach(s=>{
+    s.classList.remove('active');
+  });
+  // Reactivate first sem tab
+  const firstSem=document.getElementById('sem1');
+  if(firstSem) firstSem.classList.add('active');
+  const noRes=document.getElementById('noResults');
+  if(noRes) noRes.remove();
+  document.getElementById('search').value='';
 }
 function openCalc(id){
   // Hide home and all sections
@@ -1514,11 +1526,101 @@ function backToCalc(){
   window.scrollTo(0,0);
 }
 function searchCards(){
-  const val=document.getElementById('search').value.toLowerCase();
+  const val=document.getElementById('search').value.toLowerCase().trim();
   if(!val){goHome();return;}
+
   document.getElementById('homeMenu').style.display='none';
-  allSections.forEach(s=>document.getElementById(s).style.display='block');
-  document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(val)?'block':'none');
+  allSections.forEach(s=>document.getElementById(s).style.display='none');
+
+  // All searchable element types across all sections
+  const searchables=[
+    // Calculator cards
+    {selector:'.card', section:'calcSection', subsections:['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection']},
+    // AKTU Notes - subject cards
+    {selector:'.subject-card', section:'theorySection', subsections:[]},
+    // Components
+    {selector:'.comp-card', section:'compSection', subsections:[]},
+    // Simulator cards
+    {selector:'#simSection .card', section:'simSection', subsections:[]},
+    // Circuit cards
+    {selector:'#circuitSection .card', section:'circuitSection', subsections:[]},
+  ];
+
+  let found = {};
+
+  // Search .card (calculators)
+  document.querySelectorAll('.card').forEach(c=>{
+    const matches = c.innerText.toLowerCase().includes(val);
+    c.style.display = matches ? 'block' : 'none';
+    if(matches){
+      // Find which section this card belongs to
+      allSections.forEach(s=>{
+        const sec = document.getElementById(s);
+        if(sec && sec.contains(c)) found[s]=true;
+      });
+    }
+  });
+
+  // Search subject-cards (AKTU Notes)
+  document.querySelectorAll('.subject-card').forEach(c=>{
+    const matches = c.innerText.toLowerCase().includes(val);
+    c.style.display = matches ? 'block' : 'none';
+    if(matches) found['theorySection']=true;
+  });
+
+  // Search comp-cards (Components)
+  document.querySelectorAll('.comp-card').forEach(c=>{
+    const matches = c.innerText.toLowerCase().includes(val);
+    c.style.display = matches ? 'block' : 'none';
+    if(matches) found['compSection']=true;
+  });
+
+  // Show sections that have matches
+  // For calcSection - show it if any calc sub-section has results
+  const calcSubs=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
+  const calcHasResults = calcSubs.some(s=>found[s]);
+
+  if(calcHasResults){
+    document.getElementById('calcSection').style.display='none'; // hide menu, show sub-sections
+    calcSubs.forEach(s=>{
+      document.getElementById(s).style.display = found[s] ? 'block' : 'none';
+    });
+  }
+  if(found['theorySection']){
+    document.getElementById('theorySection').style.display='block';
+    // Show all sem-contents so results are visible
+    document.querySelectorAll('.sem-content').forEach(s=>s.classList.add('active'));
+  }
+  if(found['compSection']){
+    document.getElementById('compSection').style.display='block';
+    setTimeout(()=>{
+      document.querySelectorAll('.comp-card').forEach(c=>{
+        if(c.innerText.toLowerCase().includes(val)) c.style.display='block';
+        else c.style.display='none';
+      });
+    },50);
+  }
+  if(found['simSection']) document.getElementById('simSection').style.display='block';
+  if(found['circuitSection']) document.getElementById('circuitSection').style.display='block';
+
+  // If nothing found anywhere
+  const anyFound = Object.keys(found).length > 0;
+  if(!anyFound){
+    document.getElementById('homeMenu').style.display='flex';
+    document.getElementById('homeMenu').innerHTML += '';
+    // Show no results message
+    const existing = document.getElementById('noResults');
+    if(!existing){
+      const msg = document.createElement('div');
+      msg.id='noResults';
+      msg.style.cssText='color:rgba(0,255,231,0.5);font-family:Orbitron,monospace;font-size:.85rem;margin-top:20px;letter-spacing:2px;';
+      msg.textContent='No results found for "'+val+'"';
+      document.getElementById('homeMenu').appendChild(msg);
+    }
+  } else {
+    const existing = document.getElementById('noResults');
+    if(existing) existing.remove();
+  }
 }
 let dark=true;
 function toggleTheme(){dark=!dark;document.body.classList.toggle('light');document.querySelector('.theme-btn').textContent=dark?'🌙':'☀️';}
@@ -2897,3 +2999,4 @@ document.addEventListener('keydown',e=>{
 </script>
 </body>
 </html>
+             
