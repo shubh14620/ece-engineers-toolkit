@@ -90,26 +90,139 @@ button:not(.back-btn):not(.theme-btn):active{transform:scale(.98);}
 .orb2{width:300px;height:300px;background:rgba(255,45,120,0.05);bottom:10%;left:-80px;animation-delay:3s;}
 .orb3{width:250px;height:250px;background:rgba(255,230,0,0.04);bottom:30%;right:10%;animation-delay:6s;}
 @keyframes orbFloat{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,40px) scale(1.15);}}
-body.light{background:#f0f4f8;color:#0a1628;}
-body.light::before{background-image:linear-gradient(rgba(0,100,180,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,100,180,0.05) 1px,transparent 1px);}
-body.light .navbar{background:rgba(240,244,248,0.9);border-color:rgba(0,100,180,0.12);}
-body.light .card{background:white;border-color:rgba(0,100,180,0.15);color:#0a1628;}
-body.light .card h3{color:#0057b8;}
-body.light .card h3::before{background:#0057b8;}
-body.light input,body.light select{background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.2);color:#0a1628;}
-body.light input:focus,body.light select:focus{border-color:#0057b8;background:rgba(0,87,184,0.08);}
-body.light button:not(.back-btn):not(.theme-btn){border-color:#0057b8;color:#0057b8;background:rgba(0,87,184,0.07);}
-body.light .output{color:#0057b8;background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.15);}
-body.light .logo{color:#0057b8;text-shadow:0 0 16px rgba(0,87,184,.3);}
-body.light .cat-title{color:#0057b8;}
-body.light .cat-card{background:white;}
-body.light .section-title{color:#0057b8;}
-body.light #search{color:#0057b8;background:rgba(0,87,184,0.05);}
-body.light .back-btn{color:#0057b8;}
-body.light .info-box{background:rgba(0,87,184,0.05);color:#0a1628;}
-footer{position:relative;z-index:1;text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.82rem;color:rgba(224,247,250,0.3);letter-spacing:1px;}
+body.light{background:#e8edf5;color:#0a1628;}
+body.light::before{background-image:linear-gradient(rgba(0,60,150,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,60,150,0.06) 1px,transparent 1px);}
+body.light .navbar{background:rgba(220,228,242,0.96);border-color:rgba(0,60,150,0.15);}
+body.light .card{background:#ffffff;border-color:rgba(0,60,150,0.18);color:#0a1628;}
+body.light .card h3{color:#003399;}
+body.light .card h3::before{background:#003399;}
+body.light input,body.light select{background:#f0f4ff;border-color:rgba(0,60,150,0.25);color:#0a1628;}
+body.light input::placeholder{color:#5a78b0;}
+body.light input:focus,body.light select:focus{border-color:#003399;background:#e6ecff;box-shadow:0 0 10px rgba(0,51,153,0.1);}
+body.light select option{background:#f0f4ff;color:#0a1628;}
+body.light button:not(.back-btn):not(.theme-btn){border-color:#003399;color:#003399;background:rgba(0,51,153,0.07);}
+body.light button:not(.back-btn):not(.theme-btn):hover{background:rgba(0,51,153,0.15);}
+body.light .output{color:#003399;background:#eef2ff;border-color:rgba(0,51,153,0.2);font-weight:700;}
+body.light .logo{color:#003399;text-shadow:none;}
+body.light .hero-tag{color:#cc0033;}
+body.light .hero-title .line1{background:linear-gradient(90deg,#003399,#0055cc,#003399);-webkit-background-clip:text;background-clip:text;}
+body.light .hero-title .line2{color:#1a2d55;-webkit-text-fill-color:#1a2d55;}
+body.light .hero-sub{color:#2d4070;}
+body.light .stat-num{color:#003399;text-shadow:none;}
+body.light .stat-label{color:#4a5e8a;}
+body.light .cat-card{background:#ffffff;border-color:rgba(0,60,150,0.18);}
+body.light .cat-card:hover{border-color:#003399;box-shadow:0 8px 30px rgba(0,51,153,0.14);}
+body.light .cat-title{color:#003399;}
+body.light .cat-desc{color:#2d4070;}
+body.light .cat-arrow{color:#003399;}
+body.light .section-title{color:#003399;}
+body.light .section-header{border-color:rgba(0,60,150,0.15);}
+body.light #search{color:#003399;background:#eef2ff;border-color:rgba(0,60,150,0.25);}
+body.light #search::placeholder{color:#5a78b0;}
+body.light .back-btn{color:#003399;border-color:rgba(0,60,150,0.25);}
+body.light .back-btn:hover{background:rgba(0,51,153,0.08);}
+body.light .info-box{background:#f0f4ff;border-color:rgba(0,60,150,0.15);color:#1a2d55;}
+body.light .info-box strong{color:#003399;}
+body.light .formula-box{background:#eef2ff;border-color:rgba(0,60,150,0.2);color:#0a1628;}
+body.light .formula-box span{color:#003399;}
+body.light .truth-table th{background:rgba(0,51,153,0.1);color:#003399;}
+body.light .truth-table td{color:#0a1628;}
+body.light footer{color:#4a5e8a;border-color:rgba(0,60,150,0.15);}
+body.light footer strong{color:#003399;}
+body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51,153,0.05);}
+body.light .orb1{background:rgba(0,51,153,0.06);}
+body.light .orb2{background:rgba(200,0,40,0.04);}
+body.light .theme-btn{color:#003399;border-color:rgba(0,60,150,0.25);}
+/* Theory light */
+body.light .subject-card{background:#ffffff;border-color:rgba(90,40,180,0.2);}
+body.light .subject-header{background:#fafaff;}
+body.light .subject-name{color:#5b21b6;}
+body.light .subject-code{color:#7c6aaa;}
+body.light .subject-body{border-color:rgba(90,40,180,0.12);}
+body.light .sem-tab{color:#5b21b6;border-color:rgba(90,40,180,0.3);}
+body.light .sem-tab.active{background:rgba(91,33,182,0.1);border-color:#5b21b6;}
+body.light .theory-section-title{color:#7744bb;}
+body.light .topic-list li{color:#1a2d55;}
+body.light .topic-list li::before{color:#5b21b6;}
+body.light .note-link{color:#5b21b6;border-color:rgba(91,33,182,0.3);background:rgba(91,33,182,0.05);}
+body.light .note-link:hover{background:rgba(91,33,182,0.12);}
+body.light .subject-toggle{color:#5b21b6;}
+.sem-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.sem-tab{padding:8px 16px;border-radius:30px;border:1px solid rgba(192,132,252,0.3);background:transparent;color:#c084fc;font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
+.sem-tab:hover{background:rgba(192,132,252,0.12);border-color:#c084fc;}
+.sem-tab.active{background:rgba(192,132,252,0.2);border-color:#c084fc;box-shadow:0 0 14px rgba(192,132,252,0.3);}
+.sem-content{display:none;}
+.sem-content.active{display:block;}
+.subject-card{background:var(--card);border:1px solid rgba(192,132,252,0.18);border-radius:16px;margin-bottom:16px;overflow:hidden;transition:.3s;}
+.subject-card:hover{border-color:rgba(192,132,252,0.5);box-shadow:0 0 20px rgba(192,132,252,0.15);}
+.subject-header{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.subject-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#c084fc;letter-spacing:1px;}
+.subject-code{font-size:.75rem;color:rgba(224,247,250,0.4);margin-top:4px;}
+.subject-toggle{color:#c084fc;font-size:1.2rem;transition:.3s;}
+.subject-body{display:none;padding:0 22px 20px;border-top:1px solid rgba(192,132,252,0.1);}
+.subject-body.open{display:block;}
+.subject-toggle.open{transform:rotate(180deg);}
+.theory-section-title{font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:2px;color:rgba(192,132,252,0.6);margin:14px 0 8px;text-transform:uppercase;}
+.topic-list{list-style:none;padding:0;}
+.topic-list li{padding:5px 0;font-size:.88rem;color:rgba(224,247,250,0.75);display:flex;align-items:flex-start;gap:8px;}
+.topic-list li::before{content:'▸';color:#c084fc;flex-shrink:0;}
+.formula-box{background:rgba(192,132,252,0.06);border:1px solid rgba(192,132,252,0.15);border-radius:8px;padding:10px 14px;margin:6px 0;font-size:.85rem;color:#e0f7fa;font-family:'Orbitron',monospace;}
+.formula-box span{color:#c084fc;}
+.links-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.note-link{padding:6px 14px;border-radius:20px;border:1px solid rgba(192,132,252,0.3);color:#c084fc;font-size:.75rem;text-decoration:none;transition:.3s;background:rgba(192,132,252,0.05);}
+.note-link:hover{background:rgba(192,132,252,0.15);border-color:#c084fc;}
+body.light .subject-toggle{color:#5b21b6;}
+/* CALC SECTION sub-cards */
+#calcSection .cat-card{margin-bottom:0;border-color:rgba(0,255,231,0.2);}
+#calcSection .cat-card:hover{border-color:var(--neon);box-shadow:var(--glow);}
+#calcSection .container{gap:14px;}
+.ckt-sel-btn{background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.3);color:#f97316;border-radius:10px;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:1px;transition:.3s;width:auto;margin:0;}
+.ckt-sel-btn:hover{background:rgba(249,115,22,0.2);border-color:#f97316;box-shadow:0 0 14px rgba(249,115,22,0.2);}
+body.light .ckt-sel-btn{background:rgba(249,115,22,0.06);color:#c2410c;}
+body.light #cktTitle{color:#c2410c;}
+/* COMPONENTS */
+.comp-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.comp-tab{padding:7px 14px;border-radius:20px;border:1px solid rgba(52,211,153,0.25);background:transparent;color:#34d399;font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
+.comp-tab:hover{background:rgba(52,211,153,0.1);border-color:#34d399;}
+.comp-tab.active{background:rgba(52,211,153,0.18);border-color:#34d399;box-shadow:0 0 12px rgba(52,211,153,0.2);}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;}
+.comp-card{background:var(--card);border:1px solid rgba(52,211,153,0.15);border-radius:16px;overflow:hidden;transition:.35s;cursor:pointer;}
+.comp-card:hover{border-color:rgba(52,211,153,0.5);box-shadow:0 0 22px rgba(52,211,153,0.15);transform:translateY(-3px);}
+.comp-card-header{padding:16px 18px;display:flex;align-items:center;gap:14px;}
+.comp-symbol{width:70px;height:70px;flex-shrink:0;border-radius:10px;background:rgba(52,211,153,0.07);border:1px solid rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;}
+.comp-symbol canvas{display:block;}
+.comp-meta{flex:1;}
+.comp-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#34d399;letter-spacing:1px;margin-bottom:4px;}
+.comp-type-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.65rem;font-family:'Orbitron',monospace;letter-spacing:1px;margin-bottom:4px;}
+.comp-short{font-size:.8rem;color:rgba(224,247,250,0.55);}
+.comp-body{display:none;padding:0 18px 16px;border-top:1px solid rgba(52,211,153,0.1);}
+.comp-body.open{display:block;}
+.comp-section-title{font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:2px;color:rgba(52,211,153,0.55);margin:12px 0 6px;text-transform:uppercase;}
+.comp-detail{font-size:.85rem;color:rgba(224,247,250,0.75);line-height:1.6;margin-bottom:6px;}
+.comp-uses{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.comp-use-tag{padding:3px 10px;border-radius:12px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);font-size:.72rem;color:#34d399;}
+.comp-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;}
+.comp-spec{background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.12);border-radius:8px;padding:6px 10px;}
+.comp-spec-label{font-size:.68rem;color:rgba(52,211,153,0.5);font-family:'Orbitron',monospace;}
+.comp-spec-val{font-size:.82rem;color:#e0f7fa;font-weight:600;}
+body.light .comp-card{background:white;border-color:rgba(16,185,129,0.2);}
+body.light .comp-name{color:#059669;}
+body.light .comp-tab{color:#059669;border-color:rgba(16,185,129,0.25);}
+body.light .comp-tab.active{background:rgba(16,185,129,0.1);border-color:#059669;}
+body.light .comp-short{color:#374151;}
+body.light .comp-detail{color:#1a2d55;}
+body.light .comp-use-tag{color:#059669;background:rgba(16,185,129,0.06);}
+body.light .comp-spec{background:rgba(16,185,129,0.05);}
+body.light .comp-spec-val{color:#0a1628;}
+body.light .comp-symbol{background:rgba(16,185,129,0.06);}
+body.light #compSearch{color:#059669;border-color:rgba(16,185,129,0.3);}
+footer{
+  position:relative;z-index:1;text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.82rem;color:rgba(224,247,250,0.3);letter-spacing:1px;}
+body.light footer{color:#4a5e8a;border-color:rgba(0,60,150,0.15);}
 footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78rem;}
+body.light footer strong{color:#003399;}
 .copyright-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;padding:5px 14px;border:1px solid rgba(0,255,231,0.15);border-radius:30px;font-size:.75rem;background:rgba(0,255,231,0.04);}
+body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51,153,0.05);}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:rgba(0,255,231,0.25);border-radius:10px;}
@@ -137,53 +250,35 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
   </h1>
   <p class="hero-sub">Professional-grade calculators for ECE students &amp; engineers. Fast. Accurate. Always ready.</p>
   <div class="cat-grid">
-    <div class="cat-card" onclick="openSection('eceSection')">
-      <span class="cat-icon">⚡</span>
-      <div class="cat-title">ECE Core</div>
-      <div class="cat-desc">Ohm's Law, Power, Filters, Transistors & more</div>
-      <div class="cat-arrow">→</div>
+    <div class="cat-card" onclick="openSection('theorySection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #c084fc)">📚</span>
+      <div class="cat-title" style="color:#c084fc">AKTU Notes</div>
+      <div class="cat-desc">All 8 Sems · Formulas · Topics · PYQ Links</div>
+      <div class="cat-arrow" style="color:#c084fc">→</div>
     </div>
-    <div class="cat-card" onclick="openSection('digitalSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">💻</span>
-      <div class="cat-title" style="color:var(--neon2)">ECE Digital</div>
-      <div class="cat-desc">Binary, Hex, Octal, Logic Gates, Complement</div>
-      <div class="cat-arrow" style="color:var(--neon2)">→</div>
+    <div class="cat-card" onclick="openSection('compSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #34d399)">🔩</span>
+      <div class="cat-title" style="color:#34d399">Components</div>
+      <div class="cat-desc">Encyclopedia — Symbol, Working, Uses, Specs</div>
+      <div class="cat-arrow" style="color:#34d399">→</div>
     </div>
-    <div class="cat-card" onclick="openSection('designSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ffe600)">📐</span>
-      <div class="cat-title" style="color:var(--neon3)">Design Tools</div>
-      <div class="cat-desc">PCB, LED, Resistor color code, Regulators</div>
-      <div class="cat-arrow" style="color:var(--neon3)">→</div>
+    <div class="cat-card" onclick="openSection('circuitSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #f97316)">⚡</span>
+      <div class="cat-title" style="color:#f97316">Circuit Designer</div>
+      <div class="cat-desc">Voltage Divider, CE Amp, Rectifier, Op-Amp & more</div>
+      <div class="cat-arrow" style="color:#f97316">→</div>
     </div>
-    <div class="cat-card" onclick="openSection('commSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #a259ff)">📡</span>
-      <div class="cat-title" style="color:var(--neon4)">Communication</div>
-      <div class="cat-desc">Modulation, Shannon, Antenna, Nyquist</div>
-      <div class="cat-arrow" style="color:var(--neon4)">→</div>
+    <div class="cat-card" onclick="openSection('simSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ffaa)">🧪</span>
+      <div class="cat-title" style="color:#00ffaa">Simulators</div>
+      <div class="cat-desc">Waveform, RC/RL, Bode Plot, Phasor, Logic, 555</div>
+      <div class="cat-arrow" style="color:#00ffaa">→</div>
     </div>
-    <div class="cat-card" onclick="openSection('practicalSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00b8ff)">💡</span>
-      <div class="cat-title" style="color:var(--neon5)">Practical Tools</div>
-      <div class="cat-desc">Cap decoder, IC reference, Zener, E-series</div>
-      <div class="cat-arrow" style="color:var(--neon5)">→</div>
-    </div>
-    <div class="cat-card" onclick="openSection('mcuSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">🔌</span>
-      <div class="cat-title" style="color:var(--neon2)">Microcontroller</div>
-      <div class="cat-desc">Timer, PWM, UART, ADC, SPI, I2C</div>
-      <div class="cat-arrow" style="color:var(--neon2)">→</div>
-    </div>
-    <div class="cat-card" onclick="openSection('signalSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ff88)">📊</span>
-      <div class="cat-title" style="color:#00ff88">Signal & Systems</div>
-      <div class="cat-desc">Energy, Power, Fourier, Sampling, Convolution</div>
-      <div class="cat-arrow" style="color:#00ff88">→</div>
-    </div>
-    <div class="cat-card" onclick="openSection('vlsiSection')">
-      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff9500)">🔬</span>
-      <div class="cat-title" style="color:#ff9500">VLSI Design</div>
-      <div class="cat-desc">CMOS delay, Power, Noise margin, Fan-out</div>
-      <div class="cat-arrow" style="color:#ff9500">→</div>
+    <div class="cat-card" onclick="openSection('calcSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ffe7)">🧮</span>
+      <div class="cat-title" style="color:#00ffe7">Calculators</div>
+      <div class="cat-desc">ECE Core · Digital · Design · Comm · MCU · VLSI · Signal</div>
+      <div class="cat-arrow" style="color:#00ffe7">→</div>
     </div>
   </div>
   <div class="stats-bar">
@@ -193,9 +288,64 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
   </div>
 </div>
 
+<!-- ===== CALCULATORS MAIN SECTION ===== -->
+<div id="calcSection" class="section" style="max-width:720px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title">🧮 CALCULATORS</div></div>
+  <div class="container">
+    <div class="cat-card" onclick="openCalc('eceSection')" style="margin-bottom:0;">
+      <span class="cat-icon">⚡</span>
+      <div class="cat-title">ECE Core</div>
+      <div class="cat-desc">Ohm's Law, Power, RC, Filters, BJT, MOSFET & more — 17 calculators</div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('digitalSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">💻</span>
+      <div class="cat-title" style="color:var(--neon2)">ECE Digital</div>
+      <div class="cat-desc">Binary, Hex, Octal, Logic Gates, Complement — 9 calculators</div>
+      <div class="cat-arrow" style="color:var(--neon2)">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('designSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ffe600)">📐</span>
+      <div class="cat-title" style="color:var(--neon3)">Design Tools</div>
+      <div class="cat-desc">PCB, LED, Resistor Color, Regulator, Battery — 6 calculators</div>
+      <div class="cat-arrow" style="color:var(--neon3)">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('commSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #a259ff)">📡</span>
+      <div class="cat-title" style="color:var(--neon4)">Communication</div>
+      <div class="cat-desc">AM/FM, Shannon, Friis, FSPL, Noise, Nyquist — 8 calculators</div>
+      <div class="cat-arrow" style="color:var(--neon4)">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('practicalSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00b8ff)">💡</span>
+      <div class="cat-title" style="color:var(--neon5)">Practical Tools</div>
+      <div class="cat-desc">Cap Decoder, E-series, Zener, IC Reference — 6 calculators</div>
+      <div class="cat-arrow" style="color:var(--neon5)">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('mcuSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff2d78)">🔌</span>
+      <div class="cat-title" style="color:var(--neon2)">Microcontroller</div>
+      <div class="cat-desc">Timer, PWM, UART, ADC, SPI, I2C — 7 calculators</div>
+      <div class="cat-arrow" style="color:var(--neon2)">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('signalSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ff88)">📊</span>
+      <div class="cat-title" style="color:#00ff88">Signal & Systems</div>
+      <div class="cat-desc">Energy, Power, Fourier, Sampling, SNR — 9 calculators</div>
+      <div class="cat-arrow" style="color:#00ff88">→</div>
+    </div>
+    <div class="cat-card" onclick="openCalc('vlsiSection')" style="margin-bottom:0;">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff9500)">🔬</span>
+      <div class="cat-title" style="color:#ff9500">VLSI Design</div>
+      <div class="cat-desc">CMOS Delay, Power, Noise Margin, W/L Ratio — 9 calculators</div>
+      <div class="cat-arrow" style="color:#ff9500">→</div>
+    </div>
+  </div>
+</div>
+
 <!-- ECE CORE -->
 <div id="eceSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title">⚡ ECE CORE</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title">⚡ ECE CORE</div></div>
   <div class="container">
     <div class="card"><h3>Ohm's Law</h3><input id="V" placeholder="Voltage (V)"><input id="I" placeholder="Current (A)"><input id="R" placeholder="Resistance (Ω)"><button onclick="ohm()">CALCULATE</button><div id="o1" class="output">Enter any 2 values</div></div>
     <div class="card"><h3>Power</h3><input id="v1" placeholder="Voltage (V)"><input id="i1" placeholder="Current (A)"><button onclick="power()">CALCULATE</button><div id="o2" class="output">P = V × I</div></div>
@@ -208,18 +358,18 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
     <div class="card"><h3>Current Divider</h3><input id="Iin" placeholder="Input Current (A)"><input id="Ra" placeholder="Ra (Ω)"><input id="Rb" placeholder="Rb (Ω)"><button onclick="cd()">CALCULATE</button><div id="o9" class="output">Iout = Iin×Rb/(Ra+Rb)</div></div>
     <div class="card"><h3>Impedance</h3><input id="res" placeholder="Resistance (Ω)"><input id="react" placeholder="Reactance (Ω)"><button onclick="imp()">CALCULATE</button><div id="o10" class="output">Z = √(R²+X²)</div></div>
     <div class="card"><h3>Decibel (dB)</h3><input id="g" placeholder="Gain (ratio)"><button onclick="db()">CALCULATE</button><div id="o12" class="output">dB = 20×log₁₀(gain)</div></div>
-    <div class="card"><h3>Bandwidth</h3><input id="fh" placeholder="High Frequency (Hz)"><input id="flw" placeholder="Low Frequency (Hz)"><button onclick="bw()">CALCULATE</button><div id="o13" class="output">BW = fH−fL</div></div>
-    <div class="card"><h3>Op-Amp Gain (Inverting)</h3><input id="Rf" placeholder="Rf (Ω)"><input id="Rin" placeholder="Rin (Ω)"><button onclick="opamp()">CALCULATE</button><div id="opout" class="output">Gain = −Rf/Rin</div></div>
+    <div class="card"><h3>Bandwidth</h3><input id="fh" placeholder="High Frequency (Hz)"><input id="flw" placeholder="Low Frequency (Hz)"><button onclick="bw()">CALCULATE</button><div id="o13" class="output">BW = fH-fL</div></div>
+    <div class="card"><h3>Op-Amp Gain (Inverting)</h3><input id="Rf" placeholder="Rf (Ω)"><input id="Rin" placeholder="Rin (Ω)"><button onclick="opamp()">CALCULATE</button><div id="opout" class="output">Gain = -Rf/Rin</div></div>
     <div class="card"><h3>Low Pass Filter Cutoff</h3><input id="Rlpf" placeholder="Resistance (Ω)"><input id="Clpf" placeholder="Capacitance (F)"><button onclick="lpf()">CALCULATE</button><div id="lpfout" class="output">Fc = 1/(2πRC)</div></div>
     <div class="card"><h3>High Pass Filter Cutoff</h3><input id="Rhpf" placeholder="Resistance (Ω)"><input id="Chpf" placeholder="Capacitance (F)"><button onclick="hpf()">CALCULATE</button><div id="hpfout" class="output">Fc = 1/(2πRC)</div></div>
     <div class="card"><h3>BJT Current Gain (β)</h3><input id="Ic" placeholder="Collector Current (A)"><input id="Ib" placeholder="Base Current (A)"><button onclick="bjt()">CALCULATE</button><div id="bjtout" class="output">β = Ic/Ib</div></div>
-    <div class="card"><h3>MOSFET Drain Current</h3><input id="Vgs" placeholder="Vgs (V)"><input id="Vth" placeholder="Vth (V)"><input id="kval" placeholder="k (A/V²)"><button onclick="mosfet()">CALCULATE</button><div id="mosout" class="output">Id = k/2×(Vgs−Vth)²</div></div>
+    <div class="card"><h3>MOSFET Drain Current</h3><input id="Vgs" placeholder="Vgs (V)"><input id="Vth" placeholder="Vth (V)"><input id="kval" placeholder="k (A/V²)"><button onclick="mosfet()">CALCULATE</button><div id="mosout" class="output">Id = k/2×(Vgs-Vth)²</div></div>
   </div>
 </div>
 
 <!-- DIGITAL -->
 <div id="digitalSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon2)">💻 DIGITAL</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:var(--neon2)">💻 DIGITAL</div></div>
   <div class="container">
     <div class="card"><h3>Binary → Decimal</h3><input id="bin" placeholder="Enter Binary (e.g. 1010)"><button onclick="binToDec()">CONVERT</button><div id="d1" class="output">Result here</div></div>
     <div class="card"><h3>Decimal → Binary</h3><input id="dec" placeholder="Enter Decimal"><button onclick="decToBin()">CONVERT</button><div id="d2" class="output">Result here</div></div>
@@ -242,7 +392,7 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 <!-- DESIGN TOOLS -->
 <div id="designSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon3)">📐 DESIGN TOOLS</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:var(--neon3)">📐 DESIGN TOOLS</div></div>
   <div class="container">
     <div class="card">
       <h3>Resistor Color Code Reader</h3>
@@ -254,7 +404,7 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
       <div id="resColorOut" class="output">Select all 4 bands</div>
       <div id="colorBands" class="bands-row"></div>
     </div>
-    <div class="card"><h3>LED Resistor Calculator</h3><input id="Vsup" placeholder="Supply Voltage (V)"><input id="Vled" placeholder="LED Forward Voltage (V) e.g. 2.0"><input id="Iled" placeholder="LED Current (mA) e.g. 20"><button onclick="ledRes()">CALCULATE</button><div id="ledOut" class="output">R = (Vs−Vf)/I</div></div>
+    <div class="card"><h3>LED Resistor Calculator</h3><input id="Vsup" placeholder="Supply Voltage (V)"><input id="Vled" placeholder="LED Forward Voltage (V) e.g. 2.0"><input id="Iled" placeholder="LED Current (mA) e.g. 20"><button onclick="ledRes()">CALCULATE</button><div id="ledOut" class="output">R = (Vs-Vf)/I</div></div>
     <div class="card"><h3>PCB Trace Width</h3><input id="pcbI" placeholder="Current (A)"><input id="pcbT" placeholder="Temp Rise (°C) e.g. 10"><input id="pcbTh" placeholder="Copper Thickness (oz) e.g. 1"><button onclick="pcbTrace()">CALCULATE</button><div id="pcbOut" class="output">IPC-2221 standard</div><div class="info-box">1oz copper = 35µm. External layer formula used.</div></div>
     <div class="card"><h3>Voltage Regulator (78xx) Check</h3><input id="vregIn" placeholder="Input Voltage (V)"><input id="vregOut" placeholder="Required Output (V)"><button onclick="vreg()">CHECK</button><div id="vregRes" class="output">Min dropout ~2V</div><div class="info-box"><strong>Common:</strong> 7805→5V · 7809→9V · 7812→12V · 7815→15V</div></div>
     <div class="card"><h3>Battery Life Estimator</h3><input id="batCap" placeholder="Battery Capacity (mAh)"><input id="batCurr" placeholder="Device Current (mA)"><button onclick="batLife()">ESTIMATE</button><div id="batOut" class="output">Life = Capacity/Current</div></div>
@@ -271,27 +421,27 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 <!-- COMMUNICATION -->
 <div id="commSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon4)">📡 COMMUNICATION</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:var(--neon4)">📡 COMMUNICATION</div></div>
   <div class="container">
     <div class="card"><h3>AM Modulation Index</h3><input id="amVm" placeholder="Message Amplitude Vm"><input id="amVc" placeholder="Carrier Amplitude Vc"><button onclick="amIndex()">CALCULATE</button><div id="amOut" class="output">µ = Vm/Vc</div><div class="info-box">µ &lt; 1: Under | µ = 1: Full | µ &gt; 1: Over-modulated</div></div>
     <div class="card"><h3>FM Modulation Index</h3><input id="fmDelta" placeholder="Frequency Deviation Δf (Hz)"><input id="fmFm" placeholder="Message Frequency fm (Hz)"><button onclick="fmIndex()">CALCULATE</button><div id="fmOut" class="output">β = Δf/fm</div></div>
     <div class="card"><h3>Shannon Channel Capacity</h3><input id="shB" placeholder="Bandwidth B (Hz)"><input id="shSNR" placeholder="SNR (linear ratio)"><button onclick="shannon()">CALCULATE</button><div id="shOut" class="output">C = B×log₂(1+SNR)</div></div>
-    <div class="card"><h3>Friis Transmission (Link Budget)</h3><input id="frisPt" placeholder="Tx Power Pt (dBm)"><input id="frisGt" placeholder="Tx Gain Gt (dBi)"><input id="frisGr" placeholder="Rx Gain Gr (dBi)"><input id="frisL" placeholder="Path Loss L (dB)"><button onclick="friis()">CALCULATE</button><div id="frisOut" class="output">Pr = Pt+Gt+Gr−L</div></div>
+    <div class="card"><h3>Friis Transmission (Link Budget)</h3><input id="frisPt" placeholder="Tx Power Pt (dBm)"><input id="frisGt" placeholder="Tx Gain Gt (dBi)"><input id="frisGr" placeholder="Rx Gain Gr (dBi)"><input id="frisL" placeholder="Path Loss L (dB)"><button onclick="friis()">CALCULATE</button><div id="frisOut" class="output">Pr = Pt+Gt+Gr-L</div></div>
     <div class="card"><h3>Free Space Path Loss</h3><input id="fsplF" placeholder="Frequency (MHz)"><input id="fsplD" placeholder="Distance (km)"><button onclick="fspl()">CALCULATE</button><div id="fsplOut" class="output">FSPL = 20log(d)+20log(f)+32.44</div></div>
-    <div class="card"><h3>Noise Figure</h3><input id="nfSnrIn" placeholder="SNR Input (dB)"><input id="nfSnrOut" placeholder="SNR Output (dB)"><button onclick="noiseFig()">CALCULATE</button><div id="nfOut" class="output">NF = SNRin−SNRout</div></div>
+    <div class="card"><h3>Noise Figure</h3><input id="nfSnrIn" placeholder="SNR Input (dB)"><input id="nfSnrOut" placeholder="SNR Output (dB)"><button onclick="noiseFig()">CALCULATE</button><div id="nfOut" class="output">NF = SNRin-SNRout</div></div>
     <div class="card"><h3>Wavelength Calculator</h3><input id="wlFreq" placeholder="Frequency (Hz)"><button onclick="wavelength()">CALCULATE</button><div id="wlOut" class="output">λ = c/f</div></div>
-    <div class="card"><h3>Nyquist Sampling Rate</h3><input id="nyqF" placeholder="Max Signal Frequency (Hz)"><button onclick="nyquist()">CALCULATE</button><div id="nyqOut" class="output">fs ≥ 2×fmax</div></div>
+    <div class="card"><h3>Nyquist Sampling Rate</h3><input id="nyqF" placeholder="Max Signal Frequency (Hz)"><button onclick="nyquist()">CALCULATE</button><div id="nyqOut" class="output">fs >= 2×fmax</div></div>
   </div>
 </div>
 
 <!-- PRACTICAL TOOLS -->
 <div id="practicalSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon5)">💡 PRACTICAL TOOLS</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:var(--neon5)">💡 PRACTICAL TOOLS</div></div>
   <div class="container">
     <div class="card"><h3>Capacitor Code Decoder</h3><input id="capCode" placeholder="Enter code (e.g. 104, 472)"><button onclick="capDecode()">DECODE</button><div id="capDecOut" class="output">e.g. 104 → 100nF</div><div class="info-box">First 2 digits = value, 3rd = multiplier (10^n). Result in pF.</div></div>
     <div class="card"><h3>E12 / E24 Resistor Finder</h3><input id="eserVal" placeholder="Required resistance (Ω)"><select id="eserSeries"><option value="12">E12 Series</option><option value="24">E24 Series</option></select><button onclick="eSeries()">FIND NEAREST</button><div id="eserOut" class="output">Nearest standard value</div></div>
     <div class="card"><h3>Power Dissipation in Resistor</h3><input id="pdV" placeholder="Voltage across R (V)"><input id="pdR" placeholder="Resistance (Ω)"><button onclick="powerDiss()">CALCULATE</button><div id="pdOut" class="output">P = V²/R</div></div>
-    <div class="card"><h3>Zener Diode Regulator</h3><input id="zenVin" placeholder="Input Voltage (V)"><input id="zenVz" placeholder="Zener Voltage (V)"><input id="zenIL" placeholder="Load Current (mA)"><button onclick="zener()">CALCULATE</button><div id="zenOut" class="output">Rs = (Vin−Vz)/IL</div></div>
+    <div class="card"><h3>Zener Diode Regulator</h3><input id="zenVin" placeholder="Input Voltage (V)"><input id="zenVz" placeholder="Zener Voltage (V)"><input id="zenIL" placeholder="Load Current (mA)"><button onclick="zener()">CALCULATE</button><div id="zenOut" class="output">Rs = (Vin-Vz)/IL</div></div>
     <div class="card">
       <h3>IC Quick Reference</h3>
       <select id="icRef"><option value="">Select IC</option><option value="555">NE555 – Timer</option><option value="741">LM741 – Op-Amp</option><option value="7805">LM7805 – 5V Reg</option><option value="7812">LM7812 – 12V Reg</option><option value="4017">CD4017 – Decade Counter</option><option value="7400">74LS00 – Quad NAND</option><option value="7486">74LS86 – Quad XOR</option><option value="324">LM324 – Quad Op-Amp</option></select>
@@ -304,11 +454,11 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 <!-- MICROCONTROLLER -->
 <div id="mcuSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:var(--neon2)">🔌 MICROCONTROLLER</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:var(--neon2)">🔌 MICROCONTROLLER</div></div>
   <div class="container">
     <div class="card"><h3>Timer Frequency (Arduino)</h3><input id="timerClk" placeholder="Clock Freq (Hz) e.g. 16000000"><input id="timerPre" placeholder="Prescaler (1,8,64,256,1024)"><input id="timerOCR" placeholder="OCR Value (0-255)"><button onclick="timerFreq()">CALCULATE</button><div id="timerOut" class="output">f = Fclk/(2×N×(1+OCR))</div></div>
     <div class="card"><h3>PWM Duty Cycle</h3><input id="pwmOn" placeholder="ON time (ms)"><input id="pwmPeriod" placeholder="Total Period (ms)"><button onclick="pwmDuty()">CALCULATE</button><div id="pwmOut" class="output">Duty = (Ton/T)×100%</div></div>
-    <div class="card"><h3>UART Baud Rate (AVR)</h3><input id="uartClk" placeholder="CPU Clock (Hz) e.g. 16000000"><input id="uartBaud" placeholder="Baud Rate e.g. 9600"><button onclick="uartCalc()">CALCULATE</button><div id="uartOut" class="output">UBRR = Fclk/(16×Baud)−1</div></div>
+    <div class="card"><h3>UART Baud Rate (AVR)</h3><input id="uartClk" placeholder="CPU Clock (Hz) e.g. 16000000"><input id="uartBaud" placeholder="Baud Rate e.g. 9600"><button onclick="uartCalc()">CALCULATE</button><div id="uartOut" class="output">UBRR = Fclk/(16×Baud)-1</div></div>
     <div class="card"><h3>ADC Step Size &amp; Resolution</h3><input id="adcVref" placeholder="Vref (V)"><input id="adcBits" placeholder="Bit Resolution (e.g. 10, 12)"><button onclick="adcCalc()">CALCULATE</button><div id="adcOut" class="output">Step = Vref/2^n</div></div>
     <div class="card"><h3>ADC Reading → Voltage</h3><input id="adcDig" placeholder="Digital Reading (e.g. 512)"><input id="adcVref2" placeholder="Vref (V)"><input id="adcBits2" placeholder="Bit Resolution"><button onclick="adcVoltage()">CALCULATE</button><div id="adcVout" class="output">Vin = (D/2^n)×Vref</div></div>
     <div class="card"><h3>SPI Clock Speed</h3><input id="spiClk" placeholder="CPU Clock (Hz)"><select id="spiDiv"><option value="2">/2</option><option value="4">/4</option><option value="8">/8</option><option value="16">/16</option><option value="32">/32</option><option value="64">/64</option><option value="128">/128</option></select><button onclick="spiSpeed()">CALCULATE</button><div id="spiOut" class="output">SPI CLK = Fclk/Div</div></div>
@@ -318,13 +468,13 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 <!-- SIGNAL & SYSTEMS -->
 <div id="signalSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#00ff88">📊 SIGNAL & SYSTEMS</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:#00ff88">📊 SIGNAL & SYSTEMS</div></div>
   <div class="container">
     <div class="card"><h3>Signal Energy</h3><input id="sigAmp" placeholder="Amplitude A"><input id="sigDur" placeholder="Duration T (seconds)"><button onclick="sigEnergy()">CALCULATE</button><div id="sigEOut" class="output">E = A² × T</div></div>
-    <div class="card"><h3>Signal Power</h3><input id="sigAmp2" placeholder="Amplitude A"><input id="sigT1" placeholder="Start Time T1"><input id="sigT2" placeholder="End Time T2"><button onclick="sigPower()">CALCULATE</button><div id="sigPOut" class="output">P = A² / (T2−T1)</div></div>
+    <div class="card"><h3>Signal Power</h3><input id="sigAmp2" placeholder="Amplitude A"><input id="sigT1" placeholder="Start Time T1"><input id="sigT2" placeholder="End Time T2"><button onclick="sigPower()">CALCULATE</button><div id="sigPOut" class="output">P = A² / (T2-T1)</div></div>
     <div class="card"><h3>Fourier Series – nth Harmonic Freq</h3><input id="fsF0" placeholder="Fundamental Frequency f0 (Hz)"><input id="fsN" placeholder="Harmonic number n (1,2,3...)"><button onclick="fourierHarm()">CALCULATE</button><div id="fsOut" class="output">fn = n × f0</div></div>
-    <div class="card"><h3>Nyquist Sampling Theorem</h3><input id="nysMax" placeholder="Max Signal Frequency fmax (Hz)"><button onclick="nysSamp()">CALCULATE</button><div id="nysOut" class="output">fs ≥ 2 × fmax</div><div class="info-box">Minimum sampling rate to avoid aliasing. Practical rate = 2.5× fmax recommended.</div></div>
-    <div class="card"><h3>Convolution Length</h3><input id="convL1" placeholder="Signal 1 Length (N1)"><input id="convL2" placeholder="Signal 2 Length (N2)"><button onclick="convLen()">CALCULATE</button><div id="convOut" class="output">L = N1 + N2 − 1</div></div>
+    <div class="card"><h3>Nyquist Sampling Theorem</h3><input id="nysMax" placeholder="Max Signal Frequency fmax (Hz)"><button onclick="nysSamp()">CALCULATE</button><div id="nysOut" class="output">fs >= 2 × fmax</div><div class="info-box">Minimum sampling rate to avoid aliasing. Practical rate = 2.5× fmax recommended.</div></div>
+    <div class="card"><h3>Convolution Length</h3><input id="convL1" placeholder="Signal 1 Length (N1)"><input id="convL2" placeholder="Signal 2 Length (N2)"><button onclick="convLen()">CALCULATE</button><div id="convOut" class="output">L = N1 + N2 - 1</div></div>
     <div class="card"><h3>DFT / IDFT Size Check</h3><input id="dftN" placeholder="Number of samples N"><button onclick="dftCheck()">CALCULATE</button><div id="dftOut" class="output">Frequency resolution = fs/N</div></div>
     <div class="card"><h3>Time Constant → Frequency</h3><input id="tauVal" placeholder="Time Constant τ (seconds)"><button onclick="tauToFreq()">CALCULATE</button><div id="tauOut" class="output">f = 1 / (2πτ)</div></div>
     <div class="card"><h3>System Stability (Pole Check)</h3><input id="poleReal" placeholder="Real part of pole (σ)"><button onclick="poleCheck()">CHECK</button><div id="poleOut" class="output">Enter real part of pole</div><div class="info-box">For continuous-time: σ &lt; 0 → Stable | σ = 0 → Marginally stable | σ &gt; 0 → Unstable</div></div>
@@ -334,23 +484,989 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 <!-- VLSI DESIGN -->
 <div id="vlsiSection" class="section">
-  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#ff9500">🔬 VLSI DESIGN</div></div>
+  <div class="section-header"><button class="back-btn" onclick="backToCalc()">← Calculators</button><div class="section-title" style="color:#ff9500">🔬 VLSI DESIGN</div></div>
   <div class="container">
     <div class="card"><h3>CMOS Propagation Delay</h3><input id="cmosCL" placeholder="Load Capacitance CL (F)"><input id="cmosVdd" placeholder="Supply Voltage Vdd (V)"><input id="cmosId" placeholder="Avg Drive Current Id (A)"><button onclick="cmosDelay()">CALCULATE</button><div id="cmosOut" class="output">tp = CL × Vdd / (2 × Id)</div></div>
     <div class="card"><h3>Dynamic Power Dissipation</h3><input id="dynC" placeholder="Load Capacitance C (F)"><input id="dynV" placeholder="Supply Voltage Vdd (V)"><input id="dynF" placeholder="Clock Frequency f (Hz)"><input id="dynA" placeholder="Activity Factor α (0–1)"><button onclick="dynPower()">CALCULATE</button><div id="dynOut" class="output">P = α × C × Vdd² × f</div></div>
     <div class="card"><h3>Static / Leakage Power</h3><input id="statI" placeholder="Leakage Current Ileak (A)"><input id="statV" placeholder="Supply Voltage Vdd (V)"><button onclick="statPower()">CALCULATE</button><div id="statOut" class="output">P = Ileak × Vdd</div></div>
-    <div class="card"><h3>Noise Margin (CMOS)</h3><input id="nmVoh" placeholder="VOH – Output High (V)"><input id="nmVih" placeholder="VIH – Input High threshold (V)"><input id="nmVil" placeholder="VIL – Input Low threshold (V)"><input id="nmVol" placeholder="VOL – Output Low (V)"><button onclick="noiseMargin()">CALCULATE</button><div id="nmOut" class="output">NMH = VOH−VIH | NML = VIL−VOL</div></div>
+    <div class="card"><h3>Noise Margin (CMOS)</h3><input id="nmVoh" placeholder="VOH – Output High (V)"><input id="nmVih" placeholder="VIH – Input High threshold (V)"><input id="nmVil" placeholder="VIL – Input Low threshold (V)"><input id="nmVol" placeholder="VOL – Output Low (V)"><button onclick="noiseMargin()">CALCULATE</button><div id="nmOut" class="output">NMH = VOH-VIH | NML = VIL-VOL</div></div>
     <div class="card"><h3>Fan-Out Calculation</h3><input id="foIout" placeholder="Driver Output Current Iout (mA)"><input id="foIin" placeholder="Each Gate Input Current Iin (mA)"><button onclick="fanOut()">CALCULATE</button><div id="foOut" class="output">Fan-Out = Iout / Iin</div></div>
-    <div class="card"><h3>MOSFET W/L Ratio</h3><input id="wlId" placeholder="Required Drain Current Id (A)"><input id="wlMu" placeholder="Carrier Mobility µ (cm²/Vs)"><input id="wlCox" placeholder="Gate Oxide Capacitance Cox (F/m²)"><input id="wlVov" placeholder="Overdrive Voltage Vov = Vgs−Vth (V)"><button onclick="wlRatio()">CALCULATE</button><div id="wlOut" class="output">W/L = 2Id / (µ × Cox × Vov²)</div></div>
+    <div class="card"><h3>MOSFET W/L Ratio</h3><input id="wlId" placeholder="Required Drain Current Id (A)"><input id="wlMu" placeholder="Carrier Mobility µ (cm²/Vs)"><input id="wlCox" placeholder="Gate Oxide Capacitance Cox (F/m²)"><input id="wlVov" placeholder="Overdrive Voltage Vov = Vgs-Vth (V)"><button onclick="wlRatio()">CALCULATE</button><div id="wlOut" class="output">W/L = 2Id / (µ × Cox × Vov²)</div></div>
     <div class="card"><h3>Gate Oxide Thickness → Cox</h3><input id="toxVal" placeholder="Oxide Thickness tox (nm)"><button onclick="coxCalc()">CALCULATE</button><div id="coxOut" class="output">Cox = ε₀×εr / tox</div><div class="info-box">εr of SiO₂ ≈ 3.9 | ε₀ = 8.854×10⁻¹² F/m</div></div>
     <div class="card"><h3>Critical Path Delay</h3><input id="cpStages" placeholder="Number of gate stages"><input id="cpTp" placeholder="Propagation delay per gate tp (ns)"><button onclick="critPath()">CALCULATE</button><div id="cpOut" class="output">Total delay = N × tp</div></div>
     <div class="card"><h3>Power Delay Product (PDP)</h3><input id="pdpP" placeholder="Power P (W)"><input id="pdpTp" placeholder="Propagation Delay tp (s)"><button onclick="pdpCalc()">CALCULATE</button><div id="pdpOut" class="output">PDP = P × tp</div><div class="info-box">Lower PDP = better design. Unit: Joules (energy per switching event).</div></div>
   </div>
 </div>
 
+<!-- THEORY / AKTU NOTES -->
+<div id="theorySection" class="section" style="max-width:800px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#c084fc">📚 AKTU ECE NOTES</div></div>
+
+  <!-- SEM TABS -->
+  <div class="sem-tabs">
+    <button class="sem-tab active" onclick="showSem(1)">SEM 1</button>
+    <button class="sem-tab" onclick="showSem(2)">SEM 2</button>
+    <button class="sem-tab" onclick="showSem(3)">SEM 3</button>
+    <button class="sem-tab" onclick="showSem(4)">SEM 4</button>
+    <button class="sem-tab" onclick="showSem(5)">SEM 5</button>
+    <button class="sem-tab" onclick="showSem(6)">SEM 6</button>
+    <button class="sem-tab" onclick="showSem(7)">SEM 7</button>
+    <button class="sem-tab" onclick="showSem(8)">SEM 8</button>
+  </div>
+
+  <!-- SEM 1 -->
+  <div class="sem-content active" id="sem1">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Mathematics – I</div><div class="subject-code">KAS101 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Matrices – Rank, Eigen values, Eigen vectors, Cayley-Hamilton</li>
+          <li>Differential Calculus – Rolle's, Lagrange's, Taylor's theorem</li>
+          <li>Partial Differentiation – Euler's theorem, maxima/minima</li>
+          <li>Multiple Integrals – Double, Triple integrals, applications</li>
+          <li>Vector Calculus – Gradient, Divergence, Curl, Green's, Stokes', Gauss theorem</li>
+          <li>Ordinary Differential Equations – 1st & 2nd order, Linear ODE</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Euler's Theorem:</span> x·∂u/∂x + y·∂u/∂y = n·u</div>
+        <div class="formula-box"><span>Cayley-Hamilton:</span> Every matrix satisfies its own characteristic equation</div>
+        <div class="formula-box"><span>Gradient:</span> ∇f = (∂f/∂x)î + (∂f/∂y)ĵ + (∂f/∂z)k̂</div>
+        <div class="formula-box"><span>Stokes' Theorem:</span> ∮ F·dr = ∬(∇×F)·dS</div>
+        <div class="theory-section-title">🔗 Resources</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 AKTU Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=KAS101+AKTU+Mathematics+1" target="_blank">▶ YouTube Lectures</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=AKTU+Maths+1+PYQ" target="_blank">📝 PYQ Solutions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Engineering Physics</div><div class="subject-code">KAS101 / KAS201 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Wave Optics – Interference, Diffraction, Polarization</li>
+          <li>Laser – Types, Properties, Applications</li>
+          <li>Fiber Optics – Numerical Aperture, Types of fibers</li>
+          <li>Quantum Mechanics – de Broglie, Heisenberg, Schrödinger equation</li>
+          <li>Semiconductors – Energy bands, Hall effect</li>
+          <li>Dielectrics & Superconductors</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>de Broglie:</span> λ = h/mv = h/p</div>
+        <div class="formula-box"><span>Numerical Aperture:</span> NA = √(n₁² - n₂²)</div>
+        <div class="formula-box"><span>Heisenberg:</span> Δx · Δp >= ℏ/2</div>
+        <div class="theory-section-title">🔗 Resources</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 AKTU Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Engineering+Physics+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Engineering+Physics+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Basic Electrical Engineering</div><div class="subject-code">KEE101 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>DC Circuits – KVL, KCL, Thevenin, Norton, Superposition</li>
+          <li>AC Circuits – Phasors, Power factor, Resonance</li>
+          <li>Transformers – Working, Efficiency, Losses</li>
+          <li>DC Machines – Generator, Motor, Back EMF</li>
+          <li>AC Machines – Induction motor, Synchronous motor</li>
+          <li>Measuring Instruments – Ammeter, Voltmeter, Wattmeter</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>KVL:</span> ΣV = 0 (around closed loop)</div>
+        <div class="formula-box"><span>KCL:</span> ΣI = 0 (at node)</div>
+        <div class="formula-box"><span>Power Factor:</span> PF = cos φ = P / (V·I)</div>
+        <div class="formula-box"><span>Transformer Ratio:</span> V1/V2 = N1/N2 = I2/I1</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=KEE101+AKTU+BEE" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=BEE+AKTU+PYQ+solved" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Engineering Graphics & Design</div><div class="subject-code">KME151 | L-T-P: 1-0-4</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Orthographic Projections – 1st & 3rd angle</li>
+          <li>Isometric Views & Drawing</li>
+          <li>Section of Solids – Cone, Cylinder, Prism, Pyramid</li>
+          <li>Development of Surfaces</li>
+          <li>AutoCAD Basics – 2D drawing commands</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Engineering+Graphics+AKTU+1st+sem" target="_blank">▶ YouTube</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 2 -->
+  <div class="sem-content" id="sem2">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Mathematics – II</div><div class="subject-code">KAS201 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Laplace Transform – Properties, Inverse, Applications to ODE</li>
+          <li>Fourier Series – Half range, Parseval's theorem</li>
+          <li>Fourier Transform – Properties, Convolution theorem</li>
+          <li>Z-Transform – Properties, Inverse Z-transform</li>
+          <li>Statistics – Mean, Variance, Correlation, Regression</li>
+          <li>Probability – Bayes theorem, Distributions (Binomial, Poisson, Normal)</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Laplace:</span> L{f(t)} = ∫₀^∞ e^(-st) f(t) dt</div>
+        <div class="formula-box"><span>Fourier Series:</span> f(x) = a₀/2 + Σ(aₙcos(nx) + bₙsin(nx))</div>
+        <div class="formula-box"><span>Z-Transform:</span> Z{x[n]} = Σ x[n]·z^(-n)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=KAS201+AKTU+Maths+2" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=AKTU+Maths+2+PYQ+solved" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Basic Electronics Engineering</div><div class="subject-code">KEC201 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Semiconductor Diodes – PN junction, Zener, LED, Photodiode</li>
+          <li>Rectifiers – Half wave, Full wave, Bridge, Filters</li>
+          <li>Transistors – BJT configurations, biasing, load line</li>
+          <li>Amplifiers – CE, CB, CC configurations</li>
+          <li>Op-Amp – Inverting, Non-inverting, Summing, Differentiator</li>
+          <li>Logic Gates & Boolean Algebra</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Ripple Factor (HWR):</span> γ = 1.21</div>
+        <div class="formula-box"><span>Ripple Factor (FWR):</span> γ = 0.48</div>
+        <div class="formula-box"><span>BJT:</span> IC = β·IB | IE = IC + IB</div>
+        <div class="formula-box"><span>Op-Amp Gain (Inv):</span> Av = -Rf/Rin</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=KEC201+Basic+Electronics+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Basic+Electronics+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Programming for Problem Solving (C)</div><div class="subject-code">KCS101 | L-T-P: 3-0-2</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>C Basics – Data types, operators, I/O, control statements</li>
+          <li>Functions – Call by value/reference, Recursion</li>
+          <li>Arrays & Strings – 1D, 2D, string functions</li>
+          <li>Pointers – Pointer arithmetic, pointers to arrays/functions</li>
+          <li>Structures & Unions</li>
+          <li>File Handling – fopen, fclose, fprintf, fscanf</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=C+Programming+AKTU+KCS101" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=C+programming+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 3 -->
+  <div class="sem-content" id="sem3">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Electronic Devices & Circuits (EDC)</div><div class="subject-code">KEC301 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>PN Junction – V-I characteristics, Breakdown mechanisms</li>
+          <li>BJT – Input/Output characteristics, h-parameters, biasing</li>
+          <li>FET & MOSFET – JFET, Depletion/Enhancement MOSFET</li>
+          <li>Small Signal Models – π-model, T-model</li>
+          <li>Multistage Amplifiers – RC coupled, Cascade</li>
+          <li>Feedback Amplifiers – Types, Effect on gain/bandwidth</li>
+          <li>Oscillators – Barkhausen criterion, RC, LC, Crystal</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Diode Equation:</span> I = I₀(e^(V/ηVT) - 1)</div>
+        <div class="formula-box"><span>h-parameter:</span> Ai = -hfe / (1 + hoe·RL)</div>
+        <div class="formula-box"><span>Barkhausen:</span> Aβ = 1 ∠0°</div>
+        <div class="formula-box"><span>MOSFET Id:</span> Id = k/2·(Vgs-Vth)²</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=EDC+KEC301+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=EDC+AKTU+PYQ+solved" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Digital Electronics</div><div class="subject-code">KEC302 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Number Systems – Binary, Octal, Hex, BCD, Gray code</li>
+          <li>Boolean Algebra – Theorems, De Morgan's laws</li>
+          <li>Combinational Circuits – MUX, DEMUX, Encoder, Decoder, Adder</li>
+          <li>K-Map – 2, 3, 4 variable simplification, SOP & POS</li>
+          <li>Sequential Circuits – Flip-flops (SR, JK, D, T), Counters, Registers</li>
+          <li>Logic Families – TTL, CMOS, ECL</li>
+          <li>ADC & DAC – Types, Resolution, Conversion time</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>De Morgan's:</span> (A·B)' = A' + B' | (A+B)' = A'·B'</div>
+        <div class="formula-box"><span>Gray to Binary:</span> B[n] = G[n] XOR B[n+1]</div>
+        <div class="formula-box"><span>ADC Resolution:</span> Step = Vref / 2^n</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Digital+Electronics+KEC302+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Digital+Electronics+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Network Analysis & Synthesis</div><div class="subject-code">KEC303 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Network Theorems – Thevenin, Norton, Superposition, Maximum Power Transfer</li>
+          <li>Graph Theory – Tree, Co-tree, Incidence matrix</li>
+          <li>Two-Port Networks – Z, Y, h, ABCD parameters</li>
+          <li>Network Functions – Driving point, Transfer functions</li>
+          <li>Filters – Low pass, High pass, Band pass, Band stop</li>
+          <li>Attenuators – T-type, π-type</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Thevenin:</span> Vth = Voc | Rth = Voc/Isc</div>
+        <div class="formula-box"><span>Max Power Transfer:</span> RL = Rth → Pmax = Vth²/4Rth</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Network+Analysis+AKTU+KEC303" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Network+Analysis+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Signals & Systems</div><div class="subject-code">KEC304 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Signals – Classification, Basic operations, Unit step, Impulse, Ramp</li>
+          <li>Systems – LTI, Causality, Stability, Linearity</li>
+          <li>Convolution – Continuous & Discrete time</li>
+          <li>Fourier Series & Transform – CTFS, CTFT, DTFT, DFT</li>
+          <li>Laplace Transform – ROC, Inverse, System analysis</li>
+          <li>Z-Transform – ROC, Inverse, Stability analysis</li>
+          <li>Sampling – Nyquist theorem, Aliasing</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Convolution:</span> y(t) = x(t) * h(t) = ∫x(τ)h(t-τ)dτ</div>
+        <div class="formula-box"><span>CTFT:</span> X(jω) = ∫x(t)e^(-jωt)dt</div>
+        <div class="formula-box"><span>Nyquist:</span> fs >= 2·fmax</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Signals+Systems+KEC304+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Signals+Systems+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 4 -->
+  <div class="sem-content" id="sem4">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Analog Electronics</div><div class="subject-code">KEC401 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Op-Amp – Ideal vs Practical, CMRR, Slew rate, GBW</li>
+          <li>Op-Amp Applications – Adder, Subtractor, Integrator, Differentiator</li>
+          <li>Active Filters – 1st, 2nd order LPF, HPF, BPF</li>
+          <li>Oscillators – Wien bridge, Phase shift, 555 timer</li>
+          <li>Power Amplifiers – Class A, B, AB, C efficiency</li>
+          <li>Voltage Regulators – Series, Shunt, IC regulators (78xx)</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>CMRR:</span> CMRR = Ad/Ac (dB = 20log(Ad/Ac))</div>
+        <div class="formula-box"><span>Class A Efficiency:</span> η_max = 25%</div>
+        <div class="formula-box"><span>Class B Efficiency:</span> η_max = 78.5%</div>
+        <div class="formula-box"><span>555 Frequency:</span> f = 1.44/((R1+2R2)·C)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Analog+Electronics+KEC401+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Analog+Electronics+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Control Systems</div><div class="subject-code">KEC402 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Open & Closed Loop Systems – Transfer function, Block diagram reduction</li>
+          <li>Signal Flow Graph – Mason's gain formula</li>
+          <li>Time Response – 1st & 2nd order systems, Steady state error</li>
+          <li>Stability – Routh-Hurwitz criterion, Root locus</li>
+          <li>Frequency Response – Bode plot, Nyquist criterion, Phase/Gain margin</li>
+          <li>Controllers – P, PI, PD, PID</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>2nd Order:</span> ωn²/(s²+2ζωns+ωn²)</div>
+        <div class="formula-box"><span>Steady State Error:</span> ess = lim(s→0) s·E(s)</div>
+        <div class="formula-box"><span>Phase Margin:</span> PM = 180° + ∠G(jω)H(jω)|at GC freq</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Control+Systems+KEC402+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Control+Systems+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Electromagnetic Field Theory</div><div class="subject-code">KEC403 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Vector Analysis – Coordinate systems, Gradient, Divergence, Curl</li>
+          <li>Electrostatics – Coulomb's law, Gauss's law, Electric potential</li>
+          <li>Magnetostatics – Biot-Savart, Ampere's law, Magnetic flux</li>
+          <li>Maxwell's Equations – Differential & Integral forms</li>
+          <li>Electromagnetic Waves – Wave equation, Propagation, Skin depth</li>
+          <li>Transmission Lines – VSWR, Reflection coefficient, Smith chart</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Coulomb's Law:</span> F = Q1Q2/(4πε₀r²)</div>
+        <div class="formula-box"><span>Maxwell (Faraday):</span> ∇×E = -∂B/∂t</div>
+        <div class="formula-box"><span>Skin Depth:</span> δ = √(2/ωμσ)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=EMF+Theory+KEC403+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=EMF+AKTU+PYQ+solved" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Microprocessor & Microcontroller</div><div class="subject-code">KEC404 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>8085 Architecture – Registers, Buses, Flags, Timing diagram</li>
+          <li>8085 Instruction Set – Data transfer, Arithmetic, Logical, Branch</li>
+          <li>8085 Programming – Assembly language programs</li>
+          <li>Interfacing – 8255 PPI, 8253 Timer, ADC, DAC, LCD, Keyboard</li>
+          <li>8051 Microcontroller – Architecture, Ports, Timers, Interrupts, Serial comm</li>
+          <li>8051 Programming – Assembly & Embedded C basics</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>8085 Stack:</span> PUSH/POP — SP decrements/increments by 2</div>
+        <div class="formula-box"><span>8051 Timer:</span> Delay = (65536 - TH:TL) × Machine cycle</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Microprocessor+8085+AKTU+KEC404" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Microprocessor+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 5 -->
+  <div class="sem-content" id="sem5">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Digital Signal Processing (DSP)</div><div class="subject-code">KEC501 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>DFT & IDFT – Properties, Circular convolution</li>
+          <li>FFT – Radix-2 DIT & DIF algorithms</li>
+          <li>IIR Filter Design – Butterworth, Chebyshev, Bilinear transformation</li>
+          <li>FIR Filter Design – Window methods (Rectangular, Hamming, Hanning)</li>
+          <li>Multirate Signal Processing – Decimation, Interpolation</li>
+          <li>DSP Processors – TMS320 architecture basics</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>DFT:</span> X[k] = Σ x[n]·W_N^(nk), W_N = e^(-j2π/N)</div>
+        <div class="formula-box"><span>FFT Complexity:</span> N·log₂N (vs N² for DFT)</div>
+        <div class="formula-box"><span>Bilinear Transform:</span> s = 2/T·(z-1)/(z+1)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=DSP+KEC501+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=DSP+AKTU+PYQ+solved" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Communication Systems</div><div class="subject-code">KEC502 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>AM – DSBFC, DSBSC, SSB, VSB – modulation index, power</li>
+          <li>FM & PM – Modulation index, Carson's rule, Bessel functions</li>
+          <li>Noise – Types, SNR, Noise figure, Friis formula</li>
+          <li>Digital Modulation – ASK, FSK, PSK, QPSK, QAM</li>
+          <li>Pulse Modulation – PAM, PWM, PPM, PCM, DPCM, DM</li>
+          <li>Information Theory – Entropy, Channel capacity, Shannon's theorem</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>AM Power:</span> Pt = Pc(1 + µ²/2)</div>
+        <div class="formula-box"><span>FM BW (Carson):</span> BW = 2(Δf + fm)</div>
+        <div class="formula-box"><span>Shannon:</span> C = B·log₂(1 + SNR)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Communication+Systems+KEC502+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Communication+Systems+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">VLSI Design</div><div class="subject-code">KEC503 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>MOS Transistor – IV characteristics, scaling, short channel effects</li>
+          <li>CMOS Inverter – DC & Transient analysis, Noise margin</li>
+          <li>CMOS Logic – Combinational (NAND, NOR, AOI) & Sequential circuits</li>
+          <li>VLSI Design Flow – RTL to GDSII, Synthesis, Place & Route</li>
+          <li>FPGA & PLD – LUT, CLB, Routing resources</li>
+          <li>HDL – VHDL/Verilog basics for VLSI</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Dynamic Power:</span> P = α·C·Vdd²·f</div>
+        <div class="formula-box"><span>Propagation Delay:</span> tp = CL·Vdd/(2·Id)</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=VLSI+Design+KEC503+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=VLSI+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Microwave Engineering</div><div class="subject-code">KEC504 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Transmission Lines – Reflection coefficient, VSWR, Smith Chart</li>
+          <li>Waveguides – Rectangular, Circular – TE, TM, TEM modes</li>
+          <li>Microwave Tubes – Klystron, Magnetron, TWT</li>
+          <li>Microwave Semiconductors – Gunn diode, PIN diode, IMPATT</li>
+          <li>Microwave Measurements – Power, Frequency, VSWR</li>
+          <li>Microwave Antennas – Horn, Parabolic reflector</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>VSWR:</span> S = (1+|Γ|)/(1-|Γ|)</div>
+        <div class="formula-box"><span>Cutoff freq (waveguide):</span> fc = c/(2a) for TE10</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Microwave+Engineering+AKTU+KEC504" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Microwave+Engineering+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 6 -->
+  <div class="sem-content" id="sem6">
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Wireless Communication</div><div class="subject-code">KEC601 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Mobile Radio Propagation – Path loss, Shadowing, Multipath fading</li>
+          <li>Cellular Concepts – Frequency reuse, Handoff, Co-channel interference</li>
+          <li>Multiple Access – FDMA, TDMA, CDMA, OFDMA</li>
+          <li>GSM, GPRS, EDGE, 3G/4G/5G overview</li>
+          <li>MIMO & Smart Antenna Systems</li>
+          <li>Spread Spectrum – DSSS, FHSS</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Free Space Loss:</span> FSPL = (4πd/λ)²</div>
+        <div class="formula-box"><span>Frequency Reuse:</span> N = i² + ij + j²</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Wireless+Communication+AKTU+KEC601" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Wireless+Communication+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Antenna & Wave Propagation</div><div class="subject-code">KEC602 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Antenna Fundamentals – Radiation pattern, Gain, Directivity, Efficiency</li>
+          <li>Half-wave Dipole & Quarter-wave Monopole</li>
+          <li>Antenna Arrays – Linear array, Broadside, End-fire</li>
+          <li>Aperture Antennas – Horn, Parabolic reflector</li>
+          <li>Special Antennas – Yagi-Uda, Log-periodic, Helical, Microstrip</li>
+          <li>Wave Propagation – Ground, Sky, Space wave</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>Directivity:</span> D = 4π·Umax / Prad</div>
+        <div class="formula-box"><span>Friis:</span> Pr = Pt·Gt·Gr·(λ/4πd)²</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Antenna+Wave+Propagation+AKTU+KEC602" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Antenna+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Embedded Systems</div><div class="subject-code">KEC603 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Embedded System Basics – Architecture, Classification, Applications</li>
+          <li>ARM Processor – Architecture, Instruction set, Pipeline</li>
+          <li>RTOS – Tasks, Scheduling, Semaphores, Mutex, IPC</li>
+          <li>Interfacing – UART, SPI, I²C, CAN, USB protocols</li>
+          <li>Sensor Interfacing – ADC, DAC, Temperature, GPS</li>
+          <li>Power Management in Embedded Systems</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Embedded+Systems+AKTU+KEC603" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Embedded+Systems+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Optical Fiber Communication</div><div class="subject-code">KEC604 | L-T-P: 3-1-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Optical Fiber – Types (SM, MM), NA, Acceptance angle, V-number</li>
+          <li>Signal Degradation – Attenuation, Dispersion (modal, chromatic)</li>
+          <li>Optical Sources – LED, Laser diode – characteristics</li>
+          <li>Optical Detectors – PIN, APD photodiodes</li>
+          <li>WDM & DWDM Systems</li>
+          <li>Optical Amplifiers – EDFA, Raman</li>
+        </ul>
+        <div class="theory-section-title">📐 Key Formulas</div>
+        <div class="formula-box"><span>NA:</span> NA = √(n₁²-n₂²) = n₁·√(2Δ)</div>
+        <div class="formula-box"><span>V-number:</span> V = (2πa/λ)·NA</div>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Optical+Fiber+Communication+AKTU" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Optical+Fiber+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEM 7 -->
+  <div class="sem-content" id="sem7">
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Machine Learning (Elective)</div><div class="subject-code">KCS071 | L-T-P: 3-0-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>Supervised Learning – Linear/Logistic Regression, SVM, Decision Trees</li>
+          <li>Unsupervised Learning – K-Means, Hierarchical Clustering, PCA</li>
+          <li>Neural Networks – Perceptron, Backpropagation, Deep Learning basics</li>
+          <li>Model Evaluation – Confusion matrix, ROC, Cross-validation</li>
+          <li>Feature Engineering & Selection</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Machine+Learning+AKTU+7th+sem" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=Machine+Learning+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">IoT & Applications (Elective)</div><div class="subject-code">KEC072 | L-T-P: 3-0-0</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Topics</div>
+        <ul class="topic-list">
+          <li>IoT Architecture – Perception, Network, Application layer</li>
+          <li>Communication Protocols – MQTT, CoAP, HTTP, Zigbee, BLE</li>
+          <li>Cloud Platforms – AWS IoT, ThingSpeak, Google Cloud IoT</li>
+          <li>IoT Security – Threats, Authentication, Encryption</li>
+          <li>Smart Applications – Home, City, Healthcare, Agriculture</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Syllabus</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=IoT+AKTU+7th+sem+ECE" target="_blank">▶ YouTube</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=IoT+AKTU+PYQ" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Minor Project</div><div class="subject-code">KEC751 | L-T-P: 0-0-4</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Guidelines</div>
+        <ul class="topic-list">
+          <li>Choose a real-world ECE problem to solve</li>
+          <li>Hardware + Software integration preferred</li>
+          <li>Document – Abstract, Introduction, Circuit diagram, Results</li>
+          <li>Viva preparation – Know your components & code</li>
+          <li>Popular domains: IoT, Embedded, Signal Processing, Communication</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://www.youtube.com/results?search_query=AKTU+minor+project+ECE+ideas" target="_blank">💡 Project Ideas</a>
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEM 8 -->
+  <div class="sem-content" id="sem8">
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Major Project</div><div class="subject-code">KEC851 | L-T-P: 0-0-8</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Tips for Success</div>
+        <ul class="topic-list">
+          <li>Start early — don't leave report for last week</li>
+          <li>Choose a topic that interests you + has scope</li>
+          <li>Phase 1: Literature review & problem statement</li>
+          <li>Phase 2: Design & Implementation</li>
+          <li>Phase 3: Testing, Results & Documentation</li>
+          <li>Final: Viva, Report submission & Presentation</li>
+        </ul>
+        <div class="theory-section-title">🔥 Popular Project Domains</div>
+        <ul class="topic-list">
+          <li>IoT based Smart Systems</li>
+          <li>Image & Signal Processing using Python/MATLAB</li>
+          <li>Wireless Communication Systems</li>
+          <li>FPGA/VLSI based designs</li>
+          <li>AI/ML in ECE applications</li>
+          <li>Embedded System with Sensors & Cloud</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://www.youtube.com/results?search_query=AKTU+major+project+ECE+ideas+final+year" target="_blank">💡 Project Ideas</a>
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 AKTU Guidelines</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=how+to+write+project+report+engineering" target="_blank">📝 Report Writing</a>
+        </div>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-header" onclick="toggleSub(this)">
+        <div><div class="subject-name">Internship / Industrial Training</div><div class="subject-code">KIN801 | 4-6 Weeks</div></div>
+        <div class="subject-toggle">▾</div>
+      </div>
+      <div class="subject-body">
+        <div class="theory-section-title">📌 Important Points</div>
+        <ul class="topic-list">
+          <li>Get offer letter & completion certificate from company</li>
+          <li>Maintain daily diary / logbook</li>
+          <li>Prepare internship report as per AKTU format</li>
+          <li>Attend viva with report + certificate</li>
+        </ul>
+        <div class="links-row">
+          <a class="note-link" href="https://aktu.ac.in" target="_blank">📄 AKTU Format</a>
+          <a class="note-link" href="https://www.youtube.com/results?search_query=AKTU+internship+report+format" target="_blank">📝 Report Format</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== SIMULATORS ===== -->
+<div id="simSection" class="section" style="max-width:800px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#00ffaa">🧪 SIMULATORS</div></div>
+  <div class="container">
+
+    <!-- 1. WAVEFORM VISUALIZER -->
+    <div class="card">
+      <h3 style="color:#00ffaa">〰️ Waveform Visualizer</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <select id="waveType" onchange="drawWave()" style="flex:1;min-width:120px;">
+          <option value="sine">Sine Wave</option>
+          <option value="square">Square Wave</option>
+          <option value="triangle">Triangle Wave</option>
+          <option value="sawtooth">Sawtooth Wave</option>
+        </select>
+        <input id="waveFreq" placeholder="Frequency (Hz)" value="1" oninput="drawWave()" style="flex:1;min-width:100px;">
+        <input id="waveAmp" placeholder="Amplitude (V)" value="1" oninput="drawWave()" style="flex:1;min-width:100px;">
+      </div>
+      <canvas id="waveCanvas" width="700" height="200" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;"></canvas>
+      <div id="waveInfo" class="output" style="margin-top:10px;font-size:.85rem;"></div>
+    </div>
+
+    <!-- 2. RC/RL CHARGING CURVE -->
+    <div class="card">
+      <h3 style="color:#00ffaa">📈 RC / RL Charging & Discharging Curve</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <select id="rcrlType" style="flex:1;min-width:120px;">
+          <option value="rc_charge">RC Charging</option>
+          <option value="rc_discharge">RC Discharging</option>
+          <option value="rl_charge">RL Current Rise</option>
+          <option value="rl_discharge">RL Current Fall</option>
+        </select>
+        <input id="rcR" placeholder="R (Ω)" value="1000" style="flex:1;min-width:100px;">
+        <input id="rcC" placeholder="C (µF) / L (mH)" value="100" style="flex:1;min-width:100px;">
+        <input id="rcV" placeholder="Voltage (V)" value="5" style="flex:1;min-width:80px;">
+      </div>
+      <button onclick="drawRCRL()" style="margin-bottom:10px;">SIMULATE</button>
+      <canvas id="rcCanvas" width="700" height="220" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;"></canvas>
+      <div id="rcInfo" class="output" style="margin-top:10px;font-size:.85rem;"></div>
+    </div>
+
+    <!-- 3. BODE PLOT -->
+    <div class="card">
+      <h3 style="color:#00ffaa">📉 Bode Plot Generator</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <select id="bodeType" style="flex:1;min-width:140px;">
+          <option value="lpf">Low Pass Filter</option>
+          <option value="hpf">High Pass Filter</option>
+          <option value="bpf">Band Pass Filter</option>
+        </select>
+        <input id="bodeR" placeholder="R (Ω)" value="1000" style="flex:1;min-width:100px;">
+        <input id="bodeC" placeholder="C (µF)" value="1" style="flex:1;min-width:100px;">
+      </div>
+      <button onclick="drawBode()" style="margin-bottom:10px;">GENERATE BODE PLOT</button>
+      <div style="font-family:'Orbitron',monospace;font-size:.7rem;color:rgba(0,255,170,0.5);margin-bottom:6px;letter-spacing:1px;">MAGNITUDE (dB)</div>
+      <canvas id="bodeCanvas" width="700" height="200" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;margin-bottom:8px;"></canvas>
+      <div style="font-family:'Orbitron',monospace;font-size:.7rem;color:rgba(0,255,170,0.5);margin-bottom:6px;letter-spacing:1px;">PHASE (degrees)</div>
+      <canvas id="bodePhaseCanvas" width="700" height="160" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;"></canvas>
+      <div id="bodeInfo" class="output" style="margin-top:10px;font-size:.85rem;"></div>
+    </div>
+
+    <!-- 4. PHASOR DIAGRAM -->
+    <div class="card">
+      <h3 style="color:#00ffaa">⭕ Phasor Diagram (AC Circuit)</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <input id="phV" placeholder="Voltage V (V)" value="10" style="flex:1;">
+        <input id="phR" placeholder="Resistance R (Ω)" value="100" style="flex:1;">
+        <input id="phXL" placeholder="XL (Ω)" value="80" style="flex:1;">
+        <input id="phXC" placeholder="XC (Ω)" value="40" style="flex:1;">
+      </div>
+      <button onclick="drawPhasor()" style="margin-bottom:10px;">DRAW PHASOR</button>
+      <canvas id="phasorCanvas" width="400" height="400" style="width:100%;max-width:400px;margin:0 auto;display:block;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;"></canvas>
+      <div id="phasorInfo" class="output" style="margin-top:10px;font-size:.85rem;flex-direction:column;align-items:flex-start;gap:4px;"></div>
+    </div>
+
+    <!-- 5. LOGIC GATE SIMULATOR -->
+    <div class="card">
+      <h3 style="color:#00ffaa">🔗 Logic Gate Simulator</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <select id="lgGate1" style="flex:1;">
+          <option>AND</option><option>OR</option><option>NAND</option><option>NOR</option><option>XOR</option><option>XNOR</option><option>NOT</option>
+        </select>
+        <select id="lgGate2" style="flex:1;">
+          <option>AND</option><option>OR</option><option>NAND</option><option>NOR</option><option>XOR</option><option>XNOR</option><option>NOT</option>
+        </select>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+        <div>
+          <div style="font-family:'Orbitron',monospace;font-size:.7rem;color:rgba(0,255,170,0.6);margin-bottom:6px;">GATE 1 INPUTS</div>
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.9rem;cursor:pointer;"><input type="checkbox" id="lgA1" style="width:18px;height:18px;margin:0;"> A1</label>
+          <label style="display:flex;align-items:center;gap:8px;font-size:.9rem;cursor:pointer;"><input type="checkbox" id="lgB1" style="width:18px;height:18px;margin:0;"> B1</label>
+        </div>
+        <div>
+          <div style="font-family:'Orbitron',monospace;font-size:.7rem;color:rgba(0,255,170,0.6);margin-bottom:6px;">GATE 2 INPUTS (uses G1 output + C2)</div>
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.9rem;cursor:pointer;"><input type="checkbox" id="lgC2" style="width:18px;height:18px;margin:0;"> C2</label>
+        </div>
+      </div>
+      <button onclick="drawLogic()" style="margin-bottom:10px;">SIMULATE</button>
+      <canvas id="logicCanvas" width="700" height="200" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;"></canvas>
+      <div id="lgOut" class="output" style="margin-top:10px;"></div>
+      <div id="lgTruth" style="margin-top:10px;overflow-x:auto;"></div>
+    </div>
+
+    <!-- 6. 555 TIMER WAVEFORM -->
+    <div class="card">
+      <h3 style="color:#00ffaa">⏱️ 555 Timer Waveform Simulator</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <select id="t555mode" style="flex:1;min-width:130px;">
+          <option value="astable">Astable Mode</option>
+          <option value="monostable">Monostable Mode</option>
+        </select>
+        <input id="t555R1" placeholder="R1 (kΩ)" value="10" style="flex:1;min-width:80px;">
+        <input id="t555R2" placeholder="R2 (kΩ)" value="10" style="flex:1;min-width:80px;">
+        <input id="t555C" placeholder="C (µF)" value="1" style="flex:1;min-width:80px;">
+        <input id="t555Vcc" placeholder="Vcc (V)" value="5" style="flex:1;min-width:80px;">
+      </div>
+      <button onclick="draw555()" style="margin-bottom:10px;">SIMULATE</button>
+      <canvas id="t555Canvas" width="700" height="220" style="width:100%;border:1px solid rgba(0,255,170,0.2);border-radius:10px;background:#010d1a;display:block;"></canvas>
+      <div id="t555Info" class="output" style="margin-top:10px;font-size:.85rem;flex-direction:column;align-items:flex-start;gap:4px;"></div>
+      <div class="info-box" style="margin-top:10px;">
+        <strong>Astable:</strong> f = 1.44/((R1+2R2)×C) | Duty = (R1+R2)/(R1+2R2)×100%<br>
+        <strong>Monostable:</strong> T = 1.1×R1×C (pulse width)
+      </div>
+    </div>
+
+    <!-- 7. BOOLEAN → TRUTH TABLE -->
+    <div class="card">
+      <h3 style="color:#00ffaa">🔢 Boolean Expression → Truth Table</h3>
+      <div style="margin-bottom:10px;">
+        <input id="boolExpr" placeholder="e.g. A AND B OR (NOT C)" style="margin-bottom:8px;">
+        <div style="font-size:.8rem;color:rgba(0,255,170,0.5);margin-bottom:8px;font-family:'Rajdhani',sans-serif;">
+          Use: AND, OR, NOT, NAND, NOR, XOR, XNOR, ( ) &nbsp;|&nbsp; Variables: A, B, C (up to 3)
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="insertBool('A AND B')" style="width:auto;padding:6px 12px;font-size:.65rem;">A AND B</button>
+          <button onclick="insertBool('A OR B')" style="width:auto;padding:6px 12px;font-size:.65rem;">A OR B</button>
+          <button onclick="insertBool('NOT A')" style="width:auto;padding:6px 12px;font-size:.65rem;">NOT A</button>
+          <button onclick="insertBool('A AND B OR C')" style="width:auto;padding:6px 12px;font-size:.65rem;">A AND B OR C</button>
+          <button onclick="insertBool('(A OR B) AND NOT C')" style="width:auto;padding:6px 12px;font-size:.65rem;">(A OR B) AND NOT C</button>
+          <button onclick="insertBool('A XOR B AND C')" style="width:auto;padding:6px 12px;font-size:.65rem;">A XOR B AND C</button>
+        </div>
+      </div>
+      <button onclick="evalBool()" style="margin-bottom:10px;">GENERATE TRUTH TABLE</button>
+      <div id="boolOut" style="margin-top:8px;overflow-x:auto;"></div>
+      <div id="boolInfo" class="output" style="margin-top:10px;font-size:.85rem;display:none;"></div>
+    </div>
+
+  </div>
+</div>
+<div id="circuitSection" class="section" style="max-width:820px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#f97316">⚡ CIRCUIT DESIGNER</div></div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
+    <button onclick="loadCircuit('vd')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">VOLTAGE DIVIDER</button>
+    <button onclick="loadCircuit('ce')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">COMMON EMITTER</button>
+    <button onclick="loadCircuit('rc')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">RC LOW PASS</button>
+    <button onclick="loadCircuit('br')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">BRIDGE RECTIFIER</button>
+    <button onclick="loadCircuit('opamp')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">INVERTING OP-AMP</button>
+    <button onclick="loadCircuit('zener')" class="ckt-sel-btn" style="flex:1;min-width:130px;font-size:.7rem;padding:10px;">ZENER REGULATOR</button>
+  </div>
+  <div class="card" id="cktCard" style="border-color:rgba(249,115,22,0.3);">
+    <div id="cktTitle" style="font-family:'Orbitron',monospace;font-size:1rem;color:#f97316;margin-bottom:16px;letter-spacing:2px;">⬆ Select a circuit above</div>
+    <div id="cktInputs" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;"></div>
+    <button id="cktCalcBtn" onclick="calcCircuit()" style="display:none;border-color:#f97316;color:#f97316;margin-bottom:14px;">CALCULATE & SIMULATE</button>
+    <canvas id="cktCanvas" width="760" height="340" style="width:100%;border:1px solid rgba(249,115,22,0.2);border-radius:12px;background:#050a10;display:block;"></canvas>
+    <div id="cktOutput" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;"></div>
+    <div id="cktInfo" class="info-box" style="margin-top:12px;display:none;border-color:rgba(249,115,22,0.2);"></div>
+  </div>
+</div>
+
+<!-- ===== COMPONENTS ENCYCLOPEDIA ===== -->
+<div id="compSection" class="section" style="max-width:860px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#34d399">🔩 COMPONENTS ENCYCLOPEDIA</div></div>
+
+  <!-- Filter Tabs -->
+  <div class="comp-tabs" id="compTabs">
+    <button class="comp-tab active" onclick="filterComp('all')">ALL</button>
+    <button class="comp-tab" onclick="filterComp('passive')">⬜ PASSIVE</button>
+    <button class="comp-tab" onclick="filterComp('active')">🔴 ACTIVE</button>
+    <button class="comp-tab" onclick="filterComp('semiconductor')">💎 SEMICONDUCTOR</button>
+    <button class="comp-tab" onclick="filterComp('ic')">🧠 ICs</button>
+    <button class="comp-tab" onclick="filterComp('electromechanical')">⚙️ ELECTROMECH</button>
+    <button class="comp-tab" onclick="filterComp('sensor')">📡 SENSORS</button>
+  </div>
+  <input id="compSearch" placeholder="🔍 Search component..." oninput="searchComp()" style="margin-bottom:20px;border-color:rgba(52,211,153,0.3);color:#34d399;">
+
+  <div id="compGrid" class="comp-grid"></div>
+</div>
+
 <footer>
-  <div class="copyright-badge">©️ 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
-  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v4.0</strong>
+  <div class="copyright-badge">© 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
+  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v8.0</strong>
 </footer>
 
 <script>
@@ -367,12 +1483,34 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 // COUNTER
 function animCount(el,target,suffix=''){let n=0,step=Math.ceil(target/40),t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n+suffix;if(n>=target)clearInterval(t);},30);}
-setTimeout(()=>{animCount(document.getElementById('cnt1'),58,'+');animCount(document.getElementById('cnt2'),50,'+');animCount(document.getElementById('cnt3'),8);},800);
+setTimeout(()=>{animCount(document.getElementById('cnt1'),80,'+');animCount(document.getElementById('cnt2'),75,'+');animCount(document.getElementById('cnt3'),5);},800);
 
 // NAVIGATION
-const allSections=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
-function openSection(id){document.getElementById('homeMenu').style.display='none';allSections.forEach(s=>document.getElementById(s).style.display='none');document.getElementById(id).style.display='block';window.scrollTo(0,0);}
-function goHome(){document.getElementById('homeMenu').style.display='flex';allSections.forEach(s=>document.getElementById(s).style.display='none');document.querySelectorAll('.card').forEach(c=>c.style.display='');}
+const allSections=['calcSection','theorySection','compSection','circuitSection','simSection','eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
+function openSection(id){
+  document.getElementById('homeMenu').style.display='none';
+  allSections.forEach(s=>document.getElementById(s).style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo(0,0);
+  if(id==='compSection')setTimeout(()=>renderComps(COMP_DATA),50);
+}
+function goHome(){
+  document.getElementById('homeMenu').style.display='flex';
+  allSections.forEach(s=>document.getElementById(s).style.display='none');
+  document.querySelectorAll('.card').forEach(c=>c.style.display='');
+}
+function openCalc(id){
+  // Hide home and all sections
+  document.getElementById('homeMenu').style.display='none';
+  allSections.forEach(s=>document.getElementById(s).style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo(0,0);
+}
+function backToCalc(){
+  allSections.forEach(s=>document.getElementById(s).style.display='none');
+  document.getElementById('calcSection').style.display='block';
+  window.scrollTo(0,0);
+}
 function searchCards(){
   const val=document.getElementById('search').value.toLowerCase();
   if(!val){goHome();return;}
@@ -442,7 +1580,7 @@ function logic(){
 }
 function kmap(){document.getElementById('kout').innerHTML='⚠ Full K-Map solver coming in v3.1';}
 
-// DESIGN TOOLS — Resistor Color
+// DESIGN TOOLS  -  Resistor Color
 const COLORS=[{n:'Black',v:0,c:'#111'},{n:'Brown',v:1,c:'#8B4513'},{n:'Red',v:2,c:'#e53935'},{n:'Orange',v:3,c:'#FF6600'},{n:'Yellow',v:4,c:'#FFD700'},{n:'Green',v:5,c:'#2e7d32'},{n:'Blue',v:6,c:'#1565C0'},{n:'Violet',v:7,c:'#7B1FA2'},{n:'Grey',v:8,c:'#616161'},{n:'White',v:9,c:'#EEE'}];
 const MULT=[{n:'×1 (Black)',v:1,c:'#111'},{n:'×10 (Brown)',v:10,c:'#8B4513'},{n:'×100 (Red)',v:100,c:'#e53935'},{n:'×1K (Orange)',v:1000,c:'#FF6600'},{n:'×10K (Yellow)',v:10000,c:'#FFD700'},{n:'×100K (Green)',v:100000,c:'#2e7d32'},{n:'×1M (Blue)',v:1000000,c:'#1565C0'},{n:'×0.1 (Gold)',v:0.1,c:'#FFD700'},{n:'×0.01 (Silver)',v:0.01,c:'#C0C0C0'}];
 const TOL=[{n:'±1% (Brown)',v:'±1%',c:'#8B4513'},{n:'±2% (Red)',v:'±2%',c:'#e53935'},{n:'±5% (Gold)',v:'±5%',c:'#FFD700'},{n:'±10% (Silver)',v:'±10%',c:'#C0C0C0'},{n:'±20% (None)',v:'±20%',c:'#888'}];
@@ -463,7 +1601,7 @@ function resistorColor(){
 }
 function ledRes(){const r=(gv('Vsup')-gv('Vled'))/(gv('Iled')/1000);document.getElementById('ledOut').innerHTML=`R = <span style='color:#fff'>${fmt(r)} Ω</span> (use ${fmt(Math.ceil(r/10)*10)} Ω)`;}
 function pcbTrace(){const I=gv('pcbI'),dT=gv('pcbT'),th=gv('pcbTh'),A=I/(0.048*Math.pow(dT,0.44)),w=A/(th*1.378);document.getElementById('pcbOut').innerHTML=`Width = <span style='color:#fff'>${fmt(w)} mils (${fmt(w*0.0254)} mm)</span>`;}
-function vreg(){const d=gv('vregIn')-gv('vregOut');document.getElementById('vregRes').innerHTML=d>=2?`✅ <span style='color:#00ff88'>OK — ${fmt(d)}V headroom</span>`:`⚠ <span style='color:#ff4466'>Insufficient! Need ≥2V. Use LDO.</span>`;}
+function vreg(){const d=gv('vregIn')-gv('vregOut');document.getElementById('vregRes').innerHTML=d>=2?`✅ <span style='color:#00ff88'>OK  -  ${fmt(d)}V headroom</span>`:`⚠ <span style='color:#ff4466'>Insufficient! Need >=2V. Use LDO.</span>`;}
 function batLife(){const h=gv('batCap')/gv('batCurr');document.getElementById('batOut').innerHTML=`<span style='color:#fff'>${fmt(h)} hours (${fmt(h/24)} days)</span>`;}
 function unitConv(){const v=gv('unitVal'),from=parseFloat(document.getElementById('unitFrom').value),to=parseFloat(document.getElementById('unitTo').value);document.getElementById('unitOut').innerHTML=`= <span style='color:#fff'>${fmt(v*from/to)}</span>`;}
 
@@ -475,7 +1613,7 @@ function friis(){setOut('frisOut','Pr',gv('frisPt')+gv('frisGt')+gv('frisGr')-gv
 function fspl(){setOut('fsplOut','FSPL',20*Math.log10(gv('fsplD'))+20*Math.log10(gv('fsplF'))+32.44,'dB');}
 function noiseFig(){setOut('nfOut','NF',gv('nfSnrIn')-gv('nfSnrOut'),'dB');}
 function wavelength(){const lam=3e8/gv('wlFreq');document.getElementById('wlOut').innerHTML=`λ = <span style='color:#fff'>${fmt(lam)} m</span>`;}
-function nyquist(){document.getElementById('nyqOut').innerHTML=`fs ≥ <span style='color:#fff'>${fmt(2*gv('nyqF'))} Hz</span>`;}
+function nyquist(){document.getElementById('nyqOut').innerHTML=`fs >= <span style='color:#fff'>${fmt(2*gv('nyqF'))} Hz</span>`;}
 
 // PRACTICAL
 function capDecode(){
@@ -501,7 +1639,7 @@ function powerDiss(){setOut('pdOut','P',gv('pdV')**2/gv('pdR'),'W');}
 function zener(){setOut('zenOut','Rs',(gv('zenVin')-gv('zenVz'))/(gv('zenIL')/1000),'Ω');}
 const IC_INFO={
   '555':'NE555 Timer IC\nPins(8): GND · Trigger · Output · Reset · Control · Threshold · Discharge · Vcc\nVcc: 4.5–16V | Uses: Oscillator, PWM, Monostable/Astable',
-  '741':'LM741 Op-Amp\nPins(8): Offset N1 · Inv(−) · Non-inv(+) · Vcc− · Offset N2 · Output · Vcc+ · NC\nGBW: 1MHz | Slew: 0.5V/µs',
+  '741':'LM741 Op-Amp\nPins(8): Offset N1 · Inv(-) · Non-inv(+) · Vcc- · Offset N2 · Output · Vcc+ · NC\nGBW: 1MHz | Slew: 0.5V/µs',
   '7805':'LM7805 Regulator\nPins(3): Input · GND · Output\nVout: 5V | Vin max: 35V | Iout: 1A | Dropout: ~2V',
   '7812':'LM7812 Regulator\nPins(3): Input · GND · Output\nVout: 12V | Vin max: 35V | Iout: 1A | Dropout: ~2V',
   '4017':'CD4017 Decade Counter\nPins(16): 10 decoded outputs + Clock, Reset, ClkEn\nUses: LED chaser, frequency divider',
@@ -530,12 +1668,12 @@ function i2cFreq(){const pre=parseInt(document.getElementById('i2cPre').value);c
 function sigEnergy(){setOut('sigEOut','E',gv('sigAmp')**2*gv('sigDur'),'J');}
 function sigPower(){const dur=gv('sigT2')-gv('sigT1');setOut('sigPOut','P',gv('sigAmp2')**2/dur,'W');}
 function fourierHarm(){setOut('fsOut','fn',gv('fsN')*gv('fsF0'),'Hz');}
-function nysSamp(){const fs=2*gv('nysMax');document.getElementById('nysOut').innerHTML=`fs ≥ <span style='color:#fff'>${fmt(fs)} Hz</span> | Practical: <span style='color:#fff'>${fmt(fs*1.25)} Hz</span>`;}
+function nysSamp(){const fs=2*gv('nysMax');document.getElementById('nysOut').innerHTML=`fs >= <span style='color:#fff'>${fmt(fs)} Hz</span> | Practical: <span style='color:#fff'>${fmt(fs*1.25)} Hz</span>`;}
 function convLen(){setOut('convOut','Length',gv('convL1')+gv('convL2')-1);}
 function dftCheck(){
   const N=gv('dftN'),fs=gv('dftN');
   const isPow2=(N&(N-1))===0;
-  document.getElementById('dftOut').innerHTML=`Freq resolution = <span style='color:#fff'>fs/N</span> | FFT compatible: <span style='color:${isPow2?'#00ff88':'#ff4466'}'>${isPow2?'✅ Yes (power of 2)':'⚠ No — use next power of 2: '+Math.pow(2,Math.ceil(Math.log2(N)))}</span>`;
+  document.getElementById('dftOut').innerHTML=`Freq resolution = <span style='color:#fff'>fs/N</span> | FFT compatible: <span style='color:${isPow2?'#00ff88':'#ff4466'}'>${isPow2?'✅ Yes (power of 2)':'⚠ No  -  use next power of 2: '+Math.pow(2,Math.ceil(Math.log2(N)))}</span>`;
 }
 function tauToFreq(){setOut('tauOut','fc',1/(2*Math.PI*gv('tauVal')),'Hz');}
 function poleCheck(){
@@ -564,6 +1702,1188 @@ function coxCalc(){
 }
 function critPath(){setOut('cpOut','Total Delay',gv('cpStages')*gv('cpTp'),'ns');}
 function pdpCalc(){const pdp=gv('pdpP')*gv('pdpTp');document.getElementById('pdpOut').innerHTML=`PDP = <span style='color:#fff'>${fmt(pdp*1e15)} fJ</span>`;}
+
+// THEORY  -  SEM TABS & SUBJECT ACCORDION
+function showSem(n){
+  document.querySelectorAll('.sem-content').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.sem-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('sem'+n).classList.add('active');
+  document.querySelectorAll('.sem-tab')[n-1].classList.add('active');
+}
+function toggleSub(header){
+  const body=header.nextElementSibling;
+  const toggle=header.querySelector('.subject-toggle');
+  const isOpen=body.classList.contains('open');
+  // close all
+  document.querySelectorAll('.subject-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.subject-toggle').forEach(t=>t.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');toggle.classList.add('open');}
+}
+
+// ===== SIMULATORS =====
+const SIM_NEON='#00ffaa';
+const SIM_BG='#010d1a';
+const SIM_GRID='rgba(0,255,170,0.08)';
+
+function simCtx(id){
+  const c=document.getElementById(id);
+  const ctx=c.getContext('2d');
+  ctx.clearRect(0,0,c.width,c.height);
+  return {ctx,w:c.width,h:c.height};
+}
+
+function drawGrid(ctx,w,h,cols=10,rows=5){
+  ctx.strokeStyle=SIM_GRID;ctx.lineWidth=1;
+  for(let i=0;i<=cols;i++){const x=i*w/cols;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
+  for(let i=0;i<=rows;i++){const y=i*h/rows;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
+}
+
+function drawAxes(ctx,w,h,padX=50,padY=20){
+  ctx.strokeStyle='rgba(0,255,170,0.4)';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(padX,padY);ctx.lineTo(padX,h-padY);ctx.lineTo(w-10,h-padY);ctx.stroke();
+}
+
+// --- WAVEFORM ---
+function drawWave(){
+  const {ctx,w,h}=simCtx('waveCanvas');
+  const type=document.getElementById('waveType').value;
+  const freq=parseFloat(document.getElementById('waveFreq').value)||1;
+  const amp=parseFloat(document.getElementById('waveAmp').value)||1;
+  drawGrid(ctx,w,h);
+  const midY=h/2,scaleY=(h*0.4)/Math.max(amp,0.001);
+  const cycles=Math.min(freq*2,6);
+  const pts=700;
+  ctx.beginPath();ctx.strokeStyle=SIM_NEON;ctx.lineWidth=2.5;ctx.shadowBlur=8;ctx.shadowColor=SIM_NEON;
+  for(let i=0;i<pts;i++){
+    const t=(i/pts)*cycles/freq;
+    const phase=2*Math.PI*freq*t;
+    let y=0;
+    if(type==='sine') y=amp*Math.sin(phase);
+    else if(type==='square') y=amp*Math.sign(Math.sin(phase));
+    else if(type==='triangle') y=amp*(2/Math.PI)*Math.asin(Math.sin(phase));
+    else if(type==='sawtooth') y=amp*(2*(freq*t%1)-1);
+    const px=(i/pts)*w,py=midY-y*scaleY;
+    i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+  }
+  ctx.stroke();ctx.shadowBlur=0;
+  // Labels
+  ctx.fillStyle='rgba(0,255,170,0.6)';ctx.font='11px Rajdhani,sans-serif';
+  ctx.fillText(`+${amp}V`,4,midY-amp*scaleY+4);
+  ctx.fillText(`-${amp}V`,4,midY+amp*scaleY+4);
+  ctx.fillText('0',4,midY+4);
+  const T=(1/freq).toFixed(4);
+  document.getElementById('waveInfo').innerHTML=`<span style="color:#00ffaa">T = ${T}s</span> &nbsp;|&nbsp; <span style="color:#fff">f = ${freq}Hz</span> &nbsp;|&nbsp; <span style="color:#00ffaa">Amp = ${amp}V</span> &nbsp;|&nbsp; <span style="color:#fff">Vpp = ${(2*amp).toFixed(2)}V</span> &nbsp;|&nbsp; <span style="color:#00ffaa">Vrms = ${(amp/Math.sqrt(2)).toFixed(3)}V</span>`;
+}
+
+// --- RC/RL CURVE ---
+function drawRCRL(){
+  const {ctx,w,h}=simCtx('rcCanvas');
+  const type=document.getElementById('rcrlType').value;
+  const R=parseFloat(document.getElementById('rcR').value)||1000;
+  const CL=parseFloat(document.getElementById('rcC').value)||100;
+  const V=parseFloat(document.getElementById('rcV').value)||5;
+  const isRC=type.startsWith('rc');
+  const tau=isRC?(R*CL*1e-6):(CL*1e-3/R);
+  const tMax=5*tau;
+  const padX=55,padY=25;
+  drawGrid(ctx,w,h);
+  drawAxes(ctx,w,h,padX,padY);
+  // Axis labels
+  ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani,sans-serif';
+  ctx.fillText(isRC?'V(t)':'I(t)',5,padY);
+  ctx.fillText('Time →',w-60,h-padY+14);
+  // Time markers
+  for(let k=1;k<=5;k++){
+    const x=padX+(k/5)*(w-padX-10);
+    ctx.fillStyle='rgba(0,255,170,0.4)';
+    ctx.fillText(`${k}τ`,x-8,h-padY+14);
+    ctx.strokeStyle='rgba(0,255,170,0.15)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.setLineDash([3,3]);ctx.moveTo(x,padY);ctx.lineTo(x,h-padY);ctx.stroke();ctx.setLineDash([]);
+  }
+  // Curve
+  ctx.beginPath();ctx.strokeStyle=SIM_NEON;ctx.lineWidth=2.5;ctx.shadowBlur=8;ctx.shadowColor=SIM_NEON;
+  const pts=400;
+  for(let i=0;i<=pts;i++){
+    const t=(i/pts)*tMax;
+    let val=0;
+    if(type==='rc_charge') val=V*(1-Math.exp(-t/tau));
+    else if(type==='rc_discharge') val=V*Math.exp(-t/tau);
+    else if(type==='rl_charge') val=(V/R)*(1-Math.exp(-t/tau));
+    else if(type==='rl_discharge') val=(V/R)*Math.exp(-t/tau);
+    const maxVal=isRC?V:(V/R);
+    const px=padX+(i/pts)*(w-padX-10);
+    const py=(h-padY)-((val/maxVal)*(h-padY-padY));
+    i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+  }
+  ctx.stroke();ctx.shadowBlur=0;
+  // 63.2% marker
+  const x63=padX+(1/5)*(w-padX-10);
+  const y63=isRC?(h-padY)-(0.632*(h-padY-padY)):(h-padY)-(0.368*(h-padY-padY));
+  ctx.fillStyle='#ff2d78';ctx.font='11px Orbitron,monospace';
+  ctx.fillText(isRC?'63.2%':'36.8%',x63+4,y63-6);
+  ctx.beginPath();ctx.strokeStyle='rgba(255,45,120,0.6)';ctx.setLineDash([4,4]);
+  ctx.moveTo(padX,y63);ctx.lineTo(x63,y63);ctx.lineTo(x63,h-padY);ctx.stroke();ctx.setLineDash([]);
+  const tauMs=(tau*1000).toFixed(3);
+  const finalVal=isRC?`${V}V`:`${(V/R*1000).toFixed(2)}mA`;
+  document.getElementById('rcInfo').innerHTML=`<span style="color:#00ffaa">τ = ${tauMs}ms</span> &nbsp;|&nbsp; <span style="color:#fff">5τ = ${(tau*5000).toFixed(2)}ms (fully charged)</span> &nbsp;|&nbsp; <span style="color:#00ffaa">Final = ${finalVal}</span>`;
+}
+
+// --- BODE PLOT ---
+function drawBode(){
+  const R=parseFloat(document.getElementById('bodeR').value)||1000;
+  const C=parseFloat(document.getElementById('bodeC').value)*1e-6||1e-6;
+  const type=document.getElementById('bodeType').value;
+  const fc=1/(2*Math.PI*R*C);
+  // Magnitude
+  {
+    const {ctx,w,h}=simCtx('bodeCanvas');
+    drawGrid(ctx,w,h,10,6);
+    const padX=48,padY=15;
+    drawAxes(ctx,w,h,padX,padY);
+    // freq range: fc/100 to fc*100 (log scale)
+    const fMin=fc/1000,fMax=fc*1000;
+    const logMin=Math.log10(fMin),logMax=Math.log10(fMax);
+    // freq labels
+    ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='9px Rajdhani';
+    for(let decade=Math.floor(logMin);decade<=Math.ceil(logMax);decade++){
+      const x=padX+(decade-logMin)/(logMax-logMin)*(w-padX-10);
+      if(x>padX&&x<w-10){ctx.fillText(`10^${decade}`,x-14,h-2);}
+    }
+    // dB labels
+    const dbMax=6,dbMin=-60;
+    for(let db=dbMin;db<=dbMax;db+=20){
+      const y=(h-padY)-(db-dbMin)/(dbMax-dbMin)*(h-padY-padY);
+      ctx.fillStyle='rgba(0,255,170,0.4)';ctx.font='9px Rajdhani';
+      ctx.fillText(`${db}`,2,y+3);
+    }
+    // Plot magnitude
+    ctx.beginPath();ctx.strokeStyle=SIM_NEON;ctx.lineWidth=2.5;ctx.shadowBlur=6;ctx.shadowColor=SIM_NEON;
+    const pts=500;
+    for(let i=0;i<=pts;i++){
+      const logF=logMin+(i/pts)*(logMax-logMin);
+      const f=Math.pow(10,logF);
+      const w2=2*Math.PI*f,wc=2*Math.PI*fc;
+      let mag=0;
+      if(type==='lpf') mag=1/Math.sqrt(1+(w2/wc)**2);
+      else if(type==='hpf') mag=(w2/wc)/Math.sqrt(1+(w2/wc)**2);
+      else {const Q=0.707;mag=(w2/wc)/(Math.sqrt((1-(w2/wc)**2)**2+(w2/(Q*wc))**2));}
+      const db=20*Math.log10(Math.max(mag,1e-10));
+      const px=padX+(logF-logMin)/(logMax-logMin)*(w-padX-10);
+      const py=(h-padY)-(db-dbMin)/(dbMax-dbMin)*(h-padY-padY);
+      i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+    }
+    ctx.stroke();ctx.shadowBlur=0;
+    // fc marker
+    const fcX=padX+(Math.log10(fc)-logMin)/(logMax-logMin)*(w-padX-10);
+    ctx.strokeStyle='rgba(255,230,0,0.7)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(fcX,padY);ctx.lineTo(fcX,h-padY);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#ffe600';ctx.font='10px Orbitron,monospace';
+    ctx.fillText(`fc=${fc<1000?fc.toFixed(1)+'Hz':(fc/1000).toFixed(2)+'kHz'}`,fcX+4,padY+14);
+  }
+  // Phase
+  {
+    const {ctx,w,h}=simCtx('bodePhaseCanvas');
+    drawGrid(ctx,w,h,10,4);
+    const padX=48,padY=15;
+    drawAxes(ctx,w,h,padX,padY);
+    const fMin=fc/1000,fMax=fc*1000,logMin=Math.log10(fMin),logMax=Math.log10(fMax);
+    const phMin=-180,phMax=90;
+    ctx.fillStyle='rgba(0,255,170,0.4)';ctx.font='9px Rajdhani';
+    [-180,-135,-90,-45,0,45,90].forEach(p=>{
+      const y=(h-padY)-(p-phMin)/(phMax-phMin)*(h-padY-padY);
+      if(y>padY&&y<h-padY)ctx.fillText(`${p}°`,2,y+3);
+    });
+    ctx.beginPath();ctx.strokeStyle='#a259ff';ctx.lineWidth=2.5;ctx.shadowBlur=6;ctx.shadowColor='#a259ff';
+    const pts=500;
+    for(let i=0;i<=pts;i++){
+      const logF=logMin+(i/pts)*(logMax-logMin);
+      const f=Math.pow(10,logF),w2=2*Math.PI*f,wc=2*Math.PI*fc;
+      let ph=0;
+      if(type==='lpf') ph=-Math.atan(w2/wc)*180/Math.PI;
+      else if(type==='hpf') ph=90-Math.atan(w2/wc)*180/Math.PI;
+      else ph=90-Math.atan2(w2/wc/0.707,1-(w2/wc)**2)*180/Math.PI;
+      const px=padX+(logF-logMin)/(logMax-logMin)*(w-padX-10);
+      const py=(h-padY)-(ph-phMin)/(phMax-phMin)*(h-padY-padY);
+      i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+    }
+    ctx.stroke();ctx.shadowBlur=0;
+  }
+  document.getElementById('bodeInfo').innerHTML=`<span style="color:#00ffaa">Cutoff Freq (fc) = ${fc<1000?fc.toFixed(2)+' Hz':(fc/1000).toFixed(3)+' kHz'}</span> &nbsp;|&nbsp; <span style="color:#ffe600">━━</span> Magnitude &nbsp;|&nbsp; <span style="color:#a259ff">━━</span> Phase &nbsp;|&nbsp; <span style="color:#ffe600">│</span> = fc`;
+}
+
+// --- PHASOR ---
+function drawPhasor(){
+  const {ctx,w,h}=simCtx('phasorCanvas');
+  const V=parseFloat(document.getElementById('phV').value)||10;
+  const R=parseFloat(document.getElementById('phR').value)||100;
+  const XL=parseFloat(document.getElementById('phXL').value)||80;
+  const XC=parseFloat(document.getElementById('phXC').value)||40;
+  const X=XL-XC;
+  const Z=Math.sqrt(R*R+X*X);
+  const I=V/Z;
+  const phi=Math.atan2(X,R);
+  const VR=I*R,VL=I*XL,VC=I*XC,VX=I*Math.abs(X);
+  const cx=w/2,cy=h/2,scale=Math.min(w,h)*0.35/Math.max(V,1);
+  // Grid circles
+  ctx.strokeStyle='rgba(0,255,170,0.06)';ctx.lineWidth=1;
+  [0.25,0.5,0.75,1].forEach(r=>{ctx.beginPath();ctx.arc(cx,cy,r*scale*V,0,2*Math.PI);ctx.stroke();});
+  // Axes
+  ctx.strokeStyle='rgba(0,255,170,0.2)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(w,cy);ctx.moveTo(cx,0);ctx.lineTo(cx,h);ctx.stroke();
+  ctx.fillStyle='rgba(0,255,170,0.4)';ctx.font='11px Rajdhani';
+  ctx.fillText('+Re (R)',w-50,cy-6);ctx.fillText('+Im (L)',cx+6,14);ctx.fillText('-Im (C)',cx+6,h-4);
+  function arrow(x1,y1,x2,y2,color,label){
+    ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=2.5;ctx.shadowBlur=8;ctx.shadowColor=color;
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    const ang=Math.atan2(y2-y1,x2-x1);
+    ctx.beginPath();ctx.moveTo(x2,y2);ctx.lineTo(x2-10*Math.cos(ang-0.4),y2-10*Math.sin(ang-0.4));ctx.lineTo(x2-10*Math.cos(ang+0.4),y2-10*Math.sin(ang+0.4));ctx.closePath();ctx.fill();
+    ctx.shadowBlur=0;ctx.fillStyle=color;ctx.font='bold 11px Rajdhani,sans-serif';
+    ctx.fillText(label,x2+6,y2+4);
+  }
+  // VR (along +Re)
+  arrow(cx,cy,cx+VR*scale,cy,'#00ffaa',`VR=${VR.toFixed(1)}V`);
+  // VL (along +Im)
+  if(VL>0) arrow(cx+VR*scale,cy,cx+VR*scale,cy-VL*scale,'#ff2d78',`VL=${VL.toFixed(1)}V`);
+  // VC (along -Im)
+  if(VC>0) arrow(cx+VR*scale,cy,cx+VR*scale,cy+VC*scale,'#00b8ff',`VC=${VC.toFixed(1)}V`);
+  // Total V phasor
+  const vx=cx+VR*scale,vy=cy-(VL-VC)*scale;
+  arrow(cx,cy,vx,vy,'#ffe600',`V=${V.toFixed(1)}V`);
+  // Angle arc
+  ctx.strokeStyle='rgba(255,230,0,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.arc(cx,cy,40,0,-phi,phi<0);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#ffe600';ctx.font='11px Orbitron,monospace';
+  ctx.fillText(`φ=${(phi*180/Math.PI).toFixed(1)}°`,cx+46,cy+(phi>0?-10:14));
+  document.getElementById('phasorInfo').innerHTML=`
+    <span style="color:#00ffaa">Z = ${Z.toFixed(2)} Ω</span> &nbsp;|&nbsp;
+    <span style="color:#fff">I = ${(I*1000).toFixed(2)} mA</span> &nbsp;|&nbsp;
+    <span style="color:#ffe600">φ = ${(phi*180/Math.PI).toFixed(1)}°</span> &nbsp;|&nbsp;
+    <span style="color:#ff2d78">${X>0?'Inductive (XL>XC)':X<0?'Capacitive (XC>XL)':'Resonance!'}</span><br>
+    <span style="color:#00ffaa">VR=${VR.toFixed(1)}V</span> &nbsp;
+    <span style="color:#ff2d78">VL=${VL.toFixed(1)}V</span> &nbsp;
+    <span style="color:#00b8ff">VC=${VC.toFixed(1)}V</span> &nbsp;
+    <span style="color:#fff">PF=cos(φ)=${Math.cos(phi).toFixed(3)}</span>`;
+}
+
+// --- LOGIC GATE SIMULATOR ---
+function gateOp(gate,a,b){
+  if(gate==='AND') return a&b;
+  if(gate==='OR') return a|b;
+  if(gate==='NAND') return (a&b)?0:1;
+  if(gate==='NOR') return (a|b)?0:1;
+  if(gate==='XOR') return a^b;
+  if(gate==='XNOR') return (a===b)?1:0;
+  if(gate==='NOT') return a?0:1;
+  return 0;
+}
+function drawLogic(){
+  const g1=document.getElementById('lgGate1').value;
+  const g2=document.getElementById('lgGate2').value;
+  const A=document.getElementById('lgA1').checked?1:0;
+  const B=document.getElementById('lgB1').checked?1:0;
+  const C=document.getElementById('lgC2').checked?1:0;
+  const out1=gateOp(g1,A,B);
+  const out2=gateOp(g2,out1,C);
+  const {ctx,w,h}=simCtx('logicCanvas');
+  // Draw circuit visually
+  function drawGateBox(x,y,label,in1,in2,out,color){
+    const bw=100,bh=60;
+    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.shadowBlur=8;ctx.shadowColor=color;
+    ctx.beginPath();ctx.roundRect(x,y,bw,bh,8);ctx.stroke();ctx.shadowBlur=0;
+    ctx.fillStyle=color;ctx.font='bold 12px Orbitron,monospace';ctx.textAlign='center';
+    ctx.fillText(label,x+bw/2,y+bh/2+5);ctx.textAlign='left';
+    // Input lines
+    ctx.strokeStyle='rgba(0,255,170,0.5)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x-40,y+15);ctx.lineTo(x,y+15);ctx.stroke();
+    if(g1!=='NOT'){ctx.beginPath();ctx.moveTo(x-40,y+45);ctx.lineTo(x,y+45);ctx.stroke();}
+    // Output line
+    ctx.beginPath();ctx.moveTo(x+bw,y+bh/2);ctx.lineTo(x+bw+40,y+bh/2);ctx.stroke();
+    // Input values
+    ctx.fillStyle=in1?'#00ff88':'#ff4466';ctx.font='bold 13px Orbitron';
+    ctx.fillText(in1,x-52,y+19);
+    if(g1!=='NOT'){ctx.fillStyle=in2?'#00ff88':'#ff4466';ctx.fillText(in2,x-52,y+49);}
+    // Output value
+    ctx.fillStyle=out?'#00ff88':'#ff4466';
+    ctx.fillText(out,x+bw+46,y+bh/2+5);
+  }
+  const g1color=SIM_NEON,g2color='#a259ff';
+  drawGateBox(60,70,g1,A,B,out1,g1color);
+  // Connect G1 to G2
+  ctx.strokeStyle='rgba(162,89,255,0.6)';ctx.lineWidth=2;ctx.setLineDash([5,3]);
+  ctx.beginPath();ctx.moveTo(200,100);ctx.lineTo(260,100);ctx.lineTo(260,115);ctx.lineTo(460,115);ctx.stroke();ctx.setLineDash([]);
+  // G2 box - offset
+  const {ctx:c2}={ctx};
+  drawGateBox(460,80,g2,out1,C,out2,g2color);
+  // Final output box
+  const finalColor=out2?'#00ff88':'#ff4466';
+  ctx.strokeStyle=finalColor;ctx.lineWidth=2.5;ctx.shadowBlur=10;ctx.shadowColor=finalColor;
+  ctx.beginPath();ctx.roundRect(620,90,60,40,6);ctx.stroke();ctx.shadowBlur=0;
+  ctx.fillStyle=finalColor;ctx.font='bold 16px Orbitron,monospace';ctx.textAlign='center';
+  ctx.fillText(out2,650,115);ctx.textAlign='left';
+  ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani';
+  ctx.fillText('OUTPUT',618,148);
+  // Labels
+  ctx.fillStyle='rgba(0,255,170,0.4)';ctx.font='10px Rajdhani';
+  ctx.fillText('GATE 1',95,70);ctx.fillStyle='rgba(162,89,255,0.5)';ctx.fillText('GATE 2',490,80);
+  document.getElementById('lgOut').innerHTML=`<span style="color:#00ffaa">${g1}(${A},${g1==='NOT'?'':B}) = <b>${out1}</b></span> &nbsp;→&nbsp; <span style="color:#a259ff">${g2}(${out1},${g2==='NOT'?'':C}) = <b style="font-size:1.2em;color:${out2?'#00ff88':'#ff4466'}">${out2}</b></span>`;
+  // Truth table
+  const rows=[[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]];
+  let tbl=`<table class="truth-table"><tr><th>A</th><th>B</th><th>C</th><th>${g1} Out</th><th>Final</th></tr>`;
+  rows.forEach(r=>{
+    const o1=gateOp(g1,r[0],r[1]),o2=gateOp(g2,o1,r[2]);
+    const hl=(r[0]===A&&r[1]===B&&r[2]===C)?'background:rgba(0,255,170,0.08);':'' ;
+    tbl+=`<tr style="${hl}"><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="${o1?'t1':'t0'}">${o1}</td><td class="${o2?'t1':'t0'}" style="font-weight:bold">${o2}</td></tr>`;
+  });
+  tbl+='</table>';
+  document.getElementById('lgTruth').innerHTML=tbl;
+}
+
+// Auto-draw all simulators on load
+window.addEventListener('load',()=>{
+  setTimeout(()=>{drawWave();drawRCRL();drawBode();drawPhasor();drawLogic();draw555();},300);
+});
+
+// ===== 555 TIMER =====
+function draw555(){
+  const mode=document.getElementById('t555mode').value;
+  const R1=parseFloat(document.getElementById('t555R1').value)*1e3||10e3;
+  const R2=parseFloat(document.getElementById('t555R2').value)*1e3||10e3;
+  const C=parseFloat(document.getElementById('t555C').value)*1e-6||1e-6;
+  const Vcc=parseFloat(document.getElementById('t555Vcc').value)||5;
+  const {ctx,w,h}=simCtx('t555Canvas');
+  drawGrid(ctx,w,h,10,4);
+  const padX=50,padY=20;
+  drawAxes(ctx,w,h,padX,padY);
+  ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani';
+  ctx.fillText(`${Vcc}V`,4,padY+4);ctx.fillText('0V',4,h-padY+4);
+  if(mode==='astable'){
+    const tH=0.693*(R1+R2)*C;
+    const tL=0.693*R2*C;
+    const T=tH+tL;
+    const f=1/T;
+    const duty=(R1+R2)/(R1+2*R2)*100;
+    // Draw square wave output
+    const cycles=Math.min(5,Math.max(2,Math.round(3/f)));
+    const totalT=cycles*T;
+    ctx.beginPath();ctx.strokeStyle=SIM_NEON;ctx.lineWidth=2.5;ctx.shadowBlur=8;ctx.shadowColor=SIM_NEON;
+    let px=padX,py=h-padY;
+    ctx.moveTo(px,py);
+    for(let c=0;c<cycles;c++){
+      // Rise
+      const xH=padX+((c*T+tH)/totalT)*(w-padX-10);
+      const xL=padX+(((c+1)*T)/totalT)*(w-padX-10);
+      const yH=padY;const yLo=h-padY;
+      ctx.lineTo(px,yH);ctx.lineTo(xH,yH);ctx.lineTo(xH,yLo);ctx.lineTo(xL,yLo);
+      px=xL;
+    }
+    ctx.stroke();ctx.shadowBlur=0;
+    // Capacitor voltage (dashed)
+    ctx.beginPath();ctx.strokeStyle='#ffe600';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+    const Vth=2/3*Vcc,Vtl=1/3*Vcc;
+    const scaleV=(h-padY-padY)/Vcc;
+    for(let i=0;i<=400;i++){
+      const t=(i/400)*totalT;
+      const cycle=Math.floor(t/T),tPhase=t%T;
+      const v=tPhase<tH?Vtl+(Vth-Vtl)*(1-Math.exp(-tPhase/(R2*C))):Vth*Math.exp(-(tPhase-tH)/(R2*C))+Vtl*(1-Math.exp(-(tPhase-tH)/(R2*C)));
+      const px2=padX+(i/400)*(w-padX-10),py2=(h-padY)-v*scaleV;
+      i===0?ctx.moveTo(px2,py2):ctx.lineTo(px2,py2);
+    }
+    ctx.stroke();ctx.setLineDash([]);
+    // Threshold lines
+    ['rgba(255,230,0,0.3)','rgba(255,45,120,0.3)'].forEach((col,i)=>{
+      const v=i===0?Vth:Vtl;
+      ctx.strokeStyle=col;ctx.lineWidth=1;ctx.setLineDash([2,4]);
+      ctx.beginPath();ctx.moveTo(padX,(h-padY)-v*scaleV);ctx.lineTo(w-10,(h-padY)-v*scaleV);ctx.stroke();
+      ctx.setLineDash([]);ctx.fillStyle=col;ctx.font='9px Rajdhani';
+      ctx.fillText(i===0?'2/3 Vcc':'1/3 Vcc',w-50,(h-padY)-v*scaleV-2);
+    });
+    document.getElementById('t555Info').innerHTML=
+      `<span style="color:#00ffaa">f = ${f<1000?f.toFixed(2)+'Hz':(f/1000).toFixed(3)+'kHz'}</span> &nbsp;|&nbsp;
+       <span style="color:#fff">T = ${(T*1000).toFixed(2)}ms</span> &nbsp;|&nbsp;
+       <span style="color:#ffe600">Duty = ${duty.toFixed(1)}%</span> &nbsp;|&nbsp;
+       <span style="color:#ff2d78">tH = ${(tH*1000).toFixed(2)}ms</span> &nbsp;|&nbsp;
+       <span style="color:#00b8ff">tL = ${(tL*1000).toFixed(2)}ms</span><br>
+       <span style="color:rgba(0,255,170,0.6)">━━ Output &nbsp; <span style="color:#ffe600">- - Capacitor voltage</span>`;
+  } else {
+    // Monostable
+    const T=1.1*R1*C;
+    const totalT=T*3;
+    ctx.beginPath();ctx.strokeStyle=SIM_NEON;ctx.lineWidth=2.5;ctx.shadowBlur=8;ctx.shadowColor=SIM_NEON;
+    const trigT=totalT*0.15;
+    ctx.moveTo(padX,h-padY);ctx.lineTo(padX+trigT*(w-padX-10)/totalT,h-padY);
+    ctx.lineTo(padX+trigT*(w-padX-10)/totalT,padY);
+    ctx.lineTo(padX+(trigT+T)*(w-padX-10)/totalT,padY);
+    ctx.lineTo(padX+(trigT+T)*(w-padX-10)/totalT,h-padY);
+    ctx.lineTo(w-10,h-padY);ctx.stroke();ctx.shadowBlur=0;
+    // Trigger pulse
+    ctx.beginPath();ctx.strokeStyle='#ff2d78';ctx.lineWidth=2;
+    const trigX=padX+(trigT-T*0.05)*(w-padX-10)/totalT;
+    ctx.moveTo(padX,h-padY*0.4);ctx.lineTo(trigX,h-padY*0.4);
+    ctx.lineTo(trigX,padY*2);ctx.lineTo(trigX+T*0.05*(w-padX-10)/totalT,padY*2);
+    ctx.lineTo(trigX+T*0.05*(w-padX-10)/totalT,h-padY*0.4);ctx.lineTo(w-10,h-padY*0.4);ctx.stroke();
+    ctx.fillStyle='#ff2d78';ctx.font='10px Rajdhani';ctx.fillText('Trigger',trigX,h-padY*0.4-4);
+    // T arrow
+    const x1=padX+trigT*(w-padX-10)/totalT,x2=padX+(trigT+T)*(w-padX-10)/totalT;
+    ctx.strokeStyle='rgba(255,230,0,0.6)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(x1,padY+12);ctx.lineTo(x2,padY+12);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#ffe600';ctx.font='10px Orbitron';ctx.textAlign='center';
+    ctx.fillText(`T=${(T*1000).toFixed(1)}ms`,( x1+x2)/2,padY+24);ctx.textAlign='left';
+    document.getElementById('t555Info').innerHTML=
+      `<span style="color:#00ffaa">Pulse Width T = ${T<0.001?(T*1e6).toFixed(1)+'µs':(T*1000).toFixed(2)+'ms'}</span> &nbsp;|&nbsp;
+       <span style="color:#fff">Formula: T = 1.1 × R1 × C</span> &nbsp;|&nbsp;
+       <span style="color:#ffe600">Vcc = ${Vcc}V</span>`;
+  }
+}
+
+// ===== BOOLEAN TRUTH TABLE =====
+function insertBool(expr){document.getElementById('boolExpr').value=expr;}
+function evalBool(){
+  const raw=document.getElementById('boolExpr').value.trim().toUpperCase();
+  if(!raw){document.getElementById('boolOut').innerHTML='⚠ Enter an expression';return;}
+  // Find variables used
+  const vars=[...new Set(raw.match(/\b[A-C]\b/g)||[])].sort();
+  if(vars.length===0){document.getElementById('boolOut').innerHTML='⚠ Use variables A, B, C';return;}
+  if(vars.length>3){document.getElementById('boolOut').innerHTML='⚠ Max 3 variables supported';return;}
+  // Convert to JS evaluable
+  function toJS(expr){
+    return expr
+      .replace(/XNOR/g,'_XNOR_')
+      .replace(/NAND/g,'_NAND_')
+      .replace(/NOR/g,'_NOR_')
+      .replace(/XOR/g,'_XOR_')
+      .replace(/\bAND\b/g,'&&')
+      .replace(/\bOR\b/g,'||')
+      .replace(/\bNOT\s+([A-C])/g,'(!$1)')
+      .replace(/\bNOT\b/g,'!')
+      .replace(/_NAND_/g,'_NAND_')
+      .replace(/_NOR_/g,'_NOR_')
+      .replace(/_XOR_/g,'_XOR_')
+      .replace(/_XNOR_/g,'_XNOR_');
+  }
+  const rows=vars.length===1?[[0],[1]]:vars.length===2?[[0,0],[0,1],[1,0],[1,1]]:[[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]];
+  let tbl=`<table class="truth-table"><tr>${vars.map(v=>`<th>${v}</th>`).join('')}<th>OUTPUT</th></tr>`;
+  let ones=0;
+  const minterms=[];
+  rows.forEach((row,idx)=>{
+    let scope={};vars.forEach((v,i)=>scope[v]=row[i]);
+    let expr=raw;
+    // Handle NAND, NOR, XOR, XNOR manually
+    let jsExpr=expr
+      .replace(/([A-C])\s*XNOR\s*([A-C])/g,(_,a,b)=>`(Number(${a})===Number(${b})?1:0)`)
+      .replace(/([A-C])\s*XOR\s*([A-C])/g,(_,a,b)=>`(Number(${a})^Number(${b}))`)
+      .replace(/([A-C])\s*NAND\s*([A-C])/g,(_,a,b)=>`(Number(${a})&Number(${b})?0:1)`)
+      .replace(/([A-C])\s*NOR\s*([A-C])/g,(_,a,b)=>`(Number(${a})|Number(${b})?0:1)`)
+      .replace(/\bAND\b/g,'&').replace(/\bOR\b/g,'|')
+      .replace(/NOT\s*([A-C])/g,(_,v)=>`(${v}?0:1)`)
+      .replace(/\bNOT\b/g,'~');
+    let result=0;
+    try{
+      result=new Function(...vars,'return Number(Boolean('+jsExpr+'))')(...row);
+    }catch(e){result='?';}
+    if(result===1){ones++;minterms.push(idx);}
+    tbl+=`<tr><td>${row.join('</td><td>')}</td><td class="${result?'t1':'t0'}" style="font-weight:bold">${result}</td></tr>`;
+  });
+  tbl+='</table>';
+  document.getElementById('boolOut').innerHTML=tbl;
+  const total=rows.length;
+  document.getElementById('boolInfo').style.display='flex';
+  document.getElementById('boolInfo').innerHTML=
+    `<strong style="color:#00ffaa">Minterms (output=1):</strong> Σm(${minterms.join(',')}) &nbsp;|&nbsp;
+     <strong style="color:#ff4466">Maxterms (output=0):</strong> ΠM(${rows.map((_,i)=>i).filter(i=>!minterms.includes(i)).join(',')}) &nbsp;|&nbsp;
+     <span style="color:#fff">Ones: ${ones}/${total}</span>`;
+}
+
+// ===== CIRCUIT DESIGNER =====
+let currentCkt=null;
+const CKT_ORANGE='#f97316';
+const CKT_BG='#050a10';
+
+function cktOut(label,val,unit,color='#f97316'){
+  return `<div style="padding:10px 16px;border-radius:8px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);font-family:'Orbitron',monospace;font-size:.85rem;color:${color}">${label} = <span style="color:#fff">${val} ${unit}</span></div>`;
+}
+
+const CIRCUITS={
+  vd:{
+    name:'VOLTAGE DIVIDER',
+    inputs:[
+      {id:'vd_vin',label:'Vin (V)',val:'12'},
+      {id:'vd_r1',label:'R1 (kΩ)',val:'10'},
+      {id:'vd_r2',label:'R2 (kΩ)',val:'10'},
+    ],
+    calc(){
+      const Vin=gv('vd_vin'),R1=gv('vd_r1')*1e3,R2=gv('vd_r2')*1e3;
+      const Vout=Vin*R2/(R1+R2),I=(Vin/(R1+R2))*1000;
+      return{Vin,R1,R2,Vout,I,vals:{Vout,I}};
+    },
+    draw(ctx,w,h,d){
+      const cx=w/2,cy=h/2;
+      // Wires
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      // Vcc line top
+      wire(cx,30,cx,80);
+      // R1
+      drawResistor(ctx,cx,80,cx,160,'R1',`${d.R1/1e3}kΩ`);
+      // Junction
+      ctx.beginPath();ctx.arc(cx,175,5,0,2*Math.PI);ctx.fillStyle=CKT_ORANGE;ctx.fill();
+      // Vout tap
+      wire(cx,175,cx+100,175);
+      ctx.fillStyle='#ffe600';ctx.font='12px Orbitron';ctx.fillText(`Vout=${d.Vout.toFixed(2)}V`,cx+108,179);
+      // R2
+      drawResistor(ctx,cx,175,cx,255,'R2',`${d.R2/1e3}kΩ`);
+      // GND
+      wire(cx,255,cx,290);drawGnd(ctx,cx,290);
+      // Voltage source
+      drawVsource(ctx,cx-80,cy,`${d.Vin}V`);
+      wire(cx-60,30,cx,30);wire(cx-60,290,cx,290);
+      wire(cx-60,cy-30,cx-60,30);wire(cx-60,cy+30,cx-60,290);
+      // Labels
+      ctx.fillStyle=CKT_ORANGE;ctx.font='11px Rajdhani';
+      ctx.fillText(`I = ${d.I.toFixed(2)}mA`,cx+108,200);
+    },
+    output(d){return cktOut('Vout',d.Vout.toFixed(3),'V')+''+cktOut('Current I',d.I.toFixed(3),'mA','#00ffaa');}
+  },
+  ce:{
+    name:'COMMON EMITTER AMPLIFIER',
+    inputs:[
+      {id:'ce_vcc',label:'Vcc (V)',val:'12'},
+      {id:'ce_rc',label:'Rc (kΩ)',val:'4.7'},
+      {id:'ce_re',label:'Re (kΩ)',val:'1'},
+      {id:'ce_beta',label:'β (hfe)',val:'100'},
+      {id:'ce_rb',label:'RB (kΩ)',val:'100'},
+    ],
+    calc(){
+      const Vcc=gv('ce_vcc'),Rc=gv('ce_rc')*1e3,Re=gv('ce_re')*1e3,beta=gv('ce_beta'),Rb=gv('ce_rb')*1e3;
+      const IB=(Vcc-0.7)/(Rb+beta*Re),IC=beta*IB,VCE=Vcc-IC*(Rc+Re);
+      const Av=-beta*Rc/(beta*Re+26e-3/IB);
+      return{Vcc,Rc,Re,beta,Rb,IB:IB*1e6,IC:IC*1e3,VCE,Av};
+    },
+    draw(ctx,w,h,d){
+      const cx=w/2,cy=h/2;
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      // Vcc
+      ctx.fillStyle=CKT_ORANGE;ctx.font='12px Orbitron';ctx.textAlign='center';
+      ctx.fillText('Vcc',cx,22);ctx.textAlign='left';
+      wire(cx,25,cx,60);
+      // Rc
+      drawResistor(ctx,cx,60,cx,130,'Rc',`${d.Rc/1e3}kΩ`);
+      // Transistor (simplified)
+      drawBJT(ctx,cx,180);
+      // Re
+      drawResistor(ctx,cx,230,cx,290,'Re',`${d.Re/1e3}kΩ`);
+      wire(cx,290,cx,320);drawGnd(ctx,cx,320);
+      // Rb
+      drawResistor(ctx,cx-140,cy,cx-90,cy,'RB',`${d.Rb/1e3}kΩ`,true);
+      wire(cx-90,cy,cx-38,180);
+      wire(cx-200,30,cx-140,cy);wire(cx-200,30,cx,30);wire(cx-200,320,cx-200,30);wire(cx-200,320,cx,320);
+      // Labels
+      ctx.fillStyle='#ffe600';ctx.font='11px Rajdhani';
+      ctx.fillText(`IB=${d.IB.toFixed(2)}µA`,cx+30,155);
+      ctx.fillText(`IC=${d.IC.toFixed(2)}mA`,cx+30,195);
+      ctx.fillText(`VCE=${d.VCE.toFixed(2)}V`,cx+30,215);
+    },
+    output(d){
+      return cktOut('IC',d.IC.toFixed(3),'mA')+cktOut('IB',d.IB.toFixed(2),'µA','#00b8ff')+cktOut('VCE',d.VCE.toFixed(2),'V','#00ffaa')+cktOut('Voltage Gain Av',d.Av.toFixed(1),'','#ffe600');
+    }
+  },
+  rc:{
+    name:'RC LOW PASS FILTER',
+    inputs:[
+      {id:'rc_r',label:'R (kΩ)',val:'1'},
+      {id:'rc_c',label:'C (µF)',val:'1'},
+      {id:'rc_vin',label:'Vin (V)',val:'5'},
+      {id:'rc_f',label:'Input Freq (Hz)',val:'100'},
+    ],
+    calc(){
+      const R=gv('rc_r')*1e3,C=gv('rc_c')*1e-6,Vin=gv('rc_vin'),f=gv('rc_f');
+      const fc=1/(2*Math.PI*R*C);
+      const H=1/Math.sqrt(1+(f/fc)**2);
+      const Vout=Vin*H,phase=-Math.atan(f/fc)*180/Math.PI,dB=20*Math.log10(H);
+      return{R,C,Vin,f,fc,H,Vout,phase,dB};
+    },
+    draw(ctx,w,h,d){
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      const y=h/2;
+      // Input label
+      ctx.fillStyle='#00ffaa';ctx.font='12px Orbitron';
+      ctx.fillText(`Vin=${d.Vin}V`,30,y-25);
+      ctx.fillText(`f=${d.f}Hz`,30,y-8);
+      wire(120,y,160,y);
+      // R horizontal
+      drawResistor(ctx,160,y,300,y,'R',`${d.R/1e3}kΩ`,true);
+      wire(300,y,380,y);
+      // Junction
+      ctx.beginPath();ctx.arc(380,y,5,0,2*Math.PI);ctx.fillStyle=CKT_ORANGE;ctx.fill();
+      // C vertical
+      drawCapacitor(ctx,380,y,380,y+90,'C',`${d.C*1e6}µF`);
+      wire(380,y+90,380,y+130);drawGnd(ctx,380,y+130);
+      // Output
+      wire(380,y,480,y);
+      ctx.fillStyle='#ffe600';ctx.font='12px Orbitron';
+      ctx.fillText(`Vout=${d.Vout.toFixed(3)}V`,488,y+4);
+      ctx.fillStyle='rgba(249,115,22,0.5)';ctx.font='10px Rajdhani';
+      ctx.fillText(`fc=${d.fc<1000?d.fc.toFixed(1)+'Hz':(d.fc/1000).toFixed(2)+'kHz'}`,488,y+20);
+      ctx.fillText(`${d.dB.toFixed(1)}dB`,488,y+36);
+      // Voltage source
+      drawVsource(ctx,50,y,`${d.Vin}V`);
+      wire(70,y,120,y);wire(50,y+30,50,y+130);drawGnd(ctx,50,y+130);
+    },
+    output(d){
+      return cktOut('Cutoff fc',d.fc<1000?d.fc.toFixed(2)+' Hz':(d.fc/1000).toFixed(3)+' kHz','')+
+             cktOut('Vout',d.Vout.toFixed(3),'V','#00ffaa')+
+             cktOut('Attenuation',d.dB.toFixed(2),'dB','#ff2d78')+
+             cktOut('Phase Shift',d.phase.toFixed(1),'°','#ffe600');
+    }
+  },
+  br:{
+    name:'BRIDGE RECTIFIER',
+    inputs:[
+      {id:'br_vs',label:'Vrms (V)',val:'12'},
+      {id:'br_rl',label:'RL (kΩ)',val:'1'},
+      {id:'br_c',label:'Filter C (µF)',val:'1000'},
+      {id:'br_f',label:'Frequency (Hz)',val:'50'},
+    ],
+    calc(){
+      const Vrms=gv('br_vs'),RL=gv('br_rl')*1e3,C=gv('br_c')*1e-6,f=gv('br_f');
+      const Vm=Vrms*Math.sqrt(2),Vdc=Vm-1.4,Vr=Vdc/(2*f*RL*C);
+      const Idc=Vdc/RL,ripple=Vr/Vdc*100,eff=81.2;
+      return{Vrms,Vm,Vdc,Vr,Idc:Idc*1000,ripple,eff,RL,C,f};
+    },
+    draw(ctx,w,h,d){
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      const cx=w/2,cy=h/2;
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      // Draw 4 diodes in diamond
+      const dx=90,dy=70;
+      // D1 top-right (A to C+)
+      drawDiode(ctx,cx,cy-dy,cx+dx,cy,'D1');
+      // D2 bottom-right (GND to C+)
+      drawDiode(ctx,cx,cy+dy,cx+dx,cy,'D2');
+      // D3 top-left (A to GND)
+      drawDiode(ctx,cx-dx,cy,cx,cy-dy,'D3');
+      // D4 bottom-left (GND to A)
+      drawDiode(ctx,cx-dx,cy,cx,cy+dy,'D4');
+      // AC source
+      drawVsource(ctx,cx-180,cy,`${d.Vrms}V~`);
+      wire(cx-160,cy-30,cx-dx,cy-dy+10);wire(cx-160,cy+30,cx-dx,cy+dy-10);
+      // Output +
+      wire(cx+dx,cy,cx+dx+60,cy);
+      // RL
+      drawResistor(ctx,cx+dx+60,cy-60,cx+dx+60,cy+60,'RL',`${d.RL/1e3}kΩ`);
+      // C filter
+      drawCapacitor(ctx,cx+dx+110,cy-40,cx+dx+110,cy+40,'C',`${d.C*1e6}µF`);
+      wire(cx+dx+60,cy-60,cx+dx+120,cy-40);wire(cx+dx+60,cy+60,cx+dx+120,cy+40);
+      // Vout label
+      ctx.fillStyle='#ffe600';ctx.font='11px Orbitron';
+      ctx.fillText(`Vdc=${d.Vdc.toFixed(2)}V`,cx+dx+130,cy-10);
+      // GND lines
+      wire(cx+dx+60,cy+60,cx+dx+60,cy+80);drawGnd(ctx,cx+dx+60,cy+80);
+      ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani';
+      ctx.fillText(`Vm=${d.Vm.toFixed(2)}V`,cx+dx+130,cy+10);
+    },
+    output(d){
+      return cktOut('Vdc (avg)',d.Vdc.toFixed(3),'V')+
+             cktOut('Ripple Voltage',d.Vr.toFixed(3),'V','#ff2d78')+
+             cktOut('Ripple Factor %',d.ripple.toFixed(2),'%','#ffe600')+
+             cktOut('Load Current',d.Idc.toFixed(2),'mA','#00ffaa');
+    }
+  },
+  opamp:{
+    name:'INVERTING OP-AMP',
+    inputs:[
+      {id:'oa_vin',label:'Vin (mV)',val:'100'},
+      {id:'oa_rin',label:'Rin (kΩ)',val:'10'},
+      {id:'oa_rf',label:'Rf (kΩ)',val:'100'},
+      {id:'oa_vcc',label:'±Vcc (V)',val:'15'},
+    ],
+    calc(){
+      const Vin=gv('oa_vin')/1000,Rin=gv('oa_rin')*1e3,Rf=gv('oa_rf')*1e3,Vcc=gv('oa_vcc');
+      const Av=-Rf/Rin,Vout=Math.max(-Vcc,Math.min(Vcc,Av*Vin));
+      const saturated=Math.abs(Av*Vin)>Vcc;
+      const Iin=Vin/Rin*1e6,Iff=Vin/Rin*1e6;
+      return{Vin:Vin*1000,Rin,Rf,Vcc,Av,Vout:Vout*1000,saturated,Iin};
+    },
+    draw(ctx,w,h,d){
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      const cx=w/2-20,cy=h/2;
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      // Op-amp triangle
+      ctx.beginPath();ctx.moveTo(cx,cy-60);ctx.lineTo(cx,cy+60);ctx.lineTo(cx+80,cy);ctx.closePath();
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle=CKT_ORANGE;ctx.font='10px Rajdhani';
+      ctx.fillText('-',cx+8,cy-18);ctx.fillText('+',cx+8,cy+24);
+      ctx.fillText('LM741',cx+20,cy+4);
+      // Rin
+      drawResistor(ctx,cx-160,cy-30,cx,cy-30,'Rin',`${d.Rin/1e3}kΩ`,true);
+      // Rf feedback
+      ctx.beginPath();ctx.moveTo(cx-40,cy-30);ctx.lineTo(cx-40,cy-100);ctx.lineTo(cx+80,cy-100);ctx.lineTo(cx+80,cy);ctx.stroke();
+      // Rf resistor label on feedback path
+      ctx.fillStyle=CKT_ORANGE;ctx.font='10px Rajdhani';ctx.textAlign='center';
+      ctx.fillText(`Rf=${d.Rf/1e3}kΩ`,cx+20,cy-110);ctx.textAlign='left';
+      // Input
+      wire(cx-220,cy-30,cx-160,cy-30);
+      ctx.fillStyle='#00ffaa';ctx.font='11px Orbitron';
+      ctx.fillText(`Vin=${d.Vin.toFixed(0)}mV`,cx-280,cy-26);
+      // + input to GND
+      wire(cx,cy+30,cx-40,cy+30);wire(cx-40,cy+30,cx-40,cy+80);drawGnd(ctx,cx-40,cy+80);
+      // Output
+      wire(cx+80,cy,cx+160,cy);
+      const outColor=d.saturated?'#ff4466':'#ffe600';
+      ctx.fillStyle=outColor;ctx.font='11px Orbitron';
+      ctx.fillText(`Vout=${d.Vout.toFixed(1)}mV`,cx+165,cy+4);
+      if(d.saturated){ctx.fillStyle='#ff4466';ctx.font='10px Rajdhani';ctx.fillText('SATURATED!',cx+165,cy+18);}
+      ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani';
+      ctx.fillText(`Av=${d.Av.toFixed(0)}`,cx+80,cy-15);
+    },
+    output(d){
+      return cktOut('Voltage Gain Av',d.Av.toFixed(1),'')+
+             cktOut('Vout',d.Vout.toFixed(2),'mV',d.saturated?'#ff4466':'#00ffaa')+
+             cktOut('Iin',d.Iin.toFixed(2),'µA','#ffe600')+
+             (d.saturated?cktOut('Status','SATURATED!  -  reduce Vin or Rf','','#ff4466'):cktOut('Status','Operating in linear region ✓','','#00ff88'));
+    }
+  },
+  zener:{
+    name:'ZENER VOLTAGE REGULATOR',
+    inputs:[
+      {id:'ze_vin',label:'Vin (V)',val:'12'},
+      {id:'ze_vz',label:'Vz (V)',val:'5.1'},
+      {id:'ze_rs',label:'Rs (Ω)',val:'470'},
+      {id:'ze_rl',label:'RL (kΩ)',val:'1'},
+    ],
+    calc(){
+      const Vin=gv('ze_vin'),Vz=gv('ze_vz'),Rs=gv('ze_rs'),RL=gv('ze_rl')*1e3;
+      const IL=Vz/RL,Is=(Vin-Vz)/Rs,Iz=Is-IL;
+      const Pd=Vz*Iz,regulated=Iz>0;
+      return{Vin,Vz,Rs,RL,IL:IL*1e3,Is:Is*1e3,Iz:Iz*1e3,Pd:Pd*1e3,regulated};
+    },
+    draw(ctx,w,h,d){
+      ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+      const cy=h/2,startX=60;
+      function wire(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+      // Voltage source
+      drawVsource(ctx,startX,cy,`${d.Vin}V`);
+      wire(startX+20,cy-30,startX+20,cy-80);
+      wire(startX+20,cy-80,startX+100,cy-80);
+      // Rs
+      drawResistor(ctx,startX+100,cy-80,startX+230,cy-80,'Rs',`${d.Rs}Ω`,true);
+      wire(startX+230,cy-80,startX+340,cy-80);
+      // Junction A
+      ctx.beginPath();ctx.arc(startX+340,cy-80,5,0,2*Math.PI);ctx.fillStyle=CKT_ORANGE;ctx.fill();
+      // Zener diode vertical
+      drawZener(ctx,startX+340,cy-80,startX+340,cy+80,'Vz',`${d.Vz}V`);
+      wire(startX+340,cy+80,startX+340,cy+120);drawGnd(ctx,startX+340,cy+120);
+      // RL
+      drawResistor(ctx,startX+340,cy-80,startX+480,cy-80,'RL',`${d.RL/1e3}kΩ`,true);
+      wire(startX+480,cy-80,startX+480,cy+120);drawGnd(ctx,startX+480,cy+120);
+      // GND left
+      wire(startX+20,cy+30,startX+20,cy+120);drawGnd(ctx,startX+20,cy+120);
+      wire(startX+20,cy+120,startX+340,cy+120);
+      // Labels
+      ctx.fillStyle='#ffe600';ctx.font='11px Orbitron';
+      ctx.fillText(`Vout=${d.Vz}V`,startX+490,cy-76);
+      ctx.fillStyle='rgba(0,255,170,0.5)';ctx.font='10px Rajdhani';
+      ctx.fillText(`Is=${d.Is.toFixed(2)}mA`,startX+130,cy-95);
+      ctx.fillText(`Iz=${d.Iz.toFixed(2)}mA`,startX+350,cy);
+      ctx.fillText(`IL=${d.IL.toFixed(2)}mA`,startX+400,cy-95);
+      if(!d.regulated){
+        ctx.fillStyle='#ff4466';ctx.font='11px Rajdhani';
+        ctx.fillText('⚠ NOT REGULATED!',startX+130,cy+30);
+      }
+    },
+    output(d){
+      return cktOut('Vout (Regulated)',d.Vz.toFixed(2),'V')+
+             cktOut('Series Current Is',d.Is.toFixed(3),'mA','#00b8ff')+
+             cktOut('Load Current IL',d.IL.toFixed(3),'mA','#00ffaa')+
+             cktOut('Zener Current Iz',d.Iz.toFixed(3),'mA','#ffe600')+
+             cktOut('Zener Power',d.Pd.toFixed(2),'mW',d.Pd>500?'#ff4466':'#00ff88')+
+             (d.regulated?cktOut('Status','Regulated ✓','','#00ff88'):cktOut('Status','NOT regulated  -  increase Vin or decrease RL','','#ff4466'));
+    }
+  }
+};
+
+// Component drawing helpers
+function drawResistor(ctx,x1,y1,x2,y2,label,val,horiz=false){
+  ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+  if(horiz){
+    const mx=(x1+x2)/2,my=y1,len=Math.abs(x2-x1),seg=len*0.15;
+    ctx.beginPath();ctx.moveTo(x1,my);ctx.lineTo(mx-len*0.35,my);
+    for(let i=0;i<6;i++){ctx.lineTo(mx-len*0.35+i*seg/2,my+(i%2===0?-10:10));}
+    ctx.lineTo(x2,my);ctx.stroke();
+    ctx.fillStyle=CKT_ORANGE;ctx.font='10px Rajdhani';ctx.textAlign='center';
+    ctx.fillText(label,mx,my-14);ctx.fillText(val,mx,my-2);ctx.textAlign='left';
+  } else {
+    const mx=x1,my=(y1+y2)/2,len=Math.abs(y2-y1),seg=len*0.15;
+    ctx.beginPath();ctx.moveTo(mx,y1);ctx.lineTo(mx,my-len*0.35);
+    for(let i=0;i<6;i++){ctx.lineTo(mx+(i%2===0?-10:10),my-len*0.35+i*seg/2);}
+    ctx.lineTo(mx,y2);ctx.stroke();
+    ctx.fillStyle=CKT_ORANGE;ctx.font='10px Rajdhani';
+    ctx.fillText(label,mx+14,(y1+y2)/2-8);ctx.fillText(val,mx+14,(y1+y2)/2+6);
+  }
+}
+function drawCapacitor(ctx,x1,y1,x2,y2,label,val){
+  const my=(y1+y2)/2;ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1,my-8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1-18,my-8);ctx.lineTo(x1+18,my-8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1-18,my+8);ctx.lineTo(x1+18,my+8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1,my+8);ctx.lineTo(x1,y2);ctx.stroke();
+  ctx.fillStyle=CKT_ORANGE;ctx.font='10px Rajdhani';
+  ctx.fillText(label,x1+22,my-6);ctx.fillText(val,x1+22,my+8);
+}
+function drawGnd(ctx,x,y){
+  ctx.strokeStyle='rgba(249,115,22,0.6)';ctx.lineWidth=1.5;
+  [20,13,6].forEach((w,i)=>{ctx.beginPath();ctx.moveTo(x-w/2,y+i*7);ctx.lineTo(x+w/2,y+i*7);ctx.stroke();});
+}
+function drawVsource(ctx,x,y,label){
+  ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(x,y,30,0,2*Math.PI);ctx.stroke();
+  ctx.fillStyle='#00ffaa';ctx.font='10px Orbitron';ctx.textAlign='center';
+  ctx.fillText('~',x,y-4);ctx.fillText(label,x,y+14);ctx.textAlign='left';
+  ctx.beginPath();ctx.moveTo(x,y-30);ctx.lineTo(x,y-30);ctx.stroke();
+}
+function drawDiode(ctx,x1,y1,x2,y2,label){
+  const mx=(x1+x2)/2,my=(y1+y2)/2;
+  const angle=Math.atan2(y2-y1,x2-x1);
+  ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(mx-12*Math.cos(angle),my-12*Math.sin(angle));ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(mx-12*Math.cos(angle),my-12*Math.sin(angle));
+  ctx.lineTo(mx+12*Math.cos(angle),my+12*Math.sin(angle));
+  ctx.lineTo(mx-12*Math.cos(angle)+16*Math.sin(angle),my-12*Math.sin(angle)-16*Math.cos(angle));
+  ctx.closePath();ctx.fillStyle='rgba(249,115,22,0.3)';ctx.fill();ctx.stroke();
+  ctx.beginPath();ctx.moveTo(mx+12*Math.cos(angle),my+12*Math.sin(angle));ctx.lineTo(x2,y2);ctx.stroke();
+  ctx.fillStyle=CKT_ORANGE;ctx.font='9px Rajdhani';ctx.textAlign='center';
+  ctx.fillText(label,mx+10*Math.sin(angle),my-10*Math.cos(angle));ctx.textAlign='left';
+}
+function drawZener(ctx,x1,y1,x2,y2,label,val){
+  const my=(y1+y2)/2;ctx.strokeStyle='#00b8ff';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1,my-14);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1-16,my-14);ctx.lineTo(x1+16,my-14);
+  ctx.lineTo(x1,my+14);ctx.lineTo(x1-16,my+14);ctx.stroke();
+  // Zener bar with bends
+  ctx.beginPath();ctx.moveTo(x1-20,my+14);ctx.lineTo(x1-12,my+14);ctx.lineTo(x1-12,my+22);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1+12,my+14);ctx.lineTo(x1+20,my+14);ctx.lineTo(x1+20,my+6);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1,my+14);ctx.lineTo(x1,y2);ctx.stroke();
+  ctx.fillStyle='#00b8ff';ctx.font='10px Rajdhani';ctx.fillText(label,x1+22,my-8);ctx.fillText(val,x1+22,my+6);
+}
+function drawBJT(ctx,x,y){
+  ctx.strokeStyle=CKT_ORANGE;ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(x,y,25,0,2*Math.PI);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-25,y);ctx.lineTo(x-5,y);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-5,y-20);ctx.lineTo(x-5,y+20);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-5,y-10);ctx.lineTo(x+20,y-35);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-5,y+10);ctx.lineTo(x+20,y+35);ctx.stroke();
+  ctx.fillStyle=CKT_ORANGE;ctx.font='9px Rajdhani';ctx.fillText('NPN',x-12,y+4);
+}
+
+function loadCircuit(id){
+  currentCkt=id;
+  const ckt=CIRCUITS[id];
+  document.getElementById('cktTitle').textContent='⚡ '+ckt.name;
+  document.getElementById('cktCalcBtn').style.display='block';
+  document.getElementById('cktInfo').style.display='none';
+  document.getElementById('cktOutput').innerHTML='';
+  // Build inputs
+  let html='';
+  ckt.inputs.forEach(inp=>{
+    html+=`<div style="flex:1;min-width:120px;"><label style="font-size:.75rem;color:rgba(249,115,22,0.7);font-family:'Orbitron',monospace;display:block;margin-bottom:4px;">${inp.label}</label><input id="${inp.id}" value="${inp.val}" style="border-color:rgba(249,115,22,0.3);"></div>`;
+  });
+  document.getElementById('cktInputs').innerHTML=html;
+  // Auto simulate
+  setTimeout(calcCircuit,100);
+}
+
+function calcCircuit(){
+  if(!currentCkt)return;
+  const ckt=CIRCUITS[currentCkt];
+  const d=ckt.calc();
+  const {ctx,w,h}=simCtx('cktCanvas');
+  ctx.clearRect(0,0,w,h);
+  // Draw grid
+  ctx.strokeStyle='rgba(249,115,22,0.05)';ctx.lineWidth=1;
+  for(let i=0;i<w;i+=40){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,h);ctx.stroke();}
+  for(let i=0;i<h;i+=40){ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(w,i);ctx.stroke();}
+  ckt.draw(ctx,w,h,d);
+  document.getElementById('cktOutput').innerHTML=ckt.output(d);
+  document.getElementById('cktInfo').style.display='block';
+  document.getElementById('cktInfo').innerHTML=`<strong style="color:#f97316">ℹ ${ckt.name}</strong>  -  Circuit calculated with mathematically accurate values. All component labels shown on diagram.`;
+}
+
+// ===== COMPONENTS ENCYCLOPEDIA =====
+const COMP_DATA=[
+  // ─── PASSIVE ───
+  {id:'resistor',name:'Resistor',cat:'passive',color:'#f59e0b',short:'Opposes current flow',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#f59e0b';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(5,my);ctx.lineTo(15,my);for(let i=0;i<6;i++)ctx.lineTo(15+i*7,my+(i%2===0?-10:10));ctx.lineTo(65,my);ctx.stroke();},
+   working:'A resistor limits or controls the flow of electric current in a circuit. It works on Ohm\'s Law: V = IR. When current flows through it, it dissipates energy as heat.',
+   types:['Fixed Resistor','Variable Resistor (Potentiometer)','Thermistor (NTC/PTC)','LDR (Light Dependent Resistor)','Wire-wound Resistor','Carbon Film Resistor','Metal Film Resistor'],
+   uses:['Current limiting','Voltage dividers','Pull-up/Pull-down','Biasing transistors','Timing circuits','Signal attenuation','LED current control'],
+   specs:[{l:'Unit',v:'Ohm (Ω)'},{l:'Range',v:'0.1Ω – 10MΩ'},{l:'Power',v:'1/8W – 10W+'},{l:'Tolerance',v:'±1% to ±20%'}],
+   formula:'V = IR | P = V²/R = I²R'},
+
+  {id:'capacitor',name:'Capacitor',cat:'passive',color:'#3b82f6',short:'Stores electric charge',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#3b82f6';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(mx,5);ctx.lineTo(mx,my-8);ctx.moveTo(mx-18,my-8);ctx.lineTo(mx+18,my-8);ctx.moveTo(mx-18,my+8);ctx.lineTo(mx+18,my+8);ctx.moveTo(mx,my+8);ctx.lineTo(mx,65);ctx.stroke();},
+   working:'A capacitor stores electric charge in an electric field between two conductive plates separated by a dielectric. It charges and discharges, blocking DC while passing AC signals.',
+   types:['Ceramic','Electrolytic (Polarized)','Tantalum','Film (Polyester, Polypropylene)','Mica','Supercapacitor','Variable Capacitor'],
+   uses:['Filtering (bypass/decoupling)','Energy storage','Timing circuits (RC)','Coupling & blocking DC','Power factor correction','Oscillators','Sample & hold'],
+   specs:[{l:'Unit',v:'Farad (F)'},{l:'Range',v:'1pF – 1F'},{l:'Voltage',v:'6.3V – 450V+'},{l:'Xc at 1kHz',v:'1/(2πfC)'}],
+   formula:'Q = CV | Xc = 1/(2πfC) | E = ½CV²'},
+
+  {id:'inductor',name:'Inductor',cat:'passive',color:'#8b5cf6',short:'Stores magnetic energy',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#8b5cf6';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(5,my);for(let i=0;i<4;i++){ctx.arc(15+i*14,my,7,Math.PI,0,false);}ctx.lineTo(65,my);ctx.stroke();},
+   working:'An inductor stores energy in a magnetic field when current flows through its coil. It opposes changes in current. It passes DC but opposes AC  -  opposite behavior to a capacitor.',
+   types:['Air-core Inductor','Iron-core Inductor','Ferrite-core Inductor','Toroidal Inductor','RF Choke','Power Inductor','Variable Inductor'],
+   uses:['Filters (LPF in power supply)','RF circuits & antennas','Energy storage (SMPS)','Chokes (noise filtering)','Transformers','Oscillators (LC tank)','Motor control'],
+   specs:[{l:'Unit',v:'Henry (H)'},{l:'Range',v:'1nH – 1H'},{l:'Xl at 1kHz',v:'2πfL'},{l:'Q Factor',v:'5 – 200'}],
+   formula:'V = L·dI/dt | Xl = 2πfL | E = ½LI²'},
+
+  {id:'transformer',name:'Transformer',cat:'passive',color:'#ec4899',short:'Transfers energy magnetically',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#ec4899';ctx.lineWidth=2;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(mx-14,my-14+i*14,7,Math.PI*0.5,Math.PI*1.5,true);ctx.stroke();}for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(mx+14,my-14+i*14,7,Math.PI*1.5,Math.PI*0.5,true);ctx.stroke();}ctx.beginPath();ctx.setLineDash([2,2]);ctx.moveTo(mx,10);ctx.lineTo(mx,60);ctx.stroke();ctx.setLineDash([]);},
+   working:'A transformer transfers electrical energy between circuits through electromagnetic induction. It can step up or step down voltage. Works only with AC  -  not DC.',
+   types:['Step-up Transformer','Step-down Transformer','Isolation Transformer','Auto-transformer','Current Transformer (CT)','Pulse Transformer','Audio Transformer'],
+   uses:['Power supply (AC adapters)','Voltage level conversion','Isolation','Impedance matching','Current sensing','Audio coupling','Gate drive circuits'],
+   specs:[{l:'Ratio',v:'N1:N2 = V1:V2'},{l:'Efficiency',v:'95–99%'},{l:'Core',v:'Iron/Ferrite'},{l:'Freq',v:'50Hz – MHz'}],
+   formula:'V1/V2 = N1/N2 = I2/I1 | η = Pout/Pin × 100%'},
+
+  // ─── SEMICONDUCTOR / ACTIVE ───
+  {id:'diode',name:'PN Junction Diode',cat:'semiconductor',color:'#ef4444',short:'One-way current valve',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#ef4444';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(10,my);ctx.lineTo(mx-12,my);ctx.lineTo(mx-12,my-16);ctx.lineTo(mx+12,my);ctx.lineTo(mx-12,my+16);ctx.closePath();ctx.fillStyle='rgba(239,68,68,0.25)';ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(mx+12,my-16);ctx.lineTo(mx+12,my+16);ctx.moveTo(mx+12,my);ctx.lineTo(60,my);ctx.stroke();},
+   working:'A PN junction diode allows current to flow only in one direction (forward bias). In forward bias, the depletion layer narrows allowing current; in reverse bias it blocks current (except Zener breakdown).',
+   types:['Rectifier Diode (1N4007)','Zener Diode','Schottky Diode','LED (Light Emitting)','Photodiode','Tunnel Diode','Varactor Diode','PIN Diode'],
+   uses:['Rectification (AC→DC)','Voltage regulation (Zener)','Protection (flyback)','Clipping & clamping','Reverse polarity protection','RF detection','Freewheeling diode'],
+   specs:[{l:'Vf (forward)',v:'0.3V–0.7V'},{l:'PIV',v:'50V – 1000V'},{l:'If',v:'1mA – 30A'},{l:'Symbol',v:'→|'}],
+   formula:'I = Is(e^(V/ηVT)-1) | VT = 26mV @ 25°C'},
+
+  {id:'zener',name:'Zener Diode',cat:'semiconductor',color:'#f97316',short:'Voltage regulator diode',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#f97316';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(10,my);ctx.lineTo(mx-12,my);ctx.lineTo(mx-12,my-16);ctx.lineTo(mx+12,my);ctx.lineTo(mx-12,my+16);ctx.closePath();ctx.fillStyle='rgba(249,115,22,0.2)';ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(mx+12,my-16);ctx.lineTo(mx+8,my-16);ctx.lineTo(mx+12,my-16);ctx.lineTo(mx+12,my+16);ctx.lineTo(mx+16,my+16);ctx.moveTo(mx+12,my);ctx.lineTo(60,my);ctx.stroke();},
+   working:'In reverse bias, when voltage reaches the Zener breakdown voltage (Vz), the diode conducts in reverse and maintains a constant voltage. This makes it ideal for voltage regulation.',
+   types:['Standard Zener (2.4V–200V)','Transient Voltage Suppressor (TVS)','Avalanche Diode'],
+   uses:['Voltage regulation','Voltage reference','Overvoltage protection','Clipping circuits','Level shifting','ESD protection'],
+   specs:[{l:'Vz range',v:'2.4V – 200V'},{l:'Power',v:'500mW – 5W'},{l:'Tolerance',v:'±5%'},{l:'Iz min',v:'5–10mA'}],
+   formula:'Vout = Vz | Rs = (Vin-Vz)/(IZ+IL)'},
+
+  {id:'led',name:'LED',cat:'semiconductor',color:'#facc15',short:'Light Emitting Diode',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#facc15';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(10,my);ctx.lineTo(mx-12,my);ctx.lineTo(mx-12,my-16);ctx.lineTo(mx+12,my);ctx.lineTo(mx-12,my+16);ctx.closePath();ctx.fillStyle='rgba(250,204,21,0.25)';ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(mx+12,my-16);ctx.lineTo(mx+12,my+16);ctx.moveTo(mx+12,my);ctx.lineTo(60,my);ctx.stroke();ctx.beginPath();ctx.moveTo(mx+18,my-18);ctx.lineTo(mx+28,my-28);ctx.moveTo(mx+22,my-12);ctx.lineTo(mx+32,my-22);ctx.strokeStyle='rgba(250,204,21,0.6)';ctx.stroke();},
+   working:'LED emits light when forward biased. Electrons recombine with holes in the semiconductor material, releasing energy as photons. Different materials produce different colors.',
+   types:['Standard LED (Red, Green, Blue, Yellow, White)','IR LED','UV LED','RGB LED','High Power LED','SMD LED','OLED'],
+   uses:['Indication & display','Illumination','Remote controls (IR LED)','Optocoupler','LCD backlight','Status indicators','7-segment displays'],
+   specs:[{l:'Vf',v:'1.8V–3.5V'},{l:'If',v:'10–30mA'},{l:'Colors',v:'IR to UV'},{l:'Efficiency',v:'30–200 lm/W'}],
+   formula:'R_series = (Vsupply - Vf) / If'},
+
+  {id:'bjt',name:'BJT Transistor',cat:'active',color:'#22d3ee',short:'Current-controlled amplifier/switch',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#22d3ee';ctx.lineWidth=2;ctx.beginPath();ctx.arc(mx,my,22,0,2*Math.PI);ctx.stroke();ctx.beginPath();ctx.moveTo(mx-22,my);ctx.lineTo(mx-5,my);ctx.moveTo(mx-5,my-16);ctx.lineTo(mx-5,my+16);ctx.moveTo(mx-5,my-8);ctx.lineTo(mx+16,my-28);ctx.moveTo(mx-5,my+8);ctx.lineTo(mx+16,my+28);ctx.stroke();ctx.fillStyle='#22d3ee';ctx.font='9px Rajdhani';ctx.fillText('NPN',mx-10,my+5);},
+   working:'BJT has 3 terminals: Base, Collector, Emitter. A small base current controls a large collector current. Works in 3 regions: Cutoff (off), Active (amplify), Saturation (fully on).',
+   types:['NPN (BC547, 2N2222, BC107)','PNP (BC557, 2N2907)','Power BJT (TIP31, TIP41)','Darlington Pair (TIP120)','Small Signal BJT'],
+   uses:['Signal amplification','Switching','Motor driver','Oscillators','Current mirror','Logic gates','LED/Relay driver'],
+   specs:[{l:'Gain β',v:'20–1000'},{l:'Vce max',v:'20V – 400V'},{l:'Ic max',v:'100mA – 100A'},{l:'Config',v:'CE, CB, CC'}],
+   formula:'IC = β·IB | IE = IC+IB | VBE ≈ 0.7V'},
+
+  {id:'mosfet',name:'MOSFET',cat:'active',color:'#a78bfa',short:'Voltage-controlled switch/amplifier',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#a78bfa';ctx.lineWidth=2;ctx.beginPath();ctx.arc(mx,my,22,0,2*Math.PI);ctx.stroke();ctx.beginPath();ctx.moveTo(mx-22,my);ctx.lineTo(mx-8,my);ctx.moveTo(mx-8,my-18);ctx.lineTo(mx-8,my+18);ctx.setLineDash([2,2]);ctx.moveTo(mx-2,my-18);ctx.lineTo(mx-2,my+18);ctx.setLineDash([]);ctx.moveTo(mx-2,my-8);ctx.lineTo(mx+18,my-22);ctx.moveTo(mx-2,my+8);ctx.lineTo(mx+18,my+22);ctx.stroke();ctx.fillStyle='#a78bfa';ctx.font='8px Rajdhani';ctx.fillText('NMOS',mx-10,my+5);},
+   working:'MOSFET controls current flow using gate voltage. Gate voltage creates an electric field that forms a conducting channel between Source and Drain. No gate current flows  -  voltage controlled.',
+   types:['N-channel Enhancement (IRF540)','P-channel Enhancement','N-channel Depletion','VMOS / Power MOSFET','CMOS (complementary pair)','FinFET (modern ICs)'],
+   uses:['Power switching (SMPS)','Motor control (H-bridge)','CMOS logic gates','RF amplifiers','Voltage regulators','Class D amplifiers','Battery management'],
+   specs:[{l:'Vgs(th)',v:'1V – 5V'},{l:'Rds(on)',v:'1mΩ – 10Ω'},{l:'Id max',v:'1A – 200A'},{l:'Freq',v:'DC – GHz'}],
+   formula:'Id = k/2·(Vgs-Vth)² | P = Id·Vds | gm = 2Id/(Vgs-Vth)'},
+
+  {id:'jfet',name:'JFET',cat:'active',color:'#34d399',short:'Junction Field Effect Transistor',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#34d399';ctx.lineWidth=2;ctx.beginPath();ctx.arc(mx,my,22,0,2*Math.PI);ctx.stroke();ctx.beginPath();ctx.moveTo(mx-8,my-18);ctx.lineTo(mx-8,my+18);ctx.moveTo(mx-22,my);ctx.lineTo(mx-8,my);ctx.moveTo(mx-8,my-8);ctx.lineTo(mx+18,my-22);ctx.moveTo(mx-8,my+8);ctx.lineTo(mx+18,my+22);ctx.stroke();},
+   working:'JFET is a depletion-mode device  -  it conducts with zero gate voltage. Reverse biasing the gate depletes the channel, reducing current. It has very high input impedance.',
+   types:['N-channel JFET (2N5457, MPF102)','P-channel JFET'],
+   uses:['High impedance amplifiers','VHF/UHF amplifiers','Buffer stages','Analog switches','Current sources','Chopper circuits'],
+   specs:[{l:'Idss',v:'1mA – 50mA'},{l:'Vgs(off)',v:'-2V to -10V'},{l:'Input Z',v:'>10MΩ'},{l:'Noise',v:'Very Low'}],
+   formula:'Id = Idss·(1-Vgs/Vp)²'},
+
+  {id:'scr',name:'SCR / Thyristor',cat:'semiconductor',color:'#f43f5e',short:'Controlled rectifier switch',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#f43f5e';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(10,my);ctx.lineTo(mx-10,my);ctx.lineTo(mx-10,my-16);ctx.lineTo(mx+10,my);ctx.lineTo(mx-10,my+16);ctx.closePath();ctx.fillStyle='rgba(244,63,94,0.2)';ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(mx+10,my-16);ctx.lineTo(mx+10,my+16);ctx.moveTo(mx+10,my);ctx.lineTo(60,my);ctx.moveTo(mx+10,my);ctx.lineTo(mx+24,my+12);ctx.stroke();},
+   working:'SCR is a 4-layer PNPN device with 3 terminals: Anode, Cathode, Gate. Once triggered by a gate pulse, it latches ON and conducts until current falls below holding current.',
+   types:['SCR (Silicon Controlled Rectifier)','TRIAC (bidirectional)','DIAC','GTO (Gate Turn Off)','IGBT (combined)'],
+   uses:['AC power control','Motor speed control','Light dimmers','Battery chargers','UPS systems','Overcurrent protection','Soft starters'],
+   specs:[{l:'Vdrm',v:'50V – 5kV'},{l:'It(av)',v:'1A – 5000A'},{l:'Igt',v:'1–100mA'},{l:'Turn-on',v:'1–2µs'}],
+   formula:'Vavg = Vm/π·(1+cosα) | conduction angle = (π-α)'},
+
+  // ─── ICs ───
+  {id:'opamp',name:'Op-Amp (LM741)',cat:'ic',color:'#06b6d4',short:'Differential voltage amplifier',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#06b6d4';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(12,14);ctx.lineTo(12,56);ctx.lineTo(58,my);ctx.closePath();ctx.stroke();ctx.fillStyle='rgba(6,182,212,0.1)';ctx.fill();ctx.fillStyle='#06b6d4';ctx.font='9px Rajdhani';ctx.fillText('-',18,28);ctx.fillText('+',18,50);ctx.fillText('A→∞',28,my+4);},
+   working:'An op-amp amplifies the difference between its two inputs (+, -). Ideal op-amp has infinite gain, infinite input impedance, zero output impedance. Used with feedback for controlled amplification.',
+   types:['General Purpose (LM741, LM358)','Precision (OP07, AD711)','High Speed (LM318, TL071)','Rail-to-Rail (LMV358)','Instrumentation Amp (INA128)','Comparator (LM339)'],
+   uses:['Amplifiers (inverting/non-inverting)','Comparators','Integrators & Differentiators','Active filters','Oscillators (Wien bridge)','Instrumentation','ADC/DAC interfaces'],
+   specs:[{l:'AOL',v:'100–120 dB'},{l:'CMRR',v:'70–100 dB'},{l:'Slew Rate',v:'0.5–1000 V/µs'},{l:'GBW',v:'1MHz–1GHz'}],
+   formula:'Av(inv) = -Rf/Rin | Av(non-inv) = 1+Rf/Rin | CMRR = 20log(Ad/Ac)'},
+
+  {id:'555',name:'NE555 Timer',cat:'ic',color:'#eab308',short:'Versatile timer & oscillator IC',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#eab308';ctx.lineWidth=2;ctx.strokeRect(15,12,40,46);ctx.fillStyle='#eab308';ctx.font='9px Orbitron';ctx.textAlign='center';ctx.fillText('555',mx,my+4);ctx.textAlign='left';ctx.font='7px Rajdhani';ctx.fillStyle='rgba(234,179,8,0.6)';['VCC','OUT','RST'].forEach((t,i)=>ctx.fillText(t,18,20+i*8));},
+   working:'555 timer uses a comparator network with two voltage dividers (1/3 Vcc and 2/3 Vcc). In astable mode it oscillates continuously; in monostable mode it gives one timed pulse per trigger.',
+   types:['NE555 (bipolar)','LMC555 (CMOS, low power)','NE556 (dual 555)','NE558 (quad 555)'],
+   uses:['Oscillator / clock generator','PWM generation','Monostable timer','LED flasher','Tone generator','Delay circuit','Missing pulse detector'],
+   specs:[{l:'Vcc',v:'4.5V – 16V'},{l:'Iout',v:'200mA sink/source'},{l:'f(max)',v:'~500kHz'},{l:'Accuracy',v:'±1%'}],
+   formula:'Astable: f=1.44/((R1+2R2)C) | Mono: T=1.1×R×C'},
+
+  {id:'7805',name:'LM7805 Regulator',cat:'ic',color:'#10b981',short:'5V fixed voltage regulator',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#10b981';ctx.lineWidth=2;ctx.strokeRect(14,18,42,34);ctx.fillStyle='#10b981';ctx.font='8px Orbitron';ctx.textAlign='center';ctx.fillText('78xx',mx,my+4);ctx.textAlign='left';},
+   working:'A linear voltage regulator that maintains a constant output voltage regardless of input voltage variations or load changes. Uses a pass transistor and feedback network internally.',
+   types:['LM7805 (5V)','LM7809 (9V)','LM7812 (12V)','LM7815 (15V)','LM317 (adjustable)','LM337 (negative adj.)','LDO: LM1117, AMS1117'],
+   uses:['Regulated power supply','Microcontroller power','Sensor power','Voltage reference','Post-rectifier regulation','Battery-backed circuits'],
+   specs:[{l:'Vin(min)',v:'Vout + 2V'},{l:'Iout',v:'up to 1A'},{l:'Dropout',v:'~2V'},{l:'Accuracy',v:'±4%'}],
+   formula:'Vout = fixed (5/9/12V) | P_dissipated = (Vin-Vout)×Iout'},
+
+  {id:'4017',name:'CD4017 Decade Counter',cat:'ic',color:'#a855f7',short:'10-output sequential counter',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#a855f7';ctx.lineWidth=2;ctx.strokeRect(12,10,46,50);ctx.fillStyle='#a855f7';ctx.font='8px Orbitron';ctx.textAlign='center';ctx.fillText('4017',mx,my+4);ctx.textAlign='left';ctx.font='7px Rajdhani';ctx.fillStyle='rgba(168,85,247,0.6)';ctx.fillText('CLK',16,22);ctx.fillText('Q0-Q9',16,34);},
+   working:'On each rising clock edge, the active-HIGH output advances to the next output pin (Q0 through Q9). After Q9, it resets to Q0. Useful for sequential lighting and event counting.',
+   types:['CD4017 (CMOS)','74HC4017','MM74C917'],
+   uses:['LED chaser','Frequency divider (÷10)','Sequential control','Running light effects','Event counter','Music sequencer','Decade counter'],
+   specs:[{l:'Vdd',v:'3V – 18V'},{l:'Outputs',v:'10 (Q0–Q9)'},{l:'Max Clock',v:'~10MHz'},{l:'Current',v:'~10mA/pin'}],
+   formula:'Output advances on each ↑ CLK edge | Reset: RST high → Q0 active'},
+
+  {id:'lm324',name:'LM324 Quad Op-Amp',cat:'ic',color:'#0ea5e9',short:'4 op-amps in one package',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#0ea5e9';ctx.lineWidth=2;ctx.strokeRect(12,10,46,50);ctx.fillStyle='#0ea5e9';ctx.font='7px Orbitron';ctx.textAlign='center';ctx.fillText('LM324',mx,my);ctx.fillText('×4 OA',mx,my+10);ctx.textAlign='left';},
+   working:'Contains four independent, high-gain, internally frequency-compensated operational amplifiers. Single supply from 3V to 32V. Output can swing to ground (suitable for single supply).',
+   types:['LM324 (general purpose)','LM324A (improved)','LM2902 (low power)'],
+   uses:['Multi-channel signal conditioning','Comparators','Active filters','Battery-powered circuits','Audio pre-amp','Signal summing','Sensor interfaces'],
+   specs:[{l:'Vcc',v:'3V – 32V (single)'},{l:'GBW',v:'1MHz'},{l:'Slew Rate',v:'0.5 V/µs'},{l:'Vos',v:'2mV typ'}],
+   formula:'Same as standard op-amp | 4 channels, 14-pin DIP'},
+
+  // ─── ELECTROMECHANICAL ───
+  {id:'relay',name:'Relay',cat:'electromechanical',color:'#fb923c',short:'Electrically controlled switch',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#fb923c';ctx.lineWidth=2;ctx.strokeRect(22,25,26,20);ctx.beginPath();ctx.moveTo(10,55);ctx.lineTo(25,55);ctx.moveTo(35,45);ctx.lineTo(50,35);ctx.lineTo(60,35);ctx.moveTo(50,55);ctx.lineTo(60,55);ctx.stroke();},
+   working:'A relay uses an electromagnet coil to mechanically switch electrical contacts. When coil current flows, it creates a magnetic field attracting the armature and switching the contacts.',
+   types:['Electromagnetic Relay','Solid State Relay (SSR)','Reed Relay','Time Delay Relay','Latching Relay','Contactors (high power)'],
+   uses:['Isolating low-voltage control from high-voltage load','Motor control','PLC outputs','Home automation','Automotive systems','Safety interlocks'],
+   specs:[{l:'Coil voltage',v:'5V, 12V, 24V'},{l:'Contact',v:'SPDT, DPDT'},{l:'Current',v:'up to 30A'},{l:'Operate time',v:'5–20ms'}],
+   formula:'EMF = N·dΦ/dt | Pickup current: Fmag > Fspring'},
+
+  {id:'motor',name:'DC Motor',cat:'electromechanical',color:'#f97316',short:'Converts electrical to mechanical energy',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#f97316';ctx.lineWidth=2;ctx.beginPath();ctx.arc(mx,my,22,0,2*Math.PI);ctx.stroke();ctx.fillStyle='#f97316';ctx.font='10px Orbitron';ctx.textAlign='center';ctx.fillText('M',mx,my+4);ctx.textAlign='left';ctx.beginPath();ctx.moveTo(mx+22,my);ctx.lineTo(62,my);ctx.stroke();},
+   working:'A DC motor converts electrical energy to mechanical rotation using interaction between magnetic fields. The commutator reverses current direction to maintain continuous rotation.',
+   types:['Brushed DC Motor','Brushless DC (BLDC)','Servo Motor','Stepper Motor','Gear Motor','Coreless DC Motor'],
+   uses:['Robotics','Conveyor belts','Electric vehicles','Fans & pumps','Hard disk drives','CNC machines','Consumer electronics'],
+   specs:[{l:'Voltage',v:'3V – 500V'},{l:'Speed',v:'100–15000 RPM'},{l:'Efficiency',v:'70–95%'},{l:'Torque',v:'mNm – kNm'}],
+   formula:'P = τ·ω | Back EMF = Kb·ω | Torque = Kt·Ia'},
+
+  {id:'speaker',name:'Speaker / Buzzer',cat:'electromechanical',color:'#84cc16',short:'Converts electrical to sound energy',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#84cc16';ctx.lineWidth=2;ctx.strokeRect(20,my-12,12,24);ctx.beginPath();ctx.moveTo(32,my-12);ctx.lineTo(50,my-22);ctx.lineTo(50,my+22);ctx.lineTo(32,my+12);ctx.closePath();ctx.fillStyle='rgba(132,204,22,0.15)';ctx.fill();ctx.stroke();},
+   working:'A speaker uses a voice coil in a magnetic field. Audio signals cause the coil to vibrate, moving a cone that creates sound waves. Buzzers use piezoelectric effect or magnetic actuation.',
+   types:['Electromagnetic Speaker','Piezoelectric Buzzer','Active Buzzer (built-in oscillator)','Passive Buzzer','Tweeter/Woofer','Bone Conduction Speaker'],
+   uses:['Audio output','Alarm systems','Telephone/mobile','Notification sounds','Musical instruments','Ultrasonic transducers','PA systems'],
+   specs:[{l:'Impedance',v:'4Ω, 8Ω, 16Ω'},{l:'Power',v:'0.25W – 1000W'},{l:'Freq response',v:'20Hz – 20kHz'},{l:'SPL',v:'80–110 dB'}],
+   formula:'P = V²/Z | Efficiency = acoustic power / electrical power'},
+
+  // ─── SENSORS ───
+  {id:'ldr',name:'LDR (Photoresistor)',cat:'sensor',color:'#fde047',short:'Light-sensitive resistor',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#fde047';ctx.lineWidth=2;ctx.beginPath();ctx.arc(mx,my,20,0,2*Math.PI);ctx.stroke();ctx.beginPath();ctx.moveTo(5,my);ctx.lineTo(mx-20,my);ctx.moveTo(mx+20,my);ctx.lineTo(65,my);ctx.stroke();ctx.beginPath();ctx.moveTo(mx-8,my-8);ctx.lineTo(mx+8,my+8);ctx.moveTo(mx-4,my-12);ctx.lineTo(mx+12,my+4);ctx.strokeStyle='rgba(253,224,71,0.6)';ctx.stroke();},
+   working:'LDR (Light Dependent Resistor) changes resistance based on light intensity. In darkness, resistance is very high (1MΩ+); in bright light it drops to ~100Ω. Made of cadmium sulfide (CdS).',
+   types:['CdS Photoresistor (GL5516, GL5528)','Photodiode','Phototransistor','Photovoltaic Cell'],
+   uses:['Automatic street lights','Light meters','Camera exposure control','Security systems','Day/night switches','Object detection','Solar trackers'],
+   specs:[{l:'Dark resistance',v:'1MΩ+'},{l:'Light resistance',v:'100–1kΩ'},{l:'Response time',v:'20–100ms'},{l:'Wavelength',v:'Peak ~560nm'}],
+   formula:'R ∝ 1/Illuminance | Vout = Vcc × R_LDR/(R_fixed + R_LDR)'},
+
+  {id:'thermistor',name:'Thermistor',cat:'sensor',color:'#f87171',short:'Temperature-sensitive resistor',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#f87171';ctx.lineWidth=2;ctx.strokeRect(22,my-14,26,28);ctx.fillStyle='#f87171';ctx.font='8px Rajdhani';ctx.textAlign='center';ctx.fillText('NTC',mx,my+4);ctx.textAlign='left';ctx.beginPath();ctx.moveTo(5,my);ctx.lineTo(22,my);ctx.moveTo(48,my);ctx.lineTo(65,my);ctx.stroke();},
+   working:'Thermistor resistance changes with temperature. NTC (Negative Temp Coeff)  -  resistance decreases as temp increases. PTC (Positive Temp Coeff)  -  resistance increases with temperature.',
+   types:['NTC Thermistor (most common)','PTC Thermistor','RTD (Pt100, Pt1000)','Thermocouple (Type K, J, T)'],
+   uses:['Temperature measurement','Thermal protection','Inrush current limiting (NTC)','Self-resetting fuse (PTC)','Temperature compensation','Medical devices','HVAC systems'],
+   specs:[{l:'Range',v:'-50°C to +150°C'},{l:'Accuracy',v:'±0.1°C to ±1°C'},{l:'B constant',v:'3000–5000K'},{l:'Response',v:'1–10 seconds'}],
+   formula:'R(T) = R0 · exp(B·(1/T - 1/T0)) | β equation'},
+
+  {id:'ultrasonic',name:'Ultrasonic Sensor (HC-SR04)',cat:'sensor',color:'#67e8f9',short:'Distance measurement via ultrasound',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#67e8f9';ctx.lineWidth=2;ctx.strokeRect(10,my-18,50,36);ctx.beginPath();for(let i=1;i<=3;i++){ctx.arc(68,my,i*8,-Math.PI*0.6,Math.PI*0.6);}ctx.stroke();ctx.fillStyle='#67e8f9';ctx.font='7px Rajdhani';ctx.textAlign='center';ctx.fillText('TRIG  ECHO',mx,my+6);ctx.textAlign='left';},
+   working:'Sends 40kHz ultrasonic pulses from Trig pin. Echo pin goes HIGH for duration = time of flight. Distance = (time × speed of sound) / 2. Speed of sound ≈ 343 m/s at 20°C.',
+   types:['HC-SR04 (3.3V–5V)','US-100 (with temperature compensation)','JSN-SR04T (waterproof)','TF-Luna (ToF LiDAR)'],
+   uses:['Obstacle avoidance (robots)','Parking sensors','Level measurement','People counting','Burglar alarms','Gesture control','Drone altitude hold'],
+   specs:[{l:'Range',v:'2cm – 400cm'},{l:'Accuracy',v:'±3mm'},{l:'Angle',v:'15° beam'},{l:'Freq',v:'40kHz'}],
+   formula:'Distance = (Echo_time × 343) / 2 (in meters)'},
+
+  {id:'ir_sensor',name:'IR Sensor',cat:'sensor',color:'#c084fc',short:'Infrared detection & communication',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#c084fc';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(18,my);ctx.lineTo(30,my-14);ctx.lineTo(30,my+14);ctx.closePath();ctx.fillStyle='rgba(192,132,252,0.2)';ctx.fill();ctx.stroke();ctx.beginPath();for(let i=1;i<=3;i++){ctx.moveTo(34+i*4,my-i*4);ctx.lineTo(34+i*4+4,my-i*4-4);}ctx.stroke();ctx.beginPath();ctx.moveTo(5,my);ctx.lineTo(18,my);ctx.moveTo(30,my);ctx.lineTo(65,my);ctx.stroke();},
+   working:'IR sensor pair consists of IR LED (transmitter) and photodiode/phototransistor (receiver). When IR beam is interrupted or reflected, the receiver output changes. IR remote uses modulated 38kHz signals.',
+   types:['Reflective IR Sensor (TCRT5000)','IR Break-beam Sensor','IR Remote Receiver (TSOP1738)','Passive IR (PIR) Motion Sensor','Thermal IR Camera'],
+   uses:['Line following robots','Object detection','Remote controls','Proximity sensing','Motion detection (PIR)','Encoders','Flame detection'],
+   specs:[{l:'Wavelength',v:'850–940nm'},{l:'Range',v:'1cm – 1m'},{l:'Remote freq',v:'38kHz typical'},{l:'Response',v:'<1ms'}],
+   formula:'Received power ∝ 1/d² | TSOP: demodulates 38kHz carrier'},
+
+  {id:'temp_sensor',name:'Temperature Sensor (LM35)',cat:'sensor',color:'#34d399',short:'Precision Celsius temperature sensor',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#34d399';ctx.lineWidth=2;ctx.strokeRect(18,my-16,34,32);ctx.fillStyle='#34d399';ctx.font='7px Orbitron';ctx.textAlign='center';ctx.fillText('LM35',mx,my+4);ctx.textAlign='left';ctx.beginPath();ctx.moveTo(18,my-8);ctx.lineTo(5,my-8);ctx.moveTo(18,my+8);ctx.lineTo(5,my+8);ctx.moveTo(52,my);ctx.lineTo(65,my);ctx.stroke();},
+   working:'LM35 outputs 10mV per degree Celsius. No calibration required. Linear output. Vout = 10mV × T(°C). For example, at 25°C → 250mV output. Works from -55°C to +150°C.',
+   types:['LM35 (Celsius, 10mV/°C)','LM34 (Fahrenheit)','DS18B20 (digital, 1-Wire)','DHT11/DHT22 (Temp+Humidity)','TMP36','MCP9700','PT100 RTD'],
+   uses:['Temperature monitoring','Thermostat control','Fan speed control','Battery temperature','Industrial process control','Weather stations','Body temperature'],
+   specs:[{l:'Output',v:'10mV/°C'},{l:'Accuracy',v:'±0.5°C'},{l:'Range',v:'-55°C to +150°C'},{l:'Vcc',v:'4V–30V'}],
+   formula:'T(°C) = Vout(mV) / 10 | ADC: T = (ADC × Vref) / (1023 × 0.01)'},
+
+  {id:'piezo',name:'Piezoelectric Transducer',cat:'sensor',color:'#fb923c',short:'Converts force to voltage & vice versa',
+   symbol:(c,w,h)=>{const ctx=c.getContext('2d'),mx=w/2,my=h/2;ctx.strokeStyle='#fb923c';ctx.lineWidth=2;ctx.strokeRect(18,my-16,34,32);ctx.beginPath();ctx.moveTo(20,my-6);ctx.lineTo(50,my-6);ctx.moveTo(20,my+6);ctx.lineTo(50,my+6);ctx.stroke();ctx.fillStyle='rgba(251,146,60,0.2)';ctx.fillRect(20,my-6,30,12);ctx.fillStyle='#fb923c';ctx.font='7px Orbitron';ctx.textAlign='center';ctx.fillText('PIEZO',mx,my+4);ctx.textAlign='left';},
+   working:'Piezoelectric effect: certain crystals (quartz, PZT) generate voltage when mechanically stressed, and vice versa. Applied voltage causes physical deformation  -  used as both sensor and actuator.',
+   types:['Piezo Buzzer','Piezo Speaker','Piezo Vibration Sensor','Ultrasonic Transducer','Quartz Crystal (oscillator)','PVDF Film Sensor'],
+   uses:['Buzzers & alarms','Knock/vibration detection','Ultrasonic ranging','Crystal oscillator (frequency reference)','Force/pressure sensing','Inkjet printer heads','Medical ultrasound'],
+   specs:[{l:'Voltage gen',v:'Up to 100V/impact'},{l:'Frequency',v:'1Hz – MHz'},{l:'Crystal freq',v:'±50ppm accuracy'},{l:'Capacitance',v:'1–100nF'}],
+   formula:'V = d·F/C | Resonant freq: f = 1/(2π√LC)'},
+];
+
+function drawCompSymbol(canvas,comp){
+  const ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,70,70);
+  comp.symbol(canvas,70,70);
+}
+
+function compCard(comp){
+  const badge_colors={passive:'#f59e0b',active:'#22d3ee',semiconductor:'#ef4444',ic:'#06b6d4',electromechanical:'#fb923c',sensor:'#34d399'};
+  const badge_labels={passive:'PASSIVE',active:'ACTIVE',semiconductor:'SEMICONDUCTOR',ic:'IC',electromechanical:'ELECTROMECH',sensor:'SENSOR'};
+  return `<div class="comp-card" id="cc_${comp.id}" data-cat="${comp.cat}" onclick="toggleComp('${comp.id}')">
+    <div class="comp-card-header">
+      <div class="comp-symbol"><canvas id="sym_${comp.id}" width="70" height="70"></canvas></div>
+      <div class="comp-meta">
+        <div class="comp-name">${comp.name}</div>
+        <div class="comp-type-badge" style="background:${badge_colors[comp.cat]}22;color:${badge_colors[comp.cat]};border:1px solid ${badge_colors[comp.cat]}44;">${badge_labels[comp.cat]}</div>
+        <div class="comp-short">${comp.short}</div>
+      </div>
+    </div>
+    <div class="comp-body" id="cb_${comp.id}">
+      <div class="comp-section-title">⚙️ How it works</div>
+      <div class="comp-detail">${comp.working}</div>
+      <div class="comp-section-title">🔧 Types</div>
+      <div class="comp-uses">${comp.types.map(t=>`<span class="comp-use-tag">${t}</span>`).join('')}</div>
+      <div class="comp-section-title">🏭 Applications</div>
+      <div class="comp-uses">${comp.uses.map(u=>`<span class="comp-use-tag" style="background:rgba(52,211,153,0.06);border-color:rgba(52,211,153,0.2);color:#34d399">${u}</span>`).join('')}</div>
+      <div class="comp-section-title">📊 Key Specifications</div>
+      <div class="comp-specs">${comp.specs.map(s=>`<div class="comp-spec"><div class="comp-spec-label">${s.l}</div><div class="comp-spec-val">${s.v}</div></div>`).join('')}</div>
+      <div class="comp-section-title">📐 Key Formula</div>
+      <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.15);border-radius:8px;padding:10px 14px;font-family:'Orbitron',monospace;font-size:.78rem;color:#34d399;">${comp.formula}</div>
+    </div>
+  </div>`;
+}
+
+function renderComps(list){
+  const grid=document.getElementById('compGrid');
+  grid.innerHTML=list.map(compCard).join('');
+  list.forEach(c=>{
+    const canvas=document.getElementById('sym_'+c.id);
+    if(canvas)drawCompSymbol(canvas,c);
+  });
+}
+
+function filterComp(cat){
+  document.querySelectorAll('.comp-tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('compSearch').value='';
+  const list=cat==='all'?COMP_DATA:COMP_DATA.filter(c=>c.cat===cat);
+  renderComps(list);
+}
+
+function searchComp(){
+  const val=document.getElementById('compSearch').value.toLowerCase();
+  document.querySelectorAll('.comp-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.comp-tab')[0].classList.add('active');
+  const list=val?COMP_DATA.filter(c=>c.name.toLowerCase().includes(val)||c.short.toLowerCase().includes(val)||c.uses.join(' ').toLowerCase().includes(val)||c.cat.includes(val)):COMP_DATA;
+  renderComps(list);
+}
+
+function toggleComp(id){
+  const body=document.getElementById('cb_'+id);
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.comp-body').forEach(b=>b.classList.remove('open'));
+  if(!isOpen)body.classList.add('open');
+}
+
+// Init components when compSection opens - handled inside openSection above
 
 // ENTER KEY
 document.addEventListener('keydown',e=>{
