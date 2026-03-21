@@ -24,7 +24,7 @@ Fast. Accurate. Always ready. No installation required.
 
 ## 📌 About the Project
 
-**ECE – Engineer's Toolkit v3.0** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **6 major categories** with **40+ calculators** — from basic circuit laws to microcontroller peripherals — all wrapped in a stunning neon-themed interface with smooth animations.
+**ECE – Engineer's Toolkit** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **6 major categories** with **40+ calculators** — from basic circuit laws to microcontroller peripherals — all wrapped in a stunning neon-themed interface with smooth animations.
 
 > 💡 No internet needed after first load · No signup · No ads · 100% free · Single HTML file
 
