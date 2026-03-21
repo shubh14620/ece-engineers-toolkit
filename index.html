@@ -173,6 +173,18 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
       <div class="cat-desc">Timer, PWM, UART, ADC, SPI, I2C</div>
       <div class="cat-arrow" style="color:var(--neon2)">→</div>
     </div>
+    <div class="cat-card" onclick="openSection('signalSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ff88)">📊</span>
+      <div class="cat-title" style="color:#00ff88">Signal & Systems</div>
+      <div class="cat-desc">Energy, Power, Fourier, Sampling, Convolution</div>
+      <div class="cat-arrow" style="color:#00ff88">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('vlsiSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #ff9500)">🔬</span>
+      <div class="cat-title" style="color:#ff9500">VLSI Design</div>
+      <div class="cat-desc">CMOS delay, Power, Noise margin, Fan-out</div>
+      <div class="cat-arrow" style="color:#ff9500">→</div>
+    </div>
   </div>
   <div class="stats-bar">
     <div class="stat"><span class="stat-num" id="cnt1">0</span><span class="stat-label">Calculators</span></div>
@@ -304,9 +316,41 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
   </div>
 </div>
 
+<!-- SIGNAL & SYSTEMS -->
+<div id="signalSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#00ff88">📊 SIGNAL & SYSTEMS</div></div>
+  <div class="container">
+    <div class="card"><h3>Signal Energy</h3><input id="sigAmp" placeholder="Amplitude A"><input id="sigDur" placeholder="Duration T (seconds)"><button onclick="sigEnergy()">CALCULATE</button><div id="sigEOut" class="output">E = A² × T</div></div>
+    <div class="card"><h3>Signal Power</h3><input id="sigAmp2" placeholder="Amplitude A"><input id="sigT1" placeholder="Start Time T1"><input id="sigT2" placeholder="End Time T2"><button onclick="sigPower()">CALCULATE</button><div id="sigPOut" class="output">P = A² / (T2−T1)</div></div>
+    <div class="card"><h3>Fourier Series – nth Harmonic Freq</h3><input id="fsF0" placeholder="Fundamental Frequency f0 (Hz)"><input id="fsN" placeholder="Harmonic number n (1,2,3...)"><button onclick="fourierHarm()">CALCULATE</button><div id="fsOut" class="output">fn = n × f0</div></div>
+    <div class="card"><h3>Nyquist Sampling Theorem</h3><input id="nysMax" placeholder="Max Signal Frequency fmax (Hz)"><button onclick="nysSamp()">CALCULATE</button><div id="nysOut" class="output">fs ≥ 2 × fmax</div><div class="info-box">Minimum sampling rate to avoid aliasing. Practical rate = 2.5× fmax recommended.</div></div>
+    <div class="card"><h3>Convolution Length</h3><input id="convL1" placeholder="Signal 1 Length (N1)"><input id="convL2" placeholder="Signal 2 Length (N2)"><button onclick="convLen()">CALCULATE</button><div id="convOut" class="output">L = N1 + N2 − 1</div></div>
+    <div class="card"><h3>DFT / IDFT Size Check</h3><input id="dftN" placeholder="Number of samples N"><button onclick="dftCheck()">CALCULATE</button><div id="dftOut" class="output">Frequency resolution = fs/N</div></div>
+    <div class="card"><h3>Time Constant → Frequency</h3><input id="tauVal" placeholder="Time Constant τ (seconds)"><button onclick="tauToFreq()">CALCULATE</button><div id="tauOut" class="output">f = 1 / (2πτ)</div></div>
+    <div class="card"><h3>System Stability (Pole Check)</h3><input id="poleReal" placeholder="Real part of pole (σ)"><button onclick="poleCheck()">CHECK</button><div id="poleOut" class="output">Enter real part of pole</div><div class="info-box">For continuous-time: σ &lt; 0 → Stable | σ = 0 → Marginally stable | σ &gt; 0 → Unstable</div></div>
+    <div class="card"><h3>SNR Calculator</h3><input id="snrSig" placeholder="Signal Power (W or V²)"><input id="snrNoise" placeholder="Noise Power (W or V²)"><button onclick="snrCalc()">CALCULATE</button><div id="snrOut" class="output">SNR = 10×log₁₀(Ps/Pn)</div></div>
+  </div>
+</div>
+
+<!-- VLSI DESIGN -->
+<div id="vlsiSection" class="section">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#ff9500">🔬 VLSI DESIGN</div></div>
+  <div class="container">
+    <div class="card"><h3>CMOS Propagation Delay</h3><input id="cmosCL" placeholder="Load Capacitance CL (F)"><input id="cmosVdd" placeholder="Supply Voltage Vdd (V)"><input id="cmosId" placeholder="Avg Drive Current Id (A)"><button onclick="cmosDelay()">CALCULATE</button><div id="cmosOut" class="output">tp = CL × Vdd / (2 × Id)</div></div>
+    <div class="card"><h3>Dynamic Power Dissipation</h3><input id="dynC" placeholder="Load Capacitance C (F)"><input id="dynV" placeholder="Supply Voltage Vdd (V)"><input id="dynF" placeholder="Clock Frequency f (Hz)"><input id="dynA" placeholder="Activity Factor α (0–1)"><button onclick="dynPower()">CALCULATE</button><div id="dynOut" class="output">P = α × C × Vdd² × f</div></div>
+    <div class="card"><h3>Static / Leakage Power</h3><input id="statI" placeholder="Leakage Current Ileak (A)"><input id="statV" placeholder="Supply Voltage Vdd (V)"><button onclick="statPower()">CALCULATE</button><div id="statOut" class="output">P = Ileak × Vdd</div></div>
+    <div class="card"><h3>Noise Margin (CMOS)</h3><input id="nmVoh" placeholder="VOH – Output High (V)"><input id="nmVih" placeholder="VIH – Input High threshold (V)"><input id="nmVil" placeholder="VIL – Input Low threshold (V)"><input id="nmVol" placeholder="VOL – Output Low (V)"><button onclick="noiseMargin()">CALCULATE</button><div id="nmOut" class="output">NMH = VOH−VIH | NML = VIL−VOL</div></div>
+    <div class="card"><h3>Fan-Out Calculation</h3><input id="foIout" placeholder="Driver Output Current Iout (mA)"><input id="foIin" placeholder="Each Gate Input Current Iin (mA)"><button onclick="fanOut()">CALCULATE</button><div id="foOut" class="output">Fan-Out = Iout / Iin</div></div>
+    <div class="card"><h3>MOSFET W/L Ratio</h3><input id="wlId" placeholder="Required Drain Current Id (A)"><input id="wlMu" placeholder="Carrier Mobility µ (cm²/Vs)"><input id="wlCox" placeholder="Gate Oxide Capacitance Cox (F/m²)"><input id="wlVov" placeholder="Overdrive Voltage Vov = Vgs−Vth (V)"><button onclick="wlRatio()">CALCULATE</button><div id="wlOut" class="output">W/L = 2Id / (µ × Cox × Vov²)</div></div>
+    <div class="card"><h3>Gate Oxide Thickness → Cox</h3><input id="toxVal" placeholder="Oxide Thickness tox (nm)"><button onclick="coxCalc()">CALCULATE</button><div id="coxOut" class="output">Cox = ε₀×εr / tox</div><div class="info-box">εr of SiO₂ ≈ 3.9 | ε₀ = 8.854×10⁻¹² F/m</div></div>
+    <div class="card"><h3>Critical Path Delay</h3><input id="cpStages" placeholder="Number of gate stages"><input id="cpTp" placeholder="Propagation delay per gate tp (ns)"><button onclick="critPath()">CALCULATE</button><div id="cpOut" class="output">Total delay = N × tp</div></div>
+    <div class="card"><h3>Power Delay Product (PDP)</h3><input id="pdpP" placeholder="Power P (W)"><input id="pdpTp" placeholder="Propagation Delay tp (s)"><button onclick="pdpCalc()">CALCULATE</button><div id="pdpOut" class="output">PDP = P × tp</div><div class="info-box">Lower PDP = better design. Unit: Joules (energy per switching event).</div></div>
+  </div>
+</div>
+
 <footer>
   <div class="copyright-badge">©️ 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
-  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v3.0</strong>
+  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v4.0</strong>
 </footer>
 
 <script>
@@ -323,10 +367,10 @@ footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78re
 
 // COUNTER
 function animCount(el,target,suffix=''){let n=0,step=Math.ceil(target/40),t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n+suffix;if(n>=target)clearInterval(t);},30);}
-setTimeout(()=>{animCount(document.getElementById('cnt1'),40,'+');animCount(document.getElementById('cnt2'),35,'+');animCount(document.getElementById('cnt3'),6);},800);
+setTimeout(()=>{animCount(document.getElementById('cnt1'),58,'+');animCount(document.getElementById('cnt2'),50,'+');animCount(document.getElementById('cnt3'),8);},800);
 
 // NAVIGATION
-const allSections=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection'];
+const allSections=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
 function openSection(id){document.getElementById('homeMenu').style.display='none';allSections.forEach(s=>document.getElementById(s).style.display='none');document.getElementById(id).style.display='block';window.scrollTo(0,0);}
 function goHome(){document.getElementById('homeMenu').style.display='flex';allSections.forEach(s=>document.getElementById(s).style.display='none');document.querySelectorAll('.card').forEach(c=>c.style.display='');}
 function searchCards(){
@@ -481,6 +525,45 @@ function adcCalc(){const step=gv('adcVref')/Math.pow(2,gv('adcBits'));document.g
 function adcVoltage(){setOut('adcVout','Vin',(gv('adcDig')/Math.pow(2,gv('adcBits2')))*gv('adcVref2'),'V');}
 function spiSpeed(){const f=gv('spiClk')/parseInt(document.getElementById('spiDiv').value);document.getElementById('spiOut').innerHTML=`SPI CLK = <span style='color:#fff'>${fmt(f/1e6)} MHz</span>`;}
 function i2cFreq(){const pre=parseInt(document.getElementById('i2cPre').value);const f=gv('i2cClk')/(16+2*gv('i2cBRR')*pre);document.getElementById('i2cOut').innerHTML=`f = <span style='color:#fff'>${fmt(f/1000)} kHz</span>`;}
+
+// SIGNAL & SYSTEMS
+function sigEnergy(){setOut('sigEOut','E',gv('sigAmp')**2*gv('sigDur'),'J');}
+function sigPower(){const dur=gv('sigT2')-gv('sigT1');setOut('sigPOut','P',gv('sigAmp2')**2/dur,'W');}
+function fourierHarm(){setOut('fsOut','fn',gv('fsN')*gv('fsF0'),'Hz');}
+function nysSamp(){const fs=2*gv('nysMax');document.getElementById('nysOut').innerHTML=`fs ≥ <span style='color:#fff'>${fmt(fs)} Hz</span> | Practical: <span style='color:#fff'>${fmt(fs*1.25)} Hz</span>`;}
+function convLen(){setOut('convOut','Length',gv('convL1')+gv('convL2')-1);}
+function dftCheck(){
+  const N=gv('dftN'),fs=gv('dftN');
+  const isPow2=(N&(N-1))===0;
+  document.getElementById('dftOut').innerHTML=`Freq resolution = <span style='color:#fff'>fs/N</span> | FFT compatible: <span style='color:${isPow2?'#00ff88':'#ff4466'}'>${isPow2?'✅ Yes (power of 2)':'⚠ No — use next power of 2: '+Math.pow(2,Math.ceil(Math.log2(N)))}</span>`;
+}
+function tauToFreq(){setOut('tauOut','fc',1/(2*Math.PI*gv('tauVal')),'Hz');}
+function poleCheck(){
+  const s=gv('poleReal');
+  document.getElementById('poleOut').innerHTML=`σ = <span style='color:#fff'>${fmt(s)}</span> → <span style='color:${s<0?'#00ff88':s===0?'#ffe600':'#ff4466'}'>${s<0?'✅ STABLE':s===0?'⚠ Marginally Stable':'❌ UNSTABLE'}</span>`;
+}
+function snrCalc(){const snr=10*Math.log10(gv('snrSig')/gv('snrNoise'));document.getElementById('snrOut').innerHTML=`SNR = <span style='color:#fff'>${fmt(snr)} dB</span>`;}
+
+// VLSI DESIGN
+function cmosDelay(){setOut('cmosOut','tp',gv('cmosCL')*gv('cmosVdd')/(2*gv('cmosId')),'s');}
+function dynPower(){setOut('dynOut','P',gv('dynA')*gv('dynC')*gv('dynV')**2*gv('dynF'),'W');}
+function statPower(){setOut('statOut','P',gv('statI')*gv('statV'),'W');}
+function noiseMargin(){
+  const nmh=gv('nmVoh')-gv('nmVih'),nml=gv('nmVil')-gv('nmVol');
+  document.getElementById('nmOut').innerHTML=`NMH = <span style='color:#00ff88'>${fmt(nmh)} V</span> &nbsp;|&nbsp; NML = <span style='color:#00ff88'>${fmt(nml)} V</span>`;
+}
+function fanOut(){setOut('foOut','Fan-Out',Math.floor(gv('foIout')/gv('foIin')));}
+function wlRatio(){
+  const wl=(2*gv('wlId'))/(gv('wlMu')*1e-4*gv('wlCox')*gv('wlVov')**2);
+  setOut('wlOut','W/L',wl);
+}
+function coxCalc(){
+  const tox=gv('toxVal')*1e-9;
+  const cox=(8.854e-12*3.9)/tox;
+  document.getElementById('coxOut').innerHTML=`Cox = <span style='color:#fff'>${fmt(cox)} F/m²</span> (${fmt(cox*1e3)} mF/m²)`;
+}
+function critPath(){setOut('cpOut','Total Delay',gv('cpStages')*gv('cpTp'),'ns');}
+function pdpCalc(){const pdp=gv('pdpP')*gv('pdpTp');document.getElementById('pdpOut').innerHTML=`PDP = <span style='color:#fff'>${fmt(pdp*1e15)} fJ</span>`;}
 
 // ENTER KEY
 document.addEventListener('keydown',e=>{
