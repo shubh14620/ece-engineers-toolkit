@@ -4,7 +4,7 @@
 
 ### *Precision · Power · Performance*
 
-![Version](https://img.shields.io/badge/Version-3.0-00ffe7?style=for-the-badge&logoColor=white)
+![Version](https://img.shields.io/badge/Version-4.0-00ffe7?style=for-the-badge&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -24,7 +24,7 @@ Fast. Accurate. Always ready. No installation required.
 
 ## 📌 About the Project
 
-**ECE – Engineer's Toolkit v3.0** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **6 major categories** with **40+ calculators** — from basic circuit laws to microcontroller peripherals — all wrapped in a stunning neon-themed interface with smooth animations.
+**ECE – Engineer's Toolkit v4.0** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **8 major categories** with **58+ calculators** — from basic circuit laws to VLSI design — all wrapped in a stunning neon-themed interface with smooth animations.
 
 > 💡 No internet needed after first load · No signup · No ads · 100% free · Single HTML file
 
@@ -40,6 +40,8 @@ Fast. Accurate. Always ready. No installation required.
 | 📡 **Communication** | Modulation, Shannon, Friis, Nyquist & more |
 | 💡 **Practical Tools** | Cap decoder, IC reference, E-series finder |
 | 🔌 **Microcontroller** | Timer, PWM, UART, ADC, SPI, I²C |
+| 📊 **Signal & Systems** | Energy, Fourier, Sampling, Stability, SNR |
+| 🔬 **VLSI Design** | CMOS delay, Power, Noise margin, W/L ratio |
 | 🔍 **Live Search** | Find any calculator instantly |
 | 🌙 **Dark / Light Mode** | Toggle anytime |
 | 📱 **Responsive** | Works on mobile, tablet & desktop |
@@ -146,12 +148,44 @@ Fast. Accurate. Always ready. No installation required.
 
 ---
 
+### 📊 Signal & Systems (9 Calculators) — *New in v4.0*
+
+| # | Calculator | Formula |
+|---|---|---|
+| 1 | **Signal Energy** | E = A² × T |
+| 2 | **Signal Power** | P = A² / (T2−T1) |
+| 3 | **Fourier Series – nth Harmonic** | fn = n × f0 |
+| 4 | **Nyquist Sampling Theorem** | fs ≥ 2 × fmax |
+| 5 | **Convolution Length** | L = N1 + N2 − 1 |
+| 6 | **DFT / FFT Size Check** | FFT power-of-2 compatibility checker |
+| 7 | **Time Constant → Frequency** | f = 1 / (2πτ) |
+| 8 | **System Stability (Pole Check)** | σ < 0 → Stable, σ = 0 → Marginal, σ > 0 → Unstable |
+| 9 | **SNR Calculator** | SNR = 10 × log₁₀(Ps/Pn) |
+
+---
+
+### 🔬 VLSI Design (9 Calculators) — *New in v4.0*
+
+| # | Calculator | Formula |
+|---|---|---|
+| 1 | **CMOS Propagation Delay** | tp = CL × Vdd / (2 × Id) |
+| 2 | **Dynamic Power Dissipation** | P = α × C × Vdd² × f |
+| 3 | **Static / Leakage Power** | P = Ileak × Vdd |
+| 4 | **Noise Margin** | NMH = VOH−VIH · NML = VIL−VOL |
+| 5 | **Fan-Out Calculation** | Fan-Out = Iout / Iin |
+| 6 | **MOSFET W/L Ratio** | W/L = 2Id / (µ × Cox × Vov²) |
+| 7 | **Gate Oxide → Cox** | Cox = ε₀ × εr / tox |
+| 8 | **Critical Path Delay** | Total = N × tp |
+| 9 | **Power Delay Product (PDP)** | PDP = P × tp (in fJ) |
+
+---
+
 ## 📁 Project Structure
 
 ```
 ECE-Toolkit/
 │
-├── index.html          ← Entire app (all 40+ calculators in one file)
+├── index.html          ← Entire app (all 58+ calculators in one file)
 └── README.md           ← You are here
 ```
 
@@ -182,18 +216,29 @@ ECE-Toolkit/
 
 - **HTML5** — Structure & layout
 - **CSS3** — Animations, neon glow, glassmorphism, responsive grid
-- **Vanilla JavaScript** — All 40+ calculators, DOM, theme toggle, live search
+- **Vanilla JavaScript** — All 58+ calculators, DOM, theme toggle, live search
 - **Google Fonts** — Orbitron + Rajdhani typefaces
 
 ---
 
-## 🐛 Upcoming in v3.1
+## 📦 Version History
+
+| Version | What's New |
+|---|---|
+| **v4.0** | Signal & Systems (9 calc) + VLSI Design (9 calc) added |
+| **v3.0** | Design Tools, Communication, Practical Tools, Microcontroller added |
+| **v2.0** | Complete UI redesign — neon theme, animations, dark/light mode |
+| **v1.0** | Initial release — ECE Core + Digital calculators |
+
+---
+
+## 🐛 Upcoming in v4.1
 
 - [ ] Full K-Map solver (2–4 variables)
+- [ ] Satellite Communication section
+- [ ] Power Electronics section
 - [ ] Export results as PDF
 - [ ] Dark/Light theme memory
-- [ ] 555 Timer astable/monostable calculator
-- [ ] Microstrip antenna designer
 
 ---
 
@@ -212,7 +257,7 @@ ECE-Toolkit/
 ## 📄 License & Copyright
 
 ```
-©️ 2026 ECE – Engineer's Toolkit v3.0
+©️ 2026 ECE – Engineer's Toolkit v4.0
 Developed by Shubham Pandey
 All Rights Reserved.
 
