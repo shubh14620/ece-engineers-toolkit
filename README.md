@@ -4,14 +4,14 @@
 
 ### *Precision · Power · Performance*
 
-![Version](https://img.shields.io/badge/Version-2.0-00ffe7?style=for-the-badge&logo=lightning&logoColor=white)
+![Version](https://img.shields.io/badge/Version-3.0-00ffe7?style=for-the-badge&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-ff2d78?style=for-the-badge)
 ![Live](https://img.shields.io/badge/Live-Online-00ffe7?style=for-the-badge&logo=github&logoColor=white)
 
-**Professional-grade calculators for ECE students & engineers.**  
+**Professional-grade calculators for ECE students & engineers.**
 Fast. Accurate. Always ready. No installation required.
 
 ### 🌐 [Click Here to Open Live Website →](https://shubh14620.github.io/ece-engineers-toolkit/)
@@ -24,11 +24,9 @@ Fast. Accurate. Always ready. No installation required.
 
 ## 📌 About the Project
 
-**ECE – Engineer's Toolkit** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It covers all essential ECE formulas — from basic circuit laws to transistor analysis — wrapped in a stunning neon-themed interface with smooth animations.
+**ECE – Engineer's Toolkit v3.0** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **6 major categories** with **40+ calculators** — from basic circuit laws to microcontroller peripherals — all wrapped in a stunning neon-themed interface with smooth animations.
 
-> 💡 No internet needed after first load · No signup · No ads · 100% free
-
----
+> 💡 No internet needed after first load · No signup · No ads · 100% free · Single HTML file
 
 ---
 
@@ -37,7 +35,11 @@ Fast. Accurate. Always ready. No installation required.
 | Feature | Description |
 |---|---|
 | ⚡ **ECE Core** | 17 circuit & electronics calculators |
-| 💻 **ECE Digital** | Number conversions + logic gates |
+| 💻 **ECE Digital** | Number conversions, logic gates, complement |
+| 📐 **Design Tools** | PCB, LED, resistor color code, regulators |
+| 📡 **Communication** | Modulation, Shannon, Friis, Nyquist & more |
+| 💡 **Practical Tools** | Cap decoder, IC reference, E-series finder |
+| 🔌 **Microcontroller** | Timer, PWM, UART, ADC, SPI, I²C |
 | 🔍 **Live Search** | Find any calculator instantly |
 | 🌙 **Dark / Light Mode** | Toggle anytime |
 | 📱 **Responsive** | Works on mobile, tablet & desktop |
@@ -49,7 +51,7 @@ Fast. Accurate. Always ready. No installation required.
 
 ## 🧮 Calculators Included
 
-### ⚡ ECE Core
+### ⚡ ECE Core (17 Calculators)
 
 | # | Calculator | Formula |
 |---|---|---|
@@ -65,13 +67,15 @@ Fast. Accurate. Always ready. No installation required.
 | 10 | **Impedance** | Z = √(R² + X²) |
 | 11 | **Decibel (dB)** | dB = 20 × log₁₀(gain) |
 | 12 | **Bandwidth** | BW = fH − fL |
-| 13 | **Op-Amp Gain** | Gain = −Rf/Rin |
+| 13 | **Op-Amp Gain (Inverting)** | Gain = −Rf/Rin |
 | 14 | **Low Pass Filter** | Fc = 1/(2πRC) |
 | 15 | **High Pass Filter** | Fc = 1/(2πRC) |
 | 16 | **BJT Current Gain** | β = Ic/Ib |
 | 17 | **MOSFET Drain Current** | Id = k/2 × (Vgs−Vth)² |
 
-### 💻 ECE Digital
+---
+
+### 💻 ECE Digital (9 Calculators)
 
 | # | Calculator | Description |
 |---|---|---|
@@ -79,8 +83,66 @@ Fast. Accurate. Always ready. No installation required.
 | 2 | **Decimal → Binary** | Convert decimal to binary |
 | 3 | **Decimal → Hex** | Convert decimal to hexadecimal |
 | 4 | **Hex → Decimal** | Convert hex to decimal |
-| 5 | **Logic Gate** | AND, OR, XOR, NAND, NOR, NOT |
-| 6 | **K-Map Simplifier** | Boolean expression simplification |
+| 5 | **Decimal → Octal** | Convert decimal to octal |
+| 6 | **Octal → Decimal** | Convert octal to decimal |
+| 7 | **Logic Gate** | AND, OR, XOR, NAND, NOR, NOT, XNOR + Truth Table |
+| 8 | **1's & 2's Complement** | Binary complement calculator |
+| 9 | **K-Map Simplifier** | Boolean expression simplification |
+
+---
+
+### 📐 Design Tools (6 Calculators)
+
+| # | Calculator | Description |
+|---|---|---|
+| 1 | **Resistor Color Code** | 4-band color code reader with visual bands |
+| 2 | **LED Resistor** | Calculate series resistor for LED |
+| 3 | **PCB Trace Width** | IPC-2221 standard trace width calculator |
+| 4 | **Voltage Regulator (78xx)** | Headroom checker for 7805/7812 etc. |
+| 5 | **Battery Life Estimator** | Hours & days of battery runtime |
+| 6 | **Unit Converter (SI Prefix)** | pico, nano, micro, milli, kilo, Mega |
+
+---
+
+### 📡 Communication (8 Calculators)
+
+| # | Calculator | Formula |
+|---|---|---|
+| 1 | **AM Modulation Index** | µ = Vm / Vc |
+| 2 | **FM Modulation Index** | β = Δf / fm |
+| 3 | **Shannon Channel Capacity** | C = B × log₂(1 + SNR) |
+| 4 | **Friis Transmission** | Pr = Pt + Gt + Gr − L |
+| 5 | **Free Space Path Loss** | FSPL = 20log(d) + 20log(f) + 32.44 |
+| 6 | **Noise Figure** | NF = SNRin − SNRout (dB) |
+| 7 | **Wavelength Calculator** | λ = c / f |
+| 8 | **Nyquist Sampling Rate** | fs ≥ 2 × fmax |
+
+---
+
+### 💡 Practical Tools (6 Calculators)
+
+| # | Calculator | Description |
+|---|---|---|
+| 1 | **Capacitor Code Decoder** | 3-digit SMD/ceramic cap code (e.g. 104 → 100nF) |
+| 2 | **E12 / E24 Resistor Finder** | Nearest standard resistor value |
+| 3 | **Power Dissipation** | P = V²/R in resistor |
+| 4 | **Zener Diode Regulator** | Series resistor calculator |
+| 5 | **IC Quick Reference** | 555, 741, 7805, 4017, 74LS00 & more |
+| 6 | **Transformer Turns Ratio** | n = V1/V2 (Step-Up/Down/Isolation) |
+
+---
+
+### 🔌 Microcontroller (7 Calculators)
+
+| # | Calculator | Description |
+|---|---|---|
+| 1 | **Timer Frequency (Arduino)** | f = Fclk / (2 × N × (1+OCR)) |
+| 2 | **PWM Duty Cycle** | Duty = (Ton / T) × 100% |
+| 3 | **UART Baud Rate (AVR)** | UBRR value + actual baud + error % |
+| 4 | **ADC Step Size** | Step = Vref / 2^n |
+| 5 | **ADC Reading → Voltage** | Vin = (D / 2^n) × Vref |
+| 6 | **SPI Clock Speed** | SPI CLK = Fclk / Divider |
+| 7 | **I²C Frequency (AVR)** | f = Fclk / (16 + 2×TWBR×4^TWPS) |
 
 ---
 
@@ -89,11 +151,11 @@ Fast. Accurate. Always ready. No installation required.
 ```
 ECE-Toolkit/
 │
-├── index.html          ← Main file (entire app is here)
+├── index.html          ← Entire app (all 40+ calculators in one file)
 └── README.md           ← You are here
 ```
 
-> The entire app lives in a **single HTML file** — no build tools, no Node.js, nothing extra needed.
+> Zero dependencies. Zero build tools. Just open and use.
 
 ---
 
@@ -119,18 +181,19 @@ ECE-Toolkit/
 ## 🎨 Tech Stack
 
 - **HTML5** — Structure & layout
-- **CSS3** — Animations, glassmorphism, neon effects, responsive design
-- **Vanilla JavaScript** — All calculations, DOM manipulation, theme toggle
+- **CSS3** — Animations, neon glow, glassmorphism, responsive grid
+- **Vanilla JavaScript** — All 40+ calculators, DOM, theme toggle, live search
 - **Google Fonts** — Orbitron + Rajdhani typefaces
 
 ---
 
-## 🐛 Known Issues / Upcoming
+## 🐛 Upcoming in v3.1
 
-- [ ] Full K-Map solver (coming in v2.1)
-- [ ] Octal number conversion
+- [ ] Full K-Map solver (2–4 variables)
 - [ ] Export results as PDF
-- [ ] Dark/Light theme memory (localStorage)
+- [ ] Dark/Light theme memory
+- [ ] 555 Timer astable/monostable calculator
+- [ ] Microstrip antenna designer
 
 ---
 
@@ -149,7 +212,7 @@ ECE-Toolkit/
 ## 📄 License & Copyright
 
 ```
-©️ 2026 ECE – Engineer's Toolkit
+©️ 2026 ECE – Engineer's Toolkit v3.0
 Developed by Shubham Pandey
 All Rights Reserved.
 
