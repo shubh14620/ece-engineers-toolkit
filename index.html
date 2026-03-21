@@ -4,65 +4,71 @@
 <title>ECE – Engineer's Toolkit</title>
 
 <style>
-body {
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#0f172a,#1e293b);
-  color:white;
-  text-align:center;
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+text-align:center;
 }
 
-.navbar {
-  padding:15px;
-  font-size:24px;
-  font-weight:bold;
-  background:rgba(0,0,0,0.7);
+.navbar{
+padding:15px;
+font-size:24px;
+font-weight:bold;
+background:rgba(0,0,0,0.7);
+position:sticky;
+top:0;
 }
 
-.container {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap:20px;
-  padding:20px;
+.switch{
+margin:10px;
 }
 
-.card {
-  background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 0 20px rgba(0,255,150,0.2);
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding:20px;
 }
 
-input {
-  width:95%;
-  padding:8px;
-  margin:5px 0;
-  border:none;
-  border-radius:6px;
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,255,150,0.2);
 }
 
-button {
-  width:100%;
-  padding:10px;
-  background:#22c55e;
-  border:none;
-  color:white;
-  border-radius:6px;
-  margin-top:5px;
-  cursor:pointer;
+input,select{
+width:95%;
+padding:8px;
+margin:5px 0;
+border:none;
+border-radius:6px;
 }
 
-.output {
-  margin-top:10px;
-  color:#22c55e;
-  font-weight:bold;
+button{
+width:100%;
+padding:10px;
+background:#22c55e;
+border:none;
+color:white;
+border-radius:6px;
+margin-top:5px;
+cursor:pointer;
 }
 
-footer {
-  margin-top:20px;
-  padding:15px;
-  font-size:14px;
-  opacity:0.8;
+.output{
+margin-top:10px;
+color:#22c55e;
+font-weight:bold;
+}
+
+footer{
+margin-top:20px;
+padding:15px;
+font-size:14px;
+opacity:0.8;
 }
 </style>
 </head>
@@ -71,28 +77,33 @@ footer {
 
 <div class="navbar">⚡ ECE – Engineer’s Toolkit</div>
 
+<div class="switch">
+<button onclick="showECE()">ECE</button>
+<button onclick="showDigital()">Digital</button>
+</div>
+
+<!-- ================= ECE SECTION ================= -->
+<div id="eceSection">
+
 <div class="container">
 
-<!-- OHM -->
 <div class="card">
 <h3>Ohm's Law</h3>
-<input id="V" placeholder="Voltage (V)">
-<input id="I" placeholder="Current (A)">
-<input id="R" placeholder="Resistance (Ω)">
+<input id="V" placeholder="Voltage">
+<input id="I" placeholder="Current">
+<input id="R" placeholder="Resistance">
 <button onclick="ohm()">Calculate</button>
 <div class="output" id="o1"></div>
 </div>
 
-<!-- POWER -->
 <div class="card">
 <h3>Power</h3>
-<input id="v1" placeholder="Voltage (V)">
-<input id="i1" placeholder="Current (A)">
+<input id="v1" placeholder="Voltage">
+<input id="i1" placeholder="Current">
 <button onclick="power()">Calculate</button>
 <div class="output" id="o2"></div>
 </div>
 
-<!-- RC -->
 <div class="card">
 <h3>RC Time Constant</h3>
 <input id="r" placeholder="R">
@@ -101,7 +112,6 @@ footer {
 <div class="output" id="o3"></div>
 </div>
 
-<!-- FREQUENCY -->
 <div class="card">
 <h3>Frequency</h3>
 <input id="f" placeholder="Frequency">
@@ -109,7 +119,6 @@ footer {
 <div class="output" id="o4"></div>
 </div>
 
-<!-- XC -->
 <div class="card">
 <h3>Capacitive Reactance</h3>
 <input id="fc" placeholder="Frequency">
@@ -118,7 +127,6 @@ footer {
 <div class="output" id="o5"></div>
 </div>
 
-<!-- XL -->
 <div class="card">
 <h3>Inductive Reactance</h3>
 <input id="fl" placeholder="Frequency">
@@ -127,7 +135,6 @@ footer {
 <div class="output" id="o6"></div>
 </div>
 
-<!-- RLC -->
 <div class="card">
 <h3>Resonance</h3>
 <input id="Lr" placeholder="L">
@@ -136,17 +143,15 @@ footer {
 <div class="output" id="o7"></div>
 </div>
 
-<!-- VOLTAGE DIVIDER -->
 <div class="card">
 <h3>Voltage Divider</h3>
-<input id="Vin" placeholder="Input Voltage">
+<input id="Vin" placeholder="Vin">
 <input id="R1" placeholder="R1">
 <input id="R2" placeholder="R2">
 <button onclick="vd()">Calculate</button>
 <div class="output" id="o8"></div>
 </div>
 
-<!-- CURRENT DIVIDER -->
 <div class="card">
 <h3>Current Divider</h3>
 <input id="Iin" placeholder="Input Current">
@@ -156,7 +161,6 @@ footer {
 <div class="output" id="o9"></div>
 </div>
 
-<!-- IMPEDANCE -->
 <div class="card">
 <h3>Impedance</h3>
 <input id="res" placeholder="Resistance">
@@ -165,16 +169,14 @@ footer {
 <div class="output" id="o10"></div>
 </div>
 
-<!-- GAIN -->
 <div class="card">
 <h3>Gain</h3>
-<input id="Vo" placeholder="Output Voltage">
-<input id="Vi" placeholder="Input Voltage">
+<input id="Vo" placeholder="Output">
+<input id="Vi" placeholder="Input">
 <button onclick="gain()">Calculate</button>
 <div class="output" id="o11"></div>
 </div>
 
-<!-- dB -->
 <div class="card">
 <h3>dB</h3>
 <input id="g" placeholder="Gain">
@@ -182,15 +184,72 @@ footer {
 <div class="output" id="o12"></div>
 </div>
 
-<!-- BANDWIDTH -->
 <div class="card">
 <h3>Bandwidth</h3>
-<input id="fh" placeholder="High Freq">
-<input id="flw" placeholder="Low Freq">
+<input id="fh" placeholder="High">
+<input id="flw" placeholder="Low">
 <button onclick="bw()">Calculate</button>
 <div class="output" id="o13"></div>
 </div>
 
+</div>
+</div>
+
+<!-- ================= DIGITAL SECTION ================= -->
+<div id="digitalSection" style="display:none;">
+
+<div class="container">
+
+<div class="card">
+<h3>Binary → Decimal</h3>
+<input id="bin">
+<button onclick="binToDec()">Convert</button>
+<div class="output" id="d1"></div>
+</div>
+
+<div class="card">
+<h3>Decimal → Binary</h3>
+<input id="dec">
+<button onclick="decToBin()">Convert</button>
+<div class="output" id="d2"></div>
+</div>
+
+<div class="card">
+<h3>Decimal → Hex</h3>
+<input id="dec2">
+<button onclick="decToHex()">Convert</button>
+<div class="output" id="d3"></div>
+</div>
+
+<div class="card">
+<h3>Hex → Decimal</h3>
+<input id="hex">
+<button onclick="hexToDec()">Convert</button>
+<div class="output" id="d4"></div>
+</div>
+
+<div class="card">
+<h3>Logic Gate</h3>
+<select id="gate">
+<option>AND</option>
+<option>OR</option>
+<option>XOR</option>
+<option>NAND</option>
+<option>NOR</option>
+<option>NOT</option>
+</select>
+
+<input id="a" placeholder="A">
+<input id="b" placeholder="B">
+
+<button onclick="logic()">Calculate</button>
+
+<div class="output" id="gout"></div>
+<div class="output" id="table"></div>
+
+</div>
+
+</div>
 </div>
 
 <footer>
@@ -200,11 +259,23 @@ All Rights Reserved.
 
 <script>
 
-// Existing
-function ohm(){let V=+V.value,I=+I.value,R=+R.value;
-if(V&&I)o1.innerHTML="R="+(V/I);
-else if(V&&R)o1.innerHTML="I="+(V/R);
-else if(I&&R)o1.innerHTML="V="+(I*R);
+// SWITCH
+function showECE(){
+eceSection.style.display="block";
+digitalSection.style.display="none";
+}
+function showDigital(){
+eceSection.style.display="none";
+digitalSection.style.display="block";
+}
+
+// ECE
+function ohm(){
+let v=+V.value,i=+I.value,r=+R.value;
+if(v&&i)o1.innerHTML="R="+(v/i);
+else if(v&&r)o1.innerHTML="I="+(v/r);
+else if(i&&r)o1.innerHTML="V="+(i*r);
+else o1.innerHTML="Enter 2 values";
 }
 
 function power(){o2.innerHTML="P="+(v1.value*i1.value);}
@@ -213,14 +284,42 @@ function freq(){o4.innerHTML="T="+(1/f.value);}
 function xc(){o5.innerHTML="Xc="+(1/(2*Math.PI*fc.value*cap.value));}
 function xl(){o6.innerHTML="Xl="+(2*Math.PI*fl.value*L.value);}
 function rlc(){o7.innerHTML="f="+(1/(2*Math.PI*Math.sqrt(Lr.value*Cr.value)));}
-
-// NEW
 function vd(){o8.innerHTML="Vout="+(Vin.value*(R2.value/(+R1.value+ +R2.value)));}
 function cd(){o9.innerHTML="Iout="+(Iin.value*(Rb.value/(+Ra.value+ +Rb.value)));}
 function imp(){o10.innerHTML="Z="+Math.sqrt(res.value**2+react.value**2);}
 function gain(){o11.innerHTML="Av="+(Vo.value/Vi.value);}
 function db(){o12.innerHTML="dB="+(20*Math.log10(g.value));}
 function bw(){o13.innerHTML="BW="+(fh.value-flw.value);}
+
+// DIGITAL
+function binToDec(){d1.innerHTML=parseInt(bin.value,2);}
+function decToBin(){d2.innerHTML=Number(dec.value).toString(2);}
+function decToHex(){d3.innerHTML=Number(dec2.value).toString(16);}
+function hexToDec(){d4.innerHTML=parseInt(hex.value,16);}
+
+// LOGIC
+function logic(){
+let A=+a.value,B=+b.value,g=gate.value,o;
+
+if(g=="AND")o=A&B;
+if(g=="OR")o=A|B;
+if(g=="XOR")o=A^B;
+if(g=="NAND")o=(A&B)?0:1;
+if(g=="NOR")o=(A|B)?0:1;
+if(g=="NOT")o=A?0:1;
+
+gout.innerHTML="Output="+o;
+
+let t="";
+for(let i=0;i<=1;i++){
+for(let j=0;j<=1;j++){
+let out=(g=="AND")?i&j:(g=="OR")?i|j:(g=="XOR")?i^j:(g=="NAND")?(i&j?0:1):(g=="NOR")?(i|j?0:1):"";
+t+=i+" "+j+" → "+out+"<br>";
+}
+}
+if(g=="NOT")t="0→1<br>1→0";
+table.innerHTML=t;
+}
 
 </script>
 
