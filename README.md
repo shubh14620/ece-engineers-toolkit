@@ -4,14 +4,14 @@
 
 ### *Precision · Power · Performance*
 
-![Version](https://img.shields.io/badge/Version-4.0-00ffe7?style=for-the-badge&logoColor=white)
+![Version](https://img.shields.io/badge/Version-8.0-00ffe7?style=for-the-badge&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-ff2d78?style=for-the-badge)
 ![Live](https://img.shields.io/badge/Live-Online-00ffe7?style=for-the-badge&logo=github&logoColor=white)
 
-**Professional-grade calculators for ECE students & engineers.**
+**The ultimate ECE toolkit — Calculators, Notes, Simulators, Circuit Designer & Component Encyclopedia.**
 Fast. Accurate. Always ready. No installation required.
 
 ### 🌐 [Click Here to Open Live Website →](https://shubh14620.github.io/ece-engineers-toolkit/)
@@ -24,9 +24,30 @@ Fast. Accurate. Always ready. No installation required.
 
 ## 📌 About the Project
 
-**ECE – Engineer's Toolkit v4.0** is a fully offline, browser-based calculator suite designed specifically for Electronics & Communication Engineering students and professionals. It now covers **8 major categories** with **58+ calculators** — from basic circuit laws to VLSI design — all wrapped in a stunning neon-themed interface with smooth animations.
+**ECE – Engineer's Toolkit v8.0** is a fully offline, browser-based mega-toolkit for AKTU Electronics & Communication Engineering students and professionals. It combines **5 major sections** — AKTU Notes, Components Encyclopedia, Circuit Designer, Simulators, and 80+ Calculators — all in a single HTML file with a neon-themed animated interface.
 
-> 💡 No internet needed after first load · No signup · No ads · 100% free · Single HTML file
+> 💡 No internet after first load · No signup · No ads · 100% free · Single HTML file
+
+---
+
+## 🗂️ Website Structure
+
+```
+🏠 HOME
+├── 📚 AKTU Notes          → All 8 Semesters
+├── 🔩 Components          → Encyclopedia (20+ components)
+├── ⚡ Circuit Designer    → 6 Pre-built interactive circuits
+├── 🧪 Simulators          → 7 Real-time simulators
+└── 🧮 Calculators         → 8 Sub-sections, 80+ calculators
+    ├── ⚡ ECE Core         (17 calculators)
+    ├── 💻 ECE Digital      (9 calculators)
+    ├── 📐 Design Tools     (6 calculators)
+    ├── 📡 Communication    (8 calculators)
+    ├── 💡 Practical Tools  (6 calculators)
+    ├── 🔌 Microcontroller  (7 calculators)
+    ├── 📊 Signal & Systems (9 calculators)
+    └── 🔬 VLSI Design      (9 calculators)
+```
 
 ---
 
@@ -34,149 +55,114 @@ Fast. Accurate. Always ready. No installation required.
 
 | Feature | Description |
 |---|---|
-| ⚡ **ECE Core** | 17 circuit & electronics calculators |
-| 💻 **ECE Digital** | Number conversions, logic gates, complement |
-| 📐 **Design Tools** | PCB, LED, resistor color code, regulators |
-| 📡 **Communication** | Modulation, Shannon, Friis, Nyquist & more |
-| 💡 **Practical Tools** | Cap decoder, IC reference, E-series finder |
-| 🔌 **Microcontroller** | Timer, PWM, UART, ADC, SPI, I²C |
-| 📊 **Signal & Systems** | Energy, Fourier, Sampling, Stability, SNR |
-| 🔬 **VLSI Design** | CMOS delay, Power, Noise margin, W/L ratio |
-| 🔍 **Live Search** | Find any calculator instantly |
+| 📚 **AKTU Notes** | All 8 sems · Topics · Formulas · PYQ Links |
+| 🔩 **Components Encyclopedia** | 20+ components · Symbol · Working · Uses · Specs |
+| ⚡ **Circuit Designer** | 6 circuits with canvas diagrams & live calculations |
+| 🧪 **Simulators** | 7 real-time simulators with graphs |
+| 🧮 **Calculators** | 80+ calculators across 8 categories |
+| 🔍 **Live Search** | Find anything instantly |
 | 🌙 **Dark / Light Mode** | Toggle anytime |
-| 📱 **Responsive** | Works on mobile, tablet & desktop |
+| 📱 **Responsive** | Mobile, tablet & desktop ready |
 | ⌨️ **Keyboard Support** | Press Enter to calculate |
 | 🎨 **Neon Animations** | Particles, glows, smooth transitions |
 | 🛡️ **No Dependencies** | Pure HTML, CSS, JS — zero frameworks |
 
 ---
 
-## 🧮 Calculators Included
+## 📚 AKTU ECE Notes — All 8 Semesters
 
-### ⚡ ECE Core (17 Calculators)
+| Semester | Subjects |
+|---|---|
+| **Sem 1** | Maths-I · Engineering Physics · BEE · Engineering Graphics |
+| **Sem 2** | Maths-II · Basic Electronics · C Programming |
+| **Sem 3** | EDC · Digital Electronics · Network Analysis · Signals & Systems |
+| **Sem 4** | Analog Electronics · Control Systems · EMF Theory · Microprocessor |
+| **Sem 5** | DSP · Communication Systems · VLSI · Microwave Engineering |
+| **Sem 6** | Wireless Comm · Antenna & Wave Prop · Embedded Systems · Optical Fiber |
+| **Sem 7** | ML Elective · IoT Elective · Minor Project |
+| **Sem 8** | Major Project · Internship |
 
-| # | Calculator | Formula |
-|---|---|---|
-| 1 | **Ohm's Law** | V = IR |
-| 2 | **Power** | P = V × I |
-| 3 | **RC Time Constant** | τ = R × C |
-| 4 | **Frequency / Period** | T = 1/f |
-| 5 | **Capacitive Reactance** | Xc = 1/(2πfC) |
-| 6 | **Inductive Reactance** | Xl = 2πfL |
-| 7 | **RLC Resonance** | f = 1/(2π√LC) |
-| 8 | **Voltage Divider** | Vout = Vin × R2/(R1+R2) |
-| 9 | **Current Divider** | Iout = Iin × Rb/(Ra+Rb) |
-| 10 | **Impedance** | Z = √(R² + X²) |
-| 11 | **Decibel (dB)** | dB = 20 × log₁₀(gain) |
-| 12 | **Bandwidth** | BW = fH − fL |
-| 13 | **Op-Amp Gain (Inverting)** | Gain = −Rf/Rin |
-| 14 | **Low Pass Filter** | Fc = 1/(2πRC) |
-| 15 | **High Pass Filter** | Fc = 1/(2πRC) |
-| 16 | **BJT Current Gain** | β = Ic/Ib |
-| 17 | **MOSFET Drain Current** | Id = k/2 × (Vgs−Vth)² |
+> Each subject: 📌 Topics · 📐 Formulas · 🔗 YouTube + PYQ + Syllabus links
 
 ---
 
-### 💻 ECE Digital (9 Calculators)
+## 🔩 Components Encyclopedia
 
-| # | Calculator | Description |
-|---|---|---|
-| 1 | **Binary → Decimal** | Convert binary to decimal |
-| 2 | **Decimal → Binary** | Convert decimal to binary |
-| 3 | **Decimal → Hex** | Convert decimal to hexadecimal |
-| 4 | **Hex → Decimal** | Convert hex to decimal |
-| 5 | **Decimal → Octal** | Convert decimal to octal |
-| 6 | **Octal → Decimal** | Convert octal to decimal |
-| 7 | **Logic Gate** | AND, OR, XOR, NAND, NOR, NOT, XNOR + Truth Table |
-| 8 | **1's & 2's Complement** | Binary complement calculator |
-| 9 | **K-Map Simplifier** | Boolean expression simplification |
+20+ ECE components across 7 categories. Each component includes:
+- 🎨 Canvas-drawn circuit symbol
+- ⚙️ Working principle
+- 🔧 Types & variants (with part numbers)
+- 🏭 Real-world applications
+- 📊 Key specifications
+- 📐 Important formulas
 
----
-
-### 📐 Design Tools (6 Calculators)
-
-| # | Calculator | Description |
-|---|---|---|
-| 1 | **Resistor Color Code** | 4-band color code reader with visual bands |
-| 2 | **LED Resistor** | Calculate series resistor for LED |
-| 3 | **PCB Trace Width** | IPC-2221 standard trace width calculator |
-| 4 | **Voltage Regulator (78xx)** | Headroom checker for 7805/7812 etc. |
-| 5 | **Battery Life Estimator** | Hours & days of battery runtime |
-| 6 | **Unit Converter (SI Prefix)** | pico, nano, micro, milli, kilo, Mega |
+| Category | Components |
+|---|---|
+| ⬜ **Passive** | Resistor · Capacitor · Inductor · Transformer |
+| 🔴 **Active** | BJT · MOSFET · JFET |
+| 💎 **Semiconductor** | PN Diode · Zener · LED · SCR/Thyristor |
+| 🧠 **ICs** | Op-Amp LM741 · NE555 · LM7805 · CD4017 · LM324 |
+| ⚙️ **Electromechanical** | Relay · DC Motor · Speaker/Buzzer |
+| 📡 **Sensors** | LDR · Thermistor · HC-SR04 · IR Sensor · LM35 · Piezo |
 
 ---
 
-### 📡 Communication (8 Calculators)
+## ⚡ Circuit Designer
 
-| # | Calculator | Formula |
-|---|---|---|
-| 1 | **AM Modulation Index** | µ = Vm / Vc |
-| 2 | **FM Modulation Index** | β = Δf / fm |
-| 3 | **Shannon Channel Capacity** | C = B × log₂(1 + SNR) |
-| 4 | **Friis Transmission** | Pr = Pt + Gt + Gr − L |
-| 5 | **Free Space Path Loss** | FSPL = 20log(d) + 20log(f) + 32.44 |
-| 6 | **Noise Figure** | NF = SNRin − SNRout (dB) |
-| 7 | **Wavelength Calculator** | λ = c / f |
-| 8 | **Nyquist Sampling Rate** | fs ≥ 2 × fmax |
+6 interactive pre-built circuits with canvas diagrams and mathematically accurate calculations:
 
----
-
-### 💡 Practical Tools (6 Calculators)
-
-| # | Calculator | Description |
-|---|---|---|
-| 1 | **Capacitor Code Decoder** | 3-digit SMD/ceramic cap code (e.g. 104 → 100nF) |
-| 2 | **E12 / E24 Resistor Finder** | Nearest standard resistor value |
-| 3 | **Power Dissipation** | P = V²/R in resistor |
-| 4 | **Zener Diode Regulator** | Series resistor calculator |
-| 5 | **IC Quick Reference** | 555, 741, 7805, 4017, 74LS00 & more |
-| 6 | **Transformer Turns Ratio** | n = V1/V2 (Step-Up/Down/Isolation) |
+| Circuit | What it shows |
+|---|---|
+| **Voltage Divider** | R1, R2, Vout tap, current path |
+| **Common Emitter Amplifier** | BJT, biasing, IC, IB, VCE, voltage gain Av |
+| **RC Low Pass Filter** | Cutoff frequency, Vout, attenuation, phase shift |
+| **Bridge Rectifier** | 4 diodes, filter cap, Vdc, ripple factor |
+| **Inverting Op-Amp** | Rf feedback, gain, saturation detection |
+| **Zener Voltage Regulator** | Rs, Iz, IL, regulated/unregulated status |
 
 ---
 
-### 🔌 Microcontroller (7 Calculators)
+## 🧪 Simulators
 
-| # | Calculator | Description |
-|---|---|---|
-| 1 | **Timer Frequency (Arduino)** | f = Fclk / (2 × N × (1+OCR)) |
-| 2 | **PWM Duty Cycle** | Duty = (Ton / T) × 100% |
-| 3 | **UART Baud Rate (AVR)** | UBRR value + actual baud + error % |
-| 4 | **ADC Step Size** | Step = Vref / 2^n |
-| 5 | **ADC Reading → Voltage** | Vin = (D / 2^n) × Vref |
-| 6 | **SPI Clock Speed** | SPI CLK = Fclk / Divider |
-| 7 | **I²C Frequency (AVR)** | f = Fclk / (16 + 2×TWBR×4^TWPS) |
+7 real-time simulators with live graphs:
 
----
-
-### 📊 Signal & Systems (9 Calculators) — *New in v4.0*
-
-| # | Calculator | Formula |
-|---|---|---|
-| 1 | **Signal Energy** | E = A² × T |
-| 2 | **Signal Power** | P = A² / (T2−T1) |
-| 3 | **Fourier Series – nth Harmonic** | fn = n × f0 |
-| 4 | **Nyquist Sampling Theorem** | fs ≥ 2 × fmax |
-| 5 | **Convolution Length** | L = N1 + N2 − 1 |
-| 6 | **DFT / FFT Size Check** | FFT power-of-2 compatibility checker |
-| 7 | **Time Constant → Frequency** | f = 1 / (2πτ) |
-| 8 | **System Stability (Pole Check)** | σ < 0 → Stable, σ = 0 → Marginal, σ > 0 → Unstable |
-| 9 | **SNR Calculator** | SNR = 10 × log₁₀(Ps/Pn) |
+| Simulator | Description |
+|---|---|
+| **〰️ Waveform Visualizer** | Sine/Square/Triangle/Sawtooth — Vrms, Vpp, T |
+| **📈 RC/RL Curve** | Charging/discharging with τ marker & 63.2% point |
+| **📉 Bode Plot** | LPF/HPF/BPF — magnitude + phase graphs, fc marker |
+| **⭕ Phasor Diagram** | VR, VL, VC, Z, I, φ, Power Factor — visual arrows |
+| **🔗 Logic Gate Simulator** | 2-gate chain + visual circuit + full truth table |
+| **⏱️ 555 Timer** | Astable (square wave + Vc) & Monostable (pulse) |
+| **🔢 Boolean → Truth Table** | Auto-generate truth table from any Boolean expression |
 
 ---
 
-### 🔬 VLSI Design (9 Calculators) — *New in v4.0*
+## 🧮 Calculators (80+)
 
-| # | Calculator | Formula |
-|---|---|---|
-| 1 | **CMOS Propagation Delay** | tp = CL × Vdd / (2 × Id) |
-| 2 | **Dynamic Power Dissipation** | P = α × C × Vdd² × f |
-| 3 | **Static / Leakage Power** | P = Ileak × Vdd |
-| 4 | **Noise Margin** | NMH = VOH−VIH · NML = VIL−VOL |
-| 5 | **Fan-Out Calculation** | Fan-Out = Iout / Iin |
-| 6 | **MOSFET W/L Ratio** | W/L = 2Id / (µ × Cox × Vov²) |
-| 7 | **Gate Oxide → Cox** | Cox = ε₀ × εr / tox |
-| 8 | **Critical Path Delay** | Total = N × tp |
-| 9 | **Power Delay Product (PDP)** | PDP = P × tp (in fJ) |
+### ⚡ ECE Core (17)
+Ohm's Law · Power · RC Constant · Frequency · Xc · XL · RLC Resonance · Voltage Divider · Current Divider · Impedance · dB · Bandwidth · Op-Amp · LPF · HPF · BJT β · MOSFET Id
+
+### 💻 ECE Digital (9)
+Binary↔️Decimal · Decimal↔️Hex · Decimal↔️Octal · Logic Gates (7 types + Truth Table) · 1's & 2's Complement · K-Map
+
+### 📐 Design Tools (6)
+Resistor Color Code · LED Resistor · PCB Trace Width · Voltage Regulator Check · Battery Life · SI Unit Converter
+
+### 📡 Communication (8)
+AM Index · FM Index · Shannon Capacity · Friis Transmission · Free Space Path Loss · Noise Figure · Wavelength · Nyquist Rate
+
+### 💡 Practical Tools (6)
+Capacitor Code Decoder · E12/E24 Resistor Finder · Power Dissipation · Zener Regulator · IC Reference (8 ICs) · Transformer Ratio
+
+### 🔌 Microcontroller (7)
+Timer Frequency · PWM Duty Cycle · UART Baud Rate · ADC Step Size · ADC→Voltage · SPI Clock · I²C Frequency
+
+### 📊 Signal & Systems (9)
+Signal Energy · Signal Power · Fourier nth Harmonic · Nyquist Theorem · Convolution Length · DFT/FFT Check · τ→Frequency · Pole Stability · SNR
+
+### 🔬 VLSI Design (9)
+CMOS Delay · Dynamic Power · Static Power · Noise Margin · Fan-Out · W/L Ratio · Gate Oxide Cox · Critical Path · Power Delay Product
 
 ---
 
@@ -185,8 +171,8 @@ Fast. Accurate. Always ready. No installation required.
 ```
 ECE-Toolkit/
 │
-├── index.html          ← Entire app (all 58+ calculators in one file)
-└── README.md           ← You are here
+├── index.html    ← Entire app — all sections in one file (200KB+)
+└── README.md     ← You are here
 ```
 
 > Zero dependencies. Zero build tools. Just open and use.
@@ -198,26 +184,26 @@ ECE-Toolkit/
 **Option 1 — Direct:**
 ```
 1. Download index.html
-2. Double-click to open in browser
-3. Start calculating!
+2. Open in any modern browser
+3. Use any section!
 ```
 
 **Option 2 — GitHub Pages:**
 ```
-1. Fork this repository
-2. Go to Settings → Pages
-3. Set source to main branch
-4. Your toolkit is live online!
+1. Fork this repo
+2. Settings → Pages → Source: main branch
+3. Live in 2-3 minutes!
 ```
 
 ---
 
 ## 🎨 Tech Stack
 
-- **HTML5** — Structure & layout
-- **CSS3** — Animations, neon glow, glassmorphism, responsive grid
-- **Vanilla JavaScript** — All 58+ calculators, DOM, theme toggle, live search
-- **Google Fonts** — Orbitron + Rajdhani typefaces
+- **HTML5** — Semantic structure
+- **CSS3** — Neon glow, glassmorphism, animations, grid layout
+- **Vanilla JS** — 80+ calculators, canvas simulators, circuit diagrams
+- **Canvas API** — Waveforms, Bode plots, Phasor diagrams, Circuit symbols
+- **Google Fonts** — Orbitron + Rajdhani
 
 ---
 
@@ -225,20 +211,24 @@ ECE-Toolkit/
 
 | Version | What's New |
 |---|---|
-| **v4.0** | Signal & Systems (9 calc) + VLSI Design (9 calc) added |
-| **v3.0** | Design Tools, Communication, Practical Tools, Microcontroller added |
-| **v2.0** | Complete UI redesign — neon theme, animations, dark/light mode |
+| **v8.0** | Restructured navigation · 5 main sections · Calculators as sub-section |
+| **v7.0** | 🔩 Components Encyclopedia · ⏱️ 555 Timer · 🔢 Boolean→Truth Table |
+| **v6.0** | ⚡ Circuit Designer (6 circuits with canvas diagrams) |
+| **v5.0** | 📚 AKTU ECE Notes — All 8 Semesters |
+| **v4.0** | 📊 Signal & Systems + 🔬 VLSI Design sections |
+| **v3.0** | 📐 Design · 📡 Communication · 💡 Practical · 🔌 MCU calculators |
+| **v2.0** | Complete neon UI redesign — animations, dark/light mode |
 | **v1.0** | Initial release — ECE Core + Digital calculators |
 
 ---
 
-## 🐛 Upcoming in v4.1
+## 🐛 Upcoming in v9.0
 
-- [ ] Full K-Map solver (2–4 variables)
-- [ ] Satellite Communication section
 - [ ] Power Electronics section
+- [ ] Satellite Communication calculators
+- [ ] Full K-Map solver (2–4 variables)
 - [ ] Export results as PDF
-- [ ] Dark/Light theme memory
+- [ ] Theme preference memory
 
 ---
 
@@ -250,21 +240,20 @@ ECE-Toolkit/
 
 *ECE Engineer · Developer · Creator*
 
----
-
 </div>
+
+---
 
 ## 📄 License & Copyright
 
 ```
-©️ 2026 ECE – Engineer's Toolkit v4.0
-Developed by Shubham Pandey
-All Rights Reserved.
+©️ 2026 ECE – Engineer's Toolkit v8.0
+Developed by Shubham Pandey · All Rights Reserved.
 
 Unauthorized copying, reproduction, distribution, or modification
 of this software, via any medium, is strictly prohibited.
 
-This project is for personal and educational use only.
+For personal and educational use only.
 Commercial use requires explicit written permission from the author.
 ```
 
@@ -274,6 +263,8 @@ Commercial use requires explicit written permission from the author.
 
 Made with ⚡ by **Shubham Pandey**
 
-*If this helped you, give it a ⭐ on GitHub!*
+*Helping ECE students — one formula at a time! 🎓*
+
+⭐ *If this helped you, give it a star on GitHub!*
 
 </div>
