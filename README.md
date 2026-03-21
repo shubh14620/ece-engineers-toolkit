@@ -2,7 +2,7 @@
 
 # ⚡ ECE – Engineer's Toolkit
 
-### *Stop searching. Start solving. Built for ECE Students & Engineers.*
+### *Precision · Power · Performance*
 
 ![Version](https://img.shields.io/badge/Version-8.0-00ffe7?style=for-the-badge&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -136,7 +136,7 @@
 Ohm's Law · Power · RC Time Constant · Frequency/Period · Capacitive Reactance · Inductive Reactance · RLC Resonance · Voltage Divider · Current Divider · Impedance · Decibel (dB) · Bandwidth · Op-Amp Gain · LPF Cutoff · HPF Cutoff · BJT β · MOSFET Drain Current
 
 ### 💻 ECE Digital (9)
-Binary↔️Decimal · Decimal↔️Hex · Decimal↔️Octal · Logic Gates (7 types + Truth Table) · 1's & 2's Complement · K-Map Simplifier
+Binary↔Decimal · Decimal↔Hex · Decimal↔Octal · Logic Gates (7 types + Truth Table) · 1's & 2's Complement · K-Map Simplifier
 
 ### 📐 Design Tools (6)
 Resistor Color Code · LED Resistor Calculator · PCB Trace Width (IPC-2221) · Voltage Regulator Check (78xx) · Battery Life Estimator · SI Unit Converter
@@ -237,7 +237,7 @@ ECE-Toolkit/
 ## 📄 License & Copyright
 
 ```
-©️ 2026 ECE – Engineer's Toolkit v8.0
+© 2026 ECE – Engineer's Toolkit v8.0
 Developed by Shubham Pandey · All Rights Reserved.
 
 Unauthorized copying, reproduction, distribution, or modification
