@@ -1,410 +1,972 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECE – Engineer's Toolkit</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a);
-color:white;
-text-align:center;
-transition:0.3s;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --neon:#00ffe7;
+  --neon2:#ff2d78;
+  --neon3:#ffe600;
+  --bg:#020b18;
+  --card:#040f1e;
+  --border:rgba(0,255,231,0.18);
+  --glow:0 0 24px rgba(0,255,231,0.22),0 0 60px rgba(0,255,231,0.07);
 }
 
-.navbar{
-padding:15px;
-font-size:22px;
-font-weight:bold;
-background:rgba(0,0,0,0.7);
-position:sticky;
-top:0;
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Rajdhani',sans-serif;
+  background:var(--bg);
+  color:#e0f7fa;
+  min-height:100vh;
+  overflow-x:hidden;
 }
+
+/* ---- GRID BG ---- */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,231,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,231,0.04) 1px, transparent 1px);
+  background-size:44px 44px;
+  pointer-events:none;
+  z-index:0;
+  animation:gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse{
+  0%,100%{opacity:.7;}
+  50%{opacity:1;}
+}
+
+/* ---- PARTICLES ---- */
+#particles{
+  position:fixed;inset:0;
+  pointer-events:none;z-index:0;
+  overflow:hidden;
+}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  animation:floatUp linear infinite;
+  opacity:0;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh) scale(0);opacity:0;}
+  10%{opacity:.7;}
+  90%{opacity:.3;}
+  100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
+}
+
+/* ---- NAVBAR ---- */
+.navbar{
+  position:sticky;top:0;z-index:100;
+  padding:0 30px;
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(2,11,24,0.85);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 40px rgba(0,255,231,0.08);
+}
+
+.logo{
+  font-family:'Orbitron',monospace;
+  font-size:1.15rem;
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--neon);
+  text-shadow:0 0 16px var(--neon);
+  display:flex;align-items:center;gap:10px;
+  animation:logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse{
+  0%,100%{text-shadow:0 0 16px var(--neon),0 0 40px rgba(0,255,231,0.2);}
+  50%{text-shadow:0 0 30px var(--neon),0 0 80px rgba(0,255,231,0.4);}
+}
+
+.logo span{
+  font-size:1.5rem;
+  animation:bolt 1.5s ease-in-out infinite alternate;
+}
+@keyframes bolt{from{transform:scale(1);}to{transform:scale(1.2) rotate(-10deg);}}
+
+.nav-right{display:flex;align-items:center;gap:12px;}
 
 #search{
-width:80%;
-max-width:400px;
-padding:10px;
-margin-top:10px;
-border-radius:8px;
-border:none;
+  padding:8px 16px;
+  border-radius:30px;
+  border:1px solid var(--border);
+  background:rgba(0,255,231,0.05);
+  color:var(--neon);
+  font-family:'Rajdhani',sans-serif;
+  font-size:0.95rem;
+  outline:none;
+  width:220px;
+  transition:.3s;
+}
+#search::placeholder{color:rgba(0,255,231,0.4);}
+#search:focus{
+  border-color:var(--neon);
+  box-shadow:0 0 16px rgba(0,255,231,0.2);
+  background:rgba(0,255,231,0.08);
 }
 
-.menu{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:20px;
-margin-top:50px;
+.theme-btn{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--neon);
+  padding:8px 14px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1.1rem;
+  transition:.3s;
+  width:auto;margin:0;
+}
+.theme-btn:hover{background:rgba(0,255,231,0.1);box-shadow:var(--glow);}
+
+/* ---- HERO ---- */
+#homeMenu{
+  position:relative;z-index:1;
+  min-height:calc(100vh - 68px);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:40px 20px;
 }
 
-.menu button{
-width:220px;
-padding:15px;
-font-size:18px;
-border-radius:12px;
+.hero-tag{
+  font-family:'Orbitron',monospace;
+  font-size:0.7rem;
+  letter-spacing:6px;
+  color:var(--neon2);
+  text-transform:uppercase;
+  margin-bottom:18px;
+  opacity:0;
+  animation:fadeUp .6s .2s forwards;
 }
 
-.container{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
-padding:20px;
-max-width:600px;
-margin:auto;
+.hero-title{
+  font-family:'Orbitron',monospace;
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:18px;
+  opacity:0;
+  animation:fadeUp .7s .4s forwards;
 }
+
+.hero-title .line1{
+  display:block;
+  background:linear-gradient(90deg,var(--neon),#00b8ff,var(--neon));
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shine 3s linear infinite;
+}
+@keyframes shine{0%{background-position:0%;}100%{background-position:200%;}}
+
+.hero-title .line2{
+  display:block;
+  color:white;
+  font-size:0.55em;
+  letter-spacing:4px;
+  -webkit-text-fill-color:white;
+}
+
+.hero-sub{
+  color:rgba(224,247,250,0.55);
+  font-size:1.1rem;
+  max-width:500px;
+  margin:0 auto 50px;
+  font-weight:300;
+  letter-spacing:1px;
+  opacity:0;
+  animation:fadeUp .7s .6s forwards;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  max-width:600px;
+  width:100%;
+  opacity:0;
+  animation:fadeUp .7s .8s forwards;
+}
+
+.cat-card{
+  position:relative;
+  padding:38px 28px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:var(--card);
+  cursor:pointer;
+  transition:.4s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  text-align:left;
+}
+
+.cat-card::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,255,231,0.07),transparent);
+  opacity:0;transition:.4s;
+}
+
+.cat-card:hover::before{opacity:1;}
+.cat-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  border-color:var(--neon);
+  box-shadow:0 8px 40px rgba(0,255,231,0.25),0 0 0 1px rgba(0,255,231,0.15);
+}
+
+.cat-icon{
+  font-size:2.8rem;
+  margin-bottom:14px;
+  display:block;
+  filter:drop-shadow(0 0 12px var(--neon));
+  animation:iconPulse 2s ease-in-out infinite alternate;
+}
+@keyframes iconPulse{from{filter:drop-shadow(0 0 8px var(--neon));}to{filter:drop-shadow(0 0 22px var(--neon));}}
+
+.cat-title{
+  font-family:'Orbitron',monospace;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--neon);
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.cat-desc{
+  font-size:.9rem;
+  color:rgba(224,247,250,0.5);
+  font-weight:300;
+}
+
+.cat-arrow{
+  position:absolute;right:22px;bottom:22px;
+  font-size:1.4rem;
+  color:var(--neon);
+  opacity:.4;
+  transition:.3s;
+}
+.cat-card:hover .cat-arrow{opacity:1;transform:translateX(4px);}
+
+/* ---- SECTION ---- */
+.section{
+  position:relative;z-index:1;
+  padding:30px 20px 80px;
+  max-width:680px;
+  margin:auto;
+  display:none;
+}
+
+.section-header{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:40px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+
+.back-btn{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--neon);
+  padding:9px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-family:'Rajdhani',sans-serif;
+  font-size:.95rem;
+  transition:.3s;
+  width:auto;margin:0;
+  display:flex;align-items:center;gap:6px;
+}
+.back-btn:hover{background:rgba(0,255,231,0.1);border-color:var(--neon);}
+
+.section-title{
+  font-family:'Orbitron',monospace;
+  font-size:1.3rem;
+  color:var(--neon);
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+/* ---- CARDS ---- */
+.container{display:flex;flex-direction:column;gap:22px;}
 
 .card{
-background:rgba(255,255,255,0.07);
-padding:25px;
-border-radius:18px;
-box-shadow:0 0 20px rgba(0,255,150,0.25);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+  transition:.35s cubic-bezier(.4,0,.2,1);
+  position:relative;
+  overflow:hidden;
+  animation:cardIn .5s ease both;
 }
 
-input,select{
-width:100%;
-padding:12px;
-margin:8px 0;
-border:none;
-border-radius:8px;
+@keyframes cardIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+.card::after{
+  content:'';
+  position:absolute;
+  top:-50%;left:-50%;
+  width:200%;height:200%;
+  background:radial-gradient(circle at 50% 50%,rgba(0,255,231,0.06),transparent 60%);
+  opacity:0;transition:.4s;
+  pointer-events:none;
+}
+.card:hover::after{opacity:1;}
+.card:hover{
+  border-color:rgba(0,255,231,0.45);
+  box-shadow:var(--glow);
+  transform:translateY(-3px);
 }
 
-input::placeholder{
-color:#cbd5e1;
+.card h3{
+  font-family:'Orbitron',monospace;
+  font-size:.88rem;
+  font-weight:700;
+  letter-spacing:2px;
+  color:var(--neon);
+  margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
+}
+.card h3::before{
+  content:'';
+  display:inline-block;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--neon);
+  box-shadow:0 0 10px var(--neon);
+  flex-shrink:0;
 }
 
-.light input::placeholder{
-color:#6b7280;
+input, select{
+  width:100%;
+  padding:12px 16px;
+  margin:6px 0;
+  border:1px solid rgba(0,255,231,0.2);
+  border-radius:10px;
+  background:rgba(0,255,231,0.04);
+  color:#e0f7fa;
+  font-family:'Rajdhani',sans-serif;
+  font-size:.95rem;
+  outline:none;
+  transition:.3s;
 }
+input::placeholder{color:rgba(0,255,231,0.3);}
+input:focus, select:focus{
+  border-color:var(--neon);
+  background:rgba(0,255,231,0.08);
+  box-shadow:0 0 14px rgba(0,255,231,0.12);
+}
+select option{background:#040f1e;color:#e0f7fa;}
 
-button{
-width:100%;
-padding:12px;
-background:#22c55e;
-border:none;
-color:white;
-border-radius:8px;
-margin-top:8px;
-cursor:pointer;
+button:not(.back-btn):not(.theme-btn){
+  width:100%;
+  padding:12px;
+  background:linear-gradient(90deg,rgba(0,255,231,0.15),rgba(0,184,255,0.15));
+  border:1px solid var(--neon);
+  color:var(--neon);
+  border-radius:10px;
+  margin-top:10px;
+  cursor:pointer;
+  font-family:'Orbitron',monospace;
+  font-size:.78rem;
+  letter-spacing:2px;
+  font-weight:700;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
 }
+button:not(.back-btn):not(.theme-btn)::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(0,255,231,0.15),transparent);
+  transform:translateX(-100%);
+  transition:.5s;
+}
+button:not(.back-btn):not(.theme-btn):hover::before{transform:translateX(100%);}
+button:not(.back-btn):not(.theme-btn):hover{
+  background:linear-gradient(90deg,rgba(0,255,231,0.25),rgba(0,184,255,0.25));
+  box-shadow:0 0 22px rgba(0,255,231,0.3);
+  transform:translateY(-1px);
+}
+button:not(.back-btn):not(.theme-btn):active{transform:scale(.98);}
 
 .output{
-margin-top:12px;
-color:#22c55e;
-font-weight:bold;
+  margin-top:14px;
+  padding:12px 16px;
+  border-radius:10px;
+  background:rgba(0,255,231,0.06);
+  border:1px solid rgba(0,255,231,0.15);
+  color:var(--neon);
+  font-weight:600;
+  font-size:1.05rem;
+  letter-spacing:1px;
+  min-height:44px;
+  display:flex;align-items:center;
+  transition:.3s;
+  font-family:'Orbitron',monospace;
 }
 
-.light{
-background:#f1f5f9;
-color:black;
+/* ---- STATS BAR (Hero) ---- */
+.stats-bar{
+  display:flex;gap:40px;
+  margin-top:50px;
+  opacity:0;
+  animation:fadeUp .7s 1s forwards;
+}
+.stat{text-align:center;}
+.stat-num{
+  font-family:'Orbitron',monospace;
+  font-size:1.8rem;
+  font-weight:900;
+  color:var(--neon);
+  text-shadow:0 0 16px var(--neon);
+  display:block;
+}
+.stat-label{
+  font-size:.75rem;
+  letter-spacing:2px;
+  color:rgba(224,247,250,0.35);
+  text-transform:uppercase;
 }
 
-.light .card{
-background:white;
-color:black;
+/* ---- GLOW ORBS ---- */
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(80px);
+  pointer-events:none;
+  z-index:0;
+  animation:orbFloat 10s ease-in-out infinite alternate;
 }
+.orb1{width:400px;height:400px;background:rgba(0,255,231,0.06);top:-100px;right:-100px;}
+.orb2{width:300px;height:300px;background:rgba(255,45,120,0.05);bottom:10%;left:-80px;animation-delay:3s;}
+.orb3{width:250px;height:250px;background:rgba(255,230,0,0.04);bottom:30%;right:10%;animation-delay:6s;}
+@keyframes orbFloat{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,40px) scale(1.15);}}
 
+/* ---- LIGHT THEME ---- */
+body.light{
+  background:#f0f4f8;
+  color:#0a1628;
+}
+body.light::before{
+  background-image:
+    linear-gradient(rgba(0,100,180,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,100,180,0.05) 1px, transparent 1px);
+}
+body.light .navbar{background:rgba(240,244,248,0.9);border-color:rgba(0,100,180,0.12);}
+body.light .card{background:white;border-color:rgba(0,100,180,0.15);color:#0a1628;}
+body.light .card h3{color:#0057b8;}
+body.light .card h3::before{background:#0057b8;box-shadow:0 0 10px rgba(0,87,184,.3);}
+body.light input,body.light select{background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.2);color:#0a1628;}
+body.light input::placeholder{color:rgba(0,87,184,0.35);}
+body.light input:focus,body.light select:focus{border-color:#0057b8;background:rgba(0,87,184,0.08);}
+body.light button:not(.back-btn):not(.theme-btn){border-color:#0057b8;color:#0057b8;background:rgba(0,87,184,0.07);}
+body.light .output{color:#0057b8;background:rgba(0,87,184,0.05);border-color:rgba(0,87,184,0.15);}
+body.light .logo{color:#0057b8;text-shadow:0 0 16px rgba(0,87,184,.3);}
+body.light .cat-title{color:#0057b8;}
+body.light .cat-card{background:white;}
+body.light .section-title{color:#0057b8;}
+body.light .hero-tag{color:#e0003a;}
+body.light .stat-num{color:#0057b8;text-shadow:none;}
+body.light #search{color:#0057b8;border-color:rgba(0,87,184,0.2);background:rgba(0,87,184,0.05);}
+body.light #search::placeholder{color:rgba(0,87,184,0.4);}
+body.light .back-btn{color:#0057b8;border-color:rgba(0,87,184,0.2);}
+body.light .cat-arrow{color:#0057b8;}
+body.light .orb1{background:rgba(0,87,184,0.06);}
+body.light .orb2{background:rgba(224,0,58,0.05);}
+
+/* ---- FOOTER ---- */
 footer{
-margin-top:20px;
-padding:15px;
-font-size:14px;
+  position:relative;z-index:1;
+  text-align:center;
+  padding:28px 20px;
+  border-top:1px solid var(--border);
+  font-size:.82rem;
+  color:rgba(224,247,250,0.3);
+  letter-spacing:1px;
 }
+footer strong{color:var(--neon);font-family:'Orbitron',monospace;font-size:.78rem;}
+.copyright-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-bottom:8px;
+  padding:5px 14px;
+  border:1px solid rgba(0,255,231,0.15);
+  border-radius:30px;
+  font-size:.75rem;
+  background:rgba(0,255,231,0.04);
+}
+
+/* ---- COUNTER ANIMATION ---- */
+@keyframes countUp{from{opacity:0;}to{opacity:1;}}
+
+/* ---- TOOLTIP ---- */
+.tooltip{
+  position:absolute;
+  top:-36px;left:50%;
+  transform:translateX(-50%);
+  background:var(--neon);
+  color:#020b18;
+  font-size:.72rem;
+  font-weight:700;
+  padding:5px 10px;
+  border-radius:6px;
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transition:.2s;
+  font-family:'Orbitron',monospace;
+  letter-spacing:1px;
+}
+.card:hover .tooltip{opacity:1;}
+
+/* scrollbar */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(0,255,231,0.25);border-radius:10px;}
 </style>
 </head>
-
 <body>
 
+<!-- ORBS -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div id="particles"></div>
+
+<!-- NAVBAR -->
 <div class="navbar">
-⚡ ECE – Engineer’s Toolkit <br>
-<input type="text" id="search" placeholder="🔍 Search calculator..." onkeyup="searchCards()">
+  <div class="logo"><span>⚡</span> ECE TOOLKIT</div>
+  <div class="nav-right">
+    <input type="text" id="search" placeholder="🔍 Search calculator..." onkeyup="searchCards()">
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
 </div>
 
 <!-- HOME -->
-<div id="homeMenu" class="menu">
-<h2>Select Category</h2>
-<button onclick="openECE()">⚡ ECE Core</button>
-<button onclick="openDigital()">💻 ECE Digital</button>
+<div id="homeMenu">
+  <div class="hero-tag">⚙️ Electronics &amp; Communication Engineering</div>
+  <h1 class="hero-title">
+    <span class="line1">ENGINEER'S TOOLKIT</span>
+    <span class="line2">PRECISION · POWER · PERFORMANCE</span>
+  </h1>
+  <p class="hero-sub">Professional-grade calculators for ECE students &amp; engineers. Fast. Accurate. Always ready.</p>
+
+  <div class="cat-grid">
+    <div class="cat-card" onclick="openECE()">
+      <span class="cat-icon">⚡</span>
+      <div class="cat-title">ECE Core</div>
+      <div class="cat-desc">Ohm's Law, Power, RC, Filters, Op-Amp, Transistors & more</div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="cat-card" onclick="openDigital()">
+      <span class="cat-icon" style="animation-delay:.5s;filter:drop-shadow(0 0 12px #ff2d78)">💻</span>
+      <div class="cat-title" style="color:var(--neon2)">ECE Digital</div>
+      <div class="cat-desc">Binary, Hex, K-Map, Logic Gates & number conversions</div>
+      <div class="cat-arrow" style="color:var(--neon2)">→</div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num" id="cnt1">0</span><span class="stat-label">Calculators</span></div>
+    <div class="stat"><span class="stat-num" id="cnt2">0</span><span class="stat-label">Formulas</span></div>
+    <div class="stat"><span class="stat-num" id="cnt3">0</span><span class="stat-label">Conversions</span></div>
+  </div>
 </div>
 
-<!-- ================= ECE ================= -->
-<div id="eceSection" style="display:none;">
-<button onclick="goHome()">⬅ Back</button>
-<h2>⚡ ECE Core Calculators</h2>
+<!-- ECE CORE -->
+<div id="eceSection" class="section">
+  <div class="section-header">
+    <button class="back-btn" onclick="goHome()">← Back</button>
+    <div class="section-title">⚡ ECE CORE</div>
+  </div>
+  <div class="container">
 
-<div class="container">
+    <div class="card">
+      <h3>Ohm's Law</h3>
+      <input id="V" placeholder="Voltage (V)">
+      <input id="I" placeholder="Current (A)">
+      <input id="R" placeholder="Resistance (Ω)">
+      <button onclick="ohm()">CALCULATE</button>
+      <div id="o1" class="output">Enter any 2 values</div>
+    </div>
 
-<div class="card">
-<h3>Ohm's Law</h3>
-<input id="V" placeholder="Voltage (V)">
-<input id="I" placeholder="Current (A)">
-<input id="R" placeholder="Resistance (Ω)">
-<button onclick="ohm()">Calculate</button>
-<div id="o1" class="output"></div>
+    <div class="card">
+      <h3>Power</h3>
+      <input id="v1" placeholder="Voltage (V)">
+      <input id="i1" placeholder="Current (A)">
+      <button onclick="power()">CALCULATE</button>
+      <div id="o2" class="output">P = V × I</div>
+    </div>
+
+    <div class="card">
+      <h3>RC Time Constant</h3>
+      <input id="Rrc" placeholder="Resistance (Ω)">
+      <input id="Crc" placeholder="Capacitance (F)">
+      <button onclick="rc()">CALCULATE</button>
+      <div id="o3" class="output">τ = R × C</div>
+    </div>
+
+    <div class="card">
+      <h3>Frequency / Period</h3>
+      <input id="f" placeholder="Frequency (Hz)">
+      <button onclick="freq()">CALCULATE</button>
+      <div id="o4" class="output">T = 1 / f</div>
+    </div>
+
+    <div class="card">
+      <h3>Capacitive Reactance</h3>
+      <input id="fc" placeholder="Frequency (Hz)">
+      <input id="cap" placeholder="Capacitance (F)">
+      <button onclick="xc()">CALCULATE</button>
+      <div id="o5" class="output">Xc = 1 / (2πfC)</div>
+    </div>
+
+    <div class="card">
+      <h3>Inductive Reactance</h3>
+      <input id="fl" placeholder="Frequency (Hz)">
+      <input id="L" placeholder="Inductance (H)">
+      <button onclick="xl()">CALCULATE</button>
+      <div id="o6" class="output">Xl = 2πfL</div>
+    </div>
+
+    <div class="card">
+      <h3>RLC Resonance</h3>
+      <input id="Lr" placeholder="Inductance (H)">
+      <input id="Cr" placeholder="Capacitance (F)">
+      <button onclick="rlc()">CALCULATE</button>
+      <div id="o7" class="output">f = 1 / (2π√LC)</div>
+    </div>
+
+    <div class="card">
+      <h3>Voltage Divider</h3>
+      <input id="Vin" placeholder="Input Voltage (V)">
+      <input id="R1" placeholder="R1 (Ω)">
+      <input id="R2" placeholder="R2 (Ω)">
+      <button onclick="vd()">CALCULATE</button>
+      <div id="o8" class="output">Vout = Vin × R2/(R1+R2)</div>
+    </div>
+
+    <div class="card">
+      <h3>Current Divider</h3>
+      <input id="Iin" placeholder="Input Current (A)">
+      <input id="Ra" placeholder="Ra (Ω)">
+      <input id="Rb" placeholder="Rb (Ω)">
+      <button onclick="cd()">CALCULATE</button>
+      <div id="o9" class="output">Iout = Iin × Rb/(Ra+Rb)</div>
+    </div>
+
+    <div class="card">
+      <h3>Impedance</h3>
+      <input id="res" placeholder="Resistance (Ω)">
+      <input id="react" placeholder="Reactance (Ω)">
+      <button onclick="imp()">CALCULATE</button>
+      <div id="o10" class="output">Z = √(R² + X²)</div>
+    </div>
+
+    <div class="card">
+      <h3>Decibel (dB)</h3>
+      <input id="g" placeholder="Gain (ratio)">
+      <button onclick="db()">CALCULATE</button>
+      <div id="o12" class="output">dB = 20 × log₁₀(gain)</div>
+    </div>
+
+    <div class="card">
+      <h3>Bandwidth</h3>
+      <input id="fh" placeholder="High Frequency (Hz)">
+      <input id="flw" placeholder="Low Frequency (Hz)">
+      <button onclick="bw()">CALCULATE</button>
+      <div id="o13" class="output">BW = fH - fL</div>
+    </div>
+
+    <div class="card">
+      <h3>Op-Amp Gain (Inverting)</h3>
+      <input id="Rf" placeholder="Rf (Ω)">
+      <input id="Rin" placeholder="Rin (Ω)">
+      <button onclick="opamp()">CALCULATE</button>
+      <div id="opout" class="output">Gain = -Rf / Rin</div>
+    </div>
+
+    <div class="card">
+      <h3>Low Pass Filter – Cutoff</h3>
+      <input id="Rlpf" placeholder="Resistance (Ω)">
+      <input id="Clpf" placeholder="Capacitance (F)">
+      <button onclick="lpf()">CALCULATE</button>
+      <div id="lpfout" class="output">Fc = 1 / (2πRC)</div>
+    </div>
+
+    <div class="card">
+      <h3>High Pass Filter – Cutoff</h3>
+      <input id="Rhpf" placeholder="Resistance (Ω)">
+      <input id="Chpf" placeholder="Capacitance (F)">
+      <button onclick="hpf()">CALCULATE</button>
+      <div id="hpfout" class="output">Fc = 1 / (2πRC)</div>
+    </div>
+
+    <div class="card">
+      <h3>BJT Current Gain (β)</h3>
+      <input id="Ic" placeholder="Collector Current (A)">
+      <input id="Ib" placeholder="Base Current (A)">
+      <button onclick="bjt()">CALCULATE</button>
+      <div id="bjtout" class="output">β = Ic / Ib</div>
+    </div>
+
+    <div class="card">
+      <h3>MOSFET Drain Current</h3>
+      <input id="Vgs" placeholder="Vgs (V)">
+      <input id="Vth" placeholder="Vth (V)">
+      <input id="kval" placeholder="k (A/V²)">
+      <button onclick="mosfet()">CALCULATE</button>
+      <div id="mosout" class="output">Id = k/2 × (Vgs−Vth)²</div>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-<h3>Power</h3>
-<input id="v1" placeholder="Voltage (V)">
-<input id="i1" placeholder="Current (A)">
-<button onclick="power()">Calculate</button>
-<div id="o2" class="output"></div>
+<!-- DIGITAL -->
+<div id="digitalSection" class="section">
+  <div class="section-header">
+    <button class="back-btn" onclick="goHome()">← Back</button>
+    <div class="section-title" style="color:var(--neon2)">💻 DIGITAL</div>
+  </div>
+  <div class="container">
+
+    <div class="card">
+      <h3>Binary → Decimal</h3>
+      <input id="bin" placeholder="Enter Binary (e.g. 1010)">
+      <button onclick="binToDec()">CONVERT</button>
+      <div id="d1" class="output">Result appears here</div>
+    </div>
+
+    <div class="card">
+      <h3>Decimal → Binary</h3>
+      <input id="dec" placeholder="Enter Decimal">
+      <button onclick="decToBin()">CONVERT</button>
+      <div id="d2" class="output">Result appears here</div>
+    </div>
+
+    <div class="card">
+      <h3>Decimal → Hex</h3>
+      <input id="dec2" placeholder="Enter Decimal">
+      <button onclick="decToHex()">CONVERT</button>
+      <div id="d3" class="output">Result appears here</div>
+    </div>
+
+    <div class="card">
+      <h3>Hex → Decimal</h3>
+      <input id="hex" placeholder="Enter Hex (e.g. 1F)">
+      <button onclick="hexToDec()">CONVERT</button>
+      <div id="d4" class="output">Result appears here</div>
+    </div>
+
+    <div class="card">
+      <h3>Logic Gate Calculator</h3>
+      <select id="gate">
+        <option>AND</option>
+        <option>OR</option>
+        <option>XOR</option>
+        <option>NAND</option>
+        <option>NOR</option>
+        <option>NOT</option>
+      </select>
+      <input id="a" placeholder="Input A (0 or 1)">
+      <input id="b" placeholder="Input B (0 or 1)">
+      <button onclick="logic()">CALCULATE</button>
+      <div id="gout" class="output">Output appears here</div>
+    </div>
+
+    <div class="card">
+      <h3>K-Map Simplifier</h3>
+      <input id="k0" placeholder="Minterm list (e.g. 0,1,3,7)">
+      <button onclick="kmap()">SIMPLIFY</button>
+      <div id="kout" class="output">Enter minterms to simplify</div>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-<h3>RC Time Constant</h3>
-<input id="r" placeholder="Resistance (Ω)">
-<input id="c" placeholder="Capacitance (F)">
-<button onclick="rc()">Calculate</button>
-<div id="o3" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Frequency</h3>
-<input id="f" placeholder="Frequency (Hz)">
-<button onclick="freq()">Calculate</button>
-<div id="o4" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Capacitive Reactance</h3>
-<input id="fc" placeholder="Frequency (Hz)">
-<input id="cap" placeholder="Capacitance (F)">
-<button onclick="xc()">Calculate</button>
-<div id="o5" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Inductive Reactance</h3>
-<input id="fl" placeholder="Frequency (Hz)">
-<input id="L" placeholder="Inductance (H)">
-<button onclick="xl()">Calculate</button>
-<div id="o6" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Resonance</h3>
-<input id="Lr" placeholder="Inductance (H)">
-<input id="Cr" placeholder="Capacitance (F)">
-<button onclick="rlc()">Calculate</button>
-<div id="o7" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Voltage Divider</h3>
-<input id="Vin" placeholder="Input Voltage">
-<input id="R1" placeholder="R1 (Ω)">
-<input id="R2" placeholder="R2 (Ω)">
-<button onclick="vd()">Calculate</button>
-<div id="o8" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Current Divider</h3>
-<input id="Iin" placeholder="Input Current">
-<input id="Ra" placeholder="Ra (Ω)">
-<input id="Rb" placeholder="Rb (Ω)">
-<button onclick="cd()">Calculate</button>
-<div id="o9" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Impedance</h3>
-<input id="res" placeholder="Resistance">
-<input id="react" placeholder="Reactance">
-<button onclick="imp()">Calculate</button>
-<div id="o10" class="output"></div>
-</div>
-
-<div class="card">
-<h3>dB</h3>
-<input id="g" placeholder="Gain">
-<button onclick="db()">Calculate</button>
-<div id="o12" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Bandwidth</h3>
-<input id="fh" placeholder="High Frequency">
-<input id="flw" placeholder="Low Frequency">
-<button onclick="bw()">Calculate</button>
-<div id="o13" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Op-Amp</h3>
-<input id="Rf" placeholder="Rf">
-<input id="Rin" placeholder="Rin">
-<button onclick="opamp()">Calculate</button>
-<div id="opout" class="output"></div>
-</div>
-
-<div class="card">
-<h3>LPF</h3>
-<input id="Rlpf" placeholder="Resistance">
-<input id="Clpf" placeholder="Capacitance">
-<button onclick="lpf()">Calculate</button>
-<div id="lpfout" class="output"></div>
-</div>
-
-<div class="card">
-<h3>HPF</h3>
-<input id="Rhpf" placeholder="Resistance">
-<input id="Chpf" placeholder="Capacitance">
-<button onclick="hpf()">Calculate</button>
-<div id="hpfout" class="output"></div>
-</div>
-
-<div class="card">
-<h3>BJT</h3>
-<input id="Ic" placeholder="Collector Current">
-<input id="Ib" placeholder="Base Current">
-<button onclick="bjt()">Calculate</button>
-<div id="bjtout" class="output"></div>
-</div>
-
-<div class="card">
-<h3>MOSFET</h3>
-<input id="Vgs" placeholder="Vgs">
-<input id="Vth" placeholder="Vth">
-<input id="k" placeholder="k">
-<button onclick="mosfet()">Calculate</button>
-<div id="mosout" class="output"></div>
-</div>
-
-</div>
-</div>
-
-<!-- ================= DIGITAL ================= -->
-<div id="digitalSection" style="display:none;">
-<button onclick="goHome()">⬅ Back</button>
-<h2>💻 ECE Digital Calculators</h2>
-
-<div class="container">
-
-<div class="card">
-<h3>Binary → Decimal</h3>
-<input id="bin" placeholder="Enter Binary">
-<button onclick="binToDec()">Convert</button>
-<div id="d1" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Decimal → Binary</h3>
-<input id="dec" placeholder="Enter Decimal">
-<button onclick="decToBin()">Convert</button>
-<div id="d2" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Decimal → Hex</h3>
-<input id="dec2" placeholder="Enter Decimal">
-<button onclick="decToHex()">Convert</button>
-<div id="d3" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Hex → Decimal</h3>
-<input id="hex" placeholder="Enter Hex">
-<button onclick="hexToDec()">Convert</button>
-<div id="d4" class="output"></div>
-</div>
-
-<div class="card">
-<h3>K-Map</h3>
-<input id="k0" placeholder="A">
-<input id="k1" placeholder="B">
-<input id="k2" placeholder="C">
-<input id="k3" placeholder="D">
-<button onclick="kmap()">Solve</button>
-<div id="kout" class="output"></div>
-</div>
-
-<div class="card">
-<h3>Logic Gate</h3>
-<select id="gate">
-<option>AND</option>
-<option>OR</option>
-<option>XOR</option>
-<option>NAND</option>
-<option>NOR</option>
-<option>NOT</option>
-</select>
-<input id="a" placeholder="Input A">
-<input id="b" placeholder="Input B">
-<button onclick="logic()">Calculate</button>
-<div id="gout" class="output"></div>
-<div id="table" class="output"></div>
-</div>
-
-</div>
-</div>
-
-<button onclick="toggleTheme()" style="margin:20px;">🌙 / ☀️ Toggle Theme</button>
-
+<!-- FOOTER -->
 <footer>
-©️ 2026 <b>ECE – Engineer’s Toolkit</b> | Developed by <b>Shubham Pandey</b> ⚡
+  <div class="copyright-badge">©️ 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
+  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp;
+  Unauthorized reproduction prohibited &nbsp;|&nbsp;
+  <strong>ECE-TOOLKIT v2.0</strong>
 </footer>
 
 <script>
-function openECE(){homeMenu.style.display="none";eceSection.style.display="block";}
-function openDigital(){homeMenu.style.display="none";digitalSection.style.display="block";}
-function goHome(){homeMenu.style.display="flex";eceSection.style.display="none";digitalSection.style.display="none";}
+// ---- PARTICLES ----
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<28;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const s=Math.random()*5+2;
+    p.style.cssText=`
+      width:${s}px;height:${s}px;
+      left:${Math.random()*100}%;
+      background:${Math.random()>.5?'#00ffe7':Math.random()>.5?'#ff2d78':'#ffe600'};
+      animation-duration:${Math.random()*12+8}s;
+      animation-delay:${Math.random()*10}s;
+      opacity:0;
+    `;
+    c.appendChild(p);
+  }
+})();
 
+// ---- COUNTER ----
+function animCount(el,target,suffix=''){
+  let n=0,step=Math.ceil(target/40),t=setInterval(()=>{
+    n=Math.min(n+step,target);
+    el.textContent=n+(suffix);
+    if(n>=target)clearInterval(t);
+  },30);
+}
+setTimeout(()=>{
+  animCount(document.getElementById('cnt1'),22);
+  animCount(document.getElementById('cnt2'),18,'+');
+  animCount(document.getElementById('cnt3'),6,'+');
+},800);
+
+// ---- NAV ----
+function openECE(){
+  homeMenu.style.display="none";
+  eceSection.style.display="block";
+  eceSection.style.animation="none";
+  digitalSection.style.display="none";
+}
+function openDigital(){
+  homeMenu.style.display="none";
+  digitalSection.style.display="block";
+  eceSection.style.display="none";
+}
+function goHome(){
+  homeMenu.style.display="flex";
+  eceSection.style.display="none";
+  digitalSection.style.display="none";
+  document.querySelectorAll(".card").forEach(c=>c.style.display="");
+}
+
+// ---- SEARCH ----
 function searchCards(){
-let input=search.value.toLowerCase();
-homeMenu.style.display="none";
-eceSection.style.display="block";
-digitalSection.style.display="block";
-document.querySelectorAll(".card").forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(input)?"block":"none";
-});
+  const val=document.getElementById('search').value.toLowerCase();
+  if(!val){goHome();return;}
+  homeMenu.style.display="none";
+  eceSection.style.display="block";
+  digitalSection.style.display="block";
+  document.querySelectorAll(".card").forEach(c=>{
+    c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
+  });
 }
 
-function toggleTheme(){document.body.classList.toggle("light");}
-
-function ohm(){let v=+V.value,i=+I.value,r=+R.value;
-if(v&&i)o1.innerHTML="R="+(v/i);
-else if(v&&r)o1.innerHTML="I="+(v/r);
-else if(i&&r)o1.innerHTML="V="+(i*r);
-else o1.innerHTML="Enter any 2 values";
+// ---- THEME ----
+let dark=true;
+function toggleTheme(){
+  dark=!dark;
+  document.body.classList.toggle("light");
+  document.querySelector('.theme-btn').textContent=dark?'🌙':'☀️';
 }
 
-function power(){o2.innerHTML="P="+(v1.value*i1.value);}
-function rc(){o3.innerHTML="τ="+(r.value*c.value);}
-function freq(){o4.innerHTML="T="+(1/f.value);}
-function xc(){o5.innerHTML="Xc="+(1/(2*Math.PI*fc.value*cap.value));}
-function xl(){o6.innerHTML="Xl="+(2*Math.PI*fl.value*L.value);}
-function rlc(){o7.innerHTML="f="+(1/(2*Math.PI*Math.sqrt(Lr.value*Cr.value)));}
-function vd(){o8.innerHTML="Vout="+(Vin.value*(R2.value/(+R1.value+ +R2.value)));}
-function cd(){o9.innerHTML="Iout="+(Iin.value*(Rb.value/(+Ra.value+ +Rb.value)));}
-function imp(){o10.innerHTML="Z="+Math.sqrt(res.value**2+react.value**2);}
-function db(){o12.innerHTML="dB="+(20*Math.log10(g.value));}
-function bw(){o13.innerHTML="BW="+(fh.value-flw.value);}
-function opamp(){opout.innerHTML="Gain="+(Rf.value/Rin.value);}
-function lpf(){lpfout.innerHTML="Fc="+(1/(2*Math.PI*Rlpf.value*Clpf.value));}
-function hpf(){hpfout.innerHTML="Fc="+(1/(2*Math.PI*Rhpf.value*Chpf.value));}
-function bjt(){bjtout.innerHTML="β="+(Ic.value/Ib.value);}
-function mosfet(){mosout.innerHTML="Id="+(k.value*((Vgs.value-Vth.value)**2));}
+// ---- HELPER ----
+function fmt(n){
+  if(isNaN(n)||!isFinite(n))return "⚠ Invalid input";
+  return n%1===0?n:parseFloat(n.toFixed(6));
+}
+function setOut(id,label,val){
+  document.getElementById(id).innerHTML=`${label} = <span style="color:#fff">${fmt(val)}</span>`;
+}
 
-function binToDec(){d1.innerHTML=parseInt(bin.value,2);}
-function decToBin(){d2.innerHTML=Number(dec.value).toString(2);}
-function decToHex(){d3.innerHTML=Number(dec2.value).toString(16);}
-function hexToDec(){d4.innerHTML=parseInt(hex.value,16);}
+// ---- ECE CALCULATORS ----
+function ohm(){
+  let v=parseFloat(V.value),i=parseFloat(I.value),r=parseFloat(R.value);
+  if(!isNaN(v)&&!isNaN(i))setOut('o1','R',v/i);
+  else if(!isNaN(v)&&!isNaN(r))setOut('o1','I',v/r);
+  else if(!isNaN(i)&&!isNaN(r))setOut('o1','V',i*r);
+  else document.getElementById('o1').innerHTML="⚠ Enter any 2 values";
+}
+function power(){setOut('o2','P',parseFloat(v1.value)*parseFloat(i1.value));}
+function rc(){setOut('o3','τ',parseFloat(Rrc.value)*parseFloat(Crc.value));}
+function freq(){setOut('o4','T',1/parseFloat(f.value));}
+function xc(){setOut('o5','Xc',1/(2*Math.PI*parseFloat(fc.value)*parseFloat(cap.value)));}
+function xl(){setOut('o6','Xl',2*Math.PI*parseFloat(fl.value)*parseFloat(L.value));}
+function rlc(){setOut('o7','f',1/(2*Math.PI*Math.sqrt(parseFloat(Lr.value)*parseFloat(Cr.value))));}
+function vd(){setOut('o8','Vout',parseFloat(Vin.value)*(parseFloat(R2.value)/(parseFloat(R1.value)+parseFloat(R2.value))));}
+function cd(){setOut('o9','Iout',parseFloat(Iin.value)*(parseFloat(Rb.value)/(parseFloat(Ra.value)+parseFloat(Rb.value))));}
+function imp(){setOut('o10','Z',Math.sqrt(parseFloat(res.value)**2+parseFloat(react.value)**2));}
+function db(){setOut('o12','dB',20*Math.log10(parseFloat(g.value)));}
+function bw(){setOut('o13','BW',parseFloat(fh.value)-parseFloat(flw.value));}
+function opamp(){setOut('opout','Gain',-(parseFloat(Rf.value)/parseFloat(Rin.value)));}
+function lpf(){setOut('lpfout','Fc',1/(2*Math.PI*parseFloat(Rlpf.value)*parseFloat(Clpf.value)));}
+function hpf(){setOut('hpfout','Fc',1/(2*Math.PI*parseFloat(Rhpf.value)*parseFloat(Chpf.value)));}
+function bjt(){setOut('bjtout','β',parseFloat(Ic.value)/parseFloat(Ib.value));}
+function mosfet(){
+  let k=parseFloat(kval.value),vgs=parseFloat(Vgs.value),vth=parseFloat(Vth.value);
+  setOut('mosout','Id',(k/2)*Math.pow(vgs-vth,2));
+}
 
-function kmap(){kout.innerHTML="Basic solver";}
+// ---- DIGITAL ----
+function binToDec(){
+  const v=document.getElementById('bin').value.trim();
+  const r=parseInt(v,2);
+  document.getElementById('d1').innerHTML=isNaN(r)?"⚠ Invalid binary":`Decimal = <span style='color:#fff'>${r}</span>`;
+}
+function decToBin(){
+  const v=parseInt(document.getElementById('dec').value);
+  document.getElementById('d2').innerHTML=isNaN(v)?"⚠ Invalid input":`Binary = <span style='color:#fff'>${v.toString(2)}</span>`;
+}
+function decToHex(){
+  const v=parseInt(document.getElementById('dec2').value);
+  document.getElementById('d3').innerHTML=isNaN(v)?"⚠ Invalid input":`Hex = <span style='color:#fff'>${v.toString(16).toUpperCase()}</span>`;
+}
+function hexToDec(){
+  const v=parseInt(document.getElementById('hex').value,16);
+  document.getElementById('d4').innerHTML=isNaN(v)?"⚠ Invalid hex":`Decimal = <span style='color:#fff'>${v}</span>`;
+}
+
 function logic(){
-let A=+a.value,B=+b.value,g=gate.value,o;
-if(g=="AND")o=A&B;
-if(g=="OR")o=A|B;
-if(g=="XOR")o=A^B;
-if(g=="NAND")o=(A&B)?0:1;
-if(g=="NOR")o=(A|B)?0:1;
-if(g=="NOT")o=A?0:1;
-
-gout.innerHTML="Output="+o;
+  let A=parseInt(document.getElementById('a').value),
+      B=parseInt(document.getElementById('b').value),
+      g=document.getElementById('gate').value,o;
+  if(isNaN(A)||A<0||A>1||(g!=="NOT"&&(isNaN(B)||B<0||B>1))){
+    document.getElementById('gout').innerHTML="⚠ Enter 0 or 1";return;
+  }
+  if(g=="AND")o=A&B;
+  if(g=="OR")o=A|B;
+  if(g=="XOR")o=A^B;
+  if(g=="NAND")o=(A&B)?0:1;
+  if(g=="NOR")o=(A|B)?0:1;
+  if(g=="NOT")o=A?0:1;
+  document.getElementById('gout').innerHTML=`${g}(${A}${g!=="NOT"?','+B:''}) = <span style='color:#fff;font-size:1.3em'>${o}</span>`;
 }
-</script>
 
+function kmap(){
+  document.getElementById('kout').innerHTML="⚠ Full K-Map solver coming soon";
+}
+
+// ---- ENTER KEY ----
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    const btn=document.querySelector('.section:not([style*="none"]) button:not(.back-btn)');
+    if(btn)btn.click();
+  }
+});
+</script>
 </body>
 </html>
