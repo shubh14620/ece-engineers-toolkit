@@ -1529,99 +1529,109 @@ function searchCards(){
   const val=document.getElementById('search').value.toLowerCase().trim();
   if(!val){goHome();return;}
 
+  const noRes=document.getElementById('noResults');
+  if(noRes)noRes.remove();
+
   document.getElementById('homeMenu').style.display='none';
   allSections.forEach(s=>document.getElementById(s).style.display='none');
 
-  // All searchable element types across all sections
-  const searchables=[
-    // Calculator cards
-    {selector:'.card', section:'calcSection', subsections:['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection']},
-    // AKTU Notes - subject cards
-    {selector:'.subject-card', section:'theorySection', subsections:[]},
-    // Components
-    {selector:'.comp-card', section:'compSection', subsections:[]},
-    // Simulator cards
-    {selector:'#simSection .card', section:'simSection', subsections:[]},
-    // Circuit cards
-    {selector:'#circuitSection .card', section:'circuitSection', subsections:[]},
-  ];
+  // Reset visibility
+  document.querySelectorAll('.card,.subject-card').forEach(c=>c.style.display='block');
 
-  let found = {};
+  let found=0;
 
-  // Search .card (calculators)
-  document.querySelectorAll('.card').forEach(c=>{
-    const matches = c.innerText.toLowerCase().includes(val);
-    c.style.display = matches ? 'block' : 'none';
-    if(matches){
-      // Find which section this card belongs to
-      allSections.forEach(s=>{
-        const sec = document.getElementById(s);
-        if(sec && sec.contains(c)) found[s]=true;
-      });
+  // Map: section id → keywords that trigger it by name
+  const nameMap={
+    theorySection:['aktu','note','sem','theory','subject','pyq'],
+    compSection:['comp','component','components','encyclopedia','resistor','capacitor','inductor','diode','zener','led','bjt','mosfet','jfet','scr','opamp','relay','motor','speaker','sensor','ldr','thermistor','ultrasonic','piezo','passive','active','semiconductor'],
+    circuitSection:['circuit','ckt','designer','voltage divider','common emitter','bridge rectifier','inverting op','zener regul'],
+    simSection:['simulator','waveform','bode','phasor','555 timer','boolean','truth table','rc curve','rl curve'],
+    eceSection:['ece core','ohm','power calc','rc time','reactance','resonance','impedance','decibel','bandwidth','lpf','hpf','bjt gain','mosfet drain'],
+    digitalSection:['digital','binary','decimal','hex','octal','logic gate','complement','kmap'],
+    designSection:['design tool','color code','pcb','trace','battery life','unit converter'],
+    commSection:['communication','modulation','shannon','friis','path loss','noise figure','wavelength','nyquist'],
+    practicalSection:['practical','cap decoder','e12','e24','power dissipation','ic reference','transformer ratio'],
+    mcuSection:['microcontroller','mcu','pwm','uart','baud','adc','spi','i2c','timer freq'],
+    signalSection:['signal','system','fourier','sampling','convolution','dft','fft','snr','stability'],
+    vlsiSection:['vlsi','cmos','delay','fan-out','noise margin','w/l','cox','pdp'],
+  };
+
+  // 1. Check section name keywords
+  Object.entries(nameMap).forEach(([secId,keys])=>{
+    if(keys.some(k=>k===val||k.startsWith(val)||val.startsWith(k)||k.includes(val)||val.includes(k))){
+      const sec=document.getElementById(secId);
+      if(sec){
+        sec.style.display='block';
+        found++;
+        if(secId==='theorySection') sec.querySelectorAll('.sem-content').forEach(s=>s.classList.add('active'));
+        if(secId==='compSection'){
+          if(!sec.querySelector('.comp-card'))renderComps(COMP_DATA);
+          sec.querySelectorAll('.comp-card').forEach(c=>c.style.display='block');
+        }
+      }
     }
   });
 
-  // Search subject-cards (AKTU Notes)
-  document.querySelectorAll('.subject-card').forEach(c=>{
-    const matches = c.innerText.toLowerCase().includes(val);
-    c.style.display = matches ? 'block' : 'none';
-    if(matches) found['theorySection']=true;
-  });
-
-  // Search comp-cards (Components)
-  document.querySelectorAll('.comp-card').forEach(c=>{
-    const matches = c.innerText.toLowerCase().includes(val);
-    c.style.display = matches ? 'block' : 'none';
-    if(matches) found['compSection']=true;
-  });
-
-  // Show sections that have matches
-  // For calcSection - show it if any calc sub-section has results
-  const calcSubs=['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
-  const calcHasResults = calcSubs.some(s=>found[s]);
-
-  if(calcHasResults){
-    document.getElementById('calcSection').style.display='none'; // hide menu, show sub-sections
-    calcSubs.forEach(s=>{
-      document.getElementById(s).style.display = found[s] ? 'block' : 'none';
+  // 2. Search calculator cards inside each calc sub-section
+  ['eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'].forEach(secId=>{
+    const sec=document.getElementById(secId);
+    if(!sec)return;
+    let secFound=false;
+    sec.querySelectorAll('.card').forEach(c=>{
+      const m=c.innerText.toLowerCase().includes(val);
+      c.style.display=m?'block':'none';
+      if(m)secFound=true;
     });
-  }
-  if(found['theorySection']){
-    document.getElementById('theorySection').style.display='block';
-    // Show all sem-contents so results are visible
-    document.querySelectorAll('.sem-content').forEach(s=>s.classList.add('active'));
-  }
-  if(found['compSection']){
-    document.getElementById('compSection').style.display='block';
-    setTimeout(()=>{
-      document.querySelectorAll('.comp-card').forEach(c=>{
-        if(c.innerText.toLowerCase().includes(val)) c.style.display='block';
-        else c.style.display='none';
-      });
-    },50);
-  }
-  if(found['simSection']) document.getElementById('simSection').style.display='block';
-  if(found['circuitSection']) document.getElementById('circuitSection').style.display='block';
+    if(secFound&&sec.style.display!=='block'){sec.style.display='block';found++;}
+  });
 
-  // If nothing found anywhere
-  const anyFound = Object.keys(found).length > 0;
-  if(!anyFound){
+  // 3. Search simulator cards
+  const simSec=document.getElementById('simSection');
+  if(simSec&&simSec.style.display!=='block'){
+    let sf=false;
+    simSec.querySelectorAll('.card').forEach(c=>{const m=c.innerText.toLowerCase().includes(val);c.style.display=m?'block':'none';if(m)sf=true;});
+    if(sf){simSec.style.display='block';found++;}
+  }
+
+  // 4. Search circuit section
+  const cktSec=document.getElementById('circuitSection');
+  if(cktSec&&cktSec.style.display!=='block'&&cktSec.innerText.toLowerCase().includes(val)){
+    cktSec.style.display='block';found++;
+  }
+
+  // 5. Search components (synchronous - render first)
+  const cmpSec=document.getElementById('compSection');
+  if(cmpSec&&cmpSec.style.display!=='block'){
+    if(!cmpSec.querySelector('.comp-card'))renderComps(COMP_DATA);
+    let cf=false;
+    cmpSec.querySelectorAll('.comp-card').forEach(c=>{
+      const m=c.innerText.toLowerCase().includes(val);
+      c.style.display=m?'block':'none';
+      if(m)cf=true;
+    });
+    if(cf){cmpSec.style.display='block';found++;}
+  }
+
+  // 6. Search AKTU subject cards
+  const thSec=document.getElementById('theorySection');
+  if(thSec&&thSec.style.display!=='block'){
+    let tf=false;
+    thSec.querySelectorAll('.subject-card').forEach(c=>{const m=c.innerText.toLowerCase().includes(val);c.style.display=m?'block':'none';if(m)tf=true;});
+    if(tf){thSec.style.display='block';thSec.querySelectorAll('.sem-content').forEach(s=>s.classList.add('active'));found++;}
+  }
+
+  // No results
+  if(found===0){
     document.getElementById('homeMenu').style.display='flex';
-    document.getElementById('homeMenu').innerHTML += '';
-    // Show no results message
-    const existing = document.getElementById('noResults');
-    if(!existing){
-      const msg = document.createElement('div');
-      msg.id='noResults';
-      msg.style.cssText='color:rgba(0,255,231,0.5);font-family:Orbitron,monospace;font-size:.85rem;margin-top:20px;letter-spacing:2px;';
-      msg.textContent='No results found for "'+val+'"';
-      document.getElementById('homeMenu').appendChild(msg);
-    }
-  } else {
-    const existing = document.getElementById('noResults');
-    if(existing) existing.remove();
+    allSections.forEach(s=>document.getElementById(s).style.display='none');
+    const msg=document.createElement('div');
+    msg.id='noResults';
+    msg.style.cssText='color:rgba(0,255,231,0.5);font-family:Orbitron,monospace;font-size:.85rem;margin-top:20px;letter-spacing:2px;';
+    msg.textContent='No results found for "'+val+'"';
+    document.getElementById('homeMenu').appendChild(msg);
   }
 }
+
 let dark=true;
 function toggleTheme(){dark=!dark;document.body.classList.toggle('light');document.querySelector('.theme-btn').textContent=dark?'🌙':'☀️';}
 
@@ -2999,4 +3009,3 @@ document.addEventListener('keydown',e=>{
 </script>
 </body>
 </html>
-             
