@@ -30,7 +30,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 #search:focus{border-color:var(--neon);box-shadow:0 0 16px rgba(0,255,231,0.2);background:rgba(0,255,231,0.08);}
 .theme-btn{background:transparent;border:1px solid var(--border);color:var(--neon);padding:8px 14px;border-radius:30px;cursor:pointer;font-size:1.1rem;transition:.3s;width:auto;margin:0;}
 .theme-btn:hover{background:rgba(0,255,231,0.1);box-shadow:var(--glow);}
-#homeMenu{position:relative;z-index:1;min-height:calc(100vh - 68px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+#homeMenu{position:relative;z-index:1;min-height:calc(100vh - 68px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px;}
 .hero-tag{font-family:'Orbitron',monospace;font-size:0.7rem;letter-spacing:6px;color:var(--neon2);text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fadeUp .6s .2s forwards;}
 .hero-title{font-family:'Orbitron',monospace;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:18px;opacity:0;animation:fadeUp .7s .4s forwards;}
 .hero-title .line1{display:block;background:linear-gradient(90deg,var(--neon),#00b8ff,var(--neon));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shine 3s linear infinite;}
@@ -38,8 +38,10 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .hero-title .line2{display:block;color:white;font-size:0.55em;letter-spacing:4px;-webkit-text-fill-color:white;}
 .hero-sub{color:rgba(224,247,250,0.55);font-size:1.1rem;max-width:500px;margin:0 auto 50px;font-weight:300;letter-spacing:1px;opacity:0;animation:fadeUp .7s .6s forwards;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
-.cat-card{position:relative;padding:30px 24px;border:1px solid var(--border);border-radius:20px;background:var(--card);cursor:pointer;transition:.4s cubic-bezier(.4,0,.2,1);overflow:hidden;text-align:left;}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1100px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
+@media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.cat-grid{grid-template-columns:1fr;}}
+.cat-card{position:relative;padding:26px 18px;border:1px solid var(--border);border-radius:20px;background:var(--card);cursor:pointer;transition:.4s cubic-bezier(.4,0,.2,1);overflow:hidden;text-align:left;}
 .cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,231,0.07),transparent);opacity:0;transition:.4s;}
 .cat-card:hover::before{opacity:1;}
 .cat-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--neon);box-shadow:0 8px 40px rgba(0,255,231,0.25);}
@@ -243,12 +245,12 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
 
 <!-- HOME -->
 <div id="homeMenu">
-  <div class="hero-tag">⚙️ Electronics &amp; Communication Engineering</div>
+  <div class="hero-tag">⚙️ Electronics &amp; Communication Engineering · AKTU</div>
   <h1 class="hero-title">
     <span class="line1">ENGINEER'S TOOLKIT</span>
-    <span class="line2">PRECISION · POWER · PERFORMANCE</span>
+    <span class="line2">NOTES · CIRCUITS · SIMULATORS · CALCULATORS</span>
   </h1>
-  <p class="hero-sub">Professional-grade calculators for ECE students &amp; engineers. Fast. Accurate. Always ready.</p>
+  <p class="hero-sub">Stop searching. Start solving. Built for ECE Students &amp; Engineers.</p>
   <div class="cat-grid">
     <div class="cat-card" onclick="openSection('theorySection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #c084fc)">📚</span>
