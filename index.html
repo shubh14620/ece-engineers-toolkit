@@ -71,6 +71,9 @@ border:none;
 border-radius:8px;
 }
 
+input::placeholder{color:#9ca3af;}
+.light input::placeholder{color:#6b7280;}
+
 button{
 width:100%;
 padding:12px;
@@ -119,55 +122,67 @@ opacity:0.8;
 <input type="text" id="search" placeholder="🔍 Search calculator..." onkeyup="searchCards()">
 </div>
 
-<!-- MENU -->
 <div id="homeMenu" class="menu">
 <h2>Select Category</h2>
 <button onclick="openECE()">⚡ ECE Core</button>
 <button onclick="openDigital()">💻 ECE Digital</button>
 </div>
 
-<!-- ECE CORE -->
+<!-- ECE -->
 <div id="eceSection" style="display:none;">
 <button onclick="goHome()">⬅ Back</button>
 <h2>⚡ ECE Core Calculators</h2>
 
 <div class="container">
 
-<div class="card"><h3>Ohm's Law</h3><input id="V"><input id="I"><input id="R"><button onclick="ohm()">Calculate</button><div id="o1" class="output"></div></div>
+<div class="card">
+<h3>Ohm's Law</h3>
+<input id="V" placeholder="Voltage (V)">
+<input id="I" placeholder="Current (A)">
+<input id="R" placeholder="Resistance (Ω)">
+<button onclick="ohm()">Calculate</button>
+<div id="o1" class="output"></div>
+</div>
 
-<div class="card"><h3>Power</h3><input id="v1"><input id="i1"><button onclick="power()">Calculate</button><div id="o2" class="output"></div></div>
+<div class="card">
+<h3>Power</h3>
+<input id="v1" placeholder="Voltage (V)">
+<input id="i1" placeholder="Current (A)">
+<button onclick="power()">Calculate</button>
+<div id="o2" class="output"></div>
+</div>
 
-<div class="card"><h3>RC Time Constant</h3><input id="r"><input id="c"><button onclick="rc()">Calculate</button><div id="o3" class="output"></div></div>
+<div class="card">
+<h3>RC Time Constant</h3>
+<input id="r" placeholder="Resistance (Ω)">
+<input id="c" placeholder="Capacitance (F)">
+<button onclick="rc()">Calculate</button>
+<div id="o3" class="output"></div>
+</div>
 
-<div class="card"><h3>Frequency</h3><input id="f"><button onclick="freq()">Calculate</button><div id="o4" class="output"></div></div>
+<div class="card">
+<h3>Frequency</h3>
+<input id="f" placeholder="Frequency (Hz)">
+<button onclick="freq()">Calculate</button>
+<div id="o4" class="output"></div>
+</div>
 
-<div class="card"><h3>Capacitive Reactance</h3><input id="fc"><input id="cap"><button onclick="xc()">Calculate</button><div id="o5" class="output"></div></div>
+<div class="card">
+<h3>Voltage Divider</h3>
+<input id="Vin" placeholder="Input Voltage">
+<input id="R1" placeholder="R1 (Ω)">
+<input id="R2" placeholder="R2 (Ω)">
+<button onclick="vd()">Calculate</button>
+<div id="o8" class="output"></div>
+</div>
 
-<div class="card"><h3>Inductive Reactance</h3><input id="fl"><input id="L"><button onclick="xl()">Calculate</button><div id="o6" class="output"></div></div>
-
-<div class="card"><h3>Resonance</h3><input id="Lr"><input id="Cr"><button onclick="rlc()">Calculate</button><div id="o7" class="output"></div></div>
-
-<div class="card"><h3>Voltage Divider</h3><input id="Vin"><input id="R1"><input id="R2"><button onclick="vd()">Calculate</button><div id="o8" class="output"></div></div>
-
-<div class="card"><h3>Current Divider</h3><input id="Iin"><input id="Ra"><input id="Rb"><button onclick="cd()">Calculate</button><div id="o9" class="output"></div></div>
-
-<div class="card"><h3>Impedance</h3><input id="res"><input id="react"><button onclick="imp()">Calculate</button><div id="o10" class="output"></div></div>
-
-<div class="card"><h3>Gain</h3><input id="Vo"><input id="Vi"><button onclick="gain()">Calculate</button><div id="o11" class="output"></div></div>
-
-<div class="card"><h3>dB</h3><input id="g"><button onclick="db()">Calculate</button><div id="o12" class="output"></div></div>
-
-<div class="card"><h3>Bandwidth</h3><input id="fh"><input id="flw"><button onclick="bw()">Calculate</button><div id="o13" class="output"></div></div>
-
-<div class="card"><h3>Op-Amp</h3><input id="Rf"><input id="Rin"><button onclick="opamp()">Calculate</button><div id="opout" class="output"></div></div>
-
-<div class="card"><h3>LPF</h3><input id="Rlpf"><input id="Clpf"><button onclick="lpf()">Calculate</button><div id="lpfout" class="output"></div></div>
-
-<div class="card"><h3>HPF</h3><input id="Rhpf"><input id="Chpf"><button onclick="hpf()">Calculate</button><div id="hpfout" class="output"></div></div>
-
-<div class="card"><h3>BJT</h3><input id="Ic"><input id="Ib"><button onclick="bjt()">Calculate</button><div id="bjtout" class="output"></div></div>
-
-<div class="card"><h3>MOSFET</h3><input id="Vgs"><input id="Vth"><input id="k"><button onclick="mosfet()">Calculate</button><div id="mosout" class="output"></div></div>
+<div class="card">
+<h3>Gain</h3>
+<input id="Vo" placeholder="Output Voltage">
+<input id="Vi" placeholder="Input Voltage">
+<button onclick="gain()">Calculate</button>
+<div id="o11" class="output"></div>
+</div>
 
 </div>
 </div>
@@ -179,13 +194,19 @@ opacity:0.8;
 
 <div class="container">
 
-<div class="card"><h3>Binary → Decimal</h3><input id="bin"><button onclick="binToDec()">Convert</button><div id="d1" class="output"></div></div>
+<div class="card">
+<h3>Binary → Decimal</h3>
+<input id="bin" placeholder="Enter Binary">
+<button onclick="binToDec()">Convert</button>
+<div id="d1" class="output"></div>
+</div>
 
-<div class="card"><h3>Decimal → Binary</h3><input id="dec"><button onclick="decToBin()">Convert</button><div id="d2" class="output"></div></div>
-
-<div class="card"><h3>Decimal → Hex</h3><input id="dec2"><button onclick="decToHex()">Convert</button><div id="d3" class="output"></div></div>
-
-<div class="card"><h3>Hex → Decimal</h3><input id="hex"><button onclick="hexToDec()">Convert</button><div id="d4" class="output"></div></div>
+<div class="card">
+<h3>Decimal → Binary</h3>
+<input id="dec" placeholder="Enter Decimal">
+<button onclick="decToBin()">Convert</button>
+<div id="d2" class="output"></div>
+</div>
 
 <div class="card">
 <h3>K-Map</h3>
@@ -207,10 +228,10 @@ opacity:0.8;
 <option>NOR</option>
 <option>NOT</option>
 </select>
-<input id="a"><input id="b">
+<input id="a" placeholder="Input A">
+<input id="b" placeholder="Input B">
 <button onclick="logic()">Calculate</button>
 <div id="gout" class="output"></div>
-<div id="table" class="output"></div>
 </div>
 
 </div>
@@ -232,25 +253,40 @@ function openDigital(){homeMenu.style.display="none";digitalSection.style.displa
 function goHome(){homeMenu.style.display="flex";eceSection.style.display="none";digitalSection.style.display="none";}
 
 function searchCards(){
-let input = document.getElementById("search").value.toLowerCase();
-
+let input=document.getElementById("search").value.toLowerCase();
 eceSection.style.display="block";
 digitalSection.style.display="block";
 homeMenu.style.display="none";
 
-let cards = document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-let text = card.innerText.toLowerCase();
-card.style.display = text.includes(input) ? "block" : "none";
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
 });
 }
 
-function toggleTheme(){
-document.body.classList.toggle("light");
+function toggleTheme(){document.body.classList.toggle("light");}
+
+/* ERROR HANDLING */
+function isValid(...vals){return vals.every(v=>v!=="" && !isNaN(v));}
+
+/* CALCULATIONS */
+function ohm(){
+if(!isValid(V.value,I.value,R.value)) return o1.innerHTML="Enter any 2 values";
+let v=+V.value,i=+I.value,r=+R.value;
+if(v&&i)o1.innerHTML="R="+(v/i);
+else if(v&&r)o1.innerHTML="I="+(v/r);
+else if(i&&r)o1.innerHTML="V="+(i*r);
 }
 
-/* same calculation functions */
+function power(){ if(!isValid(v1.value,i1.value)) return o2.innerHTML="Invalid input"; o2.innerHTML="P="+(v1.value*i1.value);}
+function rc(){ if(!isValid(r.value,c.value)) return o3.innerHTML="Invalid input"; o3.innerHTML="τ="+(r.value*c.value);}
+function freq(){ if(!isValid(f.value)) return o4.innerHTML="Invalid input"; o4.innerHTML="T="+(1/f.value);}
+function vd(){ if(!isValid(Vin.value,R1.value,R2.value)) return o8.innerHTML="Invalid"; o8.innerHTML="Vout="+(Vin.value*(R2.value/(+R1.value+ +R2.value)));}
+function gain(){ if(!isValid(Vo.value,Vi.value)) return o11.innerHTML="Invalid"; o11.innerHTML="Av="+(Vo.value/Vi.value);}
+
+function binToDec(){d1.innerHTML=parseInt(bin.value,2)||"Invalid";}
+function decToBin(){d2.innerHTML=Number(dec.value).toString(2)||"Invalid";}
+function kmap(){kout.innerHTML="Basic solver";}
+function logic(){let A=+a.value,B=+b.value,g=gate.value;gout.innerHTML=(g=="AND")?A&B:(g=="OR")?A|B:"Result";}
 
 </script>
 
