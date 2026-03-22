@@ -30,21 +30,24 @@
 ## 🗂️ Website Structure
 
 ```
-🏠 HOME  (5 sections in one row)
+🏠 HOME  (8 sections — 4 top row + 4 bottom row)
 │
 ├── 📚  AKTU Notes          → All 8 Semesters
 ├── 🔩  Components          → Encyclopedia (20+ components)
 ├── ⚡  Circuit Designer    → 6 Pre-built circuits
 ├── 🧪  Simulators          → 7 Real-time simulators
-└── 🧮  Calculators         → 8 sub-sections, 80+ calculators
-    ├── ⚡ ECE Core          (17 calculators)
-    ├── 💻 ECE Digital       (9 calculators)
-    ├── 📐 Design Tools      (6 calculators)
-    ├── 📡 Communication     (8 calculators)
-    ├── 💡 Practical Tools   (6 calculators)
-    ├── 🔌 Microcontroller   (7 calculators)
-    ├── 📊 Signal & Systems  (9 calculators)
-    └── 🔬 VLSI Design       (9 calculators)
+├── 🧮  Calculators         → 8 sub-sections, 80+ calculators
+│   ├── ⚡ ECE Core          (17 calculators)
+│   ├── 💻 ECE Digital       (9 calculators)
+│   ├── 📐 Design Tools      (6 calculators)
+│   ├── 📡 Communication     (8 calculators)
+│   ├── 💡 Practical Tools   (6 calculators)
+│   ├── 🔌 Microcontroller   (7 calculators)
+│   ├── 📊 Signal & Systems  (9 calculators)
+│   └── 🔬 VLSI Design       (9 calculators)
+├── 🎯  GATE ECE            → Subjects · PYQ · Score · Cut-off · Tools
+├── 💼  Internship Portal   → Companies · Platforms · Research · Resume · Interview
+└── 🏛️  Jobs & Placement    → Govt · PSU · Private · Sarkari Result · Alerts
 ```
 
 ---
@@ -58,8 +61,11 @@
 | ⚡ **Circuit Designer** | 6 circuits · Canvas diagrams · Live accurate calculations |
 | 🧪 **Simulators** | 7 real-time simulators with graphs & waveforms |
 | 🧮 **Calculators** | 80+ calculators across 8 categories |
-| 🔍 **Live Search** | Search across all sections instantly |
-| 🌙 **Dark / Light Mode** | Neon dark + clean light theme |
+| 🎯 **GATE ECE** | Subject topics · Score estimator · Cut-off history · PYQ papers |
+| 💼 **Internship Portal** | Top companies · Platforms · Research internships · Resume tips |
+| 🏛️ **Jobs & Placement** | Govt jobs · PSU · Private · Sarkari Result links · Job alerts |
+| 🔍 **Live Search** | Search across all 8 sections instantly |
+| 🌙 **Dark / Light Mode** | Beautiful neon dark + clean readable light theme |
 | 📱 **Fully Responsive** | Mobile · Tablet · Desktop — all supported |
 | ⌨️ **Keyboard Support** | Press Enter to calculate |
 | 🎨 **Neon UI** | Particles · Glow effects · Smooth animations |
@@ -80,20 +86,20 @@
 | **Sem 7** | Machine Learning · IoT Applications · Minor Project |
 | **Sem 8** | Major Project · Internship |
 
-> Each subject includes: 📌 Important Topics · 📐 Key Formulas · 🔗 YouTube · PYQ · AKTU Syllabus links
+> Each subject: 📌 Important Topics · 📐 Key Formulas · 🔗 YouTube · PYQ · AKTU Syllabus links
 
 ---
 
 ## 🔩 Components Encyclopedia
 
-20+ ECE components with **canvas-drawn circuit symbols**, working principle, types, applications, specs & formulas.
+20+ ECE components with canvas-drawn symbols, working principle, types, applications, specs & formulas.
 
 | Category | Components |
 |---|---|
 | ⬜ **Passive** | Resistor · Capacitor · Inductor · Transformer |
 | 🔴 **Active** | BJT · MOSFET · JFET |
 | 💎 **Semiconductor** | PN Junction Diode · Zener · LED · SCR/Thyristor |
-| 🧠 **ICs** | Op-Amp LM741 · NE555 Timer · LM7805 · CD4017 · LM324 |
+| 🧠 **ICs** | Op-Amp LM741 · NE555 · LM7805 · CD4017 · LM324 |
 | ⚙️ **Electromechanical** | Relay · DC Motor · Speaker/Buzzer |
 | 📡 **Sensors** | LDR · Thermistor · HC-SR04 · IR Sensor · LM35 · Piezo |
 
@@ -103,7 +109,7 @@
 
 6 interactive circuits with accurate canvas diagrams and real-time calculated outputs:
 
-| Circuit | Output |
+| Circuit | Key Output |
 |---|---|
 | **Voltage Divider** | Vout, Current |
 | **Common Emitter Amplifier** | IC, IB, VCE, Voltage Gain Av |
@@ -118,7 +124,7 @@
 
 7 real-time simulators with live graphs:
 
-| Simulator | What it does |
+| Simulator | Description |
 |---|---|
 | **〰️ Waveform Visualizer** | Sine / Square / Triangle / Sawtooth — Vrms, Vpp, T |
 | **📈 RC / RL Curve** | Charging & discharging with τ marker & 63.2% point |
@@ -133,7 +139,7 @@
 ## 🧮 Calculators — 80+ Across 8 Categories
 
 ### ⚡ ECE Core (17)
-Ohm's Law · Power · RC Time Constant · Frequency/Period · Capacitive Reactance · Inductive Reactance · RLC Resonance · Voltage Divider · Current Divider · Impedance · Decibel (dB) · Bandwidth · Op-Amp Gain · LPF Cutoff · HPF Cutoff · BJT β · MOSFET Drain Current
+Ohm's Law · Power · RC Time Constant · Frequency/Period · Xc · XL · RLC Resonance · Voltage Divider · Current Divider · Impedance · dB · Bandwidth · Op-Amp Gain · LPF · HPF · BJT β · MOSFET Drain Current
 
 ### 💻 ECE Digital (9)
 Binary↔Decimal · Decimal↔Hex · Decimal↔Octal · Logic Gates (7 types + Truth Table) · 1's & 2's Complement · K-Map Simplifier
@@ -158,20 +164,50 @@ CMOS Propagation Delay · Dynamic Power · Static/Leakage Power · Noise Margin 
 
 ---
 
-## 📁 Project Structure
+## 🎯 GATE ECE
 
-```
-ECE-Toolkit/
-│
-├── index.html    ← Complete app — all 5 sections in one file
-└── README.md     ← You are here
-```
+Complete GATE preparation section with 5 tabs:
+
+| Tab | Content |
+|---|---|
+| 📚 **Subjects** | 9 subjects with topics, formulas, PYQ links (accordion) |
+| 📊 **Weightage** | Animated bar chart — subject-wise marks % |
+| 🧮 **Tools** | Marks Calculator · Score vs Rank · GATE Score · Study Planner |
+| 📉 **Cut-off** | 2018–2024 year-wise cut-off table · PSU GATE score requirements |
+| 📝 **PYQ Papers** | 2020–2024 papers · Solution videos · Best prep resources |
+
+**GATE ECE Subjects covered:** Engineering Mathematics · Networks & Signals · Electronic Devices · Analog Circuits · Digital Circuits · Control Systems · Communications · Electromagnetics · General Aptitude
+
+---
+
+## 💼 Internship Portal
+
+| Tab | Content |
+|---|---|
+| 🏢 **Companies** | Intel · Qualcomm · TI · Samsung · Bosch · ISRO · DRDO · TCS · Infosys + more |
+| 🔗 **Platforms** | Internshala · LinkedIn · Naukri · LetsIntern · AICTE · Unstop · Wellfound |
+| 🔬 **Research** | IIT SURGE/SRIP · IISc · DRDO · ISRO · MITACS (Canada) · DAAD (Germany) · TIFR · BARC |
+| 📄 **Resume Tips** | Structure · ECE Skills · Projects · Cover Letter guide |
+| 🎤 **Interview** | Technical topics · Coding prep · HR tips · Resources |
+| 🌐 **LinkedIn** | Profile optimization · GitHub portfolio · Certifications (NPTEL, Coursera) |
+
+---
+
+## 🏛️ Jobs & Placement
+
+| Tab | Content |
+|---|---|
+| 🏛️ **Government Jobs** | UPSC ESE/IES · SSC JE · DRDO Scientist B · Army/Navy SSC · BSNL JTO · State PSC |
+| ⚡ **PSU Jobs** | ISRO · BARC · BHEL · NTPC · ONGC · AAI · HAL · GAIL — with GATE score requirements |
+| 🏢 **Private Jobs** | Intel · Qualcomm · Bosch · L&T · TCS · Infosys + job portals |
+| 📢 **Sarkari Result** | SarkariResult.com · FreeJobAlert · Employment News — live links |
+| 🔔 **Job Alerts** | Telegram channels · Annual exam calendar · Application checklist |
 
 ---
 
 ## 🛠️ How to Use
 
-Just click the link below and open it in any modern browser — that's it! No installation, no setup, no login required.
+Just click the link and open in any modern browser — that's it! No installation, no setup, no login required.
 
 ### 👉 [Click here to open → shubh14620.github.io/ece-engineers-toolkit/](https://shubh14620.github.io/ece-engineers-toolkit/)
 
@@ -193,9 +229,9 @@ Just click the link below and open it in any modern browser — that's it! No in
 
 | Version | What's New |
 |---|---|
-| **v10.0** | 🏛️ Jobs & Placement · 4+4 Grid Layout · Day Mode Fixed · Search Enhanced |
-| **v9.0** | 🎯 GATE ECE Section · Score Estimator · PYQ Links · Cut-off History |
-| **v8.0** | 💼 Internship Portal · Restructured Navigation · 8 Main Sections |
+| **v10.0** | 🏛️ Jobs & Placement · 4×4 Grid Layout · Day Mode Fixed · Search Enhanced |
+| **v9.0** | 🎯 GATE ECE · 💼 Internship Portal · Score Estimator · PYQ Links |
+| **v8.0** | Restructured Navigation · 8 Main Sections · Calculators as sub-section |
 | **v7.0** | 🔩 Components Encyclopedia · ⏱️ 555 Timer · 🔢 Boolean→Truth Table |
 | **v6.0** | ⚡ Circuit Designer — 6 interactive circuits with canvas diagrams |
 | **v5.0** | 📚 AKTU ECE Notes — All 8 Semesters with PYQ links |
@@ -214,6 +250,17 @@ Just click the link below and open it in any modern browser — that's it! No in
 
 ---
 
+## 📁 Project Structure
+
+```
+ECE-Toolkit/
+│
+├── index.html    ← Complete app — all 8 sections in one file (297KB)
+└── README.md     ← You are here
+```
+
+---
+
 ## 👨‍💻 Author
 
 <div align="center">
@@ -229,7 +276,7 @@ Just click the link below and open it in any modern browser — that's it! No in
 ## 📄 License & Copyright
 
 ```
-© 2026 ECE – Engineer's Toolkit v8.0
+© 2026 ECE – Engineer's Toolkit v10.0
 Developed by Shubham Pandey · All Rights Reserved.
 
 Unauthorized copying, reproduction, distribution, or modification
