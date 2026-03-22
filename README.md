@@ -4,7 +4,7 @@
 
 ### *Precision · Power · Performance*
 
-![Version](https://img.shields.io/badge/Version-8.0-00ffe7?style=for-the-badge&logoColor=white)
+![Version](https://img.shields.io/badge/Version-10.0-00ffe7?style=for-the-badge&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -21,7 +21,7 @@
 
 ## 📌 About the Project
 
-**ECE – Engineer's Toolkit v8.0** is a fully offline, browser-based mega-toolkit for AKTU Electronics & Communication Engineering Students & Engineers. Built as a **single HTML file** — no installation, no login, no ads. Just open and use.
+**ECE – Engineer's Toolkit v10.0** is a fully offline, browser-based mega-toolkit for AKTU Electronics & Communication Engineering Students & Engineers. Built as a **single HTML file** — no installation, no login, no ads. Just open and use.
 
 > 💡 Works offline after first load · 100% Free · Zero dependencies · Single HTML file
 
@@ -171,19 +171,11 @@ ECE-Toolkit/
 
 ## 🛠️ How to Use
 
-**Option 1 — Direct (Offline):**
-```
-1. Download index.html
-2. Open in any modern browser
-3. Works completely offline!
-```
+Just click the link below and open it in any modern browser — that's it! No installation, no setup, no login required.
 
-**Option 2 — GitHub Pages (Online):**
-```
-1. Fork this repository
-2. Settings → Pages → Source: main branch
-3. Live in 2-3 minutes
-```
+### 👉 [Click here to open → shubh14620.github.io/ece-engineers-toolkit/](https://shubh14620.github.io/ece-engineers-toolkit/)
+
+> Works on **Google Chrome, Firefox, Safari, Microsoft Edge, Opera** and any other modern browser on mobile or desktop.
 
 ---
 
@@ -201,8 +193,10 @@ ECE-Toolkit/
 
 | Version | What's New |
 |---|---|
-| **v8.0** | 5-section restructure · Calculators as sub-section · 5 cards in one row on desktop |
-| **v7.0** | 🔩 Components Encyclopedia · ⏱️ 555 Timer Simulator · 🔢 Boolean→Truth Table |
+| **v10.0** | 🏛️ Jobs & Placement · 4+4 Grid Layout · Day Mode Fixed · Search Enhanced |
+| **v9.0** | 🎯 GATE ECE Section · Score Estimator · PYQ Links · Cut-off History |
+| **v8.0** | 💼 Internship Portal · Restructured Navigation · 8 Main Sections |
+| **v7.0** | 🔩 Components Encyclopedia · ⏱️ 555 Timer · 🔢 Boolean→Truth Table |
 | **v6.0** | ⚡ Circuit Designer — 6 interactive circuits with canvas diagrams |
 | **v5.0** | 📚 AKTU ECE Notes — All 8 Semesters with PYQ links |
 | **v4.0** | 📊 Signal & Systems + 🔬 VLSI Design calculator sections |
@@ -212,13 +206,11 @@ ECE-Toolkit/
 
 ---
 
-## 🐛 Upcoming in v9.0
+## 🔮 What's Next?
 
-- [ ] Power Electronics section
-- [ ] Satellite Communication calculators
-- [ ] Full K-Map solver (2–4 variables)
-- [ ] Export results as PDF
-- [ ] Theme preference memory (localStorage)
+> *Something exciting is coming in the next update...*
+>
+> *Stay tuned. You'll love it.* ⚡
 
 ---
 
