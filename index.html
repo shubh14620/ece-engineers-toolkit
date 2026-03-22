@@ -38,7 +38,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .hero-title .line2{display:block;color:white;font-size:0.55em;letter-spacing:4px;-webkit-text-fill-color:white;}
 .hero-sub{color:rgba(224,247,250,0.55);font-size:1.1rem;max-width:700px;margin:0 auto 50px;font-weight:300;letter-spacing:1px;opacity:0;animation:fadeUp .7s .6s forwards;white-space:nowrap;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
-.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1100px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;width:100%;opacity:0;animation:fadeUp .7s .8s forwards;}
 @media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:500px){.cat-grid{grid-template-columns:1fr;}}
 .cat-card{position:relative;padding:26px 18px;border:1px solid var(--border);border-radius:20px;background:var(--card);cursor:pointer;transition:.4s cubic-bezier(.4,0,.2,1);overflow:hidden;text-align:left;}
@@ -92,93 +92,294 @@ button:not(.back-btn):not(.theme-btn):active{transform:scale(.98);}
 .orb2{width:300px;height:300px;background:rgba(255,45,120,0.05);bottom:10%;left:-80px;animation-delay:3s;}
 .orb3{width:250px;height:250px;background:rgba(255,230,0,0.04);bottom:30%;right:10%;animation-delay:6s;}
 @keyframes orbFloat{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,40px) scale(1.15);}}
-body.light{background:#e8edf5;color:#0a1628;}
-body.light::before{background-image:linear-gradient(rgba(0,60,150,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,60,150,0.06) 1px,transparent 1px);}
-body.light .navbar{background:rgba(220,228,242,0.96);border-color:rgba(0,60,150,0.15);}
-body.light .card{background:#ffffff;border-color:rgba(0,60,150,0.18);color:#0a1628;}
-body.light .card h3{color:#003399;}
-body.light .card h3::before{background:#003399;}
-body.light input,body.light select{background:#f0f4ff;border-color:rgba(0,60,150,0.25);color:#0a1628;}
-body.light input::placeholder{color:#5a78b0;}
-body.light input:focus,body.light select:focus{border-color:#003399;background:#e6ecff;box-shadow:0 0 10px rgba(0,51,153,0.1);}
-body.light select option{background:#f0f4ff;color:#0a1628;}
-body.light button:not(.back-btn):not(.theme-btn){border-color:#003399;color:#003399;background:rgba(0,51,153,0.07);}
-body.light button:not(.back-btn):not(.theme-btn):hover{background:rgba(0,51,153,0.15);}
-body.light .output{color:#003399;background:#eef2ff;border-color:rgba(0,51,153,0.2);font-weight:700;}
-body.light .logo{color:#003399;text-shadow:none;}
-body.light .hero-tag{color:#cc0033;}
-body.light .hero-title .line1{background:linear-gradient(90deg,#003399,#0055cc,#003399);-webkit-background-clip:text;background-clip:text;}
-body.light .hero-title .line2{color:#1a2d55;-webkit-text-fill-color:#1a2d55;}
-body.light .hero-sub{color:#2d4070;}
+body.light{background:#f0f4f8;color:#111827;}
+body.light::before{background-image:linear-gradient(rgba(0,60,150,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,60,150,0.05) 1px,transparent 1px);}
+
+/* Navbar */
+body.light .navbar{background:rgba(235,240,250,0.97);border-color:rgba(0,60,150,0.15);box-shadow:0 2px 20px rgba(0,60,150,0.08);}
+body.light .logo{color:#1e3a8a;text-shadow:none;}
+body.light .theme-btn{color:#1e3a8a;border-color:rgba(30,58,138,0.3);}
+body.light #search{color:#1e3a8a;background:#e8eeff;border-color:rgba(30,58,138,0.25);}
+body.light #search::placeholder{color:#6b80b0;}
+
+/* Hero */
+body.light .hero-tag{color:#be123c;}
+body.light .hero-title .line1{background:linear-gradient(90deg,#1e3a8a,#1d4ed8,#1e3a8a);-webkit-background-clip:text;background-clip:text;}
+body.light .hero-title .line2{color:#111827;-webkit-text-fill-color:#111827;}
+body.light .hero-sub{color:#374151;}
 @media(max-width:700px){.hero-sub{white-space:normal;font-size:.95rem;}}
-body.light .stat-num{color:#003399;text-shadow:none;}
-body.light .stat-label{color:#4a5e8a;}
-body.light .cat-card{background:#ffffff;border-color:rgba(0,60,150,0.18);}
-body.light .cat-card:hover{border-color:#003399;box-shadow:0 8px 30px rgba(0,51,153,0.14);}
-body.light .cat-title{color:#003399;}
-body.light .cat-desc{color:#2d4070;}
-body.light .cat-arrow{color:#003399;}
-body.light .section-title{color:#003399;}
-body.light .section-header{border-color:rgba(0,60,150,0.15);}
-body.light #search{color:#003399;background:#eef2ff;border-color:rgba(0,60,150,0.25);}
-body.light #search::placeholder{color:#5a78b0;}
-body.light .back-btn{color:#003399;border-color:rgba(0,60,150,0.25);}
-body.light .back-btn:hover{background:rgba(0,51,153,0.08);}
-body.light .info-box{background:#f0f4ff;border-color:rgba(0,60,150,0.15);color:#1a2d55;}
-body.light .info-box strong{color:#003399;}
-body.light .formula-box{background:#eef2ff;border-color:rgba(0,60,150,0.2);color:#0a1628;}
-body.light .formula-box span{color:#003399;}
-body.light .truth-table th{background:rgba(0,51,153,0.1);color:#003399;}
-body.light .truth-table td{color:#0a1628;}
-body.light footer{color:#4a5e8a;border-color:rgba(0,60,150,0.15);}
-body.light footer strong{color:#003399;}
-body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51,153,0.05);}
-body.light .orb1{background:rgba(0,51,153,0.06);}
-body.light .orb2{background:rgba(200,0,40,0.04);}
-body.light .theme-btn{color:#003399;border-color:rgba(0,60,150,0.25);}
-/* Theory light */
-body.light .subject-card{background:#ffffff;border-color:rgba(90,40,180,0.2);}
-body.light .subject-header{background:#fafaff;}
-body.light .subject-name{color:#5b21b6;}
+body.light .stat-num{color:#1e3a8a;text-shadow:none;}
+body.light .stat-label{color:#4b5563;}
+
+/* Home Cards */
+body.light .cat-card{background:#ffffff;border-color:rgba(30,58,138,0.2);box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+body.light .cat-card:hover{border-color:#1d4ed8;box-shadow:0 8px 24px rgba(30,58,138,0.15);}
+body.light .cat-title{color:#1e3a8a;}
+body.light .cat-desc{color:#374151;}
+body.light .cat-arrow{color:#1e3a8a;}
+
+/* Section */
+body.light .section-title{color:#1e3a8a;}
+body.light .section-header{border-color:rgba(30,58,138,0.15);}
+body.light .back-btn{color:#1e3a8a;border-color:rgba(30,58,138,0.25);background:#f0f4f8;}
+body.light .back-btn:hover{background:#dde5f5;}
+
+/* Cards */
+body.light .card{background:#ffffff;border-color:rgba(30,58,138,0.18);color:#111827;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+body.light .card h3{color:#1e3a8a;}
+body.light .card h3::before{background:#1e3a8a;box-shadow:none;}
+
+/* Inputs */
+body.light input,body.light select{background:#f5f7ff;border-color:rgba(30,58,138,0.25);color:#111827;}
+body.light input::placeholder{color:#6b80b0;}
+body.light input:focus,body.light select:focus{border-color:#1d4ed8;background:#eef1ff;}
+body.light select option{background:#f5f7ff;color:#111827;}
+
+/* Buttons */
+body.light button:not(.back-btn):not(.theme-btn){border-color:#1e3a8a;color:#1e3a8a;background:rgba(30,58,138,0.07);}
+body.light button:not(.back-btn):not(.theme-btn):hover{background:rgba(30,58,138,0.15);}
+
+/* Output */
+body.light .output{color:#1e3a8a;background:#eef1ff;border-color:rgba(30,58,138,0.2);font-weight:700;}
+
+/* Info & Formula boxes */
+body.light .info-box{background:#f0f4ff;border-color:rgba(30,58,138,0.15);color:#1f2937;}
+body.light .info-box strong{color:#1e3a8a;}
+body.light .formula-box{background:#eef1ff;border-color:rgba(30,58,138,0.2);color:#111827;}
+body.light .formula-box span{color:#1e3a8a;}
+
+/* Truth table */
+body.light .truth-table th{background:rgba(30,58,138,0.1);color:#1e3a8a;}
+body.light .truth-table td{color:#111827;border-color:rgba(30,58,138,0.1);}
+
+/* Footer */
+body.light footer{color:#4b5563;border-color:rgba(30,58,138,0.12);}
+body.light footer strong{color:#1e3a8a;}
+body.light .copyright-badge{border-color:rgba(30,58,138,0.18);background:rgba(30,58,138,0.04);}
+
+/* Orbs */
+body.light .orb1{background:rgba(30,58,138,0.05);}
+body.light .orb2{background:rgba(190,18,60,0.04);}
+
+/* ── THEORY (AKTU Notes) ── */
+body.light .sem-tab{color:#6d28d9;border-color:rgba(109,40,217,0.3);background:transparent;}
+body.light .sem-tab.active{background:rgba(109,40,217,0.1);border-color:#6d28d9;color:#6d28d9;}
+body.light .subject-card{background:#ffffff;border-color:rgba(109,40,217,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+body.light .subject-header{background:#faf8ff;}
+body.light .subject-name{color:#6d28d9;}
 body.light .subject-code{color:#7c6aaa;}
-body.light .subject-body{border-color:rgba(90,40,180,0.12);}
-body.light .sem-tab{color:#5b21b6;border-color:rgba(90,40,180,0.3);}
-body.light .sem-tab.active{background:rgba(91,33,182,0.1);border-color:#5b21b6;}
-body.light .theory-section-title{color:#7744bb;}
-body.light .topic-list li{color:#1a2d55;}
-body.light .topic-list li::before{color:#5b21b6;}
-body.light .note-link{color:#5b21b6;border-color:rgba(91,33,182,0.3);background:rgba(91,33,182,0.05);}
-body.light .note-link:hover{background:rgba(91,33,182,0.12);}
-body.light .subject-toggle{color:#5b21b6;}
-.sem-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
-.sem-tab{padding:8px 16px;border-radius:30px;border:1px solid rgba(192,132,252,0.3);background:transparent;color:#c084fc;font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
-.sem-tab:hover{background:rgba(192,132,252,0.12);border-color:#c084fc;}
-.sem-tab.active{background:rgba(192,132,252,0.2);border-color:#c084fc;box-shadow:0 0 14px rgba(192,132,252,0.3);}
-.sem-content{display:none;}
-.sem-content.active{display:block;}
-.subject-card{background:var(--card);border:1px solid rgba(192,132,252,0.18);border-radius:16px;margin-bottom:16px;overflow:hidden;transition:.3s;}
-.subject-card:hover{border-color:rgba(192,132,252,0.5);box-shadow:0 0 20px rgba(192,132,252,0.15);}
-.subject-header{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
-.subject-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#c084fc;letter-spacing:1px;}
-.subject-code{font-size:.75rem;color:rgba(224,247,250,0.4);margin-top:4px;}
-.subject-toggle{color:#c084fc;font-size:1.2rem;transition:.3s;}
-.subject-body{display:none;padding:0 22px 20px;border-top:1px solid rgba(192,132,252,0.1);}
-.subject-body.open{display:block;}
-.subject-toggle.open{transform:rotate(180deg);}
-.theory-section-title{font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:2px;color:rgba(192,132,252,0.6);margin:14px 0 8px;text-transform:uppercase;}
-.topic-list{list-style:none;padding:0;}
-.topic-list li{padding:5px 0;font-size:.88rem;color:rgba(224,247,250,0.75);display:flex;align-items:flex-start;gap:8px;}
-.topic-list li::before{content:'▸';color:#c084fc;flex-shrink:0;}
-.formula-box{background:rgba(192,132,252,0.06);border:1px solid rgba(192,132,252,0.15);border-radius:8px;padding:10px 14px;margin:6px 0;font-size:.85rem;color:#e0f7fa;font-family:'Orbitron',monospace;}
-.formula-box span{color:#c084fc;}
-.links-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-.note-link{padding:6px 14px;border-radius:20px;border:1px solid rgba(192,132,252,0.3);color:#c084fc;font-size:.75rem;text-decoration:none;transition:.3s;background:rgba(192,132,252,0.05);}
-.note-link:hover{background:rgba(192,132,252,0.15);border-color:#c084fc;}
-body.light .subject-toggle{color:#5b21b6;}
-/* CALC SECTION sub-cards */
-#calcSection .cat-card{margin-bottom:0;border-color:rgba(0,255,231,0.2);}
-#calcSection .cat-card:hover{border-color:var(--neon);box-shadow:var(--glow);}
-#calcSection .container{gap:14px;}
+body.light .subject-body{border-color:rgba(109,40,217,0.1);}
+body.light .subject-toggle{color:#6d28d9;}
+body.light .theory-section-title{color:#7c3aed;}
+body.light .topic-list li{color:#1f2937;}
+body.light .topic-list li::before{color:#6d28d9;}
+body.light .note-link{color:#6d28d9;border-color:rgba(109,40,217,0.25);background:rgba(109,40,217,0.05);}
+body.light .note-link:hover{background:rgba(109,40,217,0.12);}
+
+/* ── COMPONENTS ── */
+body.light .comp-tab{color:#059669;border-color:rgba(5,150,105,0.25);}
+body.light .comp-tab.active{background:rgba(5,150,105,0.1);border-color:#059669;color:#059669;}
+body.light .comp-card{background:#ffffff;border-color:rgba(5,150,105,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+body.light .comp-name{color:#059669;}
+body.light .comp-type-badge{opacity:.9;}
+body.light .comp-short{color:#374151;}
+body.light .comp-detail{color:#1f2937;}
+body.light .comp-section-title{color:#059669;}
+body.light .comp-use-tag{color:#059669;background:rgba(5,150,105,0.06);border-color:rgba(5,150,105,0.2);}
+body.light .comp-spec{background:rgba(5,150,105,0.04);border-color:rgba(5,150,105,0.15);}
+body.light .comp-spec-label{color:#059669;}
+body.light .comp-spec-val{color:#111827;}
+body.light .comp-symbol{background:rgba(5,150,105,0.05);}
+body.light #compSearch{color:#059669;border-color:rgba(5,150,105,0.25);background:#f0fff8;}
+body.light .comp-body{border-color:rgba(5,150,105,0.1);}
+
+/* ── CIRCUIT DESIGNER ── */
+body.light .ckt-sel-btn{background:rgba(234,88,12,0.06);color:#c2410c;border-color:rgba(234,88,12,0.25);}
+body.light .ckt-sel-btn:hover{background:rgba(234,88,12,0.14);}
+body.light #cktTitle{color:#c2410c;}
+body.light #cktCanvas{background:#f8fafc;border-color:rgba(234,88,12,0.15);}
+body.light #cktOutput>div{background:#fff7ed;border-color:rgba(234,88,12,0.2);}
+
+/* ── SIMULATORS ── */
+body.light #waveCanvas,body.light #rcCanvas,body.light #bodeCanvas,
+body.light #bodePhaseCanvas,body.light #phasorCanvas,body.light #logicCanvas,
+body.light #t555Canvas{background:#f8fafc;border-color:rgba(0,255,170,0.2);}
+
+/* ── GATE SECTION ── */
+body.light .gate-tab{color:#dc2626;border-color:rgba(220,38,38,0.25);}
+body.light .gate-tab.active{background:rgba(220,38,38,0.1);border-color:#dc2626;color:#dc2626;}
+body.light .gate-subject-card{background:#ffffff;border-color:rgba(220,38,38,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+body.light .gate-subj-header{background:#fff5f5;}
+body.light .gate-subj-name{color:#dc2626;}
+body.light .gate-subj-body{border-color:rgba(220,38,38,0.1);}
+body.light .gate-toggle{color:#dc2626;}
+body.light .gate-sec-title{color:#dc2626;}
+body.light .gate-weight{color:#dc2626;border-color:rgba(220,38,38,0.3);background:rgba(220,38,38,0.06);}
+body.light .gate-topics li{color:#1f2937;}
+body.light .gate-topics li::before{color:#dc2626;}
+body.light .gate-formula{background:#fff5f5;border-color:rgba(220,38,38,0.18);color:#111827;}
+body.light .gate-formula span{color:#dc2626;}
+body.light .gate-link{color:#dc2626;border-color:rgba(220,38,38,0.25);background:rgba(220,38,38,0.04);}
+body.light .gate-link:hover{background:rgba(220,38,38,0.12);}
+body.light .gate-output{color:#dc2626;background:#fff5f5;border-color:rgba(220,38,38,0.2);}
+body.light .weight-label{color:#374151;}
+body.light .weight-bar-wrap{background:rgba(220,38,38,0.08);}
+body.light .cutoff-table th{background:rgba(220,38,38,0.1);color:#dc2626;}
+body.light .cutoff-table td{color:#111827;border-color:rgba(220,38,38,0.1);}
+body.light .gate-calc-box{background:#fff5f5;border-color:rgba(220,38,38,0.15);}
+
+/* ── INTERNSHIP PORTAL ── */
+body.light .intern-tab{color:#0369a1;border-color:rgba(3,105,161,0.25);}
+body.light .intern-tab.active{background:rgba(3,105,161,0.1);border-color:#0369a1;color:#0369a1;}
+body.light .company-card,.body.light .tip-card,.body.light .platform-card,.body.light .research-card{background:#ffffff;border-color:rgba(3,105,161,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+body.light .company-name{color:#0369a1;}
+body.light .company-domain{opacity:.9;}
+body.light .company-info{color:#1f2937;}
+body.light .company-link{color:#0369a1;border-color:rgba(3,105,161,0.25);background:rgba(3,105,161,0.04);}
+body.light .company-link:hover{background:rgba(3,105,161,0.12);}
+body.light .intern-sec-title{color:#0369a1;}
+body.light .platform-name{color:#0369a1;}
+body.light .platform-desc{color:#374151;}
+body.light .platform-link{color:#0369a1;border-color:rgba(3,105,161,0.25);}
+body.light .research-name{color:#0369a1;}
+body.light .research-info{color:#1f2937;}
+body.light .tip-title{color:#0369a1;}
+body.light .tip-list li{color:#1f2937;}
+body.light .tip-list li::before{color:#0369a1;}
+body.light .alert-box{background:#f0f9ff;border-color:rgba(3,105,161,0.2);}
+
+/* ── JOBS & PLACEMENT ── */
+body.light .job-tab{color:#b45309;border-color:rgba(180,83,9,0.25);}
+body.light .job-tab.active{background:rgba(180,83,9,0.1);border-color:#b45309;color:#b45309;}
+body.light .job-card{background:#ffffff;border-color:rgba(180,83,9,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+body.light .job-name{color:#b45309;}
+body.light .job-badge{color:#b45309;border-color:rgba(180,83,9,0.25);background:rgba(180,83,9,0.06);}
+body.light .job-info{color:#1f2937;}
+body.light .job-link{color:#b45309;border-color:rgba(180,83,9,0.25);background:rgba(180,83,9,0.04);}
+body.light .job-link:hover{background:rgba(180,83,9,0.12);}
+body.light .job-sec-title{color:#b45309;}
+body.light .alert-box{background:#fffbeb;border-color:rgba(180,83,9,0.2);}
+body.light .alert-title{color:#b45309;}
+
+/* ── CALC SECTION ── */
+body.light #calcSection .cat-card{background:#ffffff;border-color:rgba(30,58,138,0.18);}
+body.light #calcSection .cat-card:hover{border-color:#1d4ed8;}
+
+/* ── GENERAL TEXT FIXES ── */
+body.light h1,body.light h2,body.light h3,body.light h4{color:#111827;}
+body.light p,body.light li,body.light span:not([style]){color:#1f2937;}
+body.light strong{color:#111827;}
+body.light a{color:#1d4ed8;}
+body.light .comp-body{border-color:rgba(5,150,105,0.1);}
+
+/* INTERNSHIP PORTAL */
+.intern-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.intern-tab{padding:7px 14px;border-radius:20px;border:1px solid rgba(56,189,248,0.25);background:transparent;color:#38bdf8;font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
+.intern-tab:hover{background:rgba(56,189,248,0.1);border-color:#38bdf8;}
+.intern-tab.active{background:rgba(56,189,248,0.18);border-color:#38bdf8;box-shadow:0 0 12px rgba(56,189,248,0.2);}
+.intern-content{display:none;}.intern-content.active{display:block;}
+.company-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:10px;}
+.company-card{background:var(--card);border:1px solid rgba(56,189,248,0.18);border-radius:14px;padding:18px;transition:.3s;}
+.company-card:hover{border-color:rgba(56,189,248,0.5);box-shadow:0 0 18px rgba(56,189,248,0.12);transform:translateY(-2px);}
+.company-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#38bdf8;margin-bottom:6px;}
+.company-domain{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.65rem;font-family:'Orbitron',monospace;margin-bottom:8px;}
+.company-info{font-size:.82rem;color:rgba(224,247,250,0.65);line-height:1.6;margin-bottom:10px;}
+.company-links{display:flex;gap:8px;flex-wrap:wrap;}
+.company-link{padding:4px 12px;border-radius:14px;font-size:.72rem;text-decoration:none;border:1px solid rgba(56,189,248,0.3);color:#38bdf8;background:rgba(56,189,248,0.05);transition:.3s;}
+.company-link:hover{background:rgba(56,189,248,0.15);}
+.intern-sec-title{font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:2px;color:rgba(56,189,248,0.55);margin:16px 0 10px;text-transform:uppercase;}
+.tip-card{background:var(--card);border:1px solid rgba(56,189,248,0.15);border-radius:12px;padding:16px;margin-bottom:12px;transition:.3s;}
+.tip-card:hover{border-color:rgba(56,189,248,0.4);}
+.tip-title{font-family:'Orbitron',monospace;font-size:.75rem;color:#38bdf8;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.tip-list{list-style:none;padding:0;}
+.tip-list li{padding:4px 0;font-size:.85rem;color:rgba(224,247,250,0.72);display:flex;align-items:flex-start;gap:8px;}
+.tip-list li::before{content:'✓';color:#38bdf8;flex-shrink:0;}
+.platform-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:10px;}
+.platform-card{background:var(--card);border:1px solid rgba(56,189,248,0.15);border-radius:12px;padding:16px;text-align:center;transition:.3s;}
+.platform-card:hover{border-color:#38bdf8;transform:translateY(-3px);box-shadow:0 0 16px rgba(56,189,248,0.12);}
+.platform-icon{font-size:2rem;margin-bottom:8px;display:block;}
+.platform-name{font-family:'Orbitron',monospace;font-size:.78rem;color:#38bdf8;margin-bottom:6px;}
+.platform-desc{font-size:.78rem;color:rgba(224,247,250,0.55);}
+.platform-link{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:14px;font-size:.72rem;text-decoration:none;border:1px solid rgba(56,189,248,0.3);color:#38bdf8;background:rgba(56,189,248,0.05);transition:.3s;}
+.platform-link:hover{background:rgba(56,189,248,0.15);}
+.research-card{background:var(--card);border:1px solid rgba(56,189,248,0.15);border-radius:14px;padding:18px;margin-bottom:12px;transition:.3s;}
+.research-card:hover{border-color:rgba(56,189,248,0.45);box-shadow:0 0 16px rgba(56,189,248,0.1);}
+.research-name{font-family:'Orbitron',monospace;font-size:.82rem;color:#38bdf8;margin-bottom:6px;}
+.research-info{font-size:.82rem;color:rgba(224,247,250,0.65);line-height:1.6;margin-bottom:8px;}
+body.light .company-card,.body.light .tip-card,.body.light .platform-card,.body.light .research-card{background:white;border-color:rgba(2,132,199,0.2);}
+body.light .company-name,.body.light .platform-name,.body.light .research-name{color:#0284c7;}
+body.light .intern-tab{color:#0284c7;}
+body.light .intern-tab.active{background:rgba(2,132,199,0.1);border-color:#0284c7;}
+body.light .company-info,.body.light .research-info,.body.light .platform-desc{color:#374151;}
+body.light .tip-list li{color:#1a2d55;}
+body.light .tip-title,.body.light .intern-sec-title{color:#0284c7;}
+/* JOBS & PLACEMENT */
+.job-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.job-tab{padding:7px 14px;border-radius:20px;border:1px solid rgba(250,204,21,0.25);background:transparent;color:#facc15;font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
+.job-tab:hover{background:rgba(250,204,21,0.1);border-color:#facc15;}
+.job-tab.active{background:rgba(250,204,21,0.18);border-color:#facc15;box-shadow:0 0 12px rgba(250,204,21,0.2);}
+.job-content{display:none;}.job-content.active{display:block;}
+.job-card{background:var(--card);border:1px solid rgba(250,204,21,0.18);border-radius:14px;padding:18px;margin-bottom:12px;transition:.3s;}
+.job-card:hover{border-color:rgba(250,204,21,0.5);box-shadow:0 0 18px rgba(250,204,21,0.1);transform:translateY(-2px);}
+.job-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#facc15;margin-bottom:6px;}
+.job-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.65rem;font-family:'Orbitron',monospace;margin-bottom:8px;background:rgba(250,204,21,0.1);color:#facc15;border:1px solid rgba(250,204,21,0.25);}
+.job-info{font-size:.83rem;color:rgba(224,247,250,0.7);line-height:1.6;margin-bottom:10px;}
+.job-links{display:flex;gap:8px;flex-wrap:wrap;}
+.job-link{padding:4px 12px;border-radius:14px;font-size:.72rem;text-decoration:none;border:1px solid rgba(250,204,21,0.3);color:#facc15;background:rgba(250,204,21,0.05);transition:.3s;}
+.job-link:hover{background:rgba(250,204,21,0.15);}
+.job-sec-title{font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:2px;color:rgba(250,204,21,0.55);margin:16px 0 10px;text-transform:uppercase;}
+.alert-box{background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.alert-title{font-family:'Orbitron',monospace;font-size:.75rem;color:#facc15;margin-bottom:8px;}
+body.light .job-card{background:white;border-color:rgba(202,138,4,0.2);}
+body.light .job-name,.body.light .job-tab,.body.light .job-sec-title{color:#ca8a04;}
+body.light .job-tab.active{background:rgba(202,138,4,0.1);border-color:#ca8a04;}
+body.light .job-info{color:#374151;}
+body.light .job-link{color:#ca8a04;}
+/* GATE SECTION */
+.gate-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.gate-tab{padding:7px 14px;border-radius:20px;border:1px solid rgba(244,63,94,0.25);background:transparent;color:#f43f5e;font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:1px;cursor:pointer;transition:.3s;width:auto;margin:0;}
+.gate-tab:hover{background:rgba(244,63,94,0.1);border-color:#f43f5e;}
+.gate-tab.active{background:rgba(244,63,94,0.18);border-color:#f43f5e;box-shadow:0 0 12px rgba(244,63,94,0.2);}
+.gate-content{display:none;}.gate-content.active{display:block;}
+.gate-subject-card{background:var(--card);border:1px solid rgba(244,63,94,0.18);border-radius:16px;margin-bottom:14px;overflow:hidden;transition:.3s;cursor:pointer;}
+.gate-subject-card:hover{border-color:rgba(244,63,94,0.5);box-shadow:0 0 20px rgba(244,63,94,0.12);}
+.gate-subj-header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+.gate-subj-name{font-family:'Orbitron',monospace;font-size:.82rem;font-weight:700;color:#f43f5e;letter-spacing:1px;}
+.gate-weight{background:rgba(244,63,94,0.15);border:1px solid rgba(244,63,94,0.3);border-radius:20px;padding:3px 10px;font-size:.7rem;font-family:'Orbitron',monospace;color:#f43f5e;}
+.gate-subj-body{display:none;padding:0 20px 16px;border-top:1px solid rgba(244,63,94,0.1);}
+.gate-subj-body.open{display:block;}
+.gate-toggle{color:#f43f5e;font-size:1.1rem;transition:.3s;}
+.gate-toggle.open{transform:rotate(180deg);}
+.gate-sec-title{font-family:'Orbitron',monospace;font-size:.65rem;letter-spacing:2px;color:rgba(244,63,94,0.55);margin:12px 0 6px;text-transform:uppercase;}
+.gate-topics{list-style:none;padding:0;}
+.gate-topics li{padding:4px 0;font-size:.85rem;color:rgba(224,247,250,0.75);display:flex;align-items:flex-start;gap:8px;}
+.gate-topics li::before{content:'▸';color:#f43f5e;flex-shrink:0;}
+.gate-formula{background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.15);border-radius:8px;padding:9px 13px;margin:5px 0;font-size:.8rem;color:#e0f7fa;font-family:'Orbitron',monospace;}
+.gate-formula span{color:#f43f5e;}
+.gate-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.gate-link{padding:5px 13px;border-radius:20px;border:1px solid rgba(244,63,94,0.3);color:#f43f5e;font-size:.72rem;text-decoration:none;transition:.3s;background:rgba(244,63,94,0.05);}
+.gate-link:hover{background:rgba(244,63,94,0.15);border-color:#f43f5e;}
+.gate-calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;}
+@media(max-width:600px){.gate-calc-grid{grid-template-columns:1fr;}}
+.gate-calc-box{background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.18);border-radius:12px;padding:16px;}
+.gate-calc-title{font-family:'Orbitron',monospace;font-size:.72rem;color:#f43f5e;letter-spacing:1px;margin-bottom:10px;}
+.gate-output{margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.15);color:#f43f5e;font-family:'Orbitron',monospace;font-size:.82rem;min-height:36px;}
+.weight-chart{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.weight-row{display:flex;align-items:center;gap:10px;}
+.weight-label{font-size:.78rem;color:rgba(224,247,250,0.7);width:185px;flex-shrink:0;}
+.weight-bar-wrap{flex:1;background:rgba(244,63,94,0.08);border-radius:20px;height:14px;overflow:hidden;}
+.weight-bar{height:100%;border-radius:20px;background:linear-gradient(90deg,#f43f5e,#fb7185);width:0;transition:width 1.2s ease;}
+.weight-pct{font-family:'Orbitron',monospace;font-size:.7rem;color:#f43f5e;width:35px;text-align:right;}
+.cutoff-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.82rem;}
+.cutoff-table th{background:rgba(244,63,94,0.15);color:#f43f5e;padding:8px 12px;font-family:'Orbitron',monospace;font-size:.68rem;border:1px solid rgba(244,63,94,0.2);}
+.cutoff-table td{padding:8px 12px;border:1px solid rgba(244,63,94,0.1);color:#e0f7fa;text-align:center;}
+.cutoff-table tr:nth-child(even) td{background:rgba(244,63,94,0.03);}
+body.light .gate-subject-card{background:white;border-color:rgba(220,38,38,0.2);}
+body.light .gate-subj-name,.body.light .gate-tab,.body.light .gate-sec-title{color:#dc2626;}
+body.light .gate-topics li{color:#1a2d55;}
+body.light .gate-formula{background:rgba(220,38,38,0.04);color:#0a1628;}
+body.light .gate-formula span,.body.light .gate-link,.body.light .gate-output,.body.light .gate-weight{color:#dc2626;}
+body.light .weight-label{color:#374151;}
 .ckt-sel-btn{background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.3);color:#f97316;border-radius:10px;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:1px;transition:.3s;width:auto;margin:0;}
 .ckt-sel-btn:hover{background:rgba(249,115,22,0.2);border-color:#f97316;box-shadow:0 0 14px rgba(249,115,22,0.2);}
 body.light .ckt-sel-btn{background:rgba(249,115,22,0.06);color:#c2410c;}
@@ -239,7 +440,7 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
 <div class="navbar">
   <div class="logo"><span>⚡</span> ECE TOOLKIT</div>
   <div class="nav-right">
-    <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchCards()">
+    <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchCards()" oninput="searchCards()" onpaste="setTimeout(searchCards,10)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <button class="theme-btn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
@@ -262,26 +463,44 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
     <div class="cat-card" onclick="openSection('compSection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #34d399)">🔩</span>
       <div class="cat-title" style="color:#34d399">Components</div>
-      <div class="cat-desc">Encyclopedia — Symbol, Working, Uses, Specs</div>
+      <div class="cat-desc">Encyclopedia · Symbol · Working · Uses · Specs</div>
       <div class="cat-arrow" style="color:#34d399">→</div>
     </div>
     <div class="cat-card" onclick="openSection('circuitSection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #f97316)">⚡</span>
       <div class="cat-title" style="color:#f97316">Circuit Designer</div>
-      <div class="cat-desc">Voltage Divider, CE Amp, Rectifier, Op-Amp & more</div>
+      <div class="cat-desc">Voltage Divider · CE Amp · Rectifier · Op-Amp</div>
       <div class="cat-arrow" style="color:#f97316">→</div>
     </div>
     <div class="cat-card" onclick="openSection('simSection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ffaa)">🧪</span>
       <div class="cat-title" style="color:#00ffaa">Simulators</div>
-      <div class="cat-desc">Waveform, RC/RL, Bode Plot, Phasor, Logic, 555</div>
+      <div class="cat-desc">Waveform · RC/RL · Bode · Phasor · Logic · 555</div>
       <div class="cat-arrow" style="color:#00ffaa">→</div>
     </div>
     <div class="cat-card" onclick="openSection('calcSection')">
       <span class="cat-icon" style="filter:drop-shadow(0 0 12px #00ffe7)">🧮</span>
       <div class="cat-title" style="color:#00ffe7">Calculators</div>
-      <div class="cat-desc">ECE Core · Digital · Design · Comm · MCU · VLSI · Signal</div>
+      <div class="cat-desc">ECE Core · Digital · Design · Comm · MCU · VLSI</div>
       <div class="cat-arrow" style="color:#00ffe7">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('gateSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #f43f5e)">🎯</span>
+      <div class="cat-title" style="color:#f43f5e">GATE ECE</div>
+      <div class="cat-desc">Topics · PYQ · Score Estimator · Weightage · Cut-off</div>
+      <div class="cat-arrow" style="color:#f43f5e">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('internSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #38bdf8)">💼</span>
+      <div class="cat-title" style="color:#38bdf8">Internship Portal</div>
+      <div class="cat-desc">Companies · Resume · Platforms · Research · Tips</div>
+      <div class="cat-arrow" style="color:#38bdf8">→</div>
+    </div>
+    <div class="cat-card" onclick="openSection('jobSection')">
+      <span class="cat-icon" style="filter:drop-shadow(0 0 12px #facc15)">🏛️</span>
+      <div class="cat-title" style="color:#facc15">Jobs & Placement</div>
+      <div class="cat-desc">Govt · Private · PSU · Sarkari Result · Alerts</div>
+      <div class="cat-arrow" style="color:#facc15">→</div>
     </div>
   </div>
   <div class="stats-bar">
@@ -1467,9 +1686,1178 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
   <div id="compGrid" class="comp-grid"></div>
 </div>
 
+<!-- ===== GATE ECE SECTION ===== -->
+<div id="gateSection" class="section" style="max-width:820px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#f43f5e">🎯 GATE ECE</div></div>
+
+  <div class="gate-tabs">
+    <button class="gate-tab active" onclick="showGate('gSubjects')">📚 SUBJECTS</button>
+    <button class="gate-tab" onclick="showGate('gWeightage')">📊 WEIGHTAGE</button>
+    <button class="gate-tab" onclick="showGate('gCalculator')">🧮 TOOLS</button>
+    <button class="gate-tab" onclick="showGate('gCutoff')">📉 CUT-OFF</button>
+    <button class="gate-tab" onclick="showGate('gPYQ')">📝 PYQ PAPERS</button>
+  </div>
+
+  <!-- SUBJECTS TAB -->
+  <div class="gate-content active" id="gSubjects">
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Engineering Mathematics</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Compulsory · High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">13%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Linear Algebra — Matrix rank, Eigen values, System of equations</li>
+          <li>Calculus — Limits, Continuity, Maxima/Minima, Integration</li>
+          <li>Differential Equations — 1st & 2nd order ODE, PDE basics</li>
+          <li>Complex Variables — Analytic functions, Cauchy's theorem, Residue</li>
+          <li>Probability & Statistics — Random variables, PDF, CDF, Mean, Variance</li>
+          <li>Numerical Methods — Trapezoidal rule, Newton-Raphson</li>
+          <li>Transform Theory — Laplace, Fourier, Z-transform</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>Eigen value:</span> |A - λI| = 0</div>
+        <div class="gate-formula"><span>Bayes Theorem:</span> P(A|B) = P(B|A)·P(A) / P(B)</div>
+        <div class="gate-formula"><span>Laplace:</span> L{f(t)} = ∫₀∞ e^(-st)·f(t)dt</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Engineering+Mathematics+lectures" target="_blank">▶ YouTube Lectures</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Engineering+Mathematics+PYQ+ECE" target="_blank">📝 PYQ Solutions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Networks, Signals & Systems</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">11%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Network Theorems — Thevenin, Norton, Superposition, Max Power Transfer</li>
+          <li>Two-Port Networks — Z, Y, h, ABCD parameters</li>
+          <li>Transient Response — RC, RL, RLC circuits</li>
+          <li>Signals — Classification, Unit step, Impulse, Ramp, Sinusoidal</li>
+          <li>LTI Systems — Causality, Stability, Convolution, Impulse response</li>
+          <li>Fourier Series & Transform — CTFT, DTFT, DFT, FFT</li>
+          <li>Laplace & Z-Transform — ROC, Inverse, System analysis</li>
+          <li>Sampling — Nyquist theorem, Aliasing, Reconstruction</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>Convolution:</span> y(t) = x(t) * h(t) = ∫x(τ)h(t-τ)dτ</div>
+        <div class="gate-formula"><span>CTFT:</span> X(jω) = ∫x(t)e^(-jωt)dt</div>
+        <div class="gate-formula"><span>Nyquist:</span> fs ≥ 2·fmax</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Networks+Signals+Systems" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Signals+Systems+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Electronic Devices & Circuits</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Medium-High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">10%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Semiconductor Physics — Energy bands, Carrier concentration, Drift & Diffusion</li>
+          <li>PN Junction — V-I characteristics, Depletion width, Breakdown</li>
+          <li>BJT — Modes, h-parameters, Small signal model, Biasing</li>
+          <li>MOSFET — IV characteristics, Small signal model, CMOS</li>
+          <li>JFET — Pinch-off, IDSS, Transconductance</li>
+          <li>Diode Circuits — Rectifiers, Clippers, Clampers, Zener regulator</li>
+          <li>Special Devices — LED, Photodiode, Solar cell, SCR, UJT</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>Diode current:</span> I = Is(e^(V/VT) - 1), VT=26mV</div>
+        <div class="gate-formula"><span>MOSFET (sat):</span> Id = (µnCox/2)(W/L)(Vgs-Vth)²</div>
+        <div class="gate-formula"><span>BJT:</span> IC = β·IB, VBE = 0.7V</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Electronic+Devices+Circuits" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+EDC+PYQ+solutions+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Analog Circuits</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Medium-High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">10%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Amplifiers — CE, CB, CC configurations, Gain, Input/Output impedance</li>
+          <li>Feedback Amplifiers — Types, Effect on gain, BW, impedance</li>
+          <li>Op-Amp — Ideal vs Practical, CMRR, Slew rate, Applications</li>
+          <li>Oscillators — Barkhausen criterion, RC, LC, Crystal</li>
+          <li>Power Amplifiers — Class A, B, AB, C — efficiency</li>
+          <li>Active Filters — Butterworth, Chebyshev, LPF, HPF, BPF</li>
+          <li>Voltage Regulators — Series, Shunt, IC regulators</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>CMRR:</span> CMRR = Ad/Ac (dB = 20log(Ad/Ac))</div>
+        <div class="gate-formula"><span>Barkhausen:</span> |Aβ| = 1, ∠Aβ = 0°</div>
+        <div class="gate-formula"><span>Class B η:</span> η_max = π/4 = 78.5%</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Analog+Circuits+lectures" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Analog+Circuits+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Digital Circuits</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Medium Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">9%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Boolean Algebra — Theorems, De Morgan's, SOP, POS</li>
+          <li>K-Map — 2, 3, 4 variable simplification</li>
+          <li>Combinational Circuits — MUX, DEMUX, Encoder, Decoder, Adder, Comparator</li>
+          <li>Sequential Circuits — Flip-flops (SR, JK, D, T), Counters, Shift Registers</li>
+          <li>Logic Families — TTL, CMOS — fan-out, noise margin, propagation delay</li>
+          <li>ADC & DAC — Types, Resolution, Conversion time</li>
+          <li>Memory — RAM, ROM, SRAM, DRAM</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>De Morgan's:</span> (A·B)' = A'+B' | (A+B)' = A'·B'</div>
+        <div class="gate-formula"><span>ADC Resolution:</span> Step = Vref / 2^n</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Digital+Circuits+lectures" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Digital+Circuits+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Control Systems</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">10%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Transfer Function — Block diagram, Signal flow graph, Mason's gain</li>
+          <li>Time Response — 1st & 2nd order systems, Rise time, Overshoot, Settling time</li>
+          <li>Stability — Routh-Hurwitz, Root Locus technique</li>
+          <li>Frequency Response — Bode plot, Nyquist criterion, GM & PM</li>
+          <li>Controllers — P, PI, PD, PID — design and effects</li>
+          <li>State Space — State equations, Controllability, Observability</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>2nd Order TF:</span> ωn²/(s²+2ζωns+ωn²)</div>
+        <div class="gate-formula"><span>Steady state error:</span> ess = lim(s→0) s·E(s)</div>
+        <div class="gate-formula"><span>Phase Margin:</span> PM = 180° + ∠G(jωgc)</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Control+Systems+lectures" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Control+Systems+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Communications</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">High Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">13%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Analog Modulation — AM (DSBFC, DSBSC, SSB), FM, PM</li>
+          <li>Digital Modulation — ASK, FSK, PSK, QPSK, QAM, DPSK</li>
+          <li>Noise — Thermal, Shot noise, SNR, Noise figure, Friis formula</li>
+          <li>Information Theory — Entropy, Mutual info, Channel capacity, Shannon</li>
+          <li>Source & Channel Coding — Huffman, Hamming, Cyclic codes</li>
+          <li>Random Processes — WSS, PSD, Autocorrelation</li>
+          <li>Pulse Modulation — PAM, PWM, PPM, PCM, DPCM, DM</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>AM Power:</span> Pt = Pc(1 + µ²/2)</div>
+        <div class="gate-formula"><span>Shannon:</span> C = B·log₂(1+SNR)</div>
+        <div class="gate-formula"><span>FM BW:</span> BW = 2(Δf + fm) [Carson's Rule]</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Communications+lectures" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Communications+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">Electromagnetics</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Medium Weightage</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">9%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Electrostatics — Coulomb's law, Gauss's law, Electric potential, Capacitance</li>
+          <li>Magnetostatics — Biot-Savart, Ampere's law, Magnetic flux, Inductance</li>
+          <li>Maxwell's Equations — Differential & Integral forms, Boundary conditions</li>
+          <li>Electromagnetic Waves — Wave equation, Polarization, Poynting vector</li>
+          <li>Transmission Lines — VSWR, Reflection coefficient, Smith chart, Matching</li>
+          <li>Waveguides — TE, TM, TEM modes, Cutoff frequency</li>
+          <li>Antennas — Radiation pattern, Gain, Directivity, Half-wave dipole</li>
+        </ul>
+        <div class="gate-sec-title">📐 Key Formulas</div>
+        <div class="gate-formula"><span>Maxwell (Faraday):</span> ∇×E = -∂B/∂t</div>
+        <div class="gate-formula"><span>VSWR:</span> S = (1+|Γ|)/(1-|Γ|)</div>
+        <div class="gate-formula"><span>Skin depth:</span> δ = √(2/ωµσ)</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+Electromagnetics+lectures" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+Electromagnetics+PYQ+ECE" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-subject-card" onclick="toggleGate(this)">
+      <div class="gate-subj-header">
+        <div><div class="gate-subj-name">General Aptitude</div><div style="font-size:.75rem;color:rgba(224,247,250,0.45);margin-top:3px;">Compulsory · Easy Marks</div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span class="gate-weight">15%</span><span class="gate-toggle">▾</span></div>
+      </div>
+      <div class="gate-subj-body">
+        <div class="gate-sec-title">📌 Important Topics</div>
+        <ul class="gate-topics">
+          <li>Verbal Ability — Grammar, Vocabulary, Reading Comprehension</li>
+          <li>Numerical Ability — Arithmetic, Percentages, Profit/Loss, Time-Work</li>
+          <li>Data Interpretation — Tables, Bar graphs, Pie charts</li>
+          <li>Logical Reasoning — Series, Puzzles, Blood relations, Direction sense</li>
+          <li>Spatial Aptitude — Pattern matching, Mirror images, Paper folding</li>
+        </ul>
+        <div class="info-box" style="border-color:rgba(244,63,94,0.2);background:rgba(244,63,94,0.05);">
+          <strong style="color:#f43f5e">Pro Tip:</strong> GA has 15% weightage — never skip it! Score 13+/15 here to boost rank significantly.
+        </div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+General+Aptitude+ECE+2025" target="_blank">▶ YouTube</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+aptitude+PYQ+solutions" target="_blank">📝 PYQ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WEIGHTAGE TAB -->
+  <div class="gate-content" id="gWeightage">
+    <div class="card" style="border-color:rgba(244,63,94,0.2);">
+      <h3 style="color:#f43f5e">📊 Subject-wise Weightage (GATE ECE 2024)</h3>
+      <div class="info-box" style="border-color:rgba(244,63,94,0.2);background:rgba(244,63,94,0.05);margin-bottom:16px;">
+        <strong style="color:#f43f5e">Total: 100 marks</strong> — 65 questions · 3 hrs · Negative marking for MCQs
+      </div>
+      <div class="weight-chart" id="weightChart">
+        <div class="weight-row"><div class="weight-label">General Aptitude</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="15"></div></div><div class="weight-pct">15%</div></div>
+        <div class="weight-row"><div class="weight-label">Engineering Maths</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="13"></div></div><div class="weight-pct">13%</div></div>
+        <div class="weight-row"><div class="weight-label">Communications</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="13"></div></div><div class="weight-pct">13%</div></div>
+        <div class="weight-row"><div class="weight-label">Networks, Signals & Systems</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="11"></div></div><div class="weight-pct">11%</div></div>
+        <div class="weight-row"><div class="weight-label">Control Systems</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="10"></div></div><div class="weight-pct">10%</div></div>
+        <div class="weight-row"><div class="weight-label">Analog Circuits</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="10"></div></div><div class="weight-pct">10%</div></div>
+        <div class="weight-row"><div class="weight-label">Electronic Devices</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="10"></div></div><div class="weight-pct">10%</div></div>
+        <div class="weight-row"><div class="weight-label">Digital Circuits</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="9"></div></div><div class="weight-pct">9%</div></div>
+        <div class="weight-row"><div class="weight-label">Electromagnetics</div><div class="weight-bar-wrap"><div class="weight-bar" data-w="9"></div></div><div class="weight-pct">9%</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLS/CALCULATOR TAB -->
+  <div class="gate-content" id="gCalculator">
+    <div class="gate-calc-grid">
+      <div class="gate-calc-box">
+        <div class="gate-calc-title">🧮 Marks Calculator</div>
+        <input id="g1m" placeholder="1-mark correct" style="border-color:rgba(244,63,94,0.25);">
+        <input id="g2m" placeholder="2-mark correct" style="border-color:rgba(244,63,94,0.25);">
+        <input id="g1w" placeholder="1-mark wrong" style="border-color:rgba(244,63,94,0.25);">
+        <input id="g2w" placeholder="2-mark wrong" style="border-color:rgba(244,63,94,0.25);">
+        <button onclick="calcMarks()" style="border-color:#f43f5e;color:#f43f5e;background:rgba(244,63,94,0.08);">CALCULATE MARKS</button>
+        <div class="gate-output" id="gMarksOut">Marks = (+1×C1) + (+2×C2) - (0.33×W1) - (0.67×W2)</div>
+      </div>
+      <div class="gate-calc-box">
+        <div class="gate-calc-title">🏆 Score vs Rank Estimator</div>
+        <input id="gScore" placeholder="Your GATE Score (out of 100)">
+        <select id="gYear" style="border-color:rgba(244,63,94,0.25);">
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+        <button onclick="estimateRank()" style="border-color:#f43f5e;color:#f43f5e;background:rgba(244,63,94,0.08);">ESTIMATE RANK</button>
+        <div class="gate-output" id="gRankOut">Enter your expected score</div>
+      </div>
+      <div class="gate-calc-box">
+        <div class="gate-calc-title">📊 GATE Score Calculator</div>
+        <input id="gMarks" placeholder="Your Marks (out of 100)">
+        <input id="gAvg" placeholder="Session avg marks (optional)" value="35">
+        <input id="gTop" placeholder="Top scorer marks" value="85">
+        <button onclick="calcGateScore()" style="border-color:#f43f5e;color:#f43f5e;background:rgba(244,63,94,0.08);">CALC GATE SCORE</button>
+        <div class="gate-output" id="gScoreOut">Score = 1000 × (M - Mavg)/(Mtop - Mavg)</div>
+      </div>
+      <div class="gate-calc-box">
+        <div class="gate-calc-title">📅 Study Planner</div>
+        <input id="gDays" placeholder="Days left for GATE">
+        <input id="gHours" placeholder="Hours per day available">
+        <button onclick="studyPlan()" style="border-color:#f43f5e;color:#f43f5e;background:rgba(244,63,94,0.08);">GENERATE PLAN</button>
+        <div class="gate-output" id="gPlanOut">Total study hours = Days × Hours/day</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUT-OFF TAB -->
+  <div class="gate-content" id="gCutoff">
+    <div class="card" style="border-color:rgba(244,63,94,0.2);">
+      <h3 style="color:#f43f5e">📉 GATE ECE Cut-off History (Marks out of 100)</h3>
+      <table class="cutoff-table">
+        <tr><th>Year</th><th>General</th><th>OBC-NCL</th><th>SC/ST/PwD</th><th>Qualifying Score</th></tr>
+        <tr><td>2024</td><td>25.4</td><td>22.9</td><td>17.0</td><td>~350</td></tr>
+        <tr><td>2023</td><td>25.0</td><td>22.5</td><td>16.7</td><td>~340</td></tr>
+        <tr><td>2022</td><td>24.9</td><td>22.4</td><td>16.6</td><td>~330</td></tr>
+        <tr><td>2021</td><td>27.5</td><td>24.7</td><td>18.3</td><td>~380</td></tr>
+        <tr><td>2020</td><td>28.8</td><td>25.9</td><td>19.2</td><td>~400</td></tr>
+        <tr><td>2019</td><td>26.7</td><td>24.0</td><td>17.8</td><td>~370</td></tr>
+        <tr><td>2018</td><td>25.0</td><td>22.5</td><td>16.7</td><td>~340</td></tr>
+      </table>
+      <div class="info-box" style="border-color:rgba(244,63,94,0.2);background:rgba(244,63,94,0.05);margin-top:14px;">
+        <strong style="color:#f43f5e">IIT/NIT PSU cutoffs:</strong> GATE Score 600+ for top IITs · 500+ for NITs · 400+ for PSU shortlisting (varies by company)
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(244,63,94,0.2);margin-top:16px;">
+      <h3 style="color:#f43f5e">🏢 PSU GATE Score Requirements (Approx)</h3>
+      <table class="cutoff-table">
+        <tr><th>PSU</th><th>Min GATE Score</th><th>Post</th></tr>
+        <tr><td>ISRO</td><td>800+</td><td>Scientist/Engineer</td></tr>
+        <tr><td>DRDO</td><td>750+</td><td>Scientist B</td></tr>
+        <tr><td>BHEL</td><td>700+</td><td>Engineer Trainee</td></tr>
+        <tr><td>BSNL</td><td>650+</td><td>JTO</td></tr>
+        <tr><td>BARC</td><td>700+</td><td>Scientific Officer</td></tr>
+        <tr><td>NTPC</td><td>700+</td><td>Engineer Trainee</td></tr>
+        <tr><td>ONGC</td><td>650+</td><td>AEE Trainee</td></tr>
+        <tr><td>AAI</td><td>600+</td><td>Junior Executive</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PYQ PAPERS TAB -->
+  <div class="gate-content" id="gPYQ">
+    <div class="card" style="border-color:rgba(244,63,94,0.2);">
+      <h3 style="color:#f43f5e">📝 GATE ECE Previous Year Question Papers</h3>
+      <div class="info-box" style="border-color:rgba(244,63,94,0.2);background:rgba(244,63,94,0.05);margin-bottom:16px;">
+        Solving PYQs is the <strong style="color:#f43f5e">most effective GATE preparation strategy</strong>. Aim for last 10 years papers.
+      </div>
+      <div class="gate-links" style="flex-direction:column;gap:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2024</span>
+          <a class="gate-link" href="https://gate.iisc.ac.in/gate2024/previous-papers/" target="_blank">📄 Official Paper</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2024+ECE+paper+solution" target="_blank">▶ Solutions</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2023</span>
+          <a class="gate-link" href="https://gate2023.iisc.ac.in/previous-papers/" target="_blank">📄 Official Paper</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2023+ECE+paper+solution" target="_blank">▶ Solutions</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2022</span>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2022+ECE+paper+solution" target="_blank">▶ Solutions</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2022+ECE+questions+answers" target="_blank">📝 Answers</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2021</span>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2021+ECE+paper+solution" target="_blank">▶ Solutions</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2021+ECE+questions+answers" target="_blank">📝 Answers</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2020</span>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2020+ECE+paper+solution" target="_blank">▶ Solutions</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+2020+ECE+questions+answers" target="_blank">📝 Answers</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-family:'Orbitron',monospace;font-size:.72rem;color:rgba(244,63,94,0.7);width:60px;">2015-19</span>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+2015+2016+2017+2018+2019+paper+solution" target="_blank">▶ Solutions</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+previous+year+questions+all" target="_blank">📝 All PYQ</a>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(244,63,94,0.15);">
+        <div class="gate-sec-title">🔗 Best Resources for GATE ECE Prep</div>
+        <div class="gate-links">
+          <a class="gate-link" href="https://gate.iitd.ac.in" target="_blank">🌐 GATE Official</a>
+          <a class="gate-link" href="https://www.youtube.com/@gatesmashers" target="_blank">▶ GATE Smashers</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+full+course+free" target="_blank">▶ Full Course</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+subject+wise+playlist" target="_blank">▶ Subject-wise</a>
+          <a class="gate-link" href="https://www.youtube.com/results?search_query=GATE+ECE+mock+test+series" target="_blank">📝 Mock Tests</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== INTERNSHIP PORTAL ===== -->
+<div id="internSection" class="section" style="max-width:860px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#38bdf8">💼 INTERNSHIP PORTAL</div></div>
+
+  <div class="intern-tabs">
+    <button class="intern-tab active" onclick="showIntern('iCompanies')">🏢 COMPANIES</button>
+    <button class="intern-tab" onclick="showIntern('iPlatforms')">🔗 PLATFORMS</button>
+    <button class="intern-tab" onclick="showIntern('iResearch')">🔬 RESEARCH</button>
+    <button class="intern-tab" onclick="showIntern('iResume')">📄 RESUME TIPS</button>
+    <button class="intern-tab" onclick="showIntern('iInterview')">🎤 INTERVIEW</button>
+    <button class="intern-tab" onclick="showIntern('iLinkedin')">🌐 LINKEDIN</button>
+  </div>
+
+  <!-- COMPANIES TAB -->
+  <div class="intern-content active" id="iCompanies">
+    <div class="info-box" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05);margin-bottom:16px;">
+      <strong style="color:#38bdf8">Pro Tip:</strong> Apply 3-4 months before internship start date. Keep your resume updated and LinkedIn profile active!
+    </div>
+
+    <div class="intern-sec-title">⚡ Core ECE Companies (VLSI · Embedded · Hardware)</div>
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-name">Intel India</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">VLSI · Embedded</span>
+        <div class="company-info">Internships in chip design, verification, embedded firmware. Stipend: ₹60,000–₹1,00,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://jobs.intel.com/en/search-jobs?keywords=intern+india" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/intel-corporation/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Qualcomm India</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">VLSI · RF · DSP</span>
+        <div class="company-info">Semiconductor design, modem development, RF engineering. Stipend: ₹70,000–₹1,20,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.qualcomm.com/company/careers/internships" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/qualcomm/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Texas Instruments</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">Analog · Embedded</span>
+        <div class="company-info">Analog IC design, microcontroller, power electronics. Stipend: ₹50,000–₹80,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://careers.ti.com/jobs?search=intern+india" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/texas-instruments/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Samsung R&D India</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">VLSI · AI · Display</span>
+        <div class="company-info">Chip design, AI research, display technology. Stipend: ₹40,000–₹80,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://research.samsung.com/careers" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/samsung-research/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Bosch India</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">Embedded · IoT · Auto</span>
+        <div class="company-info">Automotive electronics, IoT, embedded systems. Stipend: ₹25,000–₹50,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.bosch.in/careers/" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/bosch-india/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">MediaTek India</div>
+        <span class="company-domain" style="background:rgba(56,189,248,0.1);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">VLSI · SoC Design</span>
+        <div class="company-info">SoC design, verification, connectivity chips. Stipend: ₹50,000–₹90,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://careers.mediatek.com" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/mediatek/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="intern-sec-title">💻 IT / Software Companies (ECE friendly)</div>
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-name">Tata Consultancy Services</div>
+        <span class="company-domain" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">Software · IT</span>
+        <div class="company-info">Software development, IoT, embedded projects. Stipend: ₹10,000–₹15,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.tcs.com/careers" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/tata-consultancy-services/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Infosys</div>
+        <span class="company-domain" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">Software · AI</span>
+        <div class="company-info">InStep global internship program, AI/ML, embedded. Stipend: ₹15,000–₹25,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.infosys.com/careers/instep.html" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/infosys/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Wipro</div>
+        <span class="company-domain" style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2);">Software · IoT</span>
+        <div class="company-info">VLSI, IoT, cloud computing projects. Stipend: ₹10,000–₹20,000/month</div>
+        <div class="company-links">
+          <a class="company-link" href="https://careers.wipro.com" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.linkedin.com/company/wipro/jobs/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="intern-sec-title">🏛️ PSU Internships</div>
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-name">ISRO</div>
+        <span class="company-domain" style="background:rgba(249,115,22,0.1);color:#f97316;border:1px solid rgba(249,115,22,0.2);">Space Tech · R&D</span>
+        <div class="company-info">ISITE program for B.Tech students. Duration: 4-6 weeks. Certificate + experience</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.isro.gov.in/careers.html" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.youtube.com/results?search_query=ISRO+internship+how+to+apply" target="_blank">▶ How to Apply</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">DRDO</div>
+        <span class="company-domain" style="background:rgba(249,115,22,0.1);color:#f97316;border:1px solid rgba(249,115,22,0.2);">Defence · R&D</span>
+        <div class="company-info">Project internship at various DRDO labs. Stipend provided. Duration: 1-6 months</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.drdo.gov.in/internship" target="_blank">🔗 Apply</a>
+          <a class="company-link" href="https://www.youtube.com/results?search_query=DRDO+internship+apply+ECE" target="_blank">▶ Guide</a>
+        </div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">BSNL</div>
+        <span class="company-domain" style="background:rgba(249,115,22,0.1);color:#f97316;border:1px solid rgba(249,115,22,0.2);">Telecom · Network</span>
+        <div class="company-info">Industrial training for ECE students. Free of cost. Duration: 4-6 weeks</div>
+        <div class="company-links">
+          <a class="company-link" href="https://www.bsnl.co.in" target="_blank">🔗 Website</a>
+          <a class="company-link" href="https://www.youtube.com/results?search_query=BSNL+internship+ECE+apply" target="_blank">▶ Guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLATFORMS TAB -->
+  <div class="intern-content" id="iPlatforms">
+    <div class="intern-sec-title">🌐 Best Internship Platforms for ECE</div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <span class="platform-icon">🎓</span>
+        <div class="platform-name">Internshala</div>
+        <div class="platform-desc">India's #1 internship platform. 50,000+ internships. Filter by ECE/Electronics domain.</div>
+        <a class="platform-link" href="https://internshala.com/internships/electronics-internship/" target="_blank">Browse ECE Internships →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">💼</span>
+        <div class="platform-name">LinkedIn Jobs</div>
+        <div class="platform-desc">Global platform. Search "ECE intern India". Connect with recruiters directly.</div>
+        <a class="platform-link" href="https://www.linkedin.com/jobs/search/?keywords=ECE+intern+India" target="_blank">Search on LinkedIn →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">🔍</span>
+        <div class="platform-name">Naukri.com</div>
+        <div class="platform-desc">India's largest job portal. Good for ECE freshers and internships.</div>
+        <a class="platform-link" href="https://www.naukri.com/ece-internship-jobs" target="_blank">Browse Internships →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">🚀</span>
+        <div class="platform-name">LetsIntern</div>
+        <div class="platform-desc">Verified internships with stipend details. Good for core ECE roles.</div>
+        <a class="platform-link" href="https://www.letsintern.com/internships/electronics" target="_blank">Browse Internships →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">🏢</span>
+        <div class="platform-name">Indeed India</div>
+        <div class="platform-desc">Wide range of ECE internships. Set job alerts for instant notifications.</div>
+        <a class="platform-link" href="https://in.indeed.com/jobs?q=ECE+internship" target="_blank">Search Now →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">⚡</span>
+        <div class="platform-name">Unstop (D2C)</div>
+        <div class="platform-desc">Competitions + internships. Many hackathons and challenges for ECE students.</div>
+        <a class="platform-link" href="https://unstop.com/internships?domain=electronics" target="_blank">Browse →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">🎯</span>
+        <div class="platform-name">AICTE Internship</div>
+        <div class="platform-desc">Government portal for verified internships. Mandatory for some colleges.</div>
+        <a class="platform-link" href="https://internship.aicte-india.org" target="_blank">Apply Now →</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-icon">🌍</span>
+        <div class="platform-name">Wellfound (AngelList)</div>
+        <div class="platform-desc">Startup internships. Great for ECE students interested in startups.</div>
+        <a class="platform-link" href="https://wellfound.com/jobs?role=intern&q=electronics" target="_blank">Browse Startups →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH INTERNSHIPS TAB -->
+  <div class="intern-content" id="iResearch">
+    <div class="info-box" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05);margin-bottom:16px;">
+      <strong style="color:#38bdf8">Research Internships</strong> boost your M.Tech/PhD/GATE profile significantly. Apply 6 months in advance!
+    </div>
+    <div class="research-card">
+      <div class="research-name">🏛️ IIT Research Internship (SURGE / SRIP)</div>
+      <div class="research-info">
+        <strong style="color:#38bdf8">SURGE (IIT Kanpur):</strong> Summer Undergraduate Research Grant. 8 weeks, ₹10,000 stipend<br>
+        <strong style="color:#38bdf8">SRIP (IIT Gandhinagar):</strong> Summer Research Internship Program. 8-10 weeks<br>
+        <strong style="color:#38bdf8">SRF (IIT Bombay):</strong> Summer Research Fellowship. Multiple departments
+      </div>
+      <div class="company-links">
+        <a class="company-link" href="https://surge.iitk.ac.in" target="_blank">SURGE IITK</a>
+        <a class="company-link" href="https://srip.iitgn.ac.in" target="_blank">SRIP IITGN</a>
+        <a class="company-link" href="https://www.youtube.com/results?search_query=IIT+research+internship+ECE+how+to+apply" target="_blank">▶ How to Apply</a>
+      </div>
+    </div>
+    <div class="research-card">
+      <div class="research-name">🔬 IISc Summer Research Program</div>
+      <div class="research-info">
+        Indian Institute of Science, Bangalore. One of India's top research institutions.<br>
+        Duration: 6-8 weeks | Stipend: ₹10,000-₹15,000 | Fields: ECE, EE, Physics, CS
+      </div>
+      <div class="company-links">
+        <a class="company-link" href="https://iisc.ac.in/admissions/internship/" target="_blank">🔗 Apply IISc</a>
+        <a class="company-link" href="https://www.youtube.com/results?search_query=IISc+internship+apply+undergraduate" target="_blank">▶ Guide</a>
+      </div>
+    </div>
+    <div class="research-card">
+      <div class="research-name">🛡️ DRDO & ISRO Research Projects</div>
+      <div class="research-info">
+        Work on real defence/space projects. Excellent for government job aspirants.<br>
+        DRDO: Apply through drdo.gov.in | ISRO: RESPOND program for colleges
+      </div>
+      <div class="company-links">
+        <a class="company-link" href="https://www.drdo.gov.in/internship" target="_blank">DRDO Apply</a>
+        <a class="company-link" href="https://www.isro.gov.in/respond.html" target="_blank">ISRO RESPOND</a>
+      </div>
+    </div>
+    <div class="research-card">
+      <div class="research-name">🌏 International Research (MITACS / DAAD)</div>
+      <div class="research-info">
+        <strong style="color:#38bdf8">MITACS Globalink (Canada):</strong> 12-week research in Canadian universities. Fully funded<br>
+        <strong style="color:#38bdf8">DAAD WISE (Germany):</strong> Research internship in Germany. Stipend + travel grant<br>
+        <strong style="color:#38bdf8">OIST (Japan):</strong> Research Internship Program at Okinawa Institute
+      </div>
+      <div class="company-links">
+        <a class="company-link" href="https://www.mitacs.ca/en/programs/globalink/globalink-research-internship" target="_blank">MITACS Apply</a>
+        <a class="company-link" href="https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-wise-scholarship/" target="_blank">DAAD Apply</a>
+        <a class="company-link" href="https://www.youtube.com/results?search_query=MITACS+DAAD+internship+India+ECE+apply" target="_blank">▶ Guide</a>
+      </div>
+    </div>
+    <div class="research-card">
+      <div class="research-name">🔭 CSIR / TIFR / BARC Labs</div>
+      <div class="research-info">
+        National research labs with internship programs for ECE students.<br>
+        CSIR-CEERI (electronics), TIFR (physics & electronics), BARC (nuclear)
+      </div>
+      <div class="company-links">
+        <a class="company-link" href="https://www.csir.res.in/internship" target="_blank">CSIR Apply</a>
+        <a class="company-link" href="https://www.tifr.res.in/~vsrp/" target="_blank">TIFR VSRP</a>
+        <a class="company-link" href="https://www.barc.gov.in/careers/" target="_blank">BARC Apply</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME TIPS TAB -->
+  <div class="intern-content" id="iResume">
+    <div class="tip-card">
+      <div class="tip-title">📋 Resume Structure for ECE Students</div>
+      <ul class="tip-list">
+        <li>Keep it to 1 page (freshers) — recruiters spend only 6 seconds on a resume</li>
+        <li>Order: Contact Info → Summary → Education → Skills → Projects → Experience → Certifications</li>
+        <li>Use ATS-friendly format — avoid tables, columns, graphics in main resume</li>
+        <li>Font: Calibri/Arial 10-11pt | Margins: 0.5-0.75 inch | Save as PDF</li>
+        <li>Quantify achievements: "Designed RC filter reducing noise by 40%" not just "designed filter"</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">⚡ ECE-Specific Skills to Highlight</div>
+      <ul class="tip-list">
+        <li><strong style="color:#38bdf8">Hardware:</strong> PCB Design (KiCad/Eagle), Oscilloscope, Signal analyzer, Soldering</li>
+        <li><strong style="color:#38bdf8">Software:</strong> MATLAB, Python, C/C++, Verilog/VHDL, LabVIEW</li>
+        <li><strong style="color:#38bdf8">Tools:</strong> LTSpice, Multisim, Cadence, Xilinx Vivado, Arduino IDE</li>
+        <li><strong style="color:#38bdf8">Microcontrollers:</strong> Arduino, STM32, ESP32, Raspberry Pi, 8051</li>
+        <li><strong style="color:#38bdf8">Domains:</strong> Embedded Systems, VLSI, IoT, Signal Processing, Communication</li>
+        <li><strong style="color:#38bdf8">Protocols:</strong> UART, SPI, I2C, CAN, Ethernet, MQTT, Zigbee</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">🚀 Projects That Impress Recruiters</div>
+      <ul class="tip-list">
+        <li>IoT-based Smart Home / Weather Station (ESP32 + Cloud)</li>
+        <li>Line Following Robot / Obstacle Avoidance Bot</li>
+        <li>VLSI Design — 4-bit ALU in Verilog on FPGA</li>
+        <li>PCB design of a simple circuit (schematic + layout + fabricated board)</li>
+        <li>Signal processing — audio filter, FFT analyzer in Python/MATLAB</li>
+        <li>Communication project — SDR receiver, AM/FM transmitter</li>
+        <li>GitHub portfolio with code, circuit diagrams, demo video</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">📝 Cover Letter Tips</div>
+      <ul class="tip-list">
+        <li>Keep it to 3 short paragraphs — max 200 words</li>
+        <li>Para 1: Who you are + which role you're applying for</li>
+        <li>Para 2: Why YOU are the right fit — mention 1-2 specific achievements</li>
+        <li>Para 3: Why THIS company — show you've researched them</li>
+        <li>Never start with "I am writing to apply..." — be direct and confident</li>
+        <li>Customize for each company — copy-paste cover letters get rejected</li>
+      </ul>
+    </div>
+    <div class="company-links" style="margin-top:10px;">
+      <a class="company-link" href="https://www.youtube.com/results?search_query=ECE+resume+tips+internship+India" target="_blank">▶ Resume Video Guide</a>
+      <a class="company-link" href="https://www.overleaf.com/gallery/tagged/cv" target="_blank">📄 LaTeX Resume Templates</a>
+      <a class="company-link" href="https://www.youtube.com/results?search_query=ATS+resume+tips+engineering+students" target="_blank">▶ ATS Resume Tips</a>
+    </div>
+  </div>
+
+  <!-- INTERVIEW PREP TAB -->
+  <div class="intern-content" id="iInterview">
+    <div class="tip-card">
+      <div class="tip-title">🎯 Technical Interview Topics (ECE Core)</div>
+      <ul class="tip-list">
+        <li>Ohm's Law, KVL, KCL — be ready for numerical problems</li>
+        <li>BJT & MOSFET — operating regions, biasing, gain calculation</li>
+        <li>Op-Amp — inverting/non-inverting, CMRR, virtual ground concept</li>
+        <li>Digital Electronics — K-Map, flip-flops, counters, timing diagrams</li>
+        <li>Microcontrollers — 8051/Arduino architecture, interrupts, timers</li>
+        <li>Communication — AM/FM, SNR, Shannon capacity</li>
+        <li>Control Systems — Transfer function, stability, Bode plot</li>
+        <li>PCB / Hardware debugging — multimeter, oscilloscope usage</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">💻 Coding Round Preparation (ECE → Software)</div>
+      <ul class="tip-list">
+        <li>Learn C/C++ basics — pointers, arrays, structs (important for embedded)</li>
+        <li>Python for DSP — NumPy, SciPy, Matplotlib</li>
+        <li>Data Structures — Arrays, Linked List, Stack, Queue, Trees</li>
+        <li>Practice on LeetCode / HackerRank (Easy to Medium level)</li>
+        <li>Bit manipulation problems — very common for ECE/embedded roles</li>
+        <li>Verilog/VHDL for VLSI companies — basic combinational & sequential circuits</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">🗣️ HR Interview Tips</div>
+      <ul class="tip-list">
+        <li>Prepare "Tell me about yourself" — 90 seconds, structured, confident</li>
+        <li>Know your resume thoroughly — be ready to explain every project</li>
+        <li>STAR method for behavioral questions (Situation, Task, Action, Result)</li>
+        <li>Research the company before interview — products, recent news, tech stack</li>
+        <li>Prepare 2-3 questions to ask interviewer at the end</li>
+        <li>Dress professionally even for video interviews</li>
+        <li>Send thank-you email within 24 hours after interview</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">📚 Best Interview Prep Resources</div>
+      <ul class="tip-list">
+        <li>GeeksforGeeks — ECE interview questions, C++ DSA</li>
+        <li>Electronics Hub — Circuit theory, VLSI questions</li>
+        <li>Glassdoor — Company-specific interview experiences</li>
+        <li>YouTube — "ECE technical interview questions" playlists</li>
+        <li>Internshala Training — Certificate courses in embedded/VLSI</li>
+      </ul>
+    </div>
+    <div class="company-links" style="margin-top:10px;">
+      <a class="company-link" href="https://www.youtube.com/results?search_query=ECE+technical+interview+questions+answers" target="_blank">▶ Interview Q&A</a>
+      <a class="company-link" href="https://www.geeksforgeeks.org/electronics-engineering/" target="_blank">📚 GFG ECE</a>
+      <a class="company-link" href="https://www.glassdoor.co.in/Interview/electronics-engineer-intern-interview-questions-SRCH_KO0,27.htm" target="_blank">🔍 Glassdoor</a>
+    </div>
+  </div>
+
+  <!-- LINKEDIN & PORTFOLIO TAB -->
+  <div class="intern-content" id="iLinkedin">
+    <div class="tip-card">
+      <div class="tip-title">🌐 LinkedIn Profile Optimization</div>
+      <ul class="tip-list">
+        <li>Professional photo — good lighting, neutral background, formal attire</li>
+        <li>Headline: Not just "Student" — write "ECE Student | Embedded Systems | IoT Enthusiast"</li>
+        <li>About section: 3-4 lines about your interests, skills, what you're looking for</li>
+        <li>Add all projects with descriptions, GitHub links, images/videos</li>
+        <li>Skills section: Add 10+ relevant skills — ask connections to endorse</li>
+        <li>Get 3+ recommendations from professors or project guides</li>
+        <li>Connect with 500+ people — alumni, professors, industry professionals</li>
+        <li>Post content about your projects — increases visibility to recruiters</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">💻 Portfolio / GitHub Tips</div>
+      <ul class="tip-list">
+        <li>Create a GitHub profile with a good README.md — recruiters check it</li>
+        <li>Pin your best 4-6 projects on GitHub profile</li>
+        <li>Add README to every project — what it does, how to run, circuit diagram</li>
+        <li>Make a personal portfolio website (use GitHub Pages — free!)</li>
+        <li>Upload project demo videos to YouTube — add links in resume</li>
+        <li>Contribute to open source — even small contributions count</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title">🎓 Certifications That Add Value</div>
+      <ul class="tip-list">
+        <li><strong style="color:#38bdf8">NPTEL:</strong> Embedded Systems, VLSI, Signal Processing (free + exam certificate)</li>
+        <li><strong style="color:#38bdf8">Coursera/edX:</strong> IoT, Machine Learning for ECE (audit for free)</li>
+        <li><strong style="color:#38bdf8">Cisco NetAcad:</strong> Networking basics, IoT Fundamentals (free)</li>
+        <li><strong style="color:#38bdf8">Arduino/Raspberry Pi:</strong> Official project certifications</li>
+        <li><strong style="color:#38bdf8">Internshala Training:</strong> Embedded systems, PCB design courses</li>
+        <li><strong style="color:#38bdf8">TI University Program:</strong> Free embedded systems courses from Texas Instruments</li>
+      </ul>
+    </div>
+    <div class="company-links" style="margin-top:10px;">
+      <a class="company-link" href="https://nptel.ac.in" target="_blank">📚 NPTEL Free Courses</a>
+      <a class="company-link" href="https://pages.github.com" target="_blank">🌐 GitHub Pages (Free Portfolio)</a>
+      <a class="company-link" href="https://www.youtube.com/results?search_query=LinkedIn+profile+tips+engineering+students+India" target="_blank">▶ LinkedIn Guide</a>
+      <a class="company-link" href="https://www.youtube.com/results?search_query=GitHub+portfolio+tips+ECE+students" target="_blank">▶ GitHub Portfolio</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== JOBS & PLACEMENT ===== -->
+<div id="jobSection" class="section" style="max-width:860px;">
+  <div class="section-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="section-title" style="color:#facc15">🏛️ JOBS & PLACEMENT</div></div>
+
+  <div class="job-tabs">
+    <button class="job-tab active" onclick="showJob('jGovt')">🏛️ GOVERNMENT</button>
+    <button class="job-tab" onclick="showJob('jPSU')">⚡ PSU JOBS</button>
+    <button class="job-tab" onclick="showJob('jPrivate')">🏢 PRIVATE</button>
+    <button class="job-tab" onclick="showJob('jResult')">📢 SARKARI RESULT</button>
+    <button class="job-tab" onclick="showJob('jAlerts')">🔔 JOB ALERTS</button>
+  </div>
+
+  <!-- GOVERNMENT JOBS -->
+  <div class="job-content active" id="jGovt">
+    <div class="alert-box">
+      <div class="alert-title">⚡ Latest Government Job Notifications for ECE</div>
+      <div style="font-size:.82rem;color:rgba(224,247,250,0.65);">Check official websites regularly — notifications come throughout the year. Bookmark these links!</div>
+    </div>
+
+    <div class="job-sec-title">🏛️ Central Government (Class A/B)</div>
+    <div class="job-card">
+      <div class="job-name">UPSC Engineering Services Exam (ESE/IES)</div>
+      <span class="job-badge">Class A · Central Govt</span>
+      <div class="job-info">Top government engineering job. Posting in Railways, CPWD, BRO, Defence etc. Salary: ₹56,100–₹1,77,500/month (Level 10+)</div>
+      <div class="job-links">
+        <a class="job-link" href="https://upsc.gov.in" target="_blank">🌐 UPSC Official</a>
+        <a class="job-link" href="https://www.sarkariresult.com/upsc/" target="_blank">📢 Sarkari Result</a>
+        <a class="job-link" href="https://www.youtube.com/results?search_query=UPSC+ESE+ECE+preparation" target="_blank">▶ Preparation</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">SSC JE (Junior Engineer) — Electrical/Electronics</div>
+      <span class="job-badge">Class B · Central Govt</span>
+      <div class="job-info">Staff Selection Commission. Posting in PWD, CPWD, BRO, NTPC etc. Salary: ₹35,400–₹1,12,400/month (Level 6)</div>
+      <div class="job-links">
+        <a class="job-link" href="https://ssc.nic.in" target="_blank">🌐 SSC Official</a>
+        <a class="job-link" href="https://www.sarkariresult.com/ssc/" target="_blank">📢 Results</a>
+        <a class="job-link" href="https://www.youtube.com/results?search_query=SSC+JE+electronics+preparation" target="_blank">▶ Preparation</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">DRDO Scientist B (SET/RAC)</div>
+      <span class="job-badge">Class A · Defence R&D</span>
+      <div class="job-info">Defence Research & Development Organisation. Research & development roles. Salary: ₹56,100–₹1,77,500/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.drdo.gov.in/careers" target="_blank">🌐 DRDO Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/drdo/" target="_blank">📢 Results</a>
+        <a class="job-link" href="https://rac.gov.in" target="_blank">RAC Portal</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">Indian Army — Short Service Commission (Tech)</div>
+      <span class="job-badge">Officer · Army Tech</span>
+      <div class="job-info">Technical entry scheme for ECE graduates. 10 years service + pension option. Salary + perks</div>
+      <div class="job-links">
+        <a class="job-link" href="https://joinindianarmy.nic.in" target="_blank">🌐 Army Official</a>
+        <a class="job-link" href="https://www.sarkariresult.com/indian-army/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">Indian Navy — Short Service Commission (Tech)</div>
+      <span class="job-badge">Officer · Navy Tech</span>
+      <div class="job-info">Technical branch for ECE engineers. Naval Constructor, Electrical, ATC roles available.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.joinindiannavy.gov.in" target="_blank">🌐 Navy Official</a>
+        <a class="job-link" href="https://www.sarkariresult.com/navy/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">BSNL Junior Telecom Officer (JTO)</div>
+      <span class="job-badge">Class B · Telecom</span>
+      <div class="job-info">Bharat Sanchar Nigam Limited. Telecom network operations. Salary: ₹30,000–₹1,20,000/month. GATE score used.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.bsnl.co.in/opencms/BSNL/BSNL/about_us/career/career.html" target="_blank">🌐 BSNL Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/bsnl/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+
+    <div class="job-sec-title">🏙️ State Government Jobs</div>
+    <div class="job-card">
+      <div class="job-name">State PSC / UPPSC / MPSC / BPSC (JE Posts)</div>
+      <span class="job-badge">State Govt · Various</span>
+      <div class="job-info">Junior Engineer posts in state PWD, Electricity Board, Telecom. Salary: ₹25,000–₹80,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://uppsc.up.nic.in" target="_blank">UPPSC</a>
+        <a class="job-link" href="https://www.sarkariresult.com/state-jobs/" target="_blank">📢 State Results</a>
+        <a class="job-link" href="https://www.sarkariresult.com" target="_blank">All State Jobs</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PSU JOBS -->
+  <div class="job-content" id="jPSU">
+    <div class="alert-box">
+      <div class="alert-title">⚡ PSU Recruitment via GATE Score</div>
+      <div style="font-size:.82rem;color:rgba(224,247,250,0.65);">Most PSUs recruit directly through GATE score — no separate exam needed! Keep your GATE scorecard valid for 3 years.</div>
+    </div>
+
+    <div class="job-sec-title">🚀 Top PSUs for ECE (GATE-based)</div>
+    <div class="job-card">
+      <div class="job-name">ISRO — Scientist/Engineer SC</div>
+      <span class="job-badge">GATE Score 800+ · Space Tech</span>
+      <div class="job-info">Indian Space Research Organisation. Roles in electronics, communication, embedded systems. Salary: ₹56,100+/month + HRA + DA</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.isro.gov.in/careers.html" target="_blank">🌐 ISRO Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/isro/" target="_blank">📢 Results</a>
+        <a class="job-link" href="https://www.youtube.com/results?search_query=ISRO+scientist+ECE+recruitment" target="_blank">▶ Guide</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">BARC — Scientific Officer (OCES/DGFS)</div>
+      <span class="job-badge">GATE Score 700+ · Nuclear</span>
+      <div class="job-info">Bhabha Atomic Research Centre. Electronics division. 1-year training at BARC. Salary: ₹56,100+/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.barc.gov.in/careers/" target="_blank">🌐 BARC Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/barc/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">BHEL — Engineer Trainee</div>
+      <span class="job-badge">GATE Score 700+ · Manufacturing</span>
+      <div class="job-info">Bharat Heavy Electricals Limited. Electronics, power, automation. Salary: ₹40,000–₹1,40,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://careers.bhel.in" target="_blank">🌐 BHEL Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/bhel/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">NTPC — Engineer Trainee</div>
+      <span class="job-badge">GATE Score 700+ · Power</span>
+      <div class="job-info">National Thermal Power Corporation. Electrical & Electronics. Salary: ₹40,000–₹1,40,000/month + perks</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.ntpc.co.in/careers" target="_blank">🌐 NTPC Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/ntpc/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">ONGC — AEE / Junior Engineer</div>
+      <span class="job-badge">GATE Score 650+ · Oil & Gas</span>
+      <div class="job-info">Oil & Natural Gas Corporation. Electronics & Telecom division. Salary: ₹60,000–₹1,80,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://ongcindia.com/careers" target="_blank">🌐 ONGC Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/ongc/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">AAI — Junior Executive (Electronics)</div>
+      <span class="job-badge">GATE Score 600+ · Aviation</span>
+      <div class="job-info">Airports Authority of India. Navigation aids, communication systems. Salary: ₹40,000–₹1,40,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://aai.aero/en/careers" target="_blank">🌐 AAI Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/aai/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">HAL — Management Trainee (Tech)</div>
+      <span class="job-badge">GATE Score 650+ · Aerospace</span>
+      <div class="job-info">Hindustan Aeronautics Limited. Avionics, radar, communication systems. Salary: ₹40,000–₹1,60,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://hal-india.co.in/careers" target="_blank">🌐 HAL Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/hal/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">GAIL — Junior Engineer / Executive Trainee</div>
+      <span class="job-badge">GATE Score 650+ · Gas</span>
+      <div class="job-info">Gas Authority of India. Telecom, instrumentation, control systems. Salary: ₹50,000–₹1,60,000/month</div>
+      <div class="job-links">
+        <a class="job-link" href="https://gailonline.com/careers.html" target="_blank">🌐 GAIL Careers</a>
+        <a class="job-link" href="https://www.sarkariresult.com/gail/" target="_blank">📢 Results</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVATE JOBS -->
+  <div class="job-content" id="jPrivate">
+    <div class="job-sec-title">💻 Core ECE Private Companies</div>
+    <div class="job-card">
+      <div class="job-name">Intel · Qualcomm · MediaTek · Samsung R&D</div>
+      <span class="job-badge">VLSI · Chip Design</span>
+      <div class="job-info">VLSI design engineer, verification, RTL design. CTC: ₹12–35 LPA for freshers. Skills: Verilog, SystemVerilog, Cadence, Synopsys</div>
+      <div class="job-links">
+        <a class="job-link" href="https://jobs.intel.com" target="_blank">Intel</a>
+        <a class="job-link" href="https://www.qualcomm.com/company/careers" target="_blank">Qualcomm</a>
+        <a class="job-link" href="https://careers.mediatek.com" target="_blank">MediaTek</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">Bosch · Tata Elxsi · Continental · Aptiv</div>
+      <span class="job-badge">Embedded · Automotive</span>
+      <div class="job-info">Embedded software, automotive ECU, ADAS systems. CTC: ₹6–18 LPA. Skills: C/C++, AUTOSAR, CAN, LIN</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.bosch.in/careers/" target="_blank">Bosch</a>
+        <a class="job-link" href="https://www.tataelxsi.com/careers" target="_blank">Tata Elxsi</a>
+        <a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=embedded+engineer+india" target="_blank">LinkedIn Search</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">L&T Technology · HCL · Wipro (VLSI/Embedded)</div>
+      <span class="job-badge">Service · Product</span>
+      <div class="job-info">Product engineering, embedded systems, IoT. CTC: ₹4–12 LPA. Good for campus placements.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://careers.ltts.com" target="_blank">L&T Tech</a>
+        <a class="job-link" href="https://www.hcltech.com/careers" target="_blank">HCL</a>
+        <a class="job-link" href="https://careers.wipro.com" target="_blank">Wipro</a>
+      </div>
+    </div>
+    <div class="job-sec-title">💼 IT Companies (ECE Eligible)</div>
+    <div class="job-card">
+      <div class="job-name">TCS · Infosys · Wipro · Cognizant · Accenture</div>
+      <span class="job-badge">IT · Software</span>
+      <div class="job-info">Mass recruiters — ECE eligible. CTC: ₹3.5–7 LPA (fresher). Register on company portals for campus drives.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.tcs.com/careers" target="_blank">TCS</a>
+        <a class="job-link" href="https://www.infosys.com/careers" target="_blank">Infosys</a>
+        <a class="job-link" href="https://www.naukri.com/it-jobs-in-india" target="_blank">Naukri IT Jobs</a>
+      </div>
+    </div>
+    <div class="job-sec-title">🔍 Job Search Platforms</div>
+    <div class="job-card">
+      <div class="job-name">Best Platforms to Find ECE Jobs</div>
+      <span class="job-badge">Multiple Portals</span>
+      <div class="job-info">Use multiple platforms and set daily alerts for best results.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.naukri.com/electronics-engineer-jobs" target="_blank">Naukri</a>
+        <a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=ECE+engineer+India" target="_blank">LinkedIn</a>
+        <a class="job-link" href="https://www.indeed.co.in/Electronics-Engineer-jobs" target="_blank">Indeed</a>
+        <a class="job-link" href="https://unstop.com/jobs?domain=electronics" target="_blank">Unstop</a>
+        <a class="job-link" href="https://wellfound.com/jobs" target="_blank">Wellfound</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SARKARI RESULT -->
+  <div class="job-content" id="jResult">
+    <div class="alert-box">
+      <div class="alert-title">📢 Live Sarkari Result Links — Always Updated</div>
+      <div style="font-size:.82rem;color:rgba(224,247,250,0.65);">Yeh links directly official result/notification pages pe le jaate hain. Bookmark karo aur daily check karo!</div>
+    </div>
+
+    <div class="job-sec-title">🔴 LIVE — Check Latest Results & Notifications</div>
+    <div class="job-card">
+      <div class="job-name">SarkariResult.com — All India Jobs</div>
+      <div class="job-info">India's most popular government job portal. Updated daily with new notifications, admit cards, results.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.sarkariresult.com" target="_blank">🔗 SarkariResult.com</a>
+        <a class="job-link" href="https://www.sarkariresult.com/result/" target="_blank">📋 Latest Results</a>
+        <a class="job-link" href="https://www.sarkariresult.com/admit-card/" target="_blank">🪪 Admit Cards</a>
+        <a class="job-link" href="https://www.sarkariresult.com/latest-jobs/" target="_blank">📢 New Notifications</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">FreeJobAlert.com</div>
+      <div class="job-info">Free job alerts for government jobs. Filter by state, qualification, department.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.freejobalert.com" target="_blank">🔗 FreeJobAlert</a>
+        <a class="job-link" href="https://www.freejobalert.com/jobs/electrical-electronics-engineering/" target="_blank">ECE Jobs</a>
+        <a class="job-link" href="https://www.freejobalert.com/results/" target="_blank">Latest Results</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">Official Government Portals</div>
+      <div class="job-info">Always verify from official websites before applying. These are primary sources.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://upsc.gov.in" target="_blank">UPSC</a>
+        <a class="job-link" href="https://ssc.nic.in" target="_blank">SSC</a>
+        <a class="job-link" href="https://www.drdo.gov.in/careers" target="_blank">DRDO</a>
+        <a class="job-link" href="https://www.isro.gov.in/careers" target="_blank">ISRO</a>
+        <a class="job-link" href="https://www.barc.gov.in/careers" target="_blank">BARC</a>
+        <a class="job-link" href="https://www.ntpc.co.in/careers" target="_blank">NTPC</a>
+        <a class="job-link" href="https://careers.bhel.in" target="_blank">BHEL</a>
+        <a class="job-link" href="https://ongcindia.com/careers" target="_blank">ONGC</a>
+        <a class="job-link" href="https://aai.aero/en/careers" target="_blank">AAI</a>
+        <a class="job-link" href="https://hal-india.co.in/careers" target="_blank">HAL</a>
+      </div>
+    </div>
+    <div class="job-card">
+      <div class="job-name">Rojgar Samachar / Employment News</div>
+      <div class="job-info">Weekly government job newspaper — now available online. Official govt job advertisements.</div>
+      <div class="job-links">
+        <a class="job-link" href="https://www.employmentnews.gov.in" target="_blank">🗞️ Employment News</a>
+        <a class="job-link" href="https://www.rojgarsamachar.gov.in" target="_blank">Rojgar Samachar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOB ALERTS -->
+  <div class="job-content" id="jAlerts">
+    <div class="alert-box">
+      <div class="alert-title">🔔 Never Miss a Job Notification</div>
+      <div style="font-size:.82rem;color:rgba(224,247,250,0.65);">Set up these alerts today — government jobs close very quickly, sometimes within 2 weeks of notification!</div>
+    </div>
+
+    <div class="job-sec-title">📱 Telegram Channels (Best for instant alerts)</div>
+    <div class="job-card">
+      <div class="job-name">Recommended Telegram Channels</div>
+      <div class="job-info">Join these Telegram channels for instant government job notifications on your phone:</div>
+      <div class="job-links">
+        <a class="job-link" href="https://t.me/sarkariresultofficial" target="_blank">📢 Sarkari Result</a>
+        <a class="job-link" href="https://t.me/freejobalert" target="_blank">📢 FreeJobAlert</a>
+        <a class="job-link" href="https://t.me/govtjobsnotification" target="_blank">📢 Govt Jobs</a>
+        <a class="job-link" href="https://www.youtube.com/results?search_query=ECE+government+job+notification+2025" target="_blank">▶ YouTube Channel</a>
+      </div>
+    </div>
+
+    <div class="job-sec-title">📅 Important Exam Calendars</div>
+    <div class="job-card">
+      <div class="job-name">Annual Exam Schedule (Approximate)</div>
+      <div class="job-info" style="line-height:2;">
+        <strong style="color:#facc15">January–February:</strong> GATE Exam · SSC JE Paper 2<br>
+        <strong style="color:#facc15">March–April:</strong> GATE Results · PSU Notifications open<br>
+        <strong style="color:#facc15">May–June:</strong> UPSC ESE (Prelims) · DRDO SET<br>
+        <strong style="color:#facc15">July–August:</strong> PSU Interviews · SSC JE Notification<br>
+        <strong style="color:#facc15">September–October:</strong> UPSC ESE (Mains) · BARC OCES<br>
+        <strong style="color:#facc15">November–December:</strong> GATE Registration · SSC JE Paper 1
+      </div>
+    </div>
+
+    <div class="job-sec-title">✅ Job Application Checklist</div>
+    <div class="job-card">
+      <div class="job-name">Before Applying — Always Check These</div>
+      <ul class="tip-list" style="margin-top:8px;">
+        <li>Eligibility — Degree, Age limit, Category, Percentage criteria</li>
+        <li>Application deadline — Don't miss it, no extensions given</li>
+        <li>Documents needed — Certificates, ID proof, Photo, Signature</li>
+        <li>Application fee — Different for General/OBC/SC/ST</li>
+        <li>Exam pattern — Syllabus, marks, negative marking, duration</li>
+        <li>Apply from official website ONLY — beware of fake portals</li>
+        <li>Save application number & print confirmation page</li>
+        <li>Set exam date reminder in phone calendar</li>
+      </ul>
+    </div>
+
+    <div class="job-sec-title">🔗 Quick Links — All at One Place</div>
+    <div class="job-links" style="margin-top:6px;">
+      <a class="job-link" href="https://www.sarkariresult.com/latest-jobs/" target="_blank">📢 Latest Notifications</a>
+      <a class="job-link" href="https://www.sarkariresult.com/admit-card/" target="_blank">🪪 Admit Cards</a>
+      <a class="job-link" href="https://www.sarkariresult.com/result/" target="_blank">📋 Results</a>
+      <a class="job-link" href="https://www.freejobalert.com" target="_blank">🔔 FreeJobAlert</a>
+      <a class="job-link" href="https://www.naukri.com/government-jobs" target="_blank">Naukri Govt</a>
+      <a class="job-link" href="https://www.employmentnews.gov.in" target="_blank">Employment News</a>
+    </div>
+  </div>
+
+</div>
+
 <footer>
   <div class="copyright-badge">© 2026 ECE – Engineer's Toolkit · All Rights Reserved</div><br>
-  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v8.0</strong>
+  Developed with ⚡ by <strong>Shubham Pandey</strong> &nbsp;|&nbsp; Unauthorized reproduction prohibited &nbsp;|&nbsp; <strong>ECE-TOOLKIT v10.0</strong>
 </footer>
 
 <script>
@@ -1486,16 +2874,17 @@ body.light .copyright-badge{border-color:rgba(0,60,150,0.2);background:rgba(0,51
 
 // COUNTER
 function animCount(el,target,suffix=''){let n=0,step=Math.ceil(target/40),t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n+suffix;if(n>=target)clearInterval(t);},30);}
-setTimeout(()=>{animCount(document.getElementById('cnt1'),80,'+');animCount(document.getElementById('cnt2'),75,'+');animCount(document.getElementById('cnt3'),5);},800);
+setTimeout(()=>{animCount(document.getElementById('cnt1'),80,'+');animCount(document.getElementById('cnt2'),75,'+');animCount(document.getElementById('cnt3'),8);},800);
 
 // NAVIGATION
-const allSections=['calcSection','theorySection','compSection','circuitSection','simSection','eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
+const allSections=['calcSection','theorySection','compSection','circuitSection','simSection','gateSection','internSection','jobSection','eceSection','digitalSection','designSection','commSection','practicalSection','mcuSection','signalSection','vlsiSection'];
 function openSection(id){
   document.getElementById('homeMenu').style.display='none';
   allSections.forEach(s=>document.getElementById(s).style.display='none');
   document.getElementById(id).style.display='block';
   window.scrollTo(0,0);
   if(id==='compSection')setTimeout(()=>renderComps(COMP_DATA),50);
+  if(id==='gateSection')setTimeout(()=>{document.querySelectorAll('.weight-bar').forEach(b=>b.style.width=b.dataset.w+'%');},300);
 }
 function goHome(){
   document.getElementById('homeMenu').style.display='flex';
@@ -1526,7 +2915,7 @@ function backToCalc(){
   window.scrollTo(0,0);
 }
 function searchCards(){
-  const val=document.getElementById('search').value.toLowerCase().trim();
+  const val=document.getElementById('search').value.toLowerCase().trim().replace(/\s+/g,' ');
   if(!val){goHome();return;}
 
   const noRes=document.getElementById('noResults');
@@ -1546,7 +2935,9 @@ function searchCards(){
     compSection:['comp','component','components','encyclopedia','resistor','capacitor','inductor','diode','zener','led','bjt','mosfet','jfet','scr','opamp','relay','motor','speaker','sensor','ldr','thermistor','ultrasonic','piezo','passive','active','semiconductor'],
     circuitSection:['circuit','ckt','designer','voltage divider','common emitter','bridge rectifier','inverting op','zener regul'],
     simSection:['simulator','waveform','bode','phasor','555 timer','boolean','truth table','rc curve','rl curve'],
-    eceSection:['ece core','ohm','power calc','rc time','reactance','resonance','impedance','decibel','bandwidth','lpf','hpf','bjt gain','mosfet drain'],
+    internSection:['intern','internship','company','resume','cv','linkedin','interview','research','platform','stipend','isro intern','drdo intern','mitacs','daad','career','nptel','certification','portfolio'],
+    gateSection:['gate','gate ece','pyq','cutoff','rank','gate score','ese','ies','gate exam','aptitude'],
+    jobSection:['job','jobs','placement','government','sarkari','result','sarkariresult','upsc','ssc','bsnl','barc','bhel','ntpc','ongc','aai','hal','gail','psu','naukri','recruitment','notification','alert','army','navy'],
     digitalSection:['digital','binary','decimal','hex','octal','logic gate','complement','kmap'],
     designSection:['design tool','color code','pcb','trace','battery life','unit converter'],
     commSection:['communication','modulation','shannon','friis','path loss','noise figure','wavelength','nyquist'],
@@ -1558,7 +2949,7 @@ function searchCards(){
 
   // 1. Check section name keywords
   Object.entries(nameMap).forEach(([secId,keys])=>{
-    if(keys.some(k=>k===val||k.startsWith(val)||val.startsWith(k)||k.includes(val)||val.includes(k))){
+    if(keys.some(k=>{const kl=k.toLowerCase(),vl=val.toLowerCase();return kl===vl||kl.startsWith(vl)||vl.startsWith(kl)||kl.includes(vl)||vl.includes(kl);})){
       const sec=document.getElementById(secId);
       if(sec){
         sec.style.display='block';
@@ -1578,7 +2969,7 @@ function searchCards(){
     if(!sec)return;
     let secFound=false;
     sec.querySelectorAll('.card').forEach(c=>{
-      const m=c.innerText.toLowerCase().includes(val);
+      const m=c.innerText.toLowerCase().trim().includes(val);
       c.style.display=m?'block':'none';
       if(m)secFound=true;
     });
@@ -1589,13 +2980,13 @@ function searchCards(){
   const simSec=document.getElementById('simSection');
   if(simSec&&simSec.style.display!=='block'){
     let sf=false;
-    simSec.querySelectorAll('.card').forEach(c=>{const m=c.innerText.toLowerCase().includes(val);c.style.display=m?'block':'none';if(m)sf=true;});
+    simSec.querySelectorAll('.card').forEach(c=>{const m=c.innerText.toLowerCase().trim().includes(val);c.style.display=m?'block':'none';if(m)sf=true;});
     if(sf){simSec.style.display='block';found++;}
   }
 
   // 4. Search circuit section
   const cktSec=document.getElementById('circuitSection');
-  if(cktSec&&cktSec.style.display!=='block'&&cktSec.innerText.toLowerCase().includes(val)){
+  if(cktSec&&cktSec.style.display!=='block'&&cktSec.innerText.toLowerCase().trim().includes(val)){
     cktSec.style.display='block';found++;
   }
 
@@ -1605,7 +2996,7 @@ function searchCards(){
     if(!cmpSec.querySelector('.comp-card'))renderComps(COMP_DATA);
     let cf=false;
     cmpSec.querySelectorAll('.comp-card').forEach(c=>{
-      const m=c.innerText.toLowerCase().includes(val);
+      const m=c.innerText.toLowerCase().trim().includes(val);
       c.style.display=m?'block':'none';
       if(m)cf=true;
     });
@@ -1616,7 +3007,7 @@ function searchCards(){
   const thSec=document.getElementById('theorySection');
   if(thSec&&thSec.style.display!=='block'){
     let tf=false;
-    thSec.querySelectorAll('.subject-card').forEach(c=>{const m=c.innerText.toLowerCase().includes(val);c.style.display=m?'block':'none';if(m)tf=true;});
+    thSec.querySelectorAll('.subject-card').forEach(c=>{const m=c.innerText.toLowerCase().trim().includes(val);c.style.display=m?'block':'none';if(m)tf=true;});
     if(tf){thSec.style.display='block';thSec.querySelectorAll('.sem-content').forEach(s=>s.classList.add('active'));found++;}
   }
 
@@ -2998,6 +4389,99 @@ function toggleComp(id){
 }
 
 // Init components when compSection opens - handled inside openSection above
+
+// ===== JOBS & PLACEMENT =====
+function showJob(id){
+  document.querySelectorAll('.job-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.job-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ===== INTERNSHIP PORTAL =====
+function showIntern(id){
+  document.querySelectorAll('.intern-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.intern-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ===== GATE ECE =====
+function showGate(id){
+  document.querySelectorAll('.gate-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.gate-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  // Animate weight bars when weightage tab opens
+  if(id==='gWeightage'){
+    setTimeout(()=>{
+      document.querySelectorAll('.weight-bar').forEach(b=>{
+        b.style.width=b.dataset.w+'%';
+      });
+    },100);
+  }
+}
+function toggleGate(card){
+  const body=card.querySelector('.gate-subj-body');
+  const toggle=card.querySelector('.gate-toggle');
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.gate-subj-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.gate-toggle').forEach(t=>t.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');toggle.classList.add('open');}
+}
+function calcMarks(){
+  const c1=parseFloat(document.getElementById('g1m').value)||0;
+  const c2=parseFloat(document.getElementById('g2m').value)||0;
+  const w1=parseFloat(document.getElementById('g1w').value)||0;
+  const w2=parseFloat(document.getElementById('g2w').value)||0;
+  const marks=(c1*1)+(c2*2)-(w1*0.33)-(w2*0.67);
+  const total=c1+c2+w1+w2;
+  document.getElementById('gMarksOut').innerHTML=
+    `Marks = <span style="color:#fff;font-size:1.1em">${marks.toFixed(2)}</span> / 100 &nbsp;|&nbsp; Attempted: ${total}`;
+}
+function estimateRank(){
+  const score=parseFloat(document.getElementById('gScore').value)||0;
+  const year=document.getElementById('gYear').value;
+  // Approximate rank estimation based on historical data
+  let rank='';
+  if(score>=90) rank='Top 100';
+  else if(score>=85) rank='100 - 300';
+  else if(score>=80) rank='300 - 700';
+  else if(score>=75) rank='700 - 1500';
+  else if(score>=70) rank='1500 - 3000';
+  else if(score>=65) rank='3000 - 5000';
+  else if(score>=60) rank='5000 - 8000';
+  else if(score>=55) rank='8000 - 12000';
+  else if(score>=50) rank='12000 - 18000';
+  else if(score>=40) rank='18000 - 30000';
+  else rank='> 30000';
+  document.getElementById('gRankOut').innerHTML=
+    `Score ${score} → Estimated Rank: <span style="color:#fff">${rank}</span> (${year} trend)`;
+}
+function calcGateScore(){
+  const M=parseFloat(document.getElementById('gMarks').value)||0;
+  const Mavg=parseFloat(document.getElementById('gAvg').value)||35;
+  const Mtop=parseFloat(document.getElementById('gTop').value)||85;
+  const score=350+650*((M-Mavg)/(Mtop-Mavg));
+  const clamped=Math.max(0,Math.min(1000,score));
+  document.getElementById('gScoreOut').innerHTML=
+    `GATE Score ≈ <span style="color:#fff;font-size:1.1em">${clamped.toFixed(0)}</span> / 1000`;
+}
+function studyPlan(){
+  const days=parseFloat(document.getElementById('gDays').value)||0;
+  const hours=parseFloat(document.getElementById('gHours').value)||0;
+  const total=days*hours;
+  const subjectHours=[
+    {s:'GA + Eng Maths',p:0.15},{s:'Communications',p:0.13},{s:'Networks+Signals',p:0.11},
+    {s:'Control Systems',p:0.10},{s:'Analog Circuits',p:0.10},{s:'Electronic Devices',p:0.10},
+    {s:'Digital Circuits',p:0.09},{s:'Electromagnetics',p:0.09},{s:'Revision+Mock Tests',p:0.13},
+  ];
+  let html=`Total: <span style="color:#fff">${total}hrs</span><br>`;
+  subjectHours.forEach(s=>{
+    html+=`<span style="color:rgba(244,63,94,0.7)">${s.s}:</span> <span style="color:#fff">${(total*s.p).toFixed(0)}hrs</span> &nbsp;`;
+  });
+  document.getElementById('gPlanOut').innerHTML=html;
+}
 
 // ENTER KEY
 document.addEventListener('keydown',e=>{
